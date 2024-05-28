@@ -1,0 +1,7 @@
+.navigation{
+  position: fixed;
+  display: flex;
+  & li {
+    color: white;
+  }
+}

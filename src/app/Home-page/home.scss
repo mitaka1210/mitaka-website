@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  height: 100vh;
+  color: #fff;
+  min-height: 500px;
+  background-size: cover;
+  background: #000 url("../../../assets/images/Endless-Constellation.svg");
+}
+.typewrite {
+  color: crimson;
+  font-weight: 500;
+}
+.text-main {
+  padding-right: 5px;
+}
+.second {
+  /*   background: red; */
+  text-align: center;
+  align-items: center;
+  display: flex;
+  padding-left: 0px;
+}
