@@ -1,5 +1,5 @@
+'use client'
 import React from 'react';
-import Typewriter from 'typewriter-effect';
 const HomePageHTML = (props) => {
   const  myName = 'Dimitar Dimitrov';
   var TxtType = function (el, toRotate, period) {
@@ -44,23 +44,21 @@ const HomePageHTML = (props) => {
       that.tick();
     }, delta);
   };
-
   window.onload = function () {
-    var elements = document.getElementsByClassName("typewrite");
-    for (var i = 0; i < elements.length; i++) {
-      var toRotate = elements[i].getAttribute("data-type");
-      var period = elements[i].getAttribute("data-period");
-      if (toRotate) {
-        new TxtType(elements[i], JSON.parse(toRotate), period);
+      var elements = document.getElementsByClassName("typewrite");
+      for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute("data-type");
+        var period = elements[i].getAttribute("data-period");
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
       }
-    }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-    document.body.appendChild(css);
-  };
-
+      // INJECT CSS
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+      document.body.appendChild(css);
+    };
   return (
     <>
       <div className="main-container">
@@ -73,7 +71,7 @@ const HomePageHTML = (props) => {
           <div className="flex-vertical-container align-items-center "><p className='text-main'>And I am </p></div>
           <div className='second'>
             <a href="" className="typewrite" data-period="2000"
-               data-type='[ "I Love to Develop.", "i love Aquarist", "I Love Design.", "Freelancer", "Aviation engineer" ]'>
+               data-type='[ "I Love to Develop.", "I am Aquarist", "I Love Design.", "Freelancer", "Aviation engineer" ]'>
               <span className="wrap"></span>
             </a>
           </div>
