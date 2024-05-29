@@ -4,6 +4,12 @@
   width: 100%;
   z-index: 9;
   top: 1em;
+  list-style-type: none;
+  & li a {
+    color: white;
+    text-decoration: none;
+  }
+
   & .text-1 {
     flex-basis: 10%;
   }
@@ -24,19 +30,112 @@
   }
 }
 .text-1::after{
-  content: '';
+  content: "";
   display: block;
-  width: 0;
+  width: 0px;
   height: 2px;
-  background: white;
-  transition: width .3s;
+  background: #b41f1f;
+  transition: width 0.3s;
+  /* width: 50px !important; */
+  left: 4em;
+  position: relative;
 }
-.text-1:hover{
-  color: #00a80d;
+.text-1 a:hover{
+  color: crimson;
 }
 .text-1:hover:after{
-  width: 100%;
-  transition: width .3s;
+  width: 35%;
+  transition: width .5s;
+}
+.text-2::after{
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #b41f1f;
+  transition: width 0.3s;
+  /* width: 50px !important; */
+  left: 4em;
+  position: relative;
+}
+.text-2 a:hover{
+  color: crimson;
+}
+.text-2:hover:after{
+  width: 35%;
+  transition: width .5s;
+}
+.text-3::after{
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #b41f1f;
+  transition: width 0.3s;
+  /* width: 50px !important; */
+  left: 4em;
+  position: relative;
+}
+.text-3 a:hover{
+  color: crimson;
+}
+.text-3:hover:after{
+  width: 35%;
+  transition: width .5s;
+}
+.text-4::after{
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #b41f1f;
+  transition: width 0.3s;
+  /* width: 50px !important; */
+  left: 4em;
+  position: relative;
+}
+.text-4 a:hover{
+  color: crimson;
+}
+.text-4:hover:after{
+  width: 35%;
+  transition: width .5s;
+}
+.text-5::after{
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #b41f1f;
+  transition: width 0.3s;
+  /* width: 50px !important; */
+  left: 4em;
+  position: relative;
+}
+.text-5 a:hover{
+  color: crimson;
+}
+.text-5:hover:after{
+  width: 35%;
+  transition: width .5s;
+}
+.text-6::after{
+  content: "";
+  display: block;
+  width: 0px;
+  height: 2px;
+  background: #b41f1f;
+  transition: width 0.3s;
+  /* width: 50px !important; */
+  left: 4em;
+  position: relative;
+}
+.text-6 a:hover{
+  color: crimson;
+}
+.text-6:hover:after{
+  width: 35%;
+  transition: width .5s;
 }
 .my-logo{
   position: absolute;
@@ -46,7 +145,7 @@
     background-image: url("../../../assets/images/Logo/DD.svg");
     background-repeat: no-repeat;
     width: 50%;
-    height: 50%;
+    height: 72%;
     position: absolute;
     bottom: 2em;
     left: 9em;

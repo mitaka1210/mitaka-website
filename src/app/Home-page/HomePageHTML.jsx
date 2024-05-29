@@ -68,10 +68,10 @@ const HomePageHTML = (props) => {
         </div>
         <div className='automation-text'>
 
-          <div className="flex-vertical-container align-items-center "><p className='text-main'>And I am </p></div>
+          <div className="flex-vertical-container align-items-center "><p className='text-main'>And</p></div>
           <div className='second'>
             <a href="" className="typewrite" data-period="2000"
-               data-type='[ "I Love to Develop.", "I am Aquarist", "I Love Design.", "Freelancer", "Aviation engineer" ]'>
+               data-type='[ "I Love to Develop.", "I am Aquarist", "I Love Design.", "I am Freelancer", "I am Aviation engineer" ]'>
               <span className="wrap"></span>
             </a>
           </div>
