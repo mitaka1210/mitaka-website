@@ -1,10 +1,24 @@
-.main {
+@font-face { font-family: roboto-regular;
+  src: url('../../../assets/fonts/Peralta/Peralta-Regular.ttf'); }
+
+.main-container {
   display: flex;
   height: 100vh;
   color: #fff;
   min-height: 500px;
-  background-size: cover;
+  background-size: cover !important;
   background: #000 url("../../../assets/images/Endless-Constellation.svg");
+}
+
+.automation-text {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  top: 6em;
 }
 .typewrite {
   color: crimson;
@@ -19,4 +33,22 @@
   align-items: center;
   display: flex;
   padding-left: 0px;
+}
+
+.my-name {
+  position: absolute;
+  & .is {
+    color: white;
+    font-size: 1.68em;
+  }
+
+  & .main {
+   color: #56d5e8;
+    background-image: -webkit-radial-gradient(circle, #56d5e8 3%, #87f9bf 1%, #ffeb3b 61%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    font: 4.68rem "roboto-regular";
+  }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Typewriter from 'typewriter-effect';
 const HomePageHTML = (props) => {
+  const  myName = 'Dimitar Dimitrov';
   var TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -62,15 +63,20 @@ const HomePageHTML = (props) => {
 
   return (
     <>
-      <div className='main'>
+      <div className="main-container">
+        <div className="my-name flex-horizontal-container justify-content-center align-items-center maxWidthAndHeight">
+          <h2 className="is">Hello, my name is</h2>
+          <h2 className="main">{myName}</h2>
+        </div>
+        <div className='automation-text'>
 
-        <p className='text-main flex-vertical-container align-items-center'>I am</p>
-        <div className='second'>
-
-          <a href="" className="typewrite" data-period="2000"
-             data-type='[ "I Love to Develop.", "i love Aquarist", "I Love Design.", "Freelancer", "Aviation engineer" ]'>
-            <span className="wrap"></span>
-          </a>
+          <div className="flex-vertical-container align-items-center "><p className='text-main'>And I am </p></div>
+          <div className='second'>
+            <a href="" className="typewrite" data-period="2000"
+               data-type='[ "I Love to Develop.", "i love Aquarist", "I Love Design.", "Freelancer", "Aviation engineer" ]'>
+              <span className="wrap"></span>
+            </a>
+          </div>
         </div>
       </div>
 
