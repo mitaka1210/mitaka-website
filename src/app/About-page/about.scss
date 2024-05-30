@@ -1,0 +1,52 @@
+
+.nav-bar-about {
+  width: 100%;
+  background-color: #00a80d;
+  height: 6em;
+}
+.box-1,.box-2,.box-3,.box-4,.box-5,.box-6 {
+  width: 100%;
+
+
+}
+.overlay-box {
+  background-color: #f5f5f5;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 1em;
+}
+.box-1 > .overlay-box {
+  //background-image: url("../../../assets/images/football.jpeg");
+}
+.box-2 > .overlay-box {
+  background-image: url("../../../assets/images/aquarium.jpeg");
+}
+.box-3 > .overlay-box {
+  background-image: url("../../../assets/images/front-end-work.jpg");
+}
+.box-4 > .overlay-box {
+  background-image: url("../../../assets/images/arduino.jpeg");
+}
+.overlay-box:hover .desc,
+.overlay-box:focus .desc {
+  opacity: 1;
+  //position: absolute;
+  //width: 23.5%;
+}
+.overlay-box .desc {
+  opacity: 0.01;
+  min-height: 355px;
+  font-size: 1rem;
+  height: 100%;
+  padding: 30px 25px 20px;
+  transition: all 1s ease;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+
+.info-bout-me{
+  display: flex;
+  justify-content: space-around;
+}

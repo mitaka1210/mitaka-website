@@ -1,20 +1,25 @@
 'use client'
-
 import "./home.scss";
 import HomePageHTML from './HomePageHTML'
-import {useEffect} from "react";
-import Typewriter from 'typewriter-effect';
+import Navigation from "@/app/Navigation-component/navigation";
+import React, {useEffect, useState} from "react";
+import LoadingPage from "@/app/loading";
 export default function HomePage() {
-  const words = ["Hello, World!", "Welcome to my website!", "This is a typewriter effect."];
-  let i = 0;
-  let j = 0;
-  let currentWord = "";
-  let isDeleting = false;
-
+  const [showMenu, setShowMenu] = useState(true);
+  useEffect(() => {
+  setTimeout( () => {
+    setShowMenu(false)
+    console.log('pesho', setShowMenu)
+  },2000)
+  }, []);
   return (
-
     <>
-      <HomePageHTML/>
+      {showMenu ?  <LoadingPage time={2} /> : <div>
+        <div className="nav-bar-home flex-vertical-container text-align-center justify-content-end align-items-center">
+          <Navigation/>
+        </div>
+        <HomePageHTML/>
+      </div>}
     </>
   )
 }

@@ -10,10 +10,14 @@
   },
   "dependencies": {
     "autotyping": "^1.2.6",
+    "i18next": "^23.11.5",
     "next": "14.2.3",
+    "next-i18next": "^15.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-i18next": "^14.1.2",
     "sass": "^1.77.2",
+    "typed.js": "^2.1.0",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {

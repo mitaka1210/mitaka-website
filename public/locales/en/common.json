@@ -1,0 +1,5 @@
+// public/locales/en/common.json
+{
+  "welcome": "Welcome",
+  "description": "This is an example description."
+}

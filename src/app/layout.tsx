@@ -21,9 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en">
     <body className="">
-    <div className="nav-bar">
-      <Navigation/>
-    </div>
     {children}
     </body>
     </html>

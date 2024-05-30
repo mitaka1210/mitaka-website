@@ -1,7 +1,5 @@
 .navigation{
-  position: absolute;
   display: flex;
-  width: 100%;
   z-index: 9;
   top: 1em;
   list-style-type: none;
@@ -12,51 +10,32 @@
 
   & .text-1 {
     flex-basis: 10%;
+    margin: 15px;
   }
   & .text-2 {
     flex-basis: 10%;
+    margin: 15px;
   }
   & .text-3 {
     flex-basis: 10%;
+    margin: 15px;
   }
   & .text-4 {
     flex-basis: 10%;
+    margin: 15px;
   }
   & .text-5 {
     flex-basis: 10%;
+    margin: 15px;
   }
   & .text-6 {
     flex-basis: 10%;
+    margin: 15px;
   }
 }
-.text-1::after{
-  content: "";
-  display: block;
-  width: 0px;
-  height: 2px;
-  background: #b41f1f;
-  transition: width 0.3s;
-  /* width: 50px !important; */
-  left: 4em;
-  position: relative;
-}
+
 .text-1 a:hover{
   color: crimson;
-}
-.text-1:hover:after{
-  width: 35%;
-  transition: width .5s;
-}
-.text-2::after{
-  content: "";
-  display: block;
-  width: 0px;
-  height: 2px;
-  background: #b41f1f;
-  transition: width 0.3s;
-  /* width: 50px !important; */
-  left: 4em;
-  position: relative;
 }
 .text-2 a:hover{
   color: crimson;
@@ -65,77 +44,17 @@
   width: 35%;
   transition: width .5s;
 }
-.text-3::after{
-  content: "";
-  display: block;
-  width: 0px;
-  height: 2px;
-  background: #b41f1f;
-  transition: width 0.3s;
-  /* width: 50px !important; */
-  left: 4em;
-  position: relative;
-}
 .text-3 a:hover{
   color: crimson;
-}
-.text-3:hover:after{
-  width: 35%;
-  transition: width .5s;
-}
-.text-4::after{
-  content: "";
-  display: block;
-  width: 0px;
-  height: 2px;
-  background: #b41f1f;
-  transition: width 0.3s;
-  /* width: 50px !important; */
-  left: 4em;
-  position: relative;
 }
 .text-4 a:hover{
   color: crimson;
 }
-.text-4:hover:after{
-  width: 35%;
-  transition: width .5s;
-}
-.text-5::after{
-  content: "";
-  display: block;
-  width: 0px;
-  height: 2px;
-  background: #b41f1f;
-  transition: width 0.3s;
-  /* width: 50px !important; */
-  left: 4em;
-  position: relative;
-}
 .text-5 a:hover{
   color: crimson;
 }
-.text-5:hover:after{
-  width: 35%;
-  transition: width .5s;
-}
-.text-6::after{
-  content: "";
-  display: block;
-  width: 0px;
-  height: 2px;
-  background: #b41f1f;
-  transition: width 0.3s;
-  /* width: 50px !important; */
-  left: 4em;
-  position: relative;
-}
 .text-6 a:hover{
   color: crimson;
-}
-.text-6:hover:after{
-  width: 35%;
-  transition: width .5s;
 }
 .my-logo{
   position: absolute;
