@@ -35,10 +35,10 @@ const AboutPage = () => {
       <main className="images">
         {imgsLoaded ?  <div>
           <div className="about-page">
-            {/*<div*/}
-            {/*  className="nav-bar-about flex-vertical-container text-align-center justify-content-end align-items-center">*/}
-            {/*  <Navigation/>*/}
-            {/*</div>*/}
+            <div
+              className="nav-bar-about flex-vertical-container text-align-center justify-content-end align-items-center">
+              <Navigation/>
+            </div>
             <section>
               <main>
                 <AboutHtml/>
@@ -52,26 +52,7 @@ const AboutPage = () => {
       </main>
     </>
   )
-  // const [showMenu, setShowMenu] = useState(true);
-  // useEffect(() => {
-  //   setTimeout( () => {
-  //     setShowMenu(false)
-  //     console.log('pesho', setShowMenu)
-  //   },3000)
-  // }, []);
-  // return (
-  //   <>
-  //   {showMenu ? <LoadingPage time={2} /> : <div>
-  //     <div className="about-page">
-  //       <div
-  //         className="nav-bar-about flex-vertical-container text-align-center justify-content-end align-items-center">
-  //         <Navigation/>
-  //       </div>
-  //       <AboutHtml/>
-  //     </div>
-  //   </div>}
-  //   </>
-  // );
+
 };
 
 export default AboutPage;
