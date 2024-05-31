@@ -6,6 +6,7 @@ import Navigation from "@/app/Navigation-component/navigation";
 import React from "react";
 import Link from "next/link";
 import './reusable-styles.scss';
+import FooterHTML from "@/app/Footer-page/FooterHTML";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

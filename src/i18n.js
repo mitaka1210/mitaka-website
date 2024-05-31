@@ -1,31 +1,45 @@
-// src/i18n.js
 import i18n from 'i18next';
+// import XHR from 'i18next-xhr-backend';
+// import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
+import XHR from 'i18next-xhr-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import bg from '../public/locales/bg/translation.json';
+import en from '../public/locales/en/translation.json';
 
-// Преводи
 const resources = {
   en: {
-    translation: {
-      "welcome": "Welcome",
-      "description": "This is an example description."
-    }
+    translation: en
   },
   bg: {
-    translation: {
-      "welcome": "Добре дошли",
-      "description": "Това е примерна описание."
-    }
+    translation: bg
   }
 };
-
 i18n
-  .use(initReactI18next) // свързване на react-i18next с i18next
+  .use(XHR)
+  .use(LanguageDetector)
+  .use(initReactI18next) // bind react-i18next to the instance
   .init({
     resources,
-    lng: "en", // началния език
+    fallbackLng: 'en',
+    debug: true,
+
     interpolation: {
-      escapeValue: false // react вече предпазва от XSS
+      escapeValue: false, // not needed for react!!
+    },
+    whitelist: ['en', 'bg'],
+    // react i18next special options (optional)
+    // override if needed - omit if ok with defaults
+    /*
+    react: {
+      bindI18n: 'languageChanged',
+      bindI18nStore: '',
+      transEmptyNodeValue: '',
+      transSupportBasicHtmlNodes: true,
+      transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],
+      useSuspense: true,
     }
+    */
   });
 
 export default i18n;

@@ -1,8 +1,10 @@
 const { i18n } = require('./next-i18next.config');
 
 
-module.exports = {
+const nextConfig = {
   i18n,
+  reactStrictMode: true,
+  swcMinify: true,
   async redirects() {
     return [
       {
@@ -13,3 +15,4 @@ module.exports = {
     ]
   },
 }
+module.exports = nextConfig;
