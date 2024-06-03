@@ -1,119 +1,66 @@
 
 'use client'
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import RocketIcon from '@mui/icons-material/Rocket';
+import {accordian} from '@/content'
+import ScrollTop from "@/helpMetods/scrollTop";
 const AboutHtml = () => {
-  const ScrollToTop = () =>{
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }
-  const [show, setShow] = useState(false);
-  const controlNavbar = () => {
-    if (window.scrollY > 500) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
+  const [active, setActive] = useState(-1);
+  const handleClick = (index) => {
+    if (index === active) setActive(-1);
+    else setActive(index);
   };
-  useEffect(() => {
-    window.addEventListener('scroll', controlNavbar);
-    return () => {
-      window.removeEventListener('scroll', controlNavbar);
-    };
-  }, []);
-  // const img1 = require.context('../../../assets/images', true);
+
   return (
     <div className="about">
       <div className='about-me'>
         <h2 className="text-align-center">За мен</h2>
       </div>
       <section>
+
         <div className='my-hobbi'>
-          <p className='about-me-text margin-15'>Здравейте, казвам се инж. Димитър Димитров и съм авиационен инженер. Но
-            с времето се наложи да се преклалифицирам(не по-мое желание) в програмирането. По специално в Front-end частта.
-            Страстен съм към различни хобита, включително лични финанси, аквариумистика, проекти с Arduino, разходки в
+          <p className='about-me-text margin-15'>Здравейте, казвам се Димитър Димитров и съм авиационен инженер. Но
+            с времето се наложи да се преклалифицирам в моето хоби към този момент.Именно в програмирането и по специално в Front-end частта.
+            Страстен съм към различни хобита,лични финанси, аквариумистика, проекти с Arduino, разходки в
             природата, готварство, риболов, програмиране, четене и инвестиране.</p><p>
           Моите цели са да постигна финансова независимост и да стана качествен програмист.
           Известен съм със своята упоритост, говоря директно това което мисля и съм в готовност да помагам на
           другите.</p>
-          <ul className='margin-15 text-align-justify'>
-            <li className='margin-5'>
-              <section>
-                <details id="smooth">
-                  <summary><h3>Лични финанси: Стремя се да постигна финансово грамотност и независимост.</h3></summary>
-                  <div className="content">
-                    <p>This detail element requires the use of the height and transition attributes to open smoothly.
-                      The
-                      downside to this is that it's less flexible since you must know how long the content will be in
-                      order to
-                      display content properly.</p>
-
-                    <p>Max-height will only work for opening the collapsible, but not for closing it. Closure using
-                      max-height
-                      will cause the element to close mostly like the default version, but slightly collapse at the end.
-                      This
-                      is due to changes to the <code>&lt;slot&gt;</code> made when opening and closing the details.</p>
-                    <p>The slot's inline styling is changed to include "content-visibility: hidden", which functions
-                      similarly
-                      to "display: none" in that it just removes the content from the layout and removes visibility.</p>
-
-                    <p>Lastly, the slot belongs to the user-agent shadow DOM, and is seemingly unable to be targeted
-                      using any
-                      CSS selectors that target shadow DOM components. Need to do more research.
-                    </p>
-                  </div>
-                </details>
-
-
-              </section>
-            </li>
-            <li className='margin-5'>Аквариумистика: Обичам да се грижа за аквариумни риби и да създавам красиви
-              подводни светове.
-            </li>
-            <li className='margin-5'>Arduino: Занимавам се с програмиране и изграждане на проекти с помощта на
-              Arduino.
-            </li>
-            <li className='margin-5'>Разходки в природата: Природата е моето убежище, където намирам спокойствие и
-              вдъхновение.
-            </li>
-            <li className='margin-5'>Кухня и готварство: Готвенето е мое страст и обичам да експериментирам с различни
-              рецепти.
-            </li>
-            <li className='margin-5'>Риболов: Риболовът е една от моите любими активности на открито.</li>
-            <li className='margin-5'>Програмиране: Непрекъснато се стремя да подобрявам уменията си в програмирането и
-              да уча нови технологии.
-            </li>
-            <li className='margin-5'>Четене на книги: Книгите са неизменна част от моето ежедневие и обичам да се
-              потапям в различни литературни светове.
-            </li>
-            <li className='margin-5'>Инвестиране: Инвестирането е важно за мен, тъй като ми помага да постигна
-              финансовите си цели
-            </li>
+          <ul className='margin-15 text-align-justify accordian'>
+            {accordian.map((item, index) => {
+              return (
+                <div className={'list-hobby margin-20 click-btn btn-style506' + ' ' +  (index === active ? 'add-height-click' : '')} key={index}>
+                  <li
+                    onClick={() => handleClick(index)
+                    }
+                    className={index === active ? 'active' : ''}
+                  >
+                    <div className="accordian-title">{item.title}</div>
+                    <div className="accordian-content">
+                      {item.paras.map((para,num) => {
+                        return <p  key={num}>{para}</p>;
+                      })}
+                    </div>
+                  </li>
+                </div>
+              );
+            })}
           </ul>
         </div>
-        <div>
-          <q>Единственият начин да се подобрите е да приемете провалa.</q>
+        <div className='text-align-center maxWidthAndHeight margin-bottom-30'>
+          <h4>
+            <q>Единственият начин да се подобрите е да приемете провалa.</q>
+          </h4>
+          <hr className='add-line-bottom'/>
         </div>
-
-
       </section>
-      <section className="info-bout-me">
+      <div className='text-align-center'><h2>В момента съм фокусиран върху</h2></div>
+      <section className="info-bout-me flex-h">
         <div className="box-1">
           <div className="overlay-box">
             <div className="desc flex-horizontal-container justify-content-center align-items-center text-align-center">
-              <h3 className='margin-15'>Футбол</h3>
+              <h3 className='margin-15'>Развитие в сферата на личните финанси и изграждане на капитали.</h3>
               <p>когато имам свободно време</p>
-            </div>
-          </div>
-        </div>
-        <div className="box-2">
-          <div className="overlay-box">
-            <div className="desc flex-horizontal-container justify-content-center align-items-center text-align-center">
-              <h3 className='margin-15'>Акваристът</h3>
-              <p> С аквариумистика се занимавам от 14 години и по-сериозно се занимавам от 5 години. Запалих се по-нея
-                защото има много неща който човек може сам да си направи.</p>
             </div>
           </div>
         </div>
@@ -138,11 +85,33 @@ const AboutHtml = () => {
           </div>
         </div>
       </section>
-      <div className={`nav ${show && 'nav__blue'}`} onClick={ScrollToTop}>
-        <RocketIcon/>
-      </div>
+      <ScrollTop/>
     </div>
   );
 };
+
+// export function scrollTop(){
+//   const [active, setActive] = useState(-1);
+//   const [show, setShow] = useState(false);
+//
+//   const ScrollToTop = () =>{
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "smooth"
+//     });
+//   }
+//
+//   return ScrollToTop;
+// }
+
+// export const scrollTop2 = (index) =>{
+//   const [active, setActive] = useState(-1);
+//   const handleClick = (index) => {
+//     if (index === active) setActive(-1);
+//     else setActive(index);
+//   };
+//
+//   return handleClick;
+// }
 
 export default AboutHtml;
