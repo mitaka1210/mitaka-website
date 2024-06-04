@@ -90,28 +90,4 @@ const AboutHtml = () => {
   );
 };
 
-// export function scrollTop(){
-//   const [active, setActive] = useState(-1);
-//   const [show, setShow] = useState(false);
-//
-//   const ScrollToTop = () =>{
-//     window.scrollTo({
-//       top: 0,
-//       behavior: "smooth"
-//     });
-//   }
-//
-//   return ScrollToTop;
-// }
-
-// export const scrollTop2 = (index) =>{
-//   const [active, setActive] = useState(-1);
-//   const handleClick = (index) => {
-//     if (index === active) setActive(-1);
-//     else setActive(index);
-//   };
-//
-//   return handleClick;
-// }
-
 export default AboutHtml;

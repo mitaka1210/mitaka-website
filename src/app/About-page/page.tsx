@@ -40,7 +40,7 @@ const AboutPage = () => {
               <Navigation/>
             </div>
             <section>
-              <main>
+              <main className='about-section'>
                 <AboutHtml/>
               </main>
               <footer>

@@ -1,0 +1,31 @@
+.footer-container-main{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: green;
+  overflow: hidden;
+  & ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+}
+a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 70px;
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 60px;
+  color: #fff;
+  transition: 0.5s ease;
+
+}
+a:hover{
+  font-size: 50px;
+  color: #01FFF4;
+  box-shadow: 0 0 40px #01FFF4;
+}
