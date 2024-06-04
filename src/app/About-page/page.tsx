@@ -48,7 +48,7 @@ const AboutPage = () => {
               </footer>
             </section>
           </div>
-        </div> : <LoadingPage time={2} />}
+        </div> : '' }
       </main>
     </>
   )

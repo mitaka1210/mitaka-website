@@ -22,10 +22,9 @@ const AboutHtml = () => {
           <p className='about-me-text margin-15'>Здравейте, казвам се Димитър Димитров и съм авиационен инженер. Но
             с времето се наложи да се преклалифицирам в моето хоби към този момент.Именно в програмирането и по специално в Front-end частта.
             Страстен съм към различни хобита,лични финанси, аквариумистика, проекти с Arduino, разходки в
-            природата, готварство, риболов, програмиране, четене и инвестиране.</p><p>
-          Моите цели са да постигна финансова независимост и да стана качествен програмист.
-          Известен съм със своята упоритост, говоря директно това което мисля и съм в готовност да помагам на
-          другите.</p>
+            природата, готварство, риболов, програмиране, четене и инвестиране.</p>
+          <p className='about-me-text'> Моите цели са да постигна финансова независимост и да стана качествен програмист.
+          Известен съм със своята упоритост, говоря директно това което мисля и съм в готовност да помагам на другите.</p>
           <ul className='margin-15 text-align-justify accordian'>
             {accordian.map((item, index) => {
               return (
@@ -47,14 +46,14 @@ const AboutHtml = () => {
             })}
           </ul>
         </div>
-        <div className='text-align-center maxWidthAndHeight margin-bottom-30'>
+        <div className='text-align-center maxWidthAndHeight margin-bottom-30 my-motto'>
           <h4>
             <q>Единственият начин да се подобрите е да приемете провалa.</q>
           </h4>
           <hr className='add-line-bottom'/>
         </div>
       </section>
-      <div className='text-align-center'><h2>В момента съм фокусиран върху</h2></div>
+      <div className='text-align-center my-focus'><h2>В момента съм фокусиран върху</h2></div>
       <section className="info-bout-me flex-h">
         <div className="box-1">
           <div className="overlay-box">

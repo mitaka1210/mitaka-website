@@ -9,54 +9,52 @@ const FooterHtml = () => {
   const btnRefTwitter = useRef();
   let postUrl = encodeURI(window.location.href);
   let postTitle = '';
-  // useEffect(() => {
-  //   btnRefTwitter.current.setAttribute(
-  //     "href",
-  //     `https://twitter.com/share?url=${postUrl}&text=${postTitle}`
-  //   )
-  // }, []);
   return (
     <section>
       <div className='footer-container-main'>
-        <div className='footer-wrap flex-horizontal-container margin-5'>
-          <h3 className='margin-5 color-white'>Контакти</h3>
-          <br/>
+        <div className='flex-horizontal-container justify-content-center margin-5'>
+          <div>
+            <h3 className='margin-5 color-white'>Контакти</h3>
+          </div>
           <div className='footer-text'>
-            <p className='address margin-5 color-white'>гр. Русе ул. Солун 41</p>
-            <p className='phone margin-5 color-white'>Телефон:</p>
-            <p className='email margin-5 color-white'>Имейл:</p>
+            <p className='address margin-10 color-white text-align-justify'>гр. Русе ул. Солун 41</p>
+            <p className='phone margin-10 color-white text-align-justify'>Телефон: 5522532298</p>
+            <p className='email margin-10 color-white text-align-justify'>Имейл: dimitard185@gmail.com</p>
           </div>
         </div>
-        <div className='flex-horizontal-container justify-content-center align-items-center text-align-center'>
-          <h3>Социални мрежи</h3>
-          <div>
+        <div
+          className='flex-horizontal-container justify-content-center align-items-center text-align-center  margin-5'>
+          <h3 className='margin-5 color-white'>Социални мрежи</h3>
+          <div className='social-network'>
             <ul>
               <li>
-                <a href="">
+                <a className='icons-styles' href="">
                   <FacebookIcon/>
                 </a>
               </li>
               <li>
-                <a href="">
+                <a className='icons-styles' href="">
                   <XIcon/>
                 </a>
               </li>
               <li>
-                <a href="">
+                <a className='icons-styles' href="">
                   <LinkedInIcon/>
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div>
-          <h3>Визитка</h3>
-          <Image
-            src={QR}
-            width={100}
-            height={100}
-            alt="Picture of the author"
-          />
+        <div  className='flex-horizontal-container justify-content-center align-items-center text-align-center  margin-5'>
+          <h3 className='margin-5 color-white'>Визитка</h3>
+          <div className='margin-10'>
+            <Image
+              src={QR}
+              width={50}
+              height={50}
+              alt="Picture of the author"
+            />
+          </div>
         </div>
       </div>
     </section>

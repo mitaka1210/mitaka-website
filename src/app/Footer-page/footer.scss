@@ -1,17 +1,30 @@
+//?fonts
+@font-face { font-family: roboto-regular;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
+}
+@font-face { font-family: roboto-light;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
+}
+
+//?scss
 .footer-container-main{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background: green;
+  background: #000000;
   overflow: hidden;
-  & ul{
+
+  & h3 {
+    font: 1.68em "roboto-regular";
+  }
+  & .social-network > ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style: none;
   }
 }
-a{
+.icons-styles{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,9 +35,8 @@ a{
   font-size: 60px;
   color: #fff;
   transition: 0.5s ease;
-
 }
-a:hover{
+.icons-styles:hover{
   font-size: 50px;
   color: #01FFF4;
   box-shadow: 0 0 40px #01FFF4;

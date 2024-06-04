@@ -1,7 +1,10 @@
 $background: #fafbff;
 $button-width: 100%;
 $border-radius: 5px;
-
+@font-face { font-family: roboto-regular;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
+@font-face { font-family: roboto-light;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
 
 .nav-bar-about {
   width: 100%;
@@ -95,15 +98,19 @@ $border-radius: 5px;
   align-items: center;
   text-align: center;
   margin: 20px;
+
+  & .about-me-text {
+    font: 1.2em "roboto-light";
+    font-weight: 900;
+  }
 }
 
 
 //back to top
 
 .backToTop {
-  height: 130px;
+  height: 50px;
   position: fixed;
-  width: 100%;
   transition-timing-function: ease-in;
   transition: 0.5s;
   top: -75px;
@@ -126,9 +133,6 @@ $border-radius: 5px;
 //ul li
 .list-hobby > li{
 list-style: none;
-//margin-bottom: 5px;
-//box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
-//rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
 overflow: hidden;
 }
 
@@ -151,15 +155,8 @@ overflow: hidden;
 .accordian-title {
   position: relative;
   cursor: pointer;
+  font: 1.2em "roboto-regular";
 }
-
-//.accordian-title::after {
-//  content: '+';
-//  position: absolute;
-//  right: 1rem;
-//  font-size: 1rem;
-//  font-weight: bold;
-//}
 
 li.active .accordian-title::after {
   content: '-';
@@ -172,6 +169,7 @@ li.active .accordian-title::after {
 
 .accordian-content p {
   margin-bottom: 0.5rem;
+  font: 1em "roboto-regular";
 }
 
 li.active .accordian-content {
@@ -258,5 +256,19 @@ li.active .accordian-content {
        top: 0;
        transform: none;
      }
+   }
+ }
+
+
+ .my-motto {
+   & q{
+     font: 1.68em "roboto-regular";
+   }
+ }
+
+
+ .my-focus {
+   & h2 {
+     font: 1.68em "roboto-regular";
    }
  }

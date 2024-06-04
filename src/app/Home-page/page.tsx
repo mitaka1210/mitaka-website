@@ -10,12 +10,11 @@ const  HomePage = () =>{
   useEffect(() => {
   setTimeout( () => {
     setShowMenu(false)
-    console.log('pesho', setShowMenu)
   },2000)
   }, []);
   return (
     <>
-      {showMenu ?  <LoadingPage time={2} /> : <div>
+      {showMenu ? '': <div>
         <div className="nav-bar-home flex-vertical-container text-align-center justify-content-end align-items-center">
           <Navigation/>
         </div>
