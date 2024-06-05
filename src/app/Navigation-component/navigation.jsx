@@ -21,12 +21,12 @@ const Navigation = () => {
       {/*  bg*/}
       {/*</button>*/}
       <div className="my-logo">
-        <p href="#">Portfo<span>lio.</span></p>
-        <div className="logo-images"></div>
+        {/*<p href="#">Portfo<span>lio.</span></p>*/}
+        {/*<div className="logo-images"></div>*/}
       </div>
       <ul className='navigation'>
         <li className='text-1 color-white'>
-          <Link className='white' href="/Home-page">{t("home")}</Link>
+          <Link className='white' href="/Home-page">Home</Link>
         </li>
         <li className='text-2 color-white'>
           <Link href="/About-page">About</Link>
@@ -35,7 +35,7 @@ const Navigation = () => {
           <Link href="/Blog">Blog</Link>
         </li>
         <li className='text-4 color-white'>
-          <Link href="/Project">Project</Link>
+          <Link href="/Projects-page">Project</Link>
         </li>
         <li className='text-5 color-white'>
           <Link href="/Skills">Skills</Link>

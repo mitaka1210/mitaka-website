@@ -3,7 +3,6 @@ import "./home.scss";
 import HomePageHTML from './HomePageHTML'
 import Navigation from "@/app/Navigation-component/navigation";
 import React, {useEffect, useState} from "react";
-import LoadingPage from "@/app/loading";
 
 const  HomePage = () =>{
   const [showMenu, setShowMenu] = useState(true);
