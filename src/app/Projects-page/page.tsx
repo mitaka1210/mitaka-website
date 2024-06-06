@@ -8,7 +8,7 @@ import Navigation from "@/app/Navigation-component/navigation";
 const ProjectsPage = () => {
   return (
     <div className="projects-page">
-      <div className="projects-nav flex-vertical-container text-align-center justify-content-end align-items-center">
+      <div className="projects-nav flex-horizontal-container text-align-center justify-content-end align-items-center">
       <Navigation/>
       </div>
       <ProjectsHtml/>

@@ -11,8 +11,8 @@ const FooterHtml = () => {
   let postTitle = '';
   return (
     <section>
-      <div className='footer-container-main'>
-        <div className='flex-horizontal-container justify-content-center margin-5'>
+      <div className='footer-container-main flex-horizontal-container justify-content-space-evenly align-items-baseline '>
+        <div className='flex-vertical-container justify-content-center margin-5'>
           <div>
             <h3 className='margin-5 color-white'>Контакти</h3>
           </div>
@@ -23,9 +23,11 @@ const FooterHtml = () => {
           </div>
         </div>
         <div
-          className='flex-horizontal-container justify-content-center align-items-center text-align-center  margin-5'>
-          <h3 className='margin-5 color-white'>Социални мрежи</h3>
-          <div className='social-network'>
+          className='flex-vertical-container justify-content-center align-items-center text-align-center  margin-5'>
+          <div>
+            <h3 className="margin-5 color-white">Социални мрежи</h3>
+          </div>
+          <div className="social-network">
             <ul>
               <li>
                 <a className='icons-styles' href="">
@@ -45,7 +47,7 @@ const FooterHtml = () => {
             </ul>
           </div>
         </div>
-        <div  className='flex-horizontal-container justify-content-center align-items-center text-align-center  margin-5'>
+        <div  className='flex-vertical-container  justify-content-center align-items-center text-align-center  margin-5'>
           <h3 className='margin-5 color-white'>Визитка</h3>
           <div className='margin-10'>
             <Image

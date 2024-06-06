@@ -30,8 +30,8 @@ const ProjectsHtml = () => {
               <li>Figma</li>
             </ul>
             <div className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
-              <a href="#" className="read-more-btn">Приложение</a>
-              <a href="#" className="read-more-btn">Код в GitHub</a>
+              <a href="https://gracious-goldstine-c11de1.netlify.app/" target='_blank' className="read-more-btn">Приложение</a>
+              <a href="https://github.com/mitaka1210/PWA" target='_blank' className="read-more-btn">Код в GitHub</a>
             </div>
           </figcaption>
           <span className="after"></span>
@@ -55,8 +55,8 @@ const ProjectsHtml = () => {
             </ul>
             <div
               className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
-              <a href="#" className="read-more-btn">Приложение</a>
-              <a href="#" className="read-more-btn">Код в GitHub</a>
+              <a href="https://keen-volhard-2b8ec9.netlify.app/" target='_blank' className="read-more-btn">Приложение</a>
+              <a href="https://github.com/mitaka1210/React-Website-1" target='_blank' className="read-more-btn">Код в GitHub</a>
             </div>
           </figcaption>
           <span className="after"></span>
@@ -82,8 +82,8 @@ const ProjectsHtml = () => {
             </ul>
             <div
               className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
-              <a href="#" className="read-more-btn">Приложение</a>
-              <a href="#" className="read-more-btn">Код в GitHub</a>
+              <a href="https://mitaka1210.github.io/To-Do-App/" target='_blank' className="read-more-btn">Приложение</a>
+              <a href="https://github.com/mitaka1210/To-Do-App" target='_blank' className="read-more-btn">Код в GitHub</a>
             </div>
           </figcaption>
           <span className="after"></span>
@@ -107,8 +107,8 @@ const ProjectsHtml = () => {
             </ul>
             <div
               className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
-              <a href="#" className="read-more-btn">Приложение</a>
-              <a href="#" className="read-more-btn">Код в GitHub</a>
+              <a href="#" className="read-more-btn" target='_blank'>Приложение</a>
+              <a href="#" className="read-more-btn" target='_blank'>Код в GitHub</a>
             </div>
           </figcaption>
           <span className="after"></span>
@@ -138,8 +138,8 @@ const ProjectsHtml = () => {
               </ul>
               <div
                 className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
-                <a href="#" className="read-more-btn">Приложение</a>
-                <a href="#" className="read-more-btn">Код в GitHub</a>
+                <a href="https://mitaka1210.github.io/landingPages/" target='_blank' className="read-more-btn">Приложение</a>
+                <a href="https://github.com/mitaka1210/landingPages" target='_blank' className="read-more-btn">Код в GitHub</a>
               </div>
             </figcaption>
             <span className="after"></span>
@@ -161,8 +161,8 @@ const ProjectsHtml = () => {
               <li>JS</li>
               <li>TypeScript</li>
             </ul>
-            <a href="#" className="read-more-btn">Приложение</a>
-            <a href="#" className="read-more-btn">Код в GitHub</a>
+            <a href="https://mitaka1210.github.io/landingPages/" target='_blank' className="read-more-btn">Приложение</a>
+            <a href="https://github.com/mitaka1210/landingPages" target='_blank' className="read-more-btn">Код в GitHub</a>
           </figcaption>
           <span className="after"></span>
         </figure>
@@ -189,8 +189,8 @@ const ProjectsHtml = () => {
             </ul>
             <div
               className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
-              <a href="#" className="read-more-btn">Приложение</a>
-              <a href="#" className="read-more-btn">Код в GitHub</a>
+              <a href="#" className="read-more-btn" target='_blank'>Приложение</a>
+              <a href="https://github.com/mitaka1210/react-pizza" target='_blank' className="read-more-btn">Код в GitHub</a>
             </div>
           </figcaption>
           <span className="after"></span>
@@ -214,8 +214,8 @@ const ProjectsHtml = () => {
               </ul>
               <div
                 className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
-                <a href="#" className="read-more-btn">Приложение</a>
-                <a href="#" className="read-more-btn">Код в GitHub</a>
+                <a href="https://dazzling-joliot-4402f9.netlify.app/" target='_blank' className="read-more-btn">Приложение</a>
+                <a href="https://github.com/mitaka1210/E-shopReactJS" target='_blank' className="read-more-btn">Код в GitHub</a>
               </div>
             </figcaption>
             <span className="after"></span>
@@ -224,7 +224,10 @@ const ProjectsHtml = () => {
       </section>
       <section className="magic-novatio flex-vertical-container justify-content-center text-align-center">
         <h2>Продължавам да се развивам и надграждам себе си!</h2>
-        <div>магията<strong>Новатио</strong></div>
+        <div className='flex-horizontal-container-raw text-align-center justify-content-center'>
+          <p className='margin-10'>магията</p>
+          <h2><q><strong className='novatio-header'>Новатио</strong></q></h2>
+        </div>
         <div className="box-wrapper">
           <figure className="shape-box shape-box_half">
             <img
@@ -244,13 +247,12 @@ const ProjectsHtml = () => {
                 <li>SCSS</li>
                 <li>JS</li>
                 <li>Angular</li>
-                <li>Vue</li>
+                <li>VueJs</li>
                 <li>RxJs</li>
               </ul>
               <div
                 className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
-                <a href="#" className="read-more-btn">Приложение</a>
-                <a href="#" className="read-more-btn">Код в GitHub</a>
+                <a href="https://novatiospace.com/industries/" target='_blank' className="read-more-btn">Приложение</a>
               </div>
             </figcaption>
             <span className="after"></span>

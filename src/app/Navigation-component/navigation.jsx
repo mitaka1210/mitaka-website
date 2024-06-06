@@ -26,7 +26,7 @@ const Navigation = () => {
       </div>
       <ul className='navigation'>
         <li className='text-1 color-white'>
-          <Link className='white' href="/Home-page">Home</Link>
+          <Link  href="/Home-page">Home</Link>
         </li>
         <li className='text-2 color-white'>
           <Link href="/About-page">About</Link>
