@@ -5,7 +5,7 @@
   src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
 
 
-.start-programing{
+.start-programing, .upgrade-my-self{
   & h2 {
     margin: 20px;
     text-align: center;
@@ -17,13 +17,16 @@
     background-color: #000000;
   }
 }
+.buttons-wrapper {
+  gap: 1rem;
+}
 .shape-box {
   display: inline-block;
   position: relative;
   z-index: 1;
   max-width: 500px;
   height: 430px;
-  margin: 30px 10px 30px;
+  margin: 0 10px 30px;
   box-shadow: 0 6px 30px 0 rgba(0, 0, 0, .12);
   overflow: hidden;
   width: 23.333%;
@@ -87,9 +90,6 @@
 
 .card-main-title {
   margin-top: 8px;
-  font-weight: 700;
-  font-size: 24px;
-  text-transform: uppercase;
   color: #292b2c;
 }
 

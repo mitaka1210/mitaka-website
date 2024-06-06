@@ -4,18 +4,18 @@
 
 .flex-horizontal-container-raw {
   display: flex !important;
-  flex-direction: column !important;
+  flex-direction: row !important;
 }
 
 .flex-vertical-container-raw {
   display: flex !important;
-  flex-direction: row !important;
+  flex-direction: column !important;
 }
 
 .flex-horizontal-container {
   align-items: stretch;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: stretch;
   justify-items: stretch;
 }
@@ -23,7 +23,7 @@
 .flex-vertical-container {
   align-items: stretch;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: stretch;
   justify-items: stretch;
 }
