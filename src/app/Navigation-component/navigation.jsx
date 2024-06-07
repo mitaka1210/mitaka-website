@@ -26,7 +26,7 @@ const Navigation = () => {
       </div>
       <ul className='navigation'>
         <li className='text-1 color-white'>
-          <Link  href="/Home-page">Home</Link>
+          <Link href="/Home-page">Home</Link>
         </li>
         <li className='text-2 color-white'>
           <Link href="/About-page">About</Link>
@@ -38,7 +38,10 @@ const Navigation = () => {
           <Link href="/Projects-page">Project</Link>
         </li>
         <li className='text-5 color-white'>
-          <Link href="/Skills">Skills</Link>
+          <Link href="/Skills-page">Skills</Link>
+        </li>
+        <li className='text-6 color-white'>
+          <Link href="/Timeline-page">TimeLine</Link>
         </li>
         <li className='text-6 color-white'>
           <Link href="/Contact">Contact</Link>

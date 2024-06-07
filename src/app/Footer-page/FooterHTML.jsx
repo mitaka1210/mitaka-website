@@ -10,7 +10,7 @@ const FooterHtml = () => {
   let postUrl = encodeURI(window.location.href);
   let postTitle = '';
   return (
-    <section>
+    <footer>
       <div className='footer-container-main flex-horizontal-container justify-content-space-evenly align-items-baseline '>
         <div className='flex-vertical-container justify-content-center margin-5'>
           <div>
@@ -59,7 +59,7 @@ const FooterHtml = () => {
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 
