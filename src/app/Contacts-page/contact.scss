@@ -12,8 +12,6 @@
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
-  //background-color: #67656561;
-  //background: url("../../../assets/images/bgr-images-contact.jpeg");
 }
 .add-position-relative{
   position: relative;
@@ -21,8 +19,9 @@
   background-color: white;
 }
 .add-height-section {
-  height: 500px;
+  height: 1000px;
   background-color: #e2e0e0;
+  overflow: auto;
 }
 .contacts-page {
   font: 1.2em "roboto-regular";
@@ -34,4 +33,5 @@
 
 .color-orange-text{
   color: orangered;
+  text-decoration: underline;
 }

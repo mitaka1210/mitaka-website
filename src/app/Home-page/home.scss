@@ -5,6 +5,7 @@
   display: flex;
   height: 100vh;
   width: 101%;
+  justify-content: center;
   color: #fff;
   min-height: 500px;
   background-size: cover !important;
@@ -17,7 +18,10 @@
   background: none;
 }
 .wrap-auto-text {
-  transform: translate(770px, 90px);
+  //transform: translate(770px, 90px);
+  position: relative;
+  top: 8em;
+  height: 150px;
   font-size: calc(4vw - 2vw);
 }
 

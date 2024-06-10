@@ -40,20 +40,21 @@ svg {
   }
 }
 
-.container {
+.container-contact {
   height: 100vh;
+  display: flex;
 }
 
 form {
   min-width: 25rem;
 
   .title {
-    font-family: 'Pacifico', cursive;
     color: #212529;
     font-size: 2.5rem;
   }
 
   .form-control {
+    width: 100%;
     background-color: #f2f6f8;
     border-radius: 2rem;
     border: none;
@@ -117,4 +118,27 @@ form {
   box-shadow: 0 0.5em 0.5em -0.4em #ff923cba;
   background-size: 100% 100%;
   transform: translateY(-0.15em);
+}
+textarea {
+  resize: none;
+}
+
+
+.disabled-btn {
+  cursor: none;
+  pointer-events: none;
+  font-weight: bold;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 3rem;
+  border: 0;
+  border-radius: 3rem;
+  background-image: linear-gradient(to right top, #c3c5c9, #caced2, #d2d8d9, #dae1e1, #e4eae8);
+  background-size: 300% 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+
+.text-success-1, .text-success-2{
+  color: #59a014;
 }
