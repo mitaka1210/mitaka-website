@@ -237,6 +237,36 @@ const ProjectsHtml = () => {
             <figcaption>
               <div className="show-cont">
                 <h3 className="card-no">09</h3>
+                <h4 className="card-main-title">Блог(PERN)</h4>
+              </div>
+              <p className="card-content">Приложение чрез което може да получавате информация за време. Нужно е само да
+                въведете град. Може да бъде инсталирано на телефона.</p>
+              <h5 className='margin-top-5 border-color-bottom-gray'>Технологий</h5>
+              <ul className="card-content">
+                <li>HTML</li>
+                <li>SCSS</li>
+                <li>ReactJS</li>
+                <li>Redux(RTK)</li>
+                <li>Express</li>
+                <li>Docker</li>
+                <li>DBeaver</li>
+                <li>PostgreSQL</li>
+              </ul>
+              <div
+                className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
+                <a href="https://novatiospace.com/industries/" target='_blank' className="read-more-btn">Приложение</a>
+              </div>
+            </figcaption>
+            <span className="after"></span>
+          </figure>
+          <figure className="shape-box shape-box_half">
+            <img
+              src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+              alt="logo-9"/>
+            <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
+            <figcaption>
+              <div className="show-cont">
+                <h3 className="card-no">10</h3>
                 <h4 className="card-main-title">Новатио</h4>
               </div>
               <p className="card-content">Приложение чрез което може да получавате информация за време. Нужно е само да

@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@font-face { font-family: roboto-regular;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
+@font-face { font-family: roboto-light;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
+
+
+.gray-bgr {
+  width: 100%;
+  background-color: #948c8c2e;
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  //background-color: #67656561;
+  //background: url("../../../assets/images/bgr-images-contact.jpeg");
+}
+.add-position-relative{
+  position: relative;
+  bottom: 2.5em;
+  background-color: white;
+}
+.add-height-section {
+  height: 500px;
+  background-color: #e2e0e0;
+}
+.contacts-page {
+  font: 1.2em "roboto-regular";
+  &  .contacts-nav {
+    background-color: #000000;
+  }
+}
+
+
+.color-orange-text{
+  color: orangered;
+}

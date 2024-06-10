@@ -44,7 +44,7 @@ const Navigation = () => {
           <Link href="/Timeline-page">TimeLine</Link>
         </li>
         <li className='text-6 color-white'>
-          <Link href="/Contact">Contact</Link>
+          <Link href="/Contacts-page">Contact</Link>
         </li>
       </ul>
     </header>

@@ -10,7 +10,7 @@ const HomePageHTML = (props) => {
           {/*<h2 className="is">{t('welcome')}</h2>*/}
           <h2 className="main">{myName}</h2>
         </div>
-        <div className='wrap-auto-text flex-vertical-container-raw align-items-center'>
+        <div className='wrap-auto-text flex-horizontal-container-raw align-items-center'>
           <div className='automation-text'>
             <AboutPageHTML text="My React App" delay={10}/>
           </div>
