@@ -128,8 +128,7 @@ const ProjectsHtml = () => {
                 <h3 className="card-no">05</h3>
                 <h4 className="card-main-title">Невероятни обувки <span> (Начална страница)</span></h4>
               </div>
-              <p className="card-content">Приложение чрез което може да получавате информация за време. Нужно е само да
-                въведете град. Може да бъде инсталирано на телефона.</p>
+              <p className="card-content"> Начална страница на магазин за обувки</p>
               <h5 className='margin-top-5 border-color-bottom-gray'>Технологий</h5>
               <ul className="card-content">
                 <li>HTML</li>
@@ -148,28 +147,34 @@ const ProjectsHtml = () => {
             <img
               src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80" alt='logo-6'/>
           <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
-          <figcaption>
-            <div className="show-cont">
-              <h3 className="card-no">06</h3>
-              <h4 className="card-main-title">Платежен лист (TypeScript)</h4>
-            </div>
-            <p className="card-content">Страници с оформление направени с ReactJs and Figma. Адаптивен дизайн</p>
-            <h5 className='margin-top-5 border-color-bottom-gray'>Технологий</h5>
-            <ul className="card-content">
-              <li>HTML</li>
-              <li>SCSS</li>
-              <li>JS</li>
-              <li>TypeScript</li>
-            </ul>
-            <a href="https://mitaka1210.github.io/landingPages/" target='_blank' className="read-more-btn">Приложение</a>
-            <a href="https://github.com/mitaka1210/landingPages" target='_blank' className="read-more-btn">Код в GitHub</a>
-          </figcaption>
-          <span className="after"></span>
-        </figure>
-        <figure className="shape-box shape-box_half">
-          <img
-            src="https://images.unsplash.com/photo-1498075702571-ecb018f3752d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=757&q=80" alt='logo-7'/>
-          <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
+            <figcaption>
+              <div className="show-cont">
+                <h3 className="card-no">06</h3>
+                <h4 className="card-main-title">Платежен лист (TypeScript)</h4>
+              </div>
+              <p className="card-content">Платежна страница направена с TS</p>
+              <h5 className="margin-top-5 border-color-bottom-gray">Технологий</h5>
+              <ul className="card-content">
+                <li>HTML</li>
+                <li>SCSS</li>
+                <li>JS</li>
+                <li>TypeScript</li>
+              </ul>
+              <div
+                className="buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center">
+                <a href="https://mitaka1210.github.io/paymentAppWithTypeScript/" target="_blank"
+                   className="read-more-btn">Приложение</a>
+                <a href="https://github.com/mitaka1210/paymentAppWithTypeScript" target="_blank" className="read-more-btn">Код в
+                  GitHub</a>
+              </div>
+            </figcaption>
+            <span className="after"></span>
+          </figure>
+          <figure className="shape-box shape-box_half">
+            <img
+              src="https://images.unsplash.com/photo-1498075702571-ecb018f3752d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=757&q=80"
+              alt="logo-7"/>
+            <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
           <figcaption>
             <div className="show-cont">
               <h3 className="card-no">07</h3>
@@ -254,7 +259,7 @@ const ProjectsHtml = () => {
               </ul>
               <div
                 className='buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center'>
-                <a href="https://novatiospace.com/industries/" target='_blank' className="read-more-btn">Приложение</a>
+                <a href="https://github.com/mitaka1210/PERN" target='_blank' className="read-more-btn">Приложение</a>
               </div>
             </figcaption>
             <span className="after"></span>

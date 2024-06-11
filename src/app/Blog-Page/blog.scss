@@ -1,0 +1,15 @@
+@font-face { font-family: roboto-regular;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
+@font-face { font-family: roboto-light;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
+
+.nav-bar-blog{
+  background-color: #000000;
+}
+
+.blog-main-container{
+  h2 {
+    font: 1.2em "roboto-regular";
+  }
+}
+

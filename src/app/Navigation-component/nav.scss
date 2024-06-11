@@ -1,5 +1,8 @@
 
-
+@font-face { font-family: roboto-regular;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
+@font-face { font-family: roboto-light;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
 
 .navigation{
   display: flex;
@@ -9,6 +12,7 @@
   list-style-type: none;
   & li a {
     color: white;
+    font: 1.2em "roboto-regular";
     text-decoration: none;
   }
 

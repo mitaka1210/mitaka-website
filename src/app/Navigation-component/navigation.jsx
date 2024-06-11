@@ -32,7 +32,7 @@ const Navigation = () => {
           <Link href="/About-page">About</Link>
         </li>
         <li className='text-3 color-white'>
-          <Link href="/Blog">Blog</Link>
+          <Link href="/Blog-Page">Blog</Link>
         </li>
         <li className='text-4 color-white'>
           <Link href="/Projects-page">Project</Link>

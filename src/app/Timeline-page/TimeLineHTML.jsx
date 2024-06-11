@@ -2,85 +2,90 @@
 
 import React from "react";
 import './timeline.scss'
+import Image from "next/image";
+import geodesy from "../../../assets/images/tacheometer.png";
+import aviation from "../../../assets/images/airport.png";
+import coding from "../../../assets/images/coding.png";
 const TimeLineHtml = () => {
   return (
     <div>
-      <h2 className='time-line-header'>A clean timeline design, with animated links</h2>
+      <h2 className='time-line-header'>Моят свят накратко!</h2>
       <div className="timeline">
         <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+          <div className="coding">
+            <Image className="coding-icon" src={coding} alt="coding"/>
+          </div>
           <div className="timeline__event__icon ">
             <i className="lni-cake"></i>
-
           </div>
           <div className="timeline__event__date">
-            20-08-2019
+            04-22-2021
           </div>
           <div className="timeline__event__content ">
             <div className="timeline__event__title">
-              Birthday
+              Програмиране
             </div>
             <div className="timeline__event__description">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab
-                asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum
-                quidem dolorem in!</p>
+              <p>Реших да дам шанс на хобито си! С което се занимавам и до сега. </p>
             </div>
           </div>
         </div>
         <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2">
           <div className="timeline__event__icon">
             <i className="lni-burger"></i>
-
           </div>
           <div className="timeline__event__date">
-            20-08-2019
+            25-08-2014
           </div>
           <div className="timeline__event__content">
             <div className="timeline__event__title">
-              Lunch
+              Работех всичко и се занимавах с мойте хобита
             </div>
             <div className="timeline__event__description">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab
-                asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum
-                quidem dolorem in!</p>
+              <p>Започнах да работя каквото има. Програмиране на майтап като хоби!</p>
             </div>
           </div>
         </div>
         <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+          <div className="aviation">
+            <Image className="aviation-icon" src={aviation} alt="aviation"/>
+          </div>
           <div className="timeline__event__icon">
             <i className="lni-slim"></i>
-
           </div>
           <div className="timeline__event__date">
-            20-08-2019
+            15-09-2010
           </div>
           <div className="timeline__event__content">
             <div className="timeline__event__title">
-              Exercise
+              ВИСШЕ ВОЕННОВЪЗДУШНО УЧИЛИЩЕ "ГЕОРГИ БЕНКОВСКИ" - гр. Долна Митрополия
             </div>
             <div className="timeline__event__description">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab
-                asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum
-                quidem dolorem in!</p>
+              <p>Специалност: <strong className="margin-left-5">Автоматика, информационна и управляваща техника</strong>
+              </p>
+              <p>Професионална квалификация „Бакалавър-инженер”</p>
             </div>
-
           </div>
         </div>
         <div className="timeline__event animated fadeInUp timeline__event--type1">
+          <div className="geodesy">
+            <Image className='geodesy-icon' src={geodesy} alt="Express"/>
+          </div>
           <div className="timeline__event__icon">
             <i className="lni-cake"></i>
-
           </div>
           <div className="timeline__event__date">
-            20-08-2019
+            01-06-2009
           </div>
           <div className="timeline__event__content">
             <div className="timeline__event__title">
-              Birthday
+              ПГСАГ - ПРОФЕСИОНАЛНА ГИМНАЗИЯ ПО СТРОИТЕЛСТВО, АРХИТЕКТУРА И ГЕОДЕЗИЯ -  гр. Шумен
             </div>
             <div className="timeline__event__description">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, nam! Nam eveniet ut aliquam ab
-                asperiores, accusamus iure veniam corporis incidunt reprehenderit accusantium id aut architecto harum
-                quidem dolorem in!</p>
+              <p>Специалност:<strong className='margin-left-5'>Геодезия</strong></p>
+              <p>
+                <p>Професионална квалификация „Техник”</p>
+              </p>
             </div>
           </div>
         </div>

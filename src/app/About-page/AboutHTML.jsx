@@ -56,7 +56,7 @@ const AboutHtml = forwardRef (({open,setOpen}, ref) => {
                       {item.paras.map((para, num) => {
                         return <p key={num}>{para}</p>;
                       })}
-                      <a href='#'>Виж още</a>
+                      {item.showMore ? <a href='#'>{item.showMore}</a> : ''}
                     </div>
                   </li>
                 </div>
@@ -89,8 +89,8 @@ const AboutHtml = forwardRef (({open,setOpen}, ref) => {
             <div
               className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
               <h3 className='margin-15'>Развитие в сферата на личните финанси и изграждане на капитали.</h3>
-              <h2>Старая се всеки ден да отделям по 30мин да се образовам</h2>
-              <p className='margin-5'>Както е казал <strong>Уорън Бъфет</strong></p>
+              <p>Старая се всеки ден да отделям по 30мин да се образовам</p>
+              <h2 className='margin-5'>Както е казал <strong>Уорън Бъфет</strong></h2>
               <p className='margin-5'>Правило №1: Никога не губете пари. Правило №2: Никога не забравяйте правило №1</p>
             </div>
           </div>

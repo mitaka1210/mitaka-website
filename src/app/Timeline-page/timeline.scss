@@ -283,7 +283,41 @@ $color6: #aff1b6;
     }
   }
 }
+.geodesy,{
+  position: relative;
+  left: 4em;
+  z-index: 9;
+  top: 2.6em;
 
+  & .geodesy-icon,{
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.aviation{
+  position: relative;
+  right: 3.8em;
+  z-index: 9;
+  top: 2.6em;
+
+  & .aviation-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.coding{
+  position: relative;
+  top: 1.5em;
+  right: 3.8em;
+  z-index: 9;
+
+  & .coding-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
 @keyframes fillLeft {
   100% {
     right: 100%;

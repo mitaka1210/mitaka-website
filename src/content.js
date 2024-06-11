@@ -5,6 +5,7 @@ export const accordian = [
       'Финансовата грамотност е способността на индивида да разбира и използва различни финансови умения, включително управление на лични финанси, бюджетиране, спестяване, инвестиране и разбиране на кредитите и дълговете.',
       'Финансовата независимост означава да имаш достатъчно лични приходи и активи, за да покриваш своите разходи без да разчиташ на външна помощ или заплата от работа.'
     ],
+    showMore: 'Още'
   },
   {
     title: 'Акваристът: С аквариумистика се занимавам от 14 години',paras: [
@@ -16,43 +17,37 @@ export const accordian = [
   {
     title: 'Arduino: Занимавам се с програмиране и изграждане на проекти',
     paras: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+      'С Ардуино се занимавам любителски за изграждане на малки проекти за вкъщи',
     ],
   },
   {
     title: 'Разходки в природата: Природата е моето убежище, където намирам спокойствие',
     paras: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+      'Разходките в природата предлагат много ползи и могат да бъдат истинско убежище за ума и тялото.'
     ],
   },
   {
     title: 'Риболов: Риболовът е една от моите любими активности на открито.',
     paras: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+      'Риболовът за мен е моментът в които време спира.'
     ],
   },
   {
     title: 'Програмиране: Непрекъснато се стремя да подобрявам уменията си в програмирането',
     paras: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+     'Програмирането за мен е като магия която малко хора разбират.'
     ],
   },
   {
     title: 'Четене на книги: Книгите са неизменна част от моето ежедневие',
     paras: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+      'Обичам да чеа книги които след това мога да приложа на практика.'
     ],
   },
   {
     title: 'Инвестиране: Инвестирането е важно за мен',
     paras: [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget.',
+      'С инвестиране се занимавам от скоро и ми е много интересно да уча. И да слушам лекций.'
     ],
   },
 ];
