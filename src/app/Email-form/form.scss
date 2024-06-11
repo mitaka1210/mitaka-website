@@ -1,6 +1,9 @@
-svg {
-  height: 23rem;
-  margin-right: 4rem;
+.left-svg {
+
+  & svg {
+    height: 23rem;
+    margin-right: 4rem;
+  }
 }
 
 #envelope {

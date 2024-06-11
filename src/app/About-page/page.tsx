@@ -35,7 +35,7 @@ const AboutPage = () => {
         <div>
           <div className="about-page">
             <div
-              className="nav-bar-about flex-vertical-container text-align-center justify-content-end align-items-center">
+              className="nav-bar-about flex-vertical-container text-align-center justify-content-end ">
               <Navigation/>
             </div>
             <section>

@@ -2,10 +2,8 @@
   src: url('../../../assets/fonts/Peralta/Peralta-Regular.ttf'); }
 
 .main-container {
-  display: flex;
   height: 100vh;
   width: 101%;
-  justify-content: center;
   color: #fff;
   min-height: 500px;
   background-size: cover !important;
@@ -19,9 +17,7 @@
 }
 .wrap-auto-text {
   //transform: translate(770px, 90px);
-  position: relative;
-  top: 8em;
-  height: 150px;
+
   font-size: calc(4vw - 2vw);
 }
 
@@ -38,7 +34,7 @@
 }
 
 .my-name {
-  position: absolute;
+
   font: 1.68em "roboto-regular";
   & .is {
     color: white;

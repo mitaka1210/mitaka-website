@@ -13,7 +13,7 @@ const Navigation = () => {
     i18n.changeLanguage(lng);
   };
   return (
-    <header>
+    <header className='flex-horizontal-container justify-content-end align-items-center text-align-center'>
       {/*<button type="button" onClick={() => changeLanguage("en")}>*/}
       {/*  en*/}
       {/*</button>*/}

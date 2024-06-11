@@ -17,9 +17,9 @@ const FooterHtml = () => {
             <h3 className='margin-5 color-white'>Контакти</h3>
           </div>
           <div className='footer-text'>
-            <p className='address margin-10 color-white text-align-justify'>гр. Русе ул. Солун 41</p>
-            <p className='phone margin-10 color-white text-align-justify'>Телефон: 5522532298</p>
-            <p className='email margin-10 color-white text-align-justify'>Имейл: dimitard185@gmail.com</p>
+            <p className='address margin-5 color-white text-align-justify'>гр. Русе ул. Солун 41</p>
+            <p className='phone margin-5 color-white text-align-justify'>Телефон: 5522532298</p>
+            <p className='email margin-5 color-white text-align-justify'>Имейл: dimitard185@gmail.com</p>
           </div>
         </div>
         <div
@@ -30,17 +30,17 @@ const FooterHtml = () => {
           <div className="social-network">
             <ul>
               <li>
-                <a className='icons-styles' href="">
+                <a className='icons-styles margin-10' href="">
                   <FacebookIcon/>
                 </a>
               </li>
               <li>
-                <a className='icons-styles' href="">
+                <a className='icons-styles  margin-10' href="">
                   <XIcon/>
                 </a>
               </li>
               <li>
-                <a className='icons-styles' href="">
+                <a className='icons-styles  margin-10' href="">
                   <LinkedInIcon/>
                 </a>
               </li>

@@ -14,8 +14,7 @@
   background-size: cover; /* Resize the background image to cover the entire container */
 }
 .add-position-relative{
-  position: relative;
-  bottom: 2.5em;
+  margin-top: calc(10vh - 4vh);
   background-color: white;
 }
 .add-height-section {

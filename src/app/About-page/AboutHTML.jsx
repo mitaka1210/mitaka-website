@@ -1,15 +1,30 @@
 
 'use client'
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useEffect, useState, useRef, forwardRef} from "react";
 import RocketIcon from '@mui/icons-material/Rocket';
 import {accordian} from '@/content'
+import withClickOutside from '../Helper-components/Click-outside/WithClickOutSide';
 import ScrollTop from "@/helpMetods/scrollTop";
-const AboutHtml = () => {
+const AboutHtml = forwardRef (({open,setOpen}, ref) => {
   const [active, setActive] = useState(-1);
+  const [hideDiv, setHideDiv] = useState(true);
   const handleClick = (index) => {
-    if (index === active) setActive(-1);
-    else setActive(index);
+    if (index === active) {
+      setActive(-1);
+      setHideDiv(true);
+    }
+    else {
+      setActive(index);
+      setHideDiv(false);
+    }
   };
+  const closeDiv = () => {
+    if (!open && !hideDiv){
+      setActive(-1);
+      setHideDiv(true);
+    }
+  }
+
 
   return (
     <div className="about">
@@ -18,7 +33,7 @@ const AboutHtml = () => {
       </div>
       <section>
 
-        <div className='my-hobbi'>
+        <div className='my-hobbi' onClick={closeDiv}>
           <p className='about-me-text margin-15'>Здравейте, казвам се Димитър Димитров и съм авиационен инженер. Но
             с времето се наложи да се преклалифицирам в моето хоби към този момент.Именно в програмирането и по специално в Front-end частта.
             Страстен съм към различни хобита,лични финанси, аквариумистика, проекти с Arduino, разходки в
@@ -28,17 +43,20 @@ const AboutHtml = () => {
           <ul className='margin-15 text-align-justify accordian'>
             {accordian.map((item, index) => {
               return (
-                <div className={'list-hobby margin-20 click-btn btn-style506' + ' ' +  (index === active ? 'add-height-click' : '')} key={index}>
+                <div ref={ref}  className={'list-hobby margin-20 click-btn btn-style506' + ' ' +  (index === active ? 'add-height-click' : '')} key={index}>
                   <li
-                    onClick={() => handleClick(index)
+                    onClick={() => {
+                      handleClick(index), setOpen(!open)
+                    }
                     }
                     className={index === active ? 'active' : ''}
                   >
                     <div className="accordian-title">{item.title}</div>
                     <div className="accordian-content">
-                      {item.paras.map((para,num) => {
-                        return <p  key={num}>{para}</p>;
+                      {item.paras.map((para, num) => {
+                        return <p key={num}>{para}</p>;
                       })}
+                      <a href='#'>Виж още</a>
                     </div>
                   </li>
                 </div>
@@ -55,17 +73,10 @@ const AboutHtml = () => {
       </section>
       <div className='text-align-center my-focus'><h2>В момента съм фокусиран върху</h2></div>
       <section className="info-bout-me flex-h">
-        <div className="box-1">
-          <div className="overlay-box">
-            <div className="desc flex-horizontal-container justify-content-center align-items-center text-align-center">
-              <h3 className='margin-15'>Развитие в сферата на личните финанси и изграждане на капитали.</h3>
-              <p>когато имам свободно време</p>
-            </div>
-          </div>
-        </div>
         <div className="box-3">
-          <div className="overlay-box">
-            <div className="desc flex-horizontal-container justify-content-center align-items-center text-align-center">
+          <div className="overlay-box round-behavior shadowed-element border-color-gray-2px">
+            <div
+              className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
               <h3 className='margin-15'>Програмиране!</h3>
               <h2 className='margin-5'>Всичко започна като хоби</h2>
               <p>С изучаването на новите технологий и сблъскването с много проблеми ми ставаше все по-интересно и
@@ -73,9 +84,21 @@ const AboutHtml = () => {
             </div>
           </div>
         </div>
+        <div className="box-1">
+          <div className="overlay-box round-behavior shadowed-element border-color-gray-2px">
+            <div
+              className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
+              <h3 className='margin-15'>Развитие в сферата на личните финанси и изграждане на капитали.</h3>
+              <h2>Старая се всеки ден да отделям по 30мин да се образовам</h2>
+              <p className='margin-5'>Както е казал <strong>Уорън Бъфет</strong></p>
+              <p className='margin-5'>Правило №1: Никога не губете пари. Правило №2: Никога не забравяйте правило №1</p>
+            </div>
+          </div>
+        </div>
         <div className="box-4">
-          <div className="overlay-box">
-            <div className="desc flex-horizontal-container justify-content-center align-items-center text-align-center">
+          <div className="overlay-box round-behavior shadowed-element border-color-gray-2px">
+            <div
+              className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
               <h3 className='margin-15'>Книги</h3>
               <p>Тук главен виновник е едно видео което ми показа какво са парите и как те трябва да работят за мен.
                 Както е казал Робърт Кийосаки в неговата книга <strong className='motivation'>"те са войници които
@@ -87,6 +110,6 @@ const AboutHtml = () => {
       <ScrollTop/>
     </div>
   );
-};
+});
 
-export default AboutHtml;
+export default withClickOutside(AboutHtml);
