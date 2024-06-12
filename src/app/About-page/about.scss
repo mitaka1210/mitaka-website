@@ -52,19 +52,12 @@ $border-radius: 5px;
   color: #fff;
 }
 
-
-
-
-
 .motivation{
   text-decoration: underline;
 }
-
-
 .about-page{
   height: 100vh;
 }
-
 .about-me {
   height: 690px;
   opacity: .3;
@@ -80,7 +73,6 @@ $border-radius: 5px;
     color: wheat;
     font-size: calc(2vw + 1vw);
   }
-
 }
 .my-hobbi {
   display: flex;
@@ -95,10 +87,7 @@ $border-radius: 5px;
     font-weight: 900;
   }
 }
-
-
 //back to top
-
 .backToTop {
   height: 50px;
   position: fixed;
