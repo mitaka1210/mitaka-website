@@ -53,10 +53,7 @@ $border-radius: 5px;
 }
 
 
-.info-bout-me{
-  display: flex;
-  justify-content: space-around;
-}
+
 
 
 .motivation{
@@ -265,4 +262,16 @@ li.active .accordian-content {
    & h2 {
      font: 1.68em "roboto-regular";
    }
+ }
+
+
+
+ @media  screen and (max-width: 700px) {
+   .info-bout-me{
+     flex-flow: column;
+   }
+   .navigation li a {
+     font-size: 1em;
+   }
+
  }

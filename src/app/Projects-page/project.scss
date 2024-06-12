@@ -29,7 +29,7 @@
   margin: 0 10px 30px;
   box-shadow: 0 6px 30px 0 rgba(0, 0, 0, .12);
   overflow: hidden;
-  width: 23.333%;
+  width: calc(24% + 70%);
 }
 
 .shape-box_half {
@@ -156,4 +156,23 @@
 
 .novatio-header{
   font-weight: 300;
+}
+@media screen and (max-width: 1550px) {
+  .box-wrapper  {
+    display: flex;
+    flex-flow: column;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .box-wrapper{
+    display: flex;
+    flex-flow: column;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
 }

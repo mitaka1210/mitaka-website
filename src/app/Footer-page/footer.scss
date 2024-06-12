@@ -42,3 +42,16 @@
   color: #01FFF4;
   box-shadow: 0 0 40px #01FFF4;
 }
+
+
+@media screen and (max-width: 700px) {
+  .footer-container-main {
+    flex-flow: column;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center;
+  }
+  .backTo_Top {
+    top: 17em;
+  }
+}

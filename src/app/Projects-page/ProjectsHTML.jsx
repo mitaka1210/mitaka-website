@@ -7,7 +7,7 @@ const ProjectsHtml = () => {
     <div className="flex-vertical-container text-align-center justify-content-center">
       <section className='start-programing flex-item'>
       <h2>Така започна всичко и още много.</h2>
-      <div className="box-wrapper">
+      <div className="box-wrapper flex-horizontal-container">
         <figure className="shape-box shape-box_half">
           <img
             src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
@@ -117,7 +117,7 @@ const ProjectsHtml = () => {
       </section>
       <section className='upgrade-my-self flex-item'>
         <h2>Надграждам себе си!</h2>
-        <div className="box-wrapper">
+        <div className="box-wrapper flex-horizontal-container">
           <figure className="shape-box shape-box_half">
             <img
               src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"

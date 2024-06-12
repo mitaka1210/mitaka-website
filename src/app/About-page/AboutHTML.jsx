@@ -72,7 +72,7 @@ const AboutHtml = forwardRef (({open,setOpen}, ref) => {
         </div>
       </section>
       <div className='text-align-center my-focus'><h2>В момента съм фокусиран върху</h2></div>
-      <section className="info-bout-me flex-h">
+      <section className="info-bout-me flex-horizontal-container">
         <div className="box-3">
           <div className="overlay-box round-behavior shadowed-element border-color-gray-2px">
             <div

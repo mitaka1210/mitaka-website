@@ -1,0 +1,35 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+
+  background: #136a8a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+      to right,
+      #267871,
+      #136a8a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+      to right,
+      #267871,
+      #136a8a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #effe92;
+}
+
+.pages {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .pages {
+    font-size: 2.5rem;
+  }
+}
