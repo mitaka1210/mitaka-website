@@ -40,20 +40,29 @@
     flex-basis: 10%;
     margin: 15px;
   }
+  & .text-7 {
+    flex-basis: 100%;
+    margin: 15px;
+  }
+  & .text-8 {
+    margin: 15px;
+    width: 100%;
+    cursor: pointer;
+  }
 }
 
-.text-1 a:hover{
-  color: crimson;
-}
-.text-2 a:hover{
-  color: crimson;
-}
 .text-2:hover:after{
   width: 35%;
   transition: width .5s;
 }
 .white{
   color: white !important;
+}
+.text-1 a:hover{
+  color: crimson;
+}
+.text-2 a:hover{
+  color: crimson;
 }
 .text-3 a:hover{
   color: crimson;
@@ -65,6 +74,12 @@
   color: crimson;
 }
 .text-6 a:hover{
+  color: crimson;
+}
+.text-7 a:hover{
+  color: crimson;
+}
+.text-8 a:hover{
   color: crimson;
 }
 .my-logo{

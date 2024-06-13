@@ -26,3 +26,7 @@ yarn-error.log*
 .idea
 .idea/
 .next
+
+
+#api keys
+.env

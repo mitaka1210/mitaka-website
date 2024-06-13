@@ -7,6 +7,9 @@ import { useTranslation } from 'react-i18next'
 import i18n from '../../i18n';
 import HamburgerMenu from "@/app/HamburgerMenu-page/HamburgerMenuHTML";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
+import Appbar from "@/app/SignInButton/AppBar/AppBar";
+import React from "react";
+import Header from "@/app/Lang/Lang";
 
 const Navigation = () => {
   const { t, i18n } = useTranslation();
@@ -16,12 +19,6 @@ const Navigation = () => {
   };
   return (
     <header className='flex-horizontal-container justify-content-end align-items-center text-align-center'>
-      {/*<button type="button" onClick={() => changeLanguage("en")}>*/}
-      {/*  en*/}
-      {/*</button>*/}
-      {/*<button type="button" onClick={() => changeLanguage("bg")}>*/}
-      {/*  bg*/}
-      {/*</button>*/}
       <div className="my-logo">
         {/*<p href="#">Portfo<span>lio.</span></p>*/}
         {/*<div className="logo-images"></div>*/}
@@ -35,7 +32,7 @@ const Navigation = () => {
       {
        ( size.width < 501) ? <div>
           <HamburgerMenu/>
-        </div> : <ul className="navigation">
+        </div> :<div> <ul className="navigation">
           <li className='text-1 color-white'>
             <Link href="/Home-page">Home</Link>
           </li>
@@ -54,10 +51,26 @@ const Navigation = () => {
           <li className='text-6 color-white'>
             <Link href="/Timeline-page">TimeLine</Link>
           </li>
-          <li className='text-6 color-white'>
+          <li className='text-7 color-white'>
             <Link href="/Contacts-page">Contact</Link>
           </li>
-        </ul>
+         <li className='text-8 color-white'>
+           <Appbar/>
+          </li>
+         <li className='text-9 color-white'>
+           <Header/>
+          </li>
+       </ul>
+         <div>
+          {/*<Header/>*/}
+           {/*<button type="button" onClick={() => changeLanguage("en")}>*/}
+           {/*  en*/}
+           {/*</button>*/}
+           {/*<button type="button" onClick={() => changeLanguage("bg")}>*/}
+           {/*  bg*/}
+           {/*</button>*/}
+         </div>
+       </div>
       }
     </header>
   );

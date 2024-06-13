@@ -15,7 +15,6 @@ import Express  from '../../../assets/images/express-109.svg';
 import dbeaver  from '../../../assets/images/icons8-dbeaver.svg';
 import MobileSkillsHtml from "@/app/mobileSkills/mobileSkillsHTML";
 const SkillPageHtml = ({size}) => {
-  console.log("pesho", size);
   return (
     <div>
       <div className='how-can-help margin-10 text-align-center'>
