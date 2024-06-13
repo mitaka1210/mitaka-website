@@ -40,10 +40,10 @@ const AboutHtml = forwardRef (({open,setOpen}, ref) => {
             природата, готварство, риболов, програмиране, четене и инвестиране.</p>
           <p className='about-me-text'> Моите цели са да постигна финансова независимост и да стана качествен програмист.
           Известен съм със своята упоритост, говоря директно това което мисля и съм в готовност да помагам на другите.</p>
-          <ul className='margin-15 text-align-justify accordian'>
+          <ul className=' text-align-justify accordian'>
             {accordian.map((item, index) => {
               return (
-                <div ref={ref}  className={'list-hobby margin-20 click-btn btn-style506' + ' ' +  (index === active ? 'add-height-click' : '')} key={index}>
+                <div ref={ref}  className={'list-hobby flex-horizontal-container justify-content-center align-items-center text-align-center click-btn btn-style506' + ' ' +  (index === active ? 'add-height-click' : '')} key={index}>
                   <li
                     onClick={() => {
                       handleClick(index), setOpen(!open)

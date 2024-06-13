@@ -22,7 +22,7 @@ const SkillPageHtml = ({size}) => {
         <h2>В кои области бих могъл да ви помогна</h2>
       </div>
       {
-        size.width < 600 ? <div>
+        size.width < 630 ? <div>
           <MobileSkillsHtml/>
         </div> : <main className='main-content'>
           <section className="section">

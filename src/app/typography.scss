@@ -1,0 +1,44 @@
+@import './variables.scss';
+@font-face { font-family: roboto-regular;
+  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
+@font-face { font-family: roboto-light;
+  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Typography */
+
+html {
+  font: var(--sizing-fs-base)/1.5 "font-family", serif;
+}
+
+@media (max-width: 400px) {
+  html { font-size: var(--sizing-fs-phone); }
+}
+
+@media (min-width: 600px) {
+  html { font-size: var(--sizing-fs-tablet); }
+}
+
+@media (min-width: 1260px) {
+  html { font-size: var(--sizing-fs-laptop); }
+}
+
+//@media (min-width: 1420px) {
+//  html { font-size: var(--sizing-fs-desktop); }
+//}
+
+//@media (min-width: 1660px) {
+//  html { font-size: var(--sizing-fs-laptop); }
+//}

@@ -101,7 +101,7 @@ $border-radius: 5px;
 
 .backTo_Top {
   position: fixed;
-  top: 35em;
+  top: 25em;
   & svg {
     width: 2em;
     height: 2em;
@@ -180,21 +180,14 @@ li.active .accordian-content {
 
 
 .click-btn {
-  display: flex;
-  width: $button-width;
   height: 40px;
-  justify-content: center;
-  align-items: center;
   margin: 0.5rem;
   line-height: 35px;
   border: 1px solid;
   border-radius: $border-radius;
-  text-align: center;
-  font-size: 16px;
   color: #000;
   text-decoration: none;
   transition: all 0.35s;
-  box-sizing: border-box;
 }
 
 
@@ -202,15 +195,7 @@ li.active .accordian-content {
   height: 150px;
   overflow: auto;
 }
-.buttons-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
 
-.updating {
-  margin: 3em;
-  text-align: center;
-}
  .btn-style506 {
    $btn-color: #dd7e2a;
    position: relative;
@@ -262,5 +247,15 @@ li.active .accordian-content {
    .navigation li a {
      font-size: 1em;
    }
+   .accordian-title {
+     font: 1em "roboto-regular";
+   }
 
+   .backTo_Top {
+     top: 17em;
+   }
+   .click-btn {
+     height: 50px;
+     padding: 7px;
+   }
  }
