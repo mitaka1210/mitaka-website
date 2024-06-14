@@ -1,4 +1,4 @@
-const { i18n } = require('./next-i18next.config');
+const {i18n} = require("./next-i18next.config");
 
 
 const nextConfig = {
@@ -8,11 +8,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/',
-        destination: '/Home-page',
-        permanent: true,
+        source: "/",
+        destination: "/bg",
+        permanent: false,
       },
-    ]
+    ];
   },
-}
+};
 module.exports = nextConfig;

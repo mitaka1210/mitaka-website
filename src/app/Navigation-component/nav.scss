@@ -1,92 +1,74 @@
+@font-face {
+  font-family: roboto-regular;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
+}
 
-@font-face { font-family: roboto-regular;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
-@font-face { font-family: roboto-light;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
+@font-face {
+  font-family: roboto-light;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
+}
 
-.navigation{
+.navigation {
   display: flex;
   z-index: 9;
   background-color: #000000;
   top: 1em;
   list-style-type: none;
+
   & li a {
     color: white;
     font: 1.2em "roboto-regular";
     text-decoration: none;
   }
-
-  & .text-1 {
-    flex-basis: 10%;
-    margin: 15px;
-  }
-  & .text-2 {
-    flex-basis: 10%;
-    margin: 15px;
-  }
-  & .text-3 {
-    flex-basis: 10%;
-    margin: 15px;
-  }
-  & .text-4 {
-    flex-basis: 10%;
-    margin: 15px;
-  }
-  & .text-5 {
-    flex-basis: 10%;
-    margin: 15px;
-  }
-  & .text-6 {
-    flex-basis: 10%;
-    margin: 15px;
-  }
-  & .text-7 {
-    flex-basis: 100%;
-    margin: 15px;
-  }
-  & .text-8 {
-    margin: 15px;
-    width: 100%;
-    cursor: pointer;
-  }
 }
 
-.text-2:hover:after{
+.text-2:hover:after {
   width: 35%;
   transition: width .5s;
 }
-.white{
+
+.white {
   color: white !important;
 }
-.text-1 a:hover{
+
+.text-1 a:hover {
   color: crimson;
 }
-.text-2 a:hover{
+
+.text-2 a:hover {
   color: crimson;
 }
-.text-3 a:hover{
+
+.text-3 a:hover {
   color: crimson;
 }
-.text-4 a:hover{
+
+.text-4 a:hover {
   color: crimson;
 }
-.text-5 a:hover{
+
+.text-5 a:hover {
   color: crimson;
 }
-.text-6 a:hover{
+
+.text-6 a:hover {
   color: crimson;
 }
-.text-7 a:hover{
+
+.text-7 a:hover {
   color: crimson;
 }
-.text-8 a:hover{
+
+.text-8 a:hover {
   color: crimson;
 }
-.my-logo{
+
+.my-logo {
   position: absolute;
   left: 20em;
   top: 3em;
-  & .logo-images{
+
+  & .logo-images {
     background-image: url("../../../assets/images/Logo/DD.svg");
     background-repeat: no-repeat;
     width: 50%;
@@ -96,15 +78,18 @@
     left: 9em;
   }
 }
- .my-logo p {
+
+.my-logo p {
   color: #fff;
   font-size: 35px;
   font-weight: 600;
 }
+
 .my-logo p span {
   color: crimson;
   transition: all 0.3s ease;
 }
+
 .sticky .my-logo p span {
   color: var(--color-lio, crimson);
 }
@@ -115,7 +100,7 @@
 }
 
 //test
-.addP{
+.addP {
   color: red;
   top: 5em;
   right: 5em;

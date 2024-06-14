@@ -1,5 +1,15 @@
 {
-    "title": "Header",
-    "text": "Paragraf from book War and Peace author L.N.Tolstoy",
-    "home": "Начало"
+  "title": "Header",
+  "text": "Paragraf from book War and Peace author L.N.Tolstoy",
+  "home": "Начало",
+  "about": "За мен",
+  "blog": "Блог",
+  "skills": "Умения",
+  "project": "Проекти",
+  "timeLine": "История ми!",
+  "contact": "Контакти",
+  "signIn": "Логин",
+  "language": "Език",
+  "myName": "инж.Димитър Димитров",
+  "andIam": "И аз съм"
 }

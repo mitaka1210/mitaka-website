@@ -1,7 +1,15 @@
 {
-
-    "title": "Заголовок",
-    "text": "Параграф из книги Л.Н. Толстого война и мир",
-    "home": "Home"
-
+  "title": "Заголовок",
+  "text": "Параграф из книги Л.Н. Толстого война и мир",
+  "home": "Home",
+  "about": "About",
+  "blog": "Blog",
+  "skills": "Skills",
+  "project": "Project",
+  "timeLine": "TimeLine",
+  "contact": "Contact",
+  "signIn": "Login",
+  "language": "Language",
+  "myName": "eng. Dimitar Dimitrov",
+  "andIam": "And i'am a"
 }

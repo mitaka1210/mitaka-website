@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type {Metadata} from "next";
+import {Inter} from "next/font/google";
 import React from "react";
 import './typography.scss';
 import './reusable-styles.scss';
 import Providers from "@/app/SignInButton/Providers/Provider";
-const inter = Inter({ subsets: ["latin"] });
+// import '../i18n'
+
+const inter = Inter({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,16 +14,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="bg">
     <body className={inter.className}>
     <Providers>
-    {children}
-      </Providers>
+      {children}
+    </Providers>
     </body>
     </html>
   );

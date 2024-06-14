@@ -1,5 +1,4 @@
-import React from "react";
-import Image from "next/image";
+import React, {useEffect} from "react";
 import Link from "next/link";
 import Dropdown from "../DropDown/Dropdown";
 
@@ -9,7 +8,7 @@ export interface MenuItem {
   children?: MenuItem[];
 }
 
-const menuItems: MenuItem[] = [
+const menuItemsEN: MenuItem[] = [
   {
     title: "Language",
     children: [
@@ -22,21 +21,45 @@ const menuItems: MenuItem[] = [
     ],
   },
 ];
+const menuItemsBG: MenuItem[] = [
+  {
+    title: "Език",
+    children: [
+      {
+        title: "Английски",
+      },
+      {
+        title: "Български",
+      },
+    ],
+  },
+];
 
 export default function Header() {
+  let lang = localStorage.getItem("i18nextLng");
+  useEffect(() => {
+
+  }, [lang]);
   return (
-    <header className="flex gap-10 items-center bg-zinc-800 py-4 px-2">
-      <div className="flex gap-8 items-center text-white">
-        {menuItems.map((item) => {
-          return item.hasOwnProperty("children") ? (
-            <Dropdown item={item} />
-          ) : (
-            <Link className="hover:text-blue-500"  href="#">
-              {item.title}
-            </Link>
-          );
-        })}
-      </div>
-    </header>
+    <div className="flex gap-8 items-center text-white">
+      {lang === 'bg' ? menuItemsBG.map((item, number) => {
+        return item.hasOwnProperty("children") ? (
+          <Dropdown item={item} key={number}/>
+        ) : (
+          <Link key={number} className="hover:text-crimson-500" href="#">
+            {item.title}
+          </Link>
+        );
+      }) : menuItemsEN.map((item, number) => {
+        return item.hasOwnProperty("children") ? (
+          <Dropdown item={item} key={number}/>
+        ) : (
+          <Link key={number} className="hover:text-crimson-500" href="#">
+            {item.title}
+          </Link>
+        );
+      })
+      }
+    </div>
   );
 }

@@ -1,8 +1,10 @@
 import React from 'react';
 import {signIn, signOut, useSession} from "next-auth/react";
+import {useTranslation} from "react-i18next";
 
 const SignInButton = () => {
-  const { data: session } = useSession();
+  const {t, i18n} = useTranslation();
+  const {data: session} = useSession();
 
   if (session && session.user) {
     return (
@@ -16,7 +18,7 @@ const SignInButton = () => {
   }
   return (
     <a onClick={() => signIn()}>
-      Sign In
+      {t("signIn")}
     </a>
   );
 };

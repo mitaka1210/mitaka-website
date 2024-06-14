@@ -1,18 +1,18 @@
-import i18n from 'i18next';
+import i18n from "i18next";
 // import XHR from 'i18next-xhr-backend';
 // import LanguageDetector from 'i18next-browser-languagedetector';
-import { initReactI18next } from 'react-i18next';
-import XHR from 'i18next-xhr-backend';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import bg from '../public/locales/bg/translation.json';
-import en from '../public/locales/en/translation.json';
+import {initReactI18next} from "react-i18next";
+import XHR from "i18next-xhr-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
+import bg from "../public/locales/bg/translation.json";
+import en from "../public/locales/en/translation.json";
 
 const resources = {
-  en: {
-    translation: en
-  },
   bg: {
     translation: bg
+  },
+  en: {
+    translation: en
   }
 };
 i18n
@@ -21,13 +21,13 @@ i18n
   .use(initReactI18next) // bind react-i18next to the instance
   .init({
     resources,
-    fallbackLng: 'en',
+    fallbackLng: "bg",
     debug: true,
 
     interpolation: {
       escapeValue: false, // not needed for react!!
     },
-    whitelist: ['en', 'bg'],
+    // whitelist: ["bg", "en"],
     // react i18next special options (optional)
     // override if needed - omit if ok with defaults
     /*

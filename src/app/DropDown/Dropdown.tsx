@@ -1,53 +1,54 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link';
 
-import { MenuItem } from '../Lang/Lang';
+import {MenuItem} from '../Lang/Lang';
+import i18n from "@/i18n";
+import './dropdown.scss';
 
 interface Props {
   item: MenuItem;
 }
 
 export default function Dropdown(props: Props) {
-  const { item } = props;
+  const {item} = props;
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const menuItems = item?.children ? item.children : [];
-  {/*<button type="button" onClick={() => changeLanguage("en")}>*/}
-  {/*  en*/}
-  {/*</button>*/}
-  {/*<button type="button" onClick={() => changeLanguage("bg")}>*/}
-  {/*  bg*/}
-  {/*</button>*/}
   const toggle = () => {
     setIsOpen(old => !old);
   }
-  const changeLang = () => {
-    console.log('pesho')
+  const changeLang = (data: MenuItem) => {
+    if (data.title === 'Bulgarian') {
+      i18n.changeLanguage("bg").then(r => {
+      });
+      window.location.reload();
+    } else if (data.title === 'English') {
+      i18n.changeLanguage("en").then(r => {
+      });
+      window.location.reload();
+    }
   }
-  const multiMethod = () => {
+  const multiMethod = (data: MenuItem) => {
     toggle();
-    changeLang();
+    changeLang(data);
   }
-  const transClass = isOpen
-    ?
-    "flex"
-    :
-    "hidden";
+  const transClass = isOpen ? "flex" : "hidden";
 
   return (
     <>
       <div className="relative">
         <button
-          className="hover:text-blue-400"
-          onClick={multiMethod}
+          className="add-hover-color"
+          onClick={() => multiMethod(item)}
         >{item.title}</button>
-        <div className={`absolute right-14 top-8 z-30 w-[250px] min-h-[300px] flex flex-col py-4 bg-zinc-400 rounded-md ${transClass}`}>
+        <div
+          className={`absolute right-14 top-8 z-30 w-[250px] min-h-[300px] flex flex-col py-4 bg-zinc-400 rounded-md ${transClass}`}>
           {
             menuItems.map(item =>
               <Link
                 key={item.route}
                 className="hover:bg-zinc-300 hover:text-zinc-500 px-4 py-1"
                 href={item?.route || ''}
-                onClick={multiMethod}
+                onClick={() => multiMethod(item)}
               >{item.title}</Link>
             )
           }
