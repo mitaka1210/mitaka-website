@@ -1,7 +1,12 @@
-@font-face { font-family: roboto-regular;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
-@font-face { font-family: roboto-light;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
+@font-face {
+  font-family: roboto-regular;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
+}
 
 
 $content-width: calc(40vw - 84px);
@@ -21,18 +26,18 @@ $color4: #555ac0;
 $color5: #24b47e;
 $color6: #aff1b6;
 
-.timeline-page{
+.timeline-page {
   font: 1.2em "roboto-regular";
-  &  .timeline-nav {
+
+  & .timeline-nav {
     background-color: #000000;
   }
 }
+
 .time-line-header {
-  margin: 5%;
   text-align: center;
-  font-size: 2rem;
-  font-weight: 100;
 }
+
 .timeline {
   display: flex;
   flex-direction: column;
@@ -50,9 +55,11 @@ $color6: #aff1b6;
 
     &:nth-child(2n + 1) {
       flex-direction: row-reverse;
+
       .timeline__event__date {
         border-radius: 0 $bdrs $bdrs 0;
       }
+
       .timeline__event__content {
         border-radius: $bdrs 0 0 $bdrs;
       }
@@ -71,6 +78,7 @@ $color6: #aff1b6;
           transform: translateX(-50%);
           animation: fillTop 2s forwards 4s ease-in-out;
         }
+
         &:after {
           content: "";
           width: 100%;
@@ -96,6 +104,7 @@ $color6: #aff1b6;
       color: $color1;
       letter-spacing: 1.5px;
     }
+
     &__content {
       padding: $spacing;
       box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
@@ -105,6 +114,7 @@ $color6: #aff1b6;
       width: $content-width;
       border-radius: 0 $bdrs $bdrs 0;
     }
+
     &__date {
       color: $color2;
       font-size: 1.5rem;
@@ -117,6 +127,7 @@ $color6: #aff1b6;
       padding: 0 $spacing;
       border-radius: $bdrs 0 0 $bdrs;
     }
+
     &__icon {
       display: flex;
       align-items: center;
@@ -151,6 +162,7 @@ $color6: #aff1b6;
         transform: translateX(-50%);
         animation: fillTop 2s forwards 4s ease-in-out;
       }
+
       &:after {
         content: "";
         width: 100%;
@@ -164,6 +176,7 @@ $color6: #aff1b6;
         animation: fillLeftOdd 2s forwards 4s ease-in-out;
       }
     }
+
     &__description {
       flex-basis: 60%;
     }
@@ -172,6 +185,7 @@ $color6: #aff1b6;
       &:after {
         background: $color4;
       }
+
       .timeline__event__date {
         color: $color3;
         background: $color4;
@@ -189,14 +203,17 @@ $color6: #aff1b6;
       .timeline__event__icon {
         background: $color3;
         color: $color4;
+
         &:before,
         &:after {
           background: $color3;
         }
       }
+
       .timeline__event__title {
         color: $color4;
       }
+
       .timeline__event__title {
       }
     }
@@ -205,6 +222,7 @@ $color6: #aff1b6;
       &:after {
         background: $color5;
       }
+
       .timeline__event__date {
         color: $color6;
         background-color: $color5;
@@ -222,17 +240,21 @@ $color6: #aff1b6;
       .timeline__event__icon {
         background: $color6;
         color: $color5;
+
         &:before,
         &:after {
           background: $color6;
         }
       }
+
       .timeline__event__title {
         color: $color5;
       }
+
       .timeline__event__title {
       }
     }
+
     &:last-child {
       .timeline__event__icon {
         &:before {
@@ -247,6 +269,7 @@ $color6: #aff1b6;
   .timeline__event {
     flex-direction: column;
     align-self: center;
+
     &__content {
       width: 100%;
     }
@@ -262,6 +285,7 @@ $color6: #aff1b6;
         display: none;
       }
     }
+
     &__date {
       border-radius: 0;
       padding: $spacing;
@@ -283,19 +307,20 @@ $color6: #aff1b6;
     }
   }
 }
-.geodesy,{
+
+.geodesy, {
   position: relative;
   left: 4em;
   z-index: 9;
   top: 2.6em;
 
-  & .geodesy-icon,{
+  & .geodesy-icon, {
     width: 30px;
     height: 30px;
   }
 }
 
-.aviation{
+.aviation {
   position: relative;
   right: 3.8em;
   z-index: 9;
@@ -307,7 +332,7 @@ $color6: #aff1b6;
   }
 }
 
-.coding{
+.coding {
   position: relative;
   top: 1.5em;
   right: 3.8em;
@@ -318,6 +343,7 @@ $color6: #aff1b6;
     height: 30px;
   }
 }
+
 @keyframes fillLeft {
   100% {
     right: 100%;

@@ -1,42 +1,56 @@
-@font-face { font-family: roboto-regular;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
-@font-face { font-family: roboto-light;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
+@font-face {
+  font-family: roboto-regular;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
+}
 
 .main-content {
   padding: 2em 0 2em 0;
   transform: translate(0px, 120px);
 }
-.how-can-help{
-  font: 20px 'roboto-regular' ;
+
+.how-can-help {
+  font-family: 'roboto-regular', sans-serif;
 }
+
 .skills-page {
   background-color: #000000;
 }
+
 .section {
   display: flex;
   justify-content: center;
-  padding-left: 75px;
 }
+
 .wall {
   display: flex;
 }
+
 .v-boxes {
   display: flex;
   flex-direction: column;
-  &:not(:first-child){
+
+  &:not(:first-child) {
     margin-left: -75px;
   }
 }
+
 .second {
   margin-top: 75px;
 }
+
 .third {
   margin-top: 150px;
 }
+
 .forth {
   margin-top: 225px;
 }
+
 .box {
   width: 100px;
   height: 100px;
@@ -46,20 +60,25 @@
   transform: rotate(45deg);
   margin: 25px;
   cursor: pointer;
-  &:hover{
+
+  &:hover {
     &:not(.link) > .box-face, > .box-back {
       transform: translateZ(100px) rotateX(180deg);
-      background-color: transparent!important;
+      background-color: transparent !important;
     }
+
     &:not(.link) > .box-face > .box-text {
       opacity: 0;
     }
+
     & .tooltip {
       visibility: visible;
       opacity: 1;
     }
+
     &.link > .box-face {
-      background-color: transparent!important;
+      background-color: transparent !important;
+
       & > .box-text {
         color: #323232;
       }
@@ -73,6 +92,7 @@
       box-sizing: border-box;
       transition: background-color .5s;
     }
+
     & .box-text {
       color: #efefef;
       transition: color .5s;
@@ -82,8 +102,8 @@
 
 .box-face, .box-back {
   position: absolute;
-  top:0;
-  z-index:1;
+  top: 0;
+  z-index: 1;
   width: 100px;
   height: 100px;
   background-color: #dedede;
@@ -122,8 +142,8 @@
 }
 
 .box-back {
-  z-index:0;
-  background-image: linear-gradient( #fff, #efefef);
+  z-index: 0;
+  background-image: linear-gradient(#fff, #efefef);
 }
 
 .box-text img {
@@ -144,7 +164,7 @@
   font-size: 13px;
   color: #000;
   text-align: center;
-  border-top: 1px solid rgba(0,0,0,.8);
+  border-top: 1px solid rgba(0, 0, 0, .8);
   padding: 5px 0;
   z-index: 1000;
   -webkit-transform: rotate(-45deg);
@@ -158,37 +178,42 @@
   position: absolute;
   top: -5px;
   left: 35px;
-  content:' ';
+  content: ' ';
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 5px solid black;
 }
+
 .svg-css {
-    width: 30px;
-    height: 30px;
-    position: relative;
+  width: 30px;
+  height: 30px;
+  position: relative;
   transform: translate(11px, -51px);
 }
+
 .svg-scss {
   width: 50px;
   height: 50px;
   position: relative;
   transform: translate(7px, -38px);
 }
+
 .svg-gulp {
   width: 30px;
   height: 30px;
   position: relative;
   transform: translate(7px, -38px);
 }
+
 .svg-angular {
   width: 30px;
   height: 30px;
   position: relative;
   transform: translate(10px, -55px);
 }
+
 .svg-angular-js {
   width: 30px;
   height: 30px;
@@ -200,18 +225,21 @@
     max-height: 72px;
   }
 }
+
 .svg-react {
   width: 50px;
   height: 50px;
   position: relative;
   transform: translate(10px, -38px);
 }
+
 .svg-docker {
   width: 50px;
   height: 50px;
   position: relative;
   transform: translate(10px, -38px);
 }
+
 .svg-js {
   width: 50px;
   height: 50px;
@@ -220,21 +248,24 @@
 
   & svg {
     width: 60px;
-    height:60px;
+    height: 60px;
   }
 }
+
 .svg-rxjs {
   position: relative;
   width: 50px;
   height: 50px;
   transform: translate(10px, -38px);
 }
+
 .svg-node {
   position: relative;
   width: 50px;
   height: 50px;
   transform: translate(10px, -38px);
 }
+
 .svg-express {
   position: relative;
   width: 50px;

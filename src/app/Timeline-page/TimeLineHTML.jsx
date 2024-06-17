@@ -1,15 +1,16 @@
-'use client'
+"use client";
 
 import React from "react";
-import './timeline.scss'
+import "./timeline.scss";
 import Image from "next/image";
 import geodesy from "../../../assets/images/tacheometer.png";
 import aviation from "../../../assets/images/airport.png";
 import coding from "../../../assets/images/coding.png";
+
 const TimeLineHtml = () => {
   return (
     <div>
-      <h2 className='time-line-header'>Моят свят накратко!</h2>
+      <h2 className="text-align-center">Моят свят накратко!</h2>
       <div className="timeline">
         <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
           <div className="coding">
@@ -22,9 +23,9 @@ const TimeLineHtml = () => {
             04-22-2021
           </div>
           <div className="timeline__event__content ">
-            <div className="timeline__event__title">
+            <h6>
               Програмиране
-            </div>
+            </h6>
             <div className="timeline__event__description">
               <p>Реших да дам шанс на хобито си! С което се занимавам и до сега. </p>
             </div>
@@ -38,9 +39,9 @@ const TimeLineHtml = () => {
             25-08-2014
           </div>
           <div className="timeline__event__content">
-            <div className="timeline__event__title">
+            <h6 className="">
               Работех всичко и се занимавах с мойте хобита
-            </div>
+            </h6>
             <div className="timeline__event__description">
               <p>Започнах да работя каквото има. Програмиране на майтап като хоби!</p>
             </div>
@@ -56,8 +57,8 @@ const TimeLineHtml = () => {
           <div className="timeline__event__date">
             15-09-2010
           </div>
-          <div className="timeline__event__content">
-            <div className="timeline__event__title">
+          <div className="timeline__event__content padding-15">
+            <div className="">
               ВИСШЕ ВОЕННОВЪЗДУШНО УЧИЛИЩЕ "ГЕОРГИ БЕНКОВСКИ" - гр. Долна Митрополия
             </div>
             <div className="timeline__event__description">
@@ -69,7 +70,7 @@ const TimeLineHtml = () => {
         </div>
         <div className="timeline__event animated fadeInUp timeline__event--type1">
           <div className="geodesy">
-            <Image className='geodesy-icon' src={geodesy} alt="Express"/>
+            <Image className="geodesy-icon" src={geodesy} alt="Express"/>
           </div>
           <div className="timeline__event__icon">
             <i className="lni-cake"></i>
@@ -77,12 +78,12 @@ const TimeLineHtml = () => {
           <div className="timeline__event__date">
             01-06-2009
           </div>
-          <div className="timeline__event__content">
-            <div className="timeline__event__title">
-              ПГСАГ - ПРОФЕСИОНАЛНА ГИМНАЗИЯ ПО СТРОИТЕЛСТВО, АРХИТЕКТУРА И ГЕОДЕЗИЯ -  гр. Шумен
+          <div className="timeline__event__content padding-15">
+            <div className="">
+              ПГСАГ - ПРОФЕСИОНАЛНА ГИМНАЗИЯ ПО СТРОИТЕЛСТВО, АРХИТЕКТУРА И ГЕОДЕЗИЯ - гр. Шумен
             </div>
             <div className="timeline__event__description">
-              <p>Специалност:<strong className='margin-left-5'>Геодезия</strong></p>
+              <p>Специалност:<strong className="margin-left-5">Геодезия</strong></p>
               <p>
                 <p>Професионална квалификация „Техник”</p>
               </p>

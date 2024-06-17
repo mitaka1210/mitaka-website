@@ -1,11 +1,16 @@
 import React, {useEffect} from "react";
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 import Dropdown from "../DropDown/Dropdown";
 
 export interface MenuItem {
   title: string;
   route?: string;
   children?: MenuItem[];
+}
+
+export interface Page {
+  page: string
 }
 
 const menuItemsEN: MenuItem[] = [
@@ -37,6 +42,8 @@ const menuItemsBG: MenuItem[] = [
 
 export default function Header() {
   let lang = localStorage.getItem("i18nextLng");
+  const pathname = usePathname();
+  console.log('pesho', pathname);
   useEffect(() => {
 
   }, [lang]);

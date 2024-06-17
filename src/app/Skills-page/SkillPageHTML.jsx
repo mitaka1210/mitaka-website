@@ -1,31 +1,32 @@
-'use client'
+"use client";
 import React from "react";
-import StarsIcon from '@mui/icons-material/Stars';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import Image from 'next/image'
-import HtmlIcon from '@mui/icons-material/Html';
-import JavascriptIcon from '@mui/icons-material/Javascript';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import rxjs from '../../../assets/images/rxjs-1.svg';
-import PostgreSQL  from '../../../assets/images/postgresql.svg';
-import AngularJS  from '../../../assets/images/angular-js.svg';
-import Redux  from '../../../assets/images/redux.svg';
-import Postman  from '../../../assets/images/postman.svg';
-import Express  from '../../../assets/images/express-109.svg';
-import dbeaver  from '../../../assets/images/icons8-dbeaver.svg';
+import StarsIcon from "@mui/icons-material/Stars";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import Image from "next/image";
+import HtmlIcon from "@mui/icons-material/Html";
+import JavascriptIcon from "@mui/icons-material/Javascript";
+import rxjs from "../../../assets/images/rxjs-1.svg";
+import PostgreSQL from "../../../assets/images/postgresql.svg";
+import AngularJS from "../../../assets/images/angular-js.svg";
+import Redux from "../../../assets/images/redux.svg";
+import Postman from "../../../assets/images/postman.svg";
+import Express from "../../../assets/images/express-109.svg";
+import dbeaver from "../../../assets/images/icons8-dbeaver.svg";
 import MobileSkillsHtml from "@/app/mobileSkills/mobileSkillsHTML";
+import "../typography.scss";
+
 const SkillPageHtml = ({size}) => {
   return (
     <div>
-      <div className='how-can-help margin-10 text-align-center'>
+      <div className="how-can-help margin-10 text-align-center flow-text">
         <h2>В кои области бих могъл да ви помогна</h2>
       </div>
       {
         size.width < 630 ? <div>
           <MobileSkillsHtml/>
-        </div> : <main className='main-content'>
+        </div> : <main className="main-content">
           <section className="section">
-            <div className="wall">
+            <div className="flex-horizontal-container justify-content-center">
               <div className="v-boxes section-6">
                 <div className="box">
                   <span className="tooltip">?</span>
@@ -193,7 +194,7 @@ const SkillPageHtml = ({size}) => {
                   <div className="box-face">
                     <div className="box-text">
                       <div className="svg-rxjs">
-                        <Image src={rxjs} alt='rxjs'/>
+                        <Image src={rxjs} alt="rxjs"/>
                       </div>
                     </div>
                   </div>
@@ -348,7 +349,7 @@ const SkillPageHtml = ({size}) => {
                   <span className="tooltip">JavaScript</span>
                   <div className="box-face">
                     <div className="box-text">
-                      <div className='svg-js'>
+                      <div className="svg-js">
                         <JavascriptIcon/>
                       </div>
                     </div>
@@ -408,7 +409,7 @@ const SkillPageHtml = ({size}) => {
                   <span className="tooltip">CSS</span>
                   <div className="box-face">
                     <div className="box-text">
-                      <div className='svg-css'>
+                      <div className="svg-css">
                         <svg xmlns="http://www.w3.org/2000/svg"
                              viewBox="0 0 384 512">
                           <path

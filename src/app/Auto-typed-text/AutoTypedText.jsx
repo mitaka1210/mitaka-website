@@ -22,12 +22,11 @@ const AutoTypedText = () => {
     return () => {
       typed.destroy();
     };
-  }, []);
+  }, [lang]);
   return (
     <div>
       <h4>
-        {" "}
-        {t("andIam")} <span className="who-am-i" ref={el}/>{" "}
+        {t("andIam")} <span className="who-am-i" ref={el}/>
       </h4>
     </div>
   );

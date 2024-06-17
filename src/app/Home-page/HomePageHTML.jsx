@@ -3,7 +3,7 @@ import React from "react";
 import AboutPageHTML from "@/app/Auto-typed-text/AutoTypedText";
 import {useTranslation} from "react-i18next";
 
-const HomePageHTML = (props) => {
+const HomePageHTML = () => {
   const {t} = useTranslation();
   return (
     <>

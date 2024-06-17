@@ -1,8 +1,22 @@
 @import './variables.scss';
-@font-face { font-family: roboto-regular;
-  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
-@font-face { font-family: roboto-light;
-  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
+
+$large-screen: 150px;
+$small-screen: 50px;
+$base-font-size: 2rem !default;
+// Flow Text
+$range: $large-screen - $small-screen !default;
+$intervals: 20 !default;
+$interval-size: $range / $intervals !default;
+@font-face {
+  font-family: roboto-regular;
+  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,10 +27,12 @@
 
 html {
   box-sizing: border-box;
+  font-family: roboto-regular, sans-serif !important;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  font-family: roboto-regular, sans-serif !important;
+  box-sizing: inherit; // така казваме на елементите да гледат парента и да взема стиловете спрямо него
 }
 
 /* Typography */
@@ -26,21 +42,96 @@ html {
 }
 
 @media (max-width: 400px) {
-  html { font-size: var(--sizing-fs-phone); }
+  html {
+    font-size: var(--sizing-fs-phone);
+  }
 }
 
 @media (min-width: 600px) {
-  html { font-size: var(--sizing-fs-tablet); }
+  html {
+    font-size: var(--sizing-fs-tablet);
+  }
 }
 
 @media (min-width: 1260px) {
-  html { font-size: var(--sizing-fs-laptop); }
+  html {
+    font-size: var(--sizing-fs-laptop);
+  }
 }
 
-//@media (min-width: 1420px) {
-//  html { font-size: var(--sizing-fs-desktop); }
-//}
+p, ul, ol {
+  padding-bottom: .5em;
+}
 
-//@media (min-width: 1660px) {
-//  html { font-size: var(--sizing-fs-laptop); }
-//}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 calc(var(--sizing-ws-base) / 3) 0;
+}
+
+// Credit to materialize css
+// https://github.com/Dogfalo/materialize/blob/master/sass/components/_typography.scss
+// Auto resizes text to be more readable
+h1 {
+  font-weight: 600;
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: $base-font-size * (1.2 + (.06 * $i));
+    }
+    $i: $i + 1;
+  }
+}
+
+h2 {
+  font-weight: 500;
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: $base-font-size * (1.1 + (.05 * $i));
+    }
+    $i: $i + 1;
+  }
+}
+
+h3 {
+  font-weight: 400;
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: $base-font-size * (1 + (.04 * $i));
+    }
+    $i: $i + 1;
+  }
+}
+
+h4 {
+  font-weight: 300;
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: $base-font-size * (.9 + (.03 * $i));
+    }
+    $i: $i + 1;
+  }
+}
+
+h5 {
+  font-weight: 200;
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: $base-font-size * (.8 + (.02 * $i));
+    }
+    $i: $i + 1;
+  }
+}
+
+h6 {
+  font-weight: 100;
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: $base-font-size * (.7 + (.01 * $i));
+    }
+    $i: $i + 1;
+  }
+}
