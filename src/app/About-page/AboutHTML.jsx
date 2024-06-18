@@ -1,15 +1,28 @@
 "use client";
-import React, {forwardRef, useState} from "react";
-import {accordian} from "@/content";
+import React, {forwardRef, useEffect, useState} from "react";
+import {accordianBG} from "@/content-BG";
+import {accordianEN} from "@/content-EN";
 import withClickOutside from "../Helper-components/Click-outside/WithClickOutSide";
 import ScrollTop from "@/app/Helper-components/scrollToTop/scrollTop";
 import {useTranslation} from "react-i18next";
 
 const AboutHtml = forwardRef(({open, setOpen}, ref) => {
+  // property
   // imported from library
   const [active, setActive] = useState(-1);
+  const [accordion, setAccordion] = useState(accordianBG);
   const [hideDiv, setHideDiv] = useState(true);
   const {t} = useTranslation();
+  // localStorage
+  let lang = localStorage.getItem("i18nextLng");
+  // update data
+  useEffect(() => {
+    if (lang === "bg") {
+      setAccordion(accordianBG);
+    } else {
+      setAccordion(accordianEN);
+    }
+  }, [lang]);
   // methods
   const handleClick = (index) => {
     if (index === active) {
@@ -42,7 +55,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
           <span className="about-me-text margin-15">{t("whoIam")}</span>
           <span className="about-me-text">{t("goals")}</span>
           <ul className=" text-align-justify accordian">
-            {accordian.map((item, index) => {
+            {accordion.map((item, index) => {
               return (
                 <div ref={ref}
                      className={"list-hobby flex-horizontal-container justify-content-center align-items-center text-align-center click-btn btn-style506" + " " + (index === active ? "add-height-click" : "")}
