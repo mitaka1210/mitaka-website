@@ -1,6 +1,5 @@
 {
   "title": "Заголовок",
-  "text": "Параграф из книги Л.Н. Толстого война и мир",
   "home": "Home",
   "about": "About",
   "blog": "Blog",
@@ -11,5 +10,23 @@
   "signIn": "Login",
   "language": "Language",
   "myName": "eng. Dimitar Dimitrov",
-  "andIam": "And i'am a"
+  "andIam": "And i'am a",
+  "aboutMe": "About me",
+  "whoIam": "Greetings, my name is Dimitar Dimitrov and I am an aeronautical engineer. Despite my professional background, I have shifted my focus toward my hobbies, particularly programming and front-end development. I have a strong passion for a variety of interests, such as aquariums, Arduino projects, nature walks, cooking, fishing, programming, reading, and investing, including personal finance.",
+  "goals": "My goals are to achieve financial independence and become a skilled programmer. I am known for my perseverance, speaking my mind directly, and being ready to help others.",
+  "motoOne": "Embracing failure is the key to improvement.",
+  "myFocus": "Right now, I am concentrating on.",
+  "programing": "Programing",
+  "started": "It all started as a hobby.",
+  "startedChance": "As I delved into exploring new technologies and encountered numerous challenges, my interest grew more and more. I began contemplating whether or not to give it a chance",
+  "capital": "Personal finance development and capital building.",
+  "book": "Books",
+  "moneyVideo": "The primary offender in this case is a video that enlightened me about the true nature of money and its potential to work for me.",
+  "say": "As he said",
+  "WarrenBuffett": "Warren Buffett",
+  "rule": "Rule",
+  "loseMoney": "Never lose money",
+  "forgetOne": "Never forget a rule",
+  "RobertKiyosaki": "Robert Kiyosaki in his book",
+  "motoRobert": "They are soldiers who must fight for me while I sleep and win"
 }

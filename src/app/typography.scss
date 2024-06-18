@@ -64,7 +64,7 @@ p, ul, ol {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 calc(var(--sizing-ws-base) / 3) 0;
+  margin: 0 0 calc(var(--sizing-ws-base) / 7) 0;
 }
 
 // Credit to materialize css
@@ -104,7 +104,6 @@ h3 {
 }
 
 h4 {
-  font-weight: 300;
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
@@ -115,7 +114,6 @@ h4 {
 }
 
 h5 {
-  font-weight: 200;
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
@@ -126,11 +124,31 @@ h5 {
 }
 
 h6 {
-  font-weight: 100;
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
       font-size: $base-font-size * (.7 + (.01 * $i));
+    }
+    $i: $i + 1;
+  }
+}
+
+q {
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: $base-font-size * (.6 + (.01 * $i));
+    }
+    $i: $i + 1;
+  }
+}
+
+
+span {
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: $base-font-size * (.01 + (.03 * $i));
     }
     $i: $i + 1;
   }
