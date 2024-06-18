@@ -49,7 +49,7 @@ const ProjectsHtml = () => {
                 <h3 className="card-no">02</h3>
                 <h6 className="card-main-title">React website</h6>
               </div>
-              <p className="card-content">Страници с оформление направени с ReactJs and Figma. Адаптивен дизайн</p>
+              <p className="card-content">{t("reactWebSite")}</p>
               <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
               <ul className="card-content">
                 <li>HTML</li>
@@ -77,9 +77,7 @@ const ProjectsHtml = () => {
                 <h3 className="card-no">03</h3>
                 <h6 className="card-main-title">React ToDo</h6>
               </div>
-              <p className="card-content">{t("application")} с което можете да си записвате задачите и да го променяте.
-                Адаптивен
-                дизайн</p>
+              <p className="card-content">{t("reactToDo")}</p>
               <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
               <ul className="card-content">
                 <li>HTML</li>
@@ -125,7 +123,7 @@ const ProjectsHtml = () => {
         </div>
       </section>
       <section className="upgrade-my-self flex-item">
-        <h3>Надграждам себе си!</h3>
+        <h3>{t("evolve")}</h3>
         <div className="box-wrapper flex-horizontal-container">
           <figure className="shape-box shape-box_half">
             <img
@@ -135,9 +133,9 @@ const ProjectsHtml = () => {
             <figcaption>
               <div className="show-cont">
                 <h3 className="card-no">05</h3>
-                <h6 className="card-main-title">Невероятни обувки <span> (Начална страница)</span></h6>
+                <h6 className="card-main-title">{t("shoes")}<span> ({t("shoesHomePage")})</span></h6>
               </div>
-              <p className="card-content"> Начална страница на магазин за обувки</p>
+              <p className="card-content">{t("shopShoes")}</p>
               <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
               <ul className="card-content">
                 <li>HTML</li>
@@ -162,9 +160,9 @@ const ProjectsHtml = () => {
             <figcaption>
               <div className="show-cont">
                 <h3 className="card-no">06</h3>
-                <h6 className="card-main-title">Платежен лист (TypeScript)</h6>
+                <h6 className="card-main-title">{t("paymentPage")} (TypeScript)</h6>
               </div>
-              <p className="card-content">Платежна страница направена с TS</p>
+              <p className="card-content">{t("paymentPageMake")} TS</p>
               <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
               <ul className="card-content">
                 <li>HTML</li>
@@ -177,8 +175,7 @@ const ProjectsHtml = () => {
                 <a href="https://mitaka1210.github.io/paymentAppWithTypeScript/" target="_blank"
                    className="read-more-btn">{t("application")}</a>
                 <a href="https://github.com/mitaka1210/paymentAppWithTypeScript" target="_blank"
-                   className="read-more-btn">Код в
-                  GitHub</a>
+                   className="read-more-btn">{t("code")}</a>
               </div>
             </figcaption>
             <span className="after"></span>
@@ -191,11 +188,9 @@ const ProjectsHtml = () => {
             <figcaption>
               <div className="show-cont">
                 <h3 className="card-no">07</h3>
-                <h6 className="card-main-title">Пица меню</h6>
+                <h6 className="card-main-title">{t("pizzaMenu")}</h6>
               </div>
-              <p className="card-content">{t("application")} с което можете да си записвате задачите и да го променяте.
-                Адаптивен
-                дизайн</p>
+              <p className="card-content">{t("pizzaMenu")}</p>
               <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
               <ul className="card-content">
                 <li>HTML</li>
@@ -223,9 +218,9 @@ const ProjectsHtml = () => {
             <figcaption>
               <div className="show-cont">
                 <h3 className="card-no">08</h3>
-                <h6 className="card-main-title">Електронен магазин</h6>
+                <h6 className="card-main-title">{t("onlineShop")}</h6>
               </div>
-              <p className="card-content">Страници с оформление направени с ReactJs and Figma. Адаптивен дизайн</p>
+              <p className="card-content">{t("onlineShopText")}</p>
               <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
               <ul className="card-content">
                 <li>HTML</li>
@@ -246,10 +241,10 @@ const ProjectsHtml = () => {
         </div>
       </section>
       <section className="magic-novatio flex-vertical-container justify-content-center text-align-center">
-        <h6>Продължавам да се развивам и надграждам себе си!</h6>
+        <h6>{t("iWantMore")}!</h6>
         <div className="flex-horizontal-container-raw text-align-center justify-content-center">
-          <p className="margin-10 padding-0">магията</p>
-          <p className="padding-0"><q><strong className="novatio-header">Новатио</strong></q></p>
+          <p className="margin-10 padding-0">{t("magic")}</p>
+          <p className="padding-0"><q><strong className="novatio-header">{t("novatio")}</strong></q></p>
         </div>
         <div className="box-wrapper">
           <figure className="shape-box shape-box_half">
@@ -260,11 +255,9 @@ const ProjectsHtml = () => {
             <figcaption>
               <div className="show-cont">
                 <h3 className="card-no">09</h3>
-                <h6 className="card-main-title">Блог(PERN)</h6>
+                <h6 className="card-main-title">{t("blog")}(PERN)</h6>
               </div>
-              <p className="card-content">{t("application")} чрез което може да получавате информация за време. Нужно е
-                само да
-                въведете град. Може да бъде инсталирано на телефона.</p>
+              <p className="card-content">{t("myBlog")}</p>
               <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
               <ul className="card-content">
                 <li>HTML</li>
@@ -292,11 +285,9 @@ const ProjectsHtml = () => {
             <figcaption>
               <div className="show-cont">
                 <h3 className="card-no">10</h3>
-                <h6 className="card-main-title">Новатио</h6>
+                <h6 className="card-main-title">{t("novatio")}</h6>
               </div>
-              <p className="card-content">{t("application")} чрез което може да получавате информация за време. Нужно е
-                само да
-                въведете град. Може да бъде инсталирано на телефона.</p>
+              <p className="card-content">{t("novatioText")}</p>
               <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
               <ul className="card-content">
                 <li>HTML</li>

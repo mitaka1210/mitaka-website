@@ -98,7 +98,8 @@
 .card-content {
   color: #9f9f9f;
   line-height: 22px;
-  font-size: 15px;
+  overflow: auto;
+  height: 100px;
 }
 
 .read-more-btn {

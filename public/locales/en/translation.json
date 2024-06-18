@@ -33,5 +33,21 @@
   "weatherApp": "By entering the city, you can easily access weather information through the application. It is compatible with installation on your mobile device.",
   "technologies": "Technologies",
   "application": "Application",
-  "code": "Code in GitHub"
+  "code": "Code in GitHub",
+  "reactWebSite": "Web pages created using ReactJs and Figma. Responsive design.",
+  "reactToDo": "An application that allows you to record and modify your tasks. Responsive design.",
+  "shoes": "Amazing shoes",
+  "shoesHomePage": "Home Page",
+  "shopShoes": "Homepage of a shoe store.",
+  "paymentPage": "Payment page",
+  "paymentPageMake": "Payment page make with",
+  "pizzaMenu": "Pizza menu",
+  "onlineShop": "Online store",
+  "onlineShopText": "A website or platform that enables users to buy and sell products and services online. It provides merchants with the opportunity to offer their goods or services on the global market without the need for physical presence.",
+  "novatioText": "Novatio is a comprehensive ecosystem for optimized and automated supply chain management with real-time processes and events. It consists of separate applications for the client, dispatcher, driver, and warehouse. Novatio is a tool for intuitively and transparently organizing processes in the last mile, facilitating communication between all participants, and increasing customer satisfaction.",
+  "novatio": "Novatio",
+  "myBlog": "My Blog",
+  "iWantMore": "I continue to evolve and improve myself",
+  "magic": "magic",
+  "evolve": "I am improving myself"
 }
