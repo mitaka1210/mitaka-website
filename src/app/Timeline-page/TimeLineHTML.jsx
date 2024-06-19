@@ -6,11 +6,14 @@ import Image from "next/image";
 import geodesy from "../../../assets/images/tacheometer.png";
 import aviation from "../../../assets/images/airport.png";
 import coding from "../../../assets/images/coding.png";
+import {useTranslation} from "react-i18next";
 
 const TimeLineHtml = () => {
+  // imported lib
+  const {t} = useTranslation();
   return (
     <div>
-      <h2 className="text-align-center">Моят свят накратко!</h2>
+      <h2 className="text-align-center">{t("myWord")}!</h2>
       <div className="timeline">
         <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
           <div className="timeline__event__icon ">
@@ -21,10 +24,10 @@ const TimeLineHtml = () => {
           </div>
           <div className="timeline__event__content ">
             <h6>
-              Програмиране
+              {t("programing")}
             </h6>
             <div className="timeline__event__description">
-              <p>Реших да дам шанс на хобито си! С което се занимавам и до сега. </p>
+              <p>{t("giveChance")}</p>
             </div>
           </div>
         </div>
@@ -37,10 +40,10 @@ const TimeLineHtml = () => {
           </div>
           <div className="timeline__event__content">
             <h6 className="">
-              Работех всичко и се занимавах с мойте хобита
+              {t("workAll")}
             </h6>
             <div className="timeline__event__description">
-              <p>Започнах да работя каквото има. Програмиране на майтап като хоби!</p>
+              <p>{t("startWorkingEverything")}!</p>
             </div>
           </div>
         </div>
@@ -53,12 +56,12 @@ const TimeLineHtml = () => {
           </div>
           <div className="timeline__event__content padding-15">
             <div className="">
-              ВИСШЕ ВОЕННОВЪЗДУШНО УЧИЛИЩЕ "ГЕОРГИ БЕНКОВСКИ" - гр. Долна Митрополия
+              {t("UNI")}
             </div>
             <div className="timeline__event__description">
-              <p>Специалност: <strong className="margin-left-5">Автоматика, информационна и управляваща техника</strong>
+              <p> {t("specialty")}: <strong className="margin-left-5"> {t("specification")}</strong>
               </p>
-              <p>Професионална квалификация „Бакалавър-инженер”</p>
+              <p> {t("qualification")} „{t("bachelor")}”</p>
             </div>
           </div>
         </div>
@@ -71,12 +74,12 @@ const TimeLineHtml = () => {
           </div>
           <div className="timeline__event__content padding-15">
             <div className="">
-              ПГСАГ - ПРОФЕСИОНАЛНА ГИМНАЗИЯ ПО СТРОИТЕЛСТВО, АРХИТЕКТУРА И ГЕОДЕЗИЯ - гр. Шумен
+              {t("school")}
             </div>
             <div className="timeline__event__description">
-              <p>Специалност:<strong className="margin-left-5">Геодезия</strong></p>
+              <p>{t("specialty")}:<strong className="margin-left-5">{t("geodesy")}</strong></p>
               <p>
-                <p>Професионална квалификация „Техник”</p>
+                <p>{t("qualification")} „{t("technician")}”</p>
               </p>
             </div>
           </div>

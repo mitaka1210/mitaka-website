@@ -6,9 +6,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import './footer.scss';
 import QR from '../../../assets/images/ONLINE QR Code -  Димитър Димитров.png'
 const FooterHtml = () => {
-  const btnRefTwitter = useRef();
-  let postUrl = encodeURI(window.location.href);
-  let postTitle = '';
   return (
     <footer className='set-footer-bottom'>
       <div className='footer-container-main flex-horizontal-container justify-content-space-evenly align-items-baseline '>
