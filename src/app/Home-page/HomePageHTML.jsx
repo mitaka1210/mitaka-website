@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import AboutPageHTML from "@/app/Auto-typed-text/AutoTypedText";
+import AutoTypedText from "@/app/Auto-typed-text/AutoTypedText";
 import {useTranslation} from "react-i18next";
 
 const HomePageHTML = () => {
@@ -15,7 +15,7 @@ const HomePageHTML = () => {
         </div>
         <div className="wrap-auto-text">
           <div className="automation-text">
-            <AboutPageHTML text="My React App" delay={10}/>
+            <AutoTypedText text="My React App" delay={10}/>
           </div>
         </div>
       </div>

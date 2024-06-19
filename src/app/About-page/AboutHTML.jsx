@@ -95,7 +95,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
               className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
               <h5 className="margin-15">{t("programing")}!</h5>
               <h6 className="margin-5">{t("started")}</h6>
-              <p>{t("startedChance")}!</p>
+              <span>{t("startedChance")}!</span>
             </div>
           </div>
         </div>

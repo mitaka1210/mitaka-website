@@ -9,7 +9,7 @@
 }
 
 
-$content-width: calc(40vw - 84px);
+$content-width: calc(45vw - 84px);
 $margin: 20px;
 $spacing: 20px;
 $bdrs: 6px;
@@ -308,41 +308,28 @@ $color6: #aff1b6;
   }
 }
 
-.geodesy, {
+.geodesy-icon {
   position: relative;
-  left: 4em;
-  z-index: 9;
-  top: 2.6em;
-
-  & .geodesy-icon, {
-    width: 30px;
-    height: 30px;
-  }
+  width: 24px;
+  height: 24px;
+  transform: translate(0px, 0px);
+  max-width: none;
+}
+.aviation-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  transform: translate(0px, 0px);
+  max-width: none;
+}
+.coding-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  transform: translate(0px, 0px);
+  max-width: none;
 }
 
-.aviation {
-  position: relative;
-  right: 3.8em;
-  z-index: 9;
-  top: 2.6em;
-
-  & .aviation-icon {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-.coding {
-  position: relative;
-  top: 1.5em;
-  right: 3.8em;
-  z-index: 9;
-
-  & .coding-icon {
-    width: 30px;
-    height: 30px;
-  }
-}
 
 @keyframes fillLeft {
   100% {

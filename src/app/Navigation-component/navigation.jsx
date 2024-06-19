@@ -34,7 +34,7 @@ const Navigation = () => {
         (size.width < 501) ? <div>
           <HamburgerMenu/>
         </div> : <div className="maxWidthAndHeight justify-content-end flex-horizontal-container">
-          <ul className="navigation padding-0">
+          <ul className="justify-content-end maxWidthAndHeight navigation padding-0">
             <li className="text-1 color-white margin-15">
               <Link href="/">{t("home")}</Link>
             </li>

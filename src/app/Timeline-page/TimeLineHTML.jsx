@@ -13,11 +13,8 @@ const TimeLineHtml = () => {
       <h2 className="text-align-center">Моят свят накратко!</h2>
       <div className="timeline">
         <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
-          <div className="coding">
-            <Image className="coding-icon" src={coding} alt="coding"/>
-          </div>
           <div className="timeline__event__icon ">
-            <i className="lni-cake"></i>
+            <Image className="coding-icon" src={coding} alt="coding"/>
           </div>
           <div className="timeline__event__date">
             04-22-2021
@@ -48,11 +45,8 @@ const TimeLineHtml = () => {
           </div>
         </div>
         <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
-          <div className="aviation">
-            <Image className="aviation-icon" src={aviation} alt="aviation"/>
-          </div>
           <div className="timeline__event__icon">
-            <i className="lni-slim"></i>
+            <Image className="aviation-icon" src={aviation} alt="aviation"/>
           </div>
           <div className="timeline__event__date">
             15-09-2010
@@ -69,11 +63,8 @@ const TimeLineHtml = () => {
           </div>
         </div>
         <div className="timeline__event animated fadeInUp timeline__event--type1">
-          <div className="geodesy">
-            <Image className="geodesy-icon" src={geodesy} alt="Express"/>
-          </div>
           <div className="timeline__event__icon">
-            <i className="lni-cake"></i>
+            <Image className="geodesy-icon" src={geodesy} alt="Express"/>
           </div>
           <div className="timeline__event__date">
             01-06-2009

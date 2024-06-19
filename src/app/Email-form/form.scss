@@ -145,3 +145,15 @@ textarea {
 .text-success-1, .text-success-2{
   color: #59a014;
 }
+
+
+@media screen and (max-width: 500px) {
+  .container-contact {
+    display: flex;
+    flex-flow: column;
+  }
+  .left-svg svg{
+    margin-right: 0;
+  }
+
+}
