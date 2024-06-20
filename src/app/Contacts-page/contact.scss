@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
-@font-face { font-family: roboto-regular;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf'); }
-@font-face { font-family: roboto-light;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf'); }
+
+@font-face {
+  font-family: roboto-regular;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
+}
 
 
 .gray-bgr {
@@ -13,31 +19,42 @@
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
-.add-position-relative{
+
+.add-position-relative {
   margin-top: calc(10vh - 4vh);
   background-color: white;
 }
+
 .add-height-section {
-  height: 1000px;
+  height: 100%;
   background-color: #e2e0e0;
   overflow: auto;
 }
+
 .contacts-page {
   font: 1.2em "roboto-regular";
-  &  .contacts-nav {
+
+  & .contacts-nav {
     background-color: #000000;
   }
 }
 
 
-.color-orange-text{
+.color-orange-text {
   color: orangered;
   text-decoration: underline;
 }
 
-@media  screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .add-position-relative {
     margin: calc(10vw - 8vw);
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  .small-devices {
+    flex-flow: column !important;
   }
 
 }

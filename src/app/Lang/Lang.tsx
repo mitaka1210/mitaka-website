@@ -43,7 +43,6 @@ const menuItemsBG: MenuItem[] = [
 export default function Header() {
   let lang = localStorage.getItem("i18nextLng");
   const pathname = usePathname();
-  console.log('pesho', pathname);
   useEffect(() => {
 
   }, [lang]);

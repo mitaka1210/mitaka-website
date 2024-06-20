@@ -1,8 +1,10 @@
-
-'use client'
+"use client";
 import React from "react";
 import styled from "styled-components";
-import Link from "next/link";
+import {useTranslation} from "react-i18next";
+import Appbar from "@/app/SignInButton/AppBar/AppBar";
+import Header from "@/app/Lang/Lang";
+
 const COLORS = {
   primaryDark: "#115b4c",
   primaryLight: "#B6EDC8",
@@ -45,6 +47,7 @@ const Icon = styled.span`
   display: inline-block;
   margin-top: 2rem;
   transition: all 0.3s;
+
   &::before,
   &::after {
     content: "";
@@ -56,17 +59,21 @@ const Icon = styled.span`
     left: 0;
     transition: all 0.3s;
   }
+
   &::before {
     top: ${(props) => (props.clicked ? "0" : "-0.8rem")};
     transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
   }
+
   &::after {
     top: ${(props) => (props.clicked ? "0" : "0.8rem")};
     transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
+
   ${MenuLabel}:hover &::before {
     top: ${(props) => (props.clicked ? "0" : "-1rem")};
   }
+
   ${MenuLabel}:hover &::after {
     top: ${(props) => (props.clicked ? "0" : "1rem")};
   }
@@ -107,7 +114,8 @@ const ItemLink = styled.a`
   );
   background-size: 240%;
   transition: all 0.4s;
-  cursor:pointer;
+  cursor: pointer;
+
   &:hover,
   &:active {
     background-position: 100%;
@@ -117,11 +125,12 @@ const ItemLink = styled.a`
 `;
 
 function HamburgerMenu() {
+  const {t} = useTranslation();
   const [click, setClick] = React.useState(false);
   const handleClick = () => setClick(!click);
   return (
     <>
-      <MenuLabel htmlFor="navi-toggle" className='hamburger-menu' onClick={handleClick}>
+      <MenuLabel htmlFor="navi-toggle" className="hamburger-menu" onClick={handleClick}>
         <Icon clicked={click}>&nbsp;</Icon>
       </MenuLabel>
       <NavBackground clicked={click}>&nbsp;</NavBackground>
@@ -130,38 +139,44 @@ function HamburgerMenu() {
         <List>
           <li>
             <ItemLink onClick={handleClick} to="/" href="/Home-page">
-              Home
+              {t("home")}
             </ItemLink>
           </li>
           <li>
             <ItemLink onClick={handleClick} to="/about" href="/About-page">
-              About
+              {t("about")}
             </ItemLink>
           </li>
           <li>
             <ItemLink onClick={handleClick} to="/blog" href="/Blog-Page">
-              Blog
+              {t("blog")}
             </ItemLink>
           </li>
           <li>
             <ItemLink onClick={handleClick} to="/portfolio" href="/Projects-page">
-              Projects
+              {t("project")}
             </ItemLink>
           </li>
           <li>
             <ItemLink onClick={handleClick} to="/contact" href="/Skills-page">
-              Skills
+              {t("skills")}
             </ItemLink>
           </li>
           <li>
             <ItemLink onClick={handleClick} to="/contact" href="/Timeline-page">
-              TimeLine
+              {t("timeLine")}
             </ItemLink>
           </li>
           <li>
             <ItemLink onClick={handleClick} to="/contact" href="/Contacts-page">
-              Contact
+              {t("contact")}
             </ItemLink>
+          </li>
+          <li onClick={handleClick}>
+            <Appbar/>
+          </li>
+          <li onClick={handleClick}>
+            <Header/>
           </li>
         </List>
       </Navigation>

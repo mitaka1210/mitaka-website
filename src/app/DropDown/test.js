@@ -9,6 +9,12 @@ export const translateWebsite = (data) => {
     } else if (data.title === "English" || data.title === "Английски") {
       i18n.changeLanguage("en").then(r => {
       });
+    } else if (data === "Bulgarian") {
+      i18n.changeLanguage("bg").then(r => {
+      });
+    } else if (data === "English") {
+      i18n.changeLanguage("en").then(r => {
+      });
     }
   };
   return langMethod();

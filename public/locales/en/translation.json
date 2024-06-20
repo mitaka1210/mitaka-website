@@ -8,9 +8,10 @@
   "timeLine": "TimeLine",
   "contact": "Contact",
   "signIn": "Login",
+  "signOut": "Sign Out",
   "language": "Language",
   "myName": "eng. Dimitar Dimitrov",
-  "andIam": "And i'am a",
+  "andIam": "And i'm a",
   "aboutMe": "About me",
   "whoIam": "Greetings, my name is Dimitar Dimitrov and I am an aeronautical engineer. Despite my professional background, I have shifted my focus toward my hobbies, particularly programming and front-end development. I have a strong passion for a variety of interests, such as aquariums, Arduino projects, nature walks, cooking, fishing, programming, reading, and investing, including personal finance.",
   "goals": "My goals are to achieve financial independence and become a skilled programmer. I am known for my perseverance, speaking my mind directly, and being ready to help others.",
@@ -62,5 +63,4 @@
   "technician": "Technician",
   "geodesy": "Geodesy",
   "school": "PGSAG - Vocational High School of Construction, Architecture, and Geodesy - Shumen"
-
 }
