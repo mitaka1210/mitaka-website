@@ -1,57 +1,62 @@
-'use client'
+"use client";
 
 import React, {useRef, useState} from "react";
 
-import './form.scss';
+import "./form.scss";
+import {useTranslation} from "react-i18next";
+
 const EmailHtml = () => {
+  const {t} = useTranslation();
   const [msgTrue, setMsgTrue] = useState(false);
   let [emptyInputName, setEmptyInputName] = useState(false);
   let [emptyInputEmail, setEmptyInputEmail] = useState(false);
   let [emptyInputText, setEmptyInputText] = useState(false);
-  const [inputValueText, setInputValueText] = useState('');
-  const [inputValueEmail, setInputValueEmail] = useState('');
-  const [inputValueName, setInputValueName] = useState('');
+  const [inputValueText, setInputValueText] = useState("");
+  const [inputValueEmail, setInputValueEmail] = useState("");
+  const [inputValueName, setInputValueName] = useState("");
   const ref = useRef(null);
 
 
   const showPopUp = () => {
     setMsgTrue(!msgTrue);
-  }
+  };
   const handleInputChangeEmail = (event) => {
-    if (event.target.value !== ''){
+    if (event.target.value !== "") {
       emptyInputEmail = true;
       setEmptyInputEmail(emptyInputEmail);
-    }else {
+    } else {
       emptyInputEmail = false;
       setEmptyInputEmail(emptyInputEmail);
     }
     setInputValueEmail(event.target.value);
   };
   const handleInputChangeName = (event) => {
-    if (event.target.value !== ''){
+    if (event.target.value !== "") {
       emptyInputName = true;
       setEmptyInputName(emptyInputName);
-    }else {
-      emptyInputName = false
+    } else {
+      emptyInputName = false;
       setEmptyInputName(emptyInputName);
     }
     setInputValueName(event.target.value);
   };
   const handleInputChangeText = (event) => {
-    if (event.target.value !== ''){
+    if (event.target.value !== "") {
       emptyInputText = true;
       setEmptyInputText(emptyInputText);
-    }else {
+    } else {
       emptyInputText = false;
       setEmptyInputText(emptyInputText);
     }
     setInputValueText(event.target.value);
   };
+
   async function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "7442db02-2b80-4edf-a366-dbd0ee20fd1f");
+    // formData.append("access_key", "7442db02-2b80-4edf-a366-dbd0ee20fd1f"); //mail.bg
+    formData.append("access_key", "06fed7d1-a67f-4bab-8c91-372aacadeb11"); //gmail.com
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
@@ -66,18 +71,19 @@ const EmailHtml = () => {
     });
     const result = await response.json();
     if (result.success) {
-      setInputValueName( '');
-      setInputValueText('');
-      setInputValueEmail('');
+      setInputValueName("");
+      setInputValueText("");
+      setInputValueEmail("");
       setEmptyInputEmail(false);
       setEmptyInputText(false);
       setEmptyInputName(false);
       setMsgTrue(!msgTrue);
-      setTimeout( () => {
+      setTimeout(() => {
         setMsgTrue(false);
-      },5000)
+      }, 5000);
     }
   }
+
   return (
     <div className="container-contact d-flex justify-content-center align-items-center">
 
@@ -516,45 +522,45 @@ const EmailHtml = () => {
       <form onSubmit={handleSubmit}
             ref={ref}
             action={async (formData) => {
-              await submit(formData)
-              ref.current?.reset()
+              await submit(formData);
+              ref.current?.reset();
             }}
       >
-        <h1 className="title text-center mb-4">Пишете ми</h1>
+        <h1 className="title text-center mb-4">{t("writeMe")}</h1>
         <br/>
         <div className="form-group position-relative">
           <label htmlFor="formName" className="d-block">
             <i className="icon" data-feather="user"></i>
           </label>
-          <input value={inputValueName} type="text" id="formName" onChange={handleInputChangeName} name='name'
-                 className="form-control form-control-lg thick" placeholder="Име"/>
+          <input value={inputValueName} type="text" id="formName" onChange={handleInputChangeName} name="name"
+                 className="form-control form-control-lg thick" placeholder={t("name")}/>
         </div>
         <br/>
         <div className="form-group position-relative">
           <label htmlFor="formEmail" className="d-block">
             <i className="icon" data-feather="mail"></i>
           </label>
-          <input value={inputValueEmail} type="email" id="formEmail" name='email' onChange={handleInputChangeEmail}
-                 className="form-control form-control-lg thick" placeholder="Емайл"/>
+          <input value={inputValueEmail} type="email" id="formEmail" name="email" onChange={handleInputChangeEmail}
+                 className="form-control form-control-lg thick" placeholder={t("email")}/>
         </div>
         <br/>
         <div className="form-group message">
             <textarea value={inputValueText} onChange={handleInputChangeText} id="formMessage" name="message"
                       className="form-control form-control-lg" rows="7"
-                      placeholder="Съобщение"></textarea>
+                      placeholder={t("sms")}></textarea>
         </div>
         <br/>
         <div className="text-center">
           <button type="submit"
-                  className={(emptyInputName && emptyInputEmail && emptyInputText) ? 'btn btn-primary' : 'disabled-btn'}
-                  tabIndex="-1">Изпрати съобщение
+                  className={(emptyInputName && emptyInputEmail && emptyInputText) ? "btn btn-primary" : "disabled-btn"}
+                  tabIndex="-1">{t("sendSMS")}
           </button>
         </div>
         <br/>
-        {msgTrue && <div className=''>
+        {msgTrue && <div className="">
           <div>
-            <p className='text-success-1'>Благодаря за съобщението!</p>
-            <p className='text-success-2'>Ще Ви върна отговор при първа възможност.</p>
+            <p className="text-success-1">{t("appreciate")}!</p>
+            <p className="text-success-2">{t("respondSMS")}.</p>
           </div>
         </div>}
       </form>
