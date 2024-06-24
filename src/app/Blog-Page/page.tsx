@@ -1,8 +1,22 @@
+"use client";
+
 import React from 'react';
-import BlogHtml from "@/app/Blog-Page/BlogHTML";
-import Navigation from "@/app/Navigation-component/navigation";
 import './blog.scss';
+import dynamic from "next/dynamic";
+
 const Page = () => {
+  const BlogHtml = dynamic(
+    () => import('./BlogHtml'),
+    {ssr: false}
+  );
+  const FooterHTML = dynamic(
+    () => import('../Footer-page/FooterHTML'),
+    {ssr: false}
+  );
+  const Navigation = dynamic(
+    () => import('../Navigation-component/navigation'),
+    {ssr: false}
+  );
   return (
     <div className="blog-page">
       <div
@@ -10,6 +24,7 @@ const Page = () => {
         <Navigation/>
       </div>
       <BlogHtml/>
+      <FooterHTML/>
     </div>
   );
 };

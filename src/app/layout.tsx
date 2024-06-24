@@ -4,8 +4,7 @@ import React from "react";
 import './typography.scss';
 import './reusable-styles.scss';
 import Providers from "@/app/SignInButton/Providers/Provider";
-
-// import '../i18n'
+import '../i18n';
 
 const inter = Inter({subsets: ["latin"]});
 

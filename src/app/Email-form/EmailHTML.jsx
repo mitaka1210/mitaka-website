@@ -21,7 +21,12 @@ const EmailHtml = () => {
     setMsgTrue(!msgTrue);
   };
   const handleInputChangeEmail = (event) => {
-    if (event.target.value !== "") {
+    // Проста валидация на имейл адреса
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(event.target.value)) {
+      emptyInputEmail = false;
+      setEmptyInputEmail(emptyInputEmail);
+    } else if (event.target.value !== "") {
       emptyInputEmail = true;
       setEmptyInputEmail(emptyInputEmail);
     } else {
@@ -41,7 +46,10 @@ const EmailHtml = () => {
     setInputValueName(event.target.value);
   };
   const handleInputChangeText = (event) => {
-    if (event.target.value !== "") {
+    if (event.target.value !== "" && event.target.value.length > 20) {
+      emptyInputText = true;
+      setEmptyInputText(emptyInputText);
+    } else if (event.target.value.trim().length === 0) {
       emptyInputText = true;
       setEmptyInputText(emptyInputText);
     } else {
@@ -60,27 +68,30 @@ const EmailHtml = () => {
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
+    if (object.honeypot !== "") {
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json"
-      },
-      body: json
-    });
-    const result = await response.json();
-    if (result.success) {
-      setInputValueName("");
-      setInputValueText("");
-      setInputValueEmail("");
-      setEmptyInputEmail(false);
-      setEmptyInputText(false);
-      setEmptyInputName(false);
-      setMsgTrue(!msgTrue);
-      setTimeout(() => {
-        setMsgTrue(false);
-      }, 5000);
+    } else {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      });
+      const result = await response.json();
+      if (result.success) {
+        setInputValueName("");
+        setInputValueText("");
+        setInputValueEmail("");
+        setEmptyInputEmail(false);
+        setEmptyInputText(false);
+        setEmptyInputName(false);
+        setMsgTrue(!msgTrue);
+        setTimeout(() => {
+          setMsgTrue(false);
+        }, 5000);
+      }
     }
   }
 
@@ -551,6 +562,7 @@ const EmailHtml = () => {
         </div>
         <br/>
         <div className="text-center">
+          <input type="text" name="honeypot" style={{display: "none"}}/>
           <button type="submit"
                   className={(emptyInputName && emptyInputEmail && emptyInputText) ? "btn btn-primary" : "disabled-btn"}
                   tabIndex="-1">{t("sendSMS")}

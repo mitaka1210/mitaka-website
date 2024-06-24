@@ -190,14 +190,14 @@
   width: 30px;
   height: 30px;
   position: relative;
-  transform: translate(11px, -51px);
+  transform: translate(11px, -30px);
 }
 
 .svg-scss {
   width: 50px;
   height: 50px;
   position: relative;
-  transform: translate(7px, -38px);
+  transform: translate(7px, -18px);
 }
 
 .svg-gulp {
@@ -211,12 +211,10 @@
   width: 30px;
   height: 30px;
   position: relative;
-  transform: translate(10px, -55px);
+  transform: translate(10px, -25px);
 }
 
 .svg-angular-js {
-  width: 30px;
-  height: 30px;
   position: relative;
   transform: translate(-9px, -21px);
 
@@ -230,14 +228,14 @@
   width: 50px;
   height: 50px;
   position: relative;
-  transform: translate(10px, -38px);
+  transform: translate(10px, -16px);
 }
 
 .svg-docker {
   width: 50px;
   height: 50px;
   position: relative;
-  transform: translate(10px, -38px);
+  transform: translate(10px, -16px);
 }
 
 .svg-js {
@@ -254,23 +252,29 @@
 
 .svg-rxjs {
   position: relative;
-  width: 50px;
-  height: 50px;
-  transform: translate(10px, -38px);
+  transform: translate(10px, -25px);
 }
 
 .svg-node {
   position: relative;
   width: 50px;
   height: 50px;
-  transform: translate(10px, -38px);
+  transform: translate(10px, -7px);
 }
 
 .svg-express {
   position: relative;
-  width: 50px;
-  height: 50px;
-  transform: translate(7px, -28px);
+  transform: translate(-3px, -31px);
+
+  & img {
+    max-width: 52px;
+    max-height: 52px;
+  }
+}
+
+.svg-dbeaver {
+  position: relative;
+  transform: translate(6px, -21px);
 
   & img {
     max-width: 52px;

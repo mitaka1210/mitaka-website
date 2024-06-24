@@ -1,13 +1,23 @@
 'use client'
 
 import React from 'react';
-import Navigation from "@/app/Navigation-component/navigation";
-import FooterHtml from "@/app/Footer-page/FooterHTML";
-import SkillPageHtml from "@/app/Skills-page/SkillPageHTML";
 import './skill.scss';
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
+import dynamic from "next/dynamic";
 
 const Page = () => {
+  const SkillPageHtml = dynamic(
+    () => import('./SkillPageHtml'),
+    {ssr: false}
+  );
+  const FooterHTML = dynamic(
+    () => import('../Footer-page/FooterHTML'),
+    {ssr: false}
+  );
+  const Navigation = dynamic(
+    () => import('../Navigation-component/navigation'),
+    {ssr: false}
+  );
   const size = useWindowSize();
   return (
     <div className="projects-page">
@@ -15,7 +25,7 @@ const Page = () => {
         <Navigation/>
       </div>
       <SkillPageHtml size={size}/>
-      <FooterHtml/>
+      <FooterHTML/>
     </div>
   );
 };

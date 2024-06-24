@@ -20,6 +20,8 @@
     "@mui/material": "^5.15.19",
     "@react-oauth/google": "^0.12.1",
     "autotyping": "^1.2.6",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-xhr-backend": "^3.2.2",
@@ -45,5 +47,8 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "sideEffects": [
+    "./src/services/i18n.js"
+  ]
 }

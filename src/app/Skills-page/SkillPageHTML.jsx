@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import StarsIcon from "@mui/icons-material/Stars";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import HtmlIcon from "@mui/icons-material/Html";
@@ -14,12 +13,15 @@ import Express from "../../../assets/images/express-109.svg";
 import dbeaver from "../../../assets/images/icons8-dbeaver.svg";
 import MobileSkillsHtml from "@/app/mobileSkills/mobileSkillsHTML";
 import "../typography.scss";
+import {useTranslation} from "react-i18next";
 
 const SkillPageHtml = ({size}) => {
+  // imported from library
+  const {t} = useTranslation();
   return (
     <div>
       <div className="how-can-help margin-10 text-align-center flow-text">
-        <h2>В кои области бих могъл да ви помогна</h2>
+        <h2>{t("helpYou")}</h2>
       </div>
       {
         size.width < 630 ? <div>
@@ -86,11 +88,11 @@ const SkillPageHtml = ({size}) => {
                   </div>
                   <div className="box-back">
                     <div className="box-text">
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                      <i className="fas fa-star-half-alt"></i>
+                      {/*<i className="fa fa-star"></i>*/}
+                      {/*<i className="fa fa-star"></i>*/}
+                      {/*<i className="fa fa-star"></i>*/}
+                      {/*<i className="fa fa-star"></i>*/}
+                      {/*<i className="fas fa-star-half-alt"></i>*/}
                     </div>
                   </div>
                 </div>
@@ -98,18 +100,18 @@ const SkillPageHtml = ({size}) => {
                   <span className="tooltip">Dbeaver</span>
                   <div className="box-face">
                     <div className="box-text">
-                      <div className="svg-express">
+                      <div className="svg-dbeaver">
                         <Image src={dbeaver} alt="dbeaver"/>
                       </div>
                     </div>
                   </div>
                   <div className="box-back">
                     <div className="box-text">
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                      <i className="far fa-star"></i>
+                      {/*<i className="fa fa-star"></i>*/}
+                      {/*<i className="fa fa-star"></i>*/}
+                      {/*<i className="fa fa-star"></i>*/}
+                      {/*<i className="fa fa-star"></i>*/}
+                      {/*<i className="far fa-star"></i>*/}
                     </div>
                   </div>
                 </div>
@@ -248,10 +250,10 @@ const SkillPageHtml = ({size}) => {
                   </div>
                   <div className="box-back">
                     <div className="box-text">
-                      <StarsIcon/>
-                      <StarsIcon/>
-                      <StarsIcon/>
-                      <StarsIcon/>
+                      {/*<StarsIcon/>*/}
+                      {/*<StarsIcon/>*/}
+                      {/*<StarsIcon/>*/}
+                      {/*<StarsIcon/>*/}
                     </div>
                   </div>
                 </div>
@@ -398,10 +400,10 @@ const SkillPageHtml = ({size}) => {
                   </div>
                   <div className="box-back">
                     <div className="box-text">
-                      <StarsIcon/>
-                      <StarsIcon/>
-                      <StarsIcon/>
-                      <StarsIcon/>
+                      {/*<StarsIcon/>*/}
+                      {/*<StarsIcon/>*/}
+                      {/*<StarsIcon/>*/}
+                      {/*<StarsIcon/>*/}
                     </div>
                   </div>
                 </div>
@@ -420,10 +422,10 @@ const SkillPageHtml = ({size}) => {
                   </div>
                   <div className="box-back">
                     <div className="box-text">
-                      <StarsIcon/>
-                      <StarsIcon/>
-                      <StarsIcon/>
-                      <StarsIcon/>
+                      {/*<StarsIcon/>*/}
+                      {/*<StarsIcon/>*/}
+                      {/*<StarsIcon/>*/}
+                      {/*<StarsIcon/>*/}
                     </div>
                   </div>
                 </div>

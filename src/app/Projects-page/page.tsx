@@ -1,18 +1,28 @@
 'use client'
 
 import React from 'react';
-import ProjectsHtml from "@/app/Projects-page/ProjectsHTML";
-import FooterHtml from "@/app/Footer-page/FooterHTML";
-import Navigation from "@/app/Navigation-component/navigation";
+import dynamic from "next/dynamic";
 
 const ProjectsPage = () => {
+  const ProjectsHtml = dynamic(
+    () => import('./ProjectsHtml'),
+    {ssr: false}
+  );
+  const FooterHTML = dynamic(
+    () => import('../Footer-page/FooterHTML'),
+    {ssr: false}
+  );
+  const Navigation = dynamic(
+    () => import('../Navigation-component/navigation'),
+    {ssr: false}
+  );
   return (
     <div className="projects-page">
       <div className="projects-nav flex-horizontal-container text-align-center justify-content-end align-items-center">
-      <Navigation/>
+        <Navigation/>
       </div>
       <ProjectsHtml/>
-      <FooterHtml/>
+      <FooterHTML/>
     </div>
   );
 };
