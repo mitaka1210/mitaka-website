@@ -6,11 +6,11 @@ import dynamic from "next/dynamic";
 
 const Page = () => {
   const BlogHtml = dynamic(
-    () => import('./BlogHtml'),
+    () => import('./BlogHTML'),
     {ssr: false}
   );
   const FooterHTML = dynamic(
-    () => import('../Footer-page/FooterHTML'),
+    () => import('../Footer-page/page'),
     {ssr: false}
   );
   const Navigation = dynamic(

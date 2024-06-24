@@ -5,11 +5,11 @@ import dynamic from "next/dynamic";
 
 const ProjectsPage = () => {
   const ProjectsHtml = dynamic(
-    () => import('./ProjectsHtml'),
+    () => import('./ProjectsHTML'),
     {ssr: false}
   );
   const FooterHTML = dynamic(
-    () => import('../Footer-page/FooterHTML'),
+    () => import('../Footer-page/page'),
     {ssr: false}
   );
   const Navigation = dynamic(

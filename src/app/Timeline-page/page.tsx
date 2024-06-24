@@ -5,11 +5,11 @@ import dynamic from "next/dynamic";
 
 const Page = () => {
   const TimeLineHtml = dynamic(
-    () => import('./TimeLineHtml'),
+    () => import('./TimeLineHTML'),
     {ssr: false}
   );
   const FooterHTML = dynamic(
-    () => import('../Footer-page/FooterHTML'),
+    () => import('../Footer-page/page'),
     {ssr: false}
   );
   const Navigation = dynamic(

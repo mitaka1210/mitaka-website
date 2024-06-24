@@ -7,11 +7,11 @@ import dynamic from "next/dynamic";
 
 const Page = () => {
   const SkillPageHtml = dynamic(
-    () => import('./SkillPageHtml'),
+    () => import('./SkillPageHTML'),
     {ssr: false}
   );
   const FooterHTML = dynamic(
-    () => import('../Footer-page/FooterHTML'),
+    () => import('../Footer-page/page'),
     {ssr: false}
   );
   const Navigation = dynamic(
