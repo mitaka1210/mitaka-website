@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import XIcon from "@mui/icons-material/X";
 import Image from "next/image";

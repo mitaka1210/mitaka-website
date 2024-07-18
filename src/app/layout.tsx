@@ -5,6 +5,8 @@ import './typography.scss';
 import './reusable-styles.scss';
 import Providers from "@/app/SignInButton/Providers/Provider";
 import '../i18n';
+import {Provider} from "react-redux";
+import store from "@/store/storeState/store";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -18,7 +20,9 @@ export default function RootLayout({children,}: Readonly<{ children: React.React
     <html lang="bg">
     <body className={inter.className}>
     <Providers>
-      {children}
+      <Provider store={store}>
+        {children}
+      </Provider>
     </Providers>
     </body>
     </html>
