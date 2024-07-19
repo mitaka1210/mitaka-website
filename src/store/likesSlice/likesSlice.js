@@ -1,12 +1,16 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import getTodo from "../../configurationAPI/api-endpoints";
 import {fetchTodo} from "../todoSlice/todoSlice";
+import axios from "axios";
 // getAll likesDislikes from server
 export const fetchLikesDislikes = createAsyncThunk("fetchLikesDislikes", async (id) => {
-  return fetch(`${getTodo.GET_LIKES_DISLIKES}/${id}`)
-    .then(response => response.json())
-    .then(json => {
-      return json;
+  console.log("pesho", id);
+  const url = "api/getLikeDislike";
+  return await axios.get(`${url}/:${id}`)
+    .then(response => {
+      let a = response.data;
+      console.log(a);
+    }).catch(function (error) {
+      console.log(error);
     });
 });
 

@@ -15,8 +15,8 @@ export async function GET() {
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM article');
-    console.log('pesho', result.rows);
-    return NextResponse.json(result.rows);
+    let articles: ArticlesData = result.rows;
+    return NextResponse.json(articles);
   } catch (error) {
     return NextResponse.json({error: 'Failed to fetch data  '});
   }

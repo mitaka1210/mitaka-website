@@ -5,11 +5,13 @@ import {useRouter} from "next/navigation";
 import "./cardAquariums.scss";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchTodo} from "@/store/todoSlice/todoSlice";
+import {DataState} from "@/app/interfaceTS/getCardInfoTS";
 
 const CardAquariumsHTML = () => {
+
   const router = useRouter();
   let todoId = 1000;
-  let todosData = [];
+  let cardInfo = DataState;
   const dispatch = useDispatch();
   const status = useSelector((state) => state.todo.status);
   const error = useSelector((state) => state.todo.error);
@@ -28,9 +30,9 @@ const CardAquariumsHTML = () => {
   const [data, setData] = useState(null);
   useEffect(() => {
     getTodos();
-  }, [status, dispatch()]);
+  }, [status]);
   const storeData = useSelector((state) => {
-    todosData = state.todo;
+    cardInfo = state.todo;
   });
   const redirectPage = (header, content, date, time, images, todoId) => {
     // Добавете query parameters към URL
@@ -48,14 +50,15 @@ const CardAquariumsHTML = () => {
       console.log("peshoDARTA", status, data);
     }
   };
-  const handleClick = () => {
+  const handleClick = (id) => {
+    // const {id} = router.query;
     // Проверете дали използвате низове за query параметрите
-    router.push("/ReadArticles");
+    router.push("/ReadArticles" + `/?id=${id}`);
   };
   return (
     <div className="card-main">
       {
-        cardAquariums.map((card, index) => {
+        cardInfo.data.map((card, index) => {
           return <div className="container-card" key={index}>
             <div className="card">
               <div className="image-wrapper">
@@ -68,7 +71,7 @@ const CardAquariumsHTML = () => {
                 <p>{card.description.substring(0, 150) + " ..."}</p>
               </div>
               <button className="card-read"
-                      onClick={handleClick}> Прочети
+                      onClick={() => handleClick(card.todoId)}> Прочети
                 повече
               </button>
               {/*<button className="card-read"*/}

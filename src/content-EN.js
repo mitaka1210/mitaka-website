@@ -36,13 +36,13 @@ export const accordianEN = [
   {
     title: "Programming: I am constantly striving to improve my programming skills.",
     paras: [
-      "Programming is like magic to me, something that only a few people understand."
+      "Programming is Like magic to me, something that only a few people understand."
     ],
   },
   {
     title: "Reading books is a crucial part of my everyday life.",
     paras: [
-      "I like to read books and then put what I have read into practice."
+      "I Like to read books and then put what I have read into practice."
     ],
   },
   {

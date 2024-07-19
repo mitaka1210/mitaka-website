@@ -2,16 +2,10 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 
 export const fetchTodo = createAsyncThunk("fetchTodo", async () => {
-  // return fetch(api.GET_ALL_ARTICLES)
-  //   .then(response => response.json())
-  //   .then(json => {
-  //     return json;
-  //   });
-  fetch("api/getArticles")
+  return fetch("api/getArticles")
     .then((res) => res.json())
-    .then((data) => {
-      console.log("pesho", data);
-      return data;
+    .then((json) => {
+      return json;
       // setData(data);
     });
 });
@@ -23,7 +17,7 @@ const fetchImage = (file, path) => {
   }
 };
 
-export const todoSlice = createSlice({
+const todoSlice = createSlice({
   name: "todo",
   initialState: {
     isLoading: false,
