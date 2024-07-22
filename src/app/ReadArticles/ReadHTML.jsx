@@ -63,7 +63,7 @@ const ReadHtml = () => {
                           className="article-content">{article.description}</p>
                       </div>
                     </article>
-                    <LikeHTML id={article.todoId}/>
+                    <LikeHTML propertyId={article.todoId}/>
                     {/*<hr className="add-line"/>*/}
                     {/*<LeaveComments articleId={todoId}/>*/}
                     {/*<AddComment articleId={todoId}/>*/}

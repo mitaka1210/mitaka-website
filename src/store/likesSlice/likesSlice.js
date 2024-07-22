@@ -4,8 +4,8 @@ import axios from "axios";
 // getAll likesDislikes from server
 export const fetchLikesDislikes = createAsyncThunk("fetchLikesDislikes", async (id) => {
   console.log("pesho", id);
-  const url = "api/getLikeDislike";
-  return await axios.get(`${url}/:${id}`)
+  const url = "/api/property";
+  return await axios.get(`${url}/${id}`)
     .then(response => {
       let a = response.data;
       console.log(a);

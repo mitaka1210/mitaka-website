@@ -2,12 +2,15 @@ import pool from "../../../database/db";
 
 export default async (req, res) => {
   const {id} = req.query;
+  console.log("pesho", id);
 
   if (req.method === "GET") {
     try {
       // Връзка към базата данни и изпълнение на заявката
       const client = await pool.connect();
       const result = await client.query("SELECT * FROM articles WHERE id = $1", [id]);
+
+      console.log("pesho", result);
       client.release();
 
       if (result.rows.length === 0) {
