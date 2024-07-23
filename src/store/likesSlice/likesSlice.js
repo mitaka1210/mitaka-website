@@ -4,13 +4,11 @@ import axios from "axios";
 // getAll likesDislikes from server
 export const fetchLikesDislikes = createAsyncThunk("fetchLikesDislikes", async (id) => {
   console.log("pesho", id);
-  const url = "/api/property";
-  return await axios.get(`${url}/${id}`)
-    .then(response => {
-      let a = response.data;
-      console.log(a);
-    }).catch(function (error) {
-      console.log(error);
+  return fetch(`api/getArticle?${id}`)
+    .then((res) => res.json())
+    .then((json) => {
+      return json;
+      // setData(data);
     });
 });
 
@@ -24,7 +22,12 @@ const initialState = {
 
 const likesSlice = createSlice({
   name: "likesDislikes",
-  initialState,
+  initialState: {
+    isLoading: false,
+    data: [],
+    error: false,
+    status: "idle"
+  },
   reducers: {
     incrementLike: (state) => {
       state.likes += 1;

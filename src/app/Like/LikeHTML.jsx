@@ -1,31 +1,42 @@
 "use client";
 
 import React, {useEffect, useState} from "react";
-
-const LikeHTML = ({propertyId}) => {
+import {useDispatch, useSelector} from "react-redux";
+import {fetchLikesDislikes} from "@/store/likesSlice/likesSlice";
+const LikeHTML = ({id}) => {
+  console.log("pesho", id);
+  let cardIdInfo = [];
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
+  let err = "";
+  let content;
+  const dispatch = useDispatch();
+  const status = useSelector((state) => state.likes.status);
+  const error = useSelector((state) => state.likes.error);
+// Create a new URLSearchParams object
+const params = new URLSearchParams({
+  'id': id
+});
+  const storeData = useSelector((state) => {
+    cardIdInfo = state.todo;
+  });
   useEffect(() => {
-    const fetchProperty = async () => {
-      try {
-        const response = await fetch(`api/getArticle/${propertyId}`);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        setProperty(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+    getTodos();
+  }, [status]);
+  const getTodos = () => {
+    if (status === "idle") {
+      dispatch(fetchLikesDislikes(params));
+    } else if (status === "loading") {
+      content = <div>Loading...</div>;
+    } else if (status === "succeeded") {
+      console.log("pesho", cardIdInfo);
 
-    fetchProperty();
-  }, [propertyId]);
-
+    } else if (status === "failed") {
+      content = <div>{error}</div>;
+    } else {
+      console.log("peshoDARTA", status, data);
+    }
+  };
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
