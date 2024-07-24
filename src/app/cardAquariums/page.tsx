@@ -21,7 +21,9 @@ const Page = () => {
     <div>
       <Navigation/>
       <CardAquariumsHtml/>
-      <FooterHTML/>
+      <div className="fotter-css">
+        <FooterHTML/>
+      </div>
     </div>
   );
 };

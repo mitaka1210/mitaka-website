@@ -4,8 +4,8 @@ import React, {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import "./cardAquariums.scss";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchTodo} from "@/store/todoSlice/todoSlice";
 import {DataState} from "@/app/interfaceTS/getCardInfoTS";
+import {fetchTodo} from "@/store/todoSlice/todoSlice.js";
 
 const CardAquariumsHTML = () => {
 
@@ -13,18 +13,11 @@ const CardAquariumsHTML = () => {
   let todoId = 1000;
   let cardInfo = DataState;
   const dispatch = useDispatch();
+  const [showInfo, setShowInfo] = useState(false);
   const status = useSelector((state) => state.todo.status);
   const error = useSelector((state) => state.todo.error);
   let err = "";
   let content;
-  let cardAquariums = [
-    {
-      images: "https://images.unsplash.com/photo-1667680139900-44882fc7b625?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      header: "Mitaka",
-      date: "2021-09-02",
-      description: "Mitaka is a city located in the western portion of Tokyo Metropolis, Japan. It is a part of the Tama Area of Tokyo. As of 1 February 2016, the city had an estimated population of 189,168, and a population density of 11,520 persons per km². Its total area is 16.42 square kilometres.",
-    }
-  ];
 
 
   const [data, setData] = useState(null);
@@ -44,6 +37,7 @@ const CardAquariumsHTML = () => {
     } else if (status === "loading") {
       content = <div>Loading...</div>;
     } else if (status === "succeeded") {
+      console.log("pesho", cardInfo);
     } else if (status === "failed") {
       content = <div>{error}</div>;
     } else {
@@ -54,6 +48,13 @@ const CardAquariumsHTML = () => {
     // const {id} = router.query;
     // Проверете дали използвате низове за query параметрите
     router.push("/ReadArticles" + `/?id=${id}`);
+  };
+  const handleClickShowText = (id) => {
+    for (let i = 0; i < cardInfo.data.length; i++) {
+      if (id === cardInfo.data[i].todoId) {
+        setShowInfo(!showInfo);
+      }
+    }
   };
   return (
     <div className="card-main">
@@ -66,7 +67,7 @@ const CardAquariumsHTML = () => {
                      src={card.images === null ? mitaka : card.images}/>
               </div>
               <div className="content">
-                <h2>{card.header}</h2>
+                <h6>{card.header}</h6>
                 <h5>{card.date}</h5>
                 <p>{card.description.substring(0, 150) + " ..."}</p>
               </div>

@@ -12,7 +12,7 @@ $card-transition: 0.5s ease-in-out;
   flex-flow: row wrap !important;
   align-items: center !important;
   justify-content: center !important;
-  height: 100vh;
+  overflow: auto;
 }
 
 .container-card {
@@ -92,6 +92,11 @@ $card-transition: 0.5s ease-in-out;
 
   .card-read {
     display: none;
+  }
+
+  .set-footer-bottom {
+    position: absolute;
+    bottom: 0;
   }
 
 }

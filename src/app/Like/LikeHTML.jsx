@@ -3,6 +3,8 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchLikesDislikes} from "@/store/likesSlice/likesSlice";
+import LikeHeart from "@/app/likeHeart/likeHeart.js";
+
 const LikeHTML = ({id}) => {
   console.log("pesho", id);
   let cardIdInfo = [];
@@ -14,9 +16,9 @@ const LikeHTML = ({id}) => {
   const status = useSelector((state) => state.likes.status);
   const error = useSelector((state) => state.likes.error);
 // Create a new URLSearchParams object
-const params = new URLSearchParams({
-  'id': id
-});
+  const params = new URLSearchParams({
+    "id": id
+  });
   const storeData = useSelector((state) => {
     cardIdInfo = state.todo;
   });
@@ -42,10 +44,23 @@ const params = new URLSearchParams({
 
   return (
     <div>
-      <h1>Property Details</h1>
-      {property && (
-        <pre>{JSON.stringify(property, null, 2)}</pre>
-      )}
+      {
+        likesData.isLoading ? <div><h1>Loading........</h1></div> :
+          <div className="likeDislikeBtn">
+            <button className="removeBgrBorder" onClick={handleLike} disabled={isLiked || isDisliked}>
+              <LikeHeart/>
+              <span>{likesData.data.likes}</span>
+            </button>
+            {/*<button onClick={handleLike} disabled={isLiked || isDisliked}>👍 Харесвам <span>{likesData.data.likes}</span>*/}
+            {/*</button>*/}
+            {/*<button className="removeBgrBorder" onClick={handleDislike} disabled={isLiked || isDisliked}>*/}
+            {/*  <DisLikeheart/>*/}
+            {/*  <span>{likesData.data.dislikes}</span>*/}
+            {/*</button>*/}
+            {/*<button onClick={handleDislike} disabled={isLiked || isDisliked}>👎 Не*/}
+            {/*  харесвам <span>{likesData.data.dislikes}</span></button>*/}
+          </div>
+      }
     </div>
   );
 };
