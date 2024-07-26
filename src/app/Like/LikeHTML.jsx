@@ -8,7 +8,6 @@ import axios from "axios";
 import DisLikeheart from "@/app/dislikeHeart/disLikeHTML.jsx";
 
 const LikeHTML = ({id}) => {
-  console.log("pesho", id);
   let likesData = [];
   const {likes, dislikes} = useSelector(state => state.likes);
   const [isLiked, setIsLiked] = useState(false);
@@ -33,19 +32,16 @@ const LikeHTML = ({id}) => {
     } else if (status === "loading") {
       content = <div>Loading...</div>;
     } else if (status === "succeeded") {
-      console.log("pesho", likesData);
-
     } else if (status === "failed") {
       content = <div>{error}</div>;
     } else {
-      console.log("peshoDARTA", status, data);
     }
   };
   const handleLike = async () => {
     dispatch(incrementLike());
     setIsLiked(true);
     try {
-      await axios.post("/api/like", {likes: likes, id: id});
+      await axios.post("/api/like", {likes: likesData.data.likes, id: id});
     } catch (error) {
       console.error("Error liking the article", error);
     }
@@ -54,10 +50,17 @@ const LikeHTML = ({id}) => {
     dispatch(incrementDislike());
     setIsDisliked(true);
     try {
-      await axios.post("/api/dislike", {dislikes: dislikes, id: id});
+      await axios.post("/api/dislike", {dislikes: likesData.data.dislikes, id: id});
     } catch (error) {
       console.error("Error disliking the article", error);
     }
+  };
+  const [color, setColor] = useState("white"); // Начален цвят на SVG пътя
+
+  const handleClick = () => {
+    console.log("pesho");
+    // Промяна на цвета при клик
+    setColor(color === "black" ? "blue" : "red");
   };
   return (
     <div>
@@ -65,7 +68,7 @@ const LikeHTML = ({id}) => {
         likesData.isLoading ? <div><h1>Loading........</h1></div> :
           <div className="likeDislikeBtn">
             <button className="removeBgrBorder" onClick={handleLike} disabled={isLiked || isDisliked}>
-              <LikeHeart/>
+              <LikeHeart onClick={handleClick}/>
               <span>{likesData.data.likes}</span>
             </button>
             {/*<button onClick={handleLike} disabled={isLiked || isDisliked}>👍 Харесвам <span>{likesData.data.likes}</span>*/}

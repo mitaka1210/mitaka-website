@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 import {useTranslation} from "react-i18next";
 import Appbar from "@/app/SignInButton/AppBar/AppBar";
@@ -23,7 +23,9 @@ const MenuLabel = styled.label`
   box-shadow: 0 1rem 3rem rgba(182, 237, 200, 0.3);
   text-align: center;
 `;
-const NavBackground = styled.div`
+const NavBackground = styled.div.attrs(props => ({
+  clicked: props.clicked ? true : false,
+}))`
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
@@ -39,7 +41,9 @@ const NavBackground = styled.div`
   transition: transform 0.8s;
 `;
 
-const Icon = styled.span`
+const Icon = styled.span.attrs(props => ({
+  clicked: props.clicked ? true : false,
+}))`
   position: relative;
   background-color: ${(props) => (props.clicked ? "transparent" : "black")};
   width: 3rem;
@@ -126,7 +130,7 @@ const ItemLink = styled.a`
 
 function HamburgerMenu() {
   const {t} = useTranslation();
-  const [click, setClick] = React.useState(false);
+  const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   return (
     <>

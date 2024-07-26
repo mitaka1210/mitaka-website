@@ -10,7 +10,7 @@ export async function POST(req: any, res: any) {
   try {
     await transferTodosToArticles();
     const client = await pool.connect();
-    const result = await client.query("UPDATE articles SET dislikes = $1 + 1 WHERE id = $2", [dislikes, id]);
+    const result = await client.query("UPDATE articles SET dislikes = $1 WHERE id = $2 RETURNING *", [dislikes, id]);
     await client.end();
     res.status(200).json({success: true, data: result.rows[0]});
   } catch (error) {

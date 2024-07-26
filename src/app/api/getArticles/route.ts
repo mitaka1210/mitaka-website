@@ -12,6 +12,7 @@ type ArticlesData = {
 };
 
 export async function GET() {
+  // изчакваме req.json() да се изпълни и да ни върне body
   try {
     const client = await pool.connect();
     const result = await client.query('SELECT * FROM article');

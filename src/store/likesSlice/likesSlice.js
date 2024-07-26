@@ -12,20 +12,15 @@ export const fetchLikesDislikes = createAsyncThunk("fetchLikesDislikes", async (
 
 
 const initialState = {
-  likes: 0,
-  dislikes: 0,
+  isLoading: false,
+  data: {},
   error: false,
   status: "idle"
 };
 
 const likesSlice = createSlice({
   name: "likesDislikes",
-  initialState: {
-    isLoading: false,
-    data: [],
-    error: false,
-    status: "idle"
-  },
+  initialState: initialState,
   reducers: {
     resetState: () => initialState,
     incrementLike: (state) => {
@@ -41,15 +36,11 @@ const likesSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(fetchLikesDislikes.fulfilled, (state, action) => {
-      let likesDislikesArr = [];
+      let likesDislikesArr = {};
       state.isLoading = false;
       state.status = "succeeded";
-      likesDislikesArr.push({
-        tour_id: action.payload[0].id,
-        likes: action.payload[0].likes,
-        dislikes: action.payload[0].dislikes,
-      });
-      state.data = likesDislikesArr[0];
+      likesDislikesArr = {...action.payload[0]};
+      state.data = likesDislikesArr;
     });
     builder.addCase(fetchTodo.rejected, (state, action) => {
       state.status = "failed";

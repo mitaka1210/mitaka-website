@@ -1,13 +1,14 @@
 "use client";
 import React, {useEffect} from "react";
-import {useSearchParams} from "next/navigation";
+import {useRouter, useSearchParams} from "next/navigation";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchTodo} from "@/store/todoSlice/todoSlice";
 import LikeHTML from "@/app/Like/LikeHTML";
+import {resetState} from "@/store/likesSlice/likesSlice.js";
 
 const ReadHtml = () => {
-  const [show, setShow] = React.useState(false);
   const searchParams = useSearchParams();
+  const router = useRouter();
   const dispatch = useDispatch();
   const status = useSelector((state) => state.todo.status);
   const error = useSelector((state) => state.todo.error);
@@ -28,26 +29,30 @@ const ReadHtml = () => {
     } else if (status === "loading") {
       content = <div>Loading...</div>;
     } else if (status === "succeeded") {
-      console.log("pesho", cardIdInfo);
       showDataForId();
     } else if (status === "failed") {
       content = <div>{error}</div>;
     } else {
-      console.log("peshoDARTA", status, data);
     }
   };
   const showDataForId = () => {
     cardIdInfo.data.find((item) => {
       if (item.todoId === Number(id)) {
         findCard.push(item);
-        console.log("pesho", findCard);
       }
     });
+  };
+  const goBack = () => {
+    dispatch(resetState());
+    router.push("/cardAquariums"); // Връщане назад с 1 стъпка в историята
   };
   return (
     <div className="read">
       {
         cardIdInfo ? <div>
+          <div className="read-back-btn">
+            <button className="btn btn-outline-secondary" onClick={goBack}>back</button>
+          </div>
           <div>
             {
               cardIdInfo.data.map((article, index) => {

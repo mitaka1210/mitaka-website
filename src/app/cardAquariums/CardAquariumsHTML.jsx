@@ -37,11 +37,9 @@ const CardAquariumsHTML = () => {
     } else if (status === "loading") {
       content = <div>Loading...</div>;
     } else if (status === "succeeded") {
-      console.log("pesho", cardInfo);
     } else if (status === "failed") {
       content = <div>{error}</div>;
     } else {
-      console.log("peshoDARTA", status, data);
     }
   };
   const handleClick = (id) => {
