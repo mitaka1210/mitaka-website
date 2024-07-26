@@ -1,9 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {fetchTodo} from "../todoSlice/todoSlice";
-import axios from "axios";
 // getAll likesDislikes from server
 export const fetchLikesDislikes = createAsyncThunk("fetchLikesDislikes", async (id) => {
-  console.log("pesho", id);
   return fetch(`api/getArticle?${id}`)
     .then((res) => res.json())
     .then((json) => {
@@ -29,11 +27,12 @@ const likesSlice = createSlice({
     status: "idle"
   },
   reducers: {
+    resetState: () => initialState,
     incrementLike: (state) => {
-      state.likes += 1;
+      state.data.likes += 1;
     },
     incrementDislike: (state) => {
-      state.dislikes += 1;
+      state.data.dislikes += 1;
     },
   },
   extraReducers: builder => {
@@ -46,9 +45,9 @@ const likesSlice = createSlice({
       state.isLoading = false;
       state.status = "succeeded";
       likesDislikesArr.push({
-        tour_id: action.payload.id,
-        likes: action.payload.likes,
-        dislikes: action.payload.dislikes,
+        tour_id: action.payload[0].id,
+        likes: action.payload[0].likes,
+        dislikes: action.payload[0].dislikes,
       });
       state.data = likesDislikesArr[0];
     });
@@ -60,6 +59,6 @@ const likesSlice = createSlice({
   }
 });
 
-export const {incrementLike, incrementDislike} = likesSlice.actions;
+export const {incrementLike, resetState, incrementDislike} = likesSlice.actions;
 
 export default likesSlice.reducer;

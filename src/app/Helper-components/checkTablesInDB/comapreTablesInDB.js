@@ -5,6 +5,8 @@ export const transferTodosToArticles = async () => {
     // Стъпка 1: Извличане на всички записи от `todos`
     const allArticle = await pool.query("SELECT * FROM article");
     const article = await pool.query("SELECT * FROM articles");
+    // console.log("pesho allArticle", allArticle.rows);
+    // console.log("pesho article", article.rows);
     // Стъпка 2 и 3: Вмъкване на данни в `articles`
     if (allArticle.rows.length !== article.rows.length) {
       // Начало на транзакция

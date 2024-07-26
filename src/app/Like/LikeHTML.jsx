@@ -2,15 +2,17 @@
 
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchLikesDislikes} from "@/store/likesSlice/likesSlice";
+import {fetchLikesDislikes, incrementDislike, incrementLike} from "@/store/likesSlice/likesSlice";
 import LikeHeart from "@/app/likeHeart/likeHeart.js";
+import axios from "axios";
+import DisLikeheart from "@/app/dislikeHeart/disLikeHTML.jsx";
 
 const LikeHTML = ({id}) => {
   console.log("pesho", id);
-  let cardIdInfo = [];
-  const [property, setProperty] = useState(null);
-  const [loading, setLoading] = useState(true);
-  let err = "";
+  let likesData = [];
+  const {likes, dislikes} = useSelector(state => state.likes);
+  const [isLiked, setIsLiked] = useState(false);
+  const [isDisliked, setIsDisliked] = useState(false);
   let content;
   const dispatch = useDispatch();
   const status = useSelector((state) => state.likes.status);
@@ -20,7 +22,7 @@ const LikeHTML = ({id}) => {
     "id": id
   });
   const storeData = useSelector((state) => {
-    cardIdInfo = state.todo;
+    likesData = state.likes;
   });
   useEffect(() => {
     getTodos();
@@ -31,7 +33,7 @@ const LikeHTML = ({id}) => {
     } else if (status === "loading") {
       content = <div>Loading...</div>;
     } else if (status === "succeeded") {
-      console.log("pesho", cardIdInfo);
+      console.log("pesho", likesData);
 
     } else if (status === "failed") {
       content = <div>{error}</div>;
@@ -39,9 +41,24 @@ const LikeHTML = ({id}) => {
       console.log("peshoDARTA", status, data);
     }
   };
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
-
+  const handleLike = async () => {
+    dispatch(incrementLike());
+    setIsLiked(true);
+    try {
+      await axios.post("/api/like", {likes: likes, id: id});
+    } catch (error) {
+      console.error("Error liking the article", error);
+    }
+  };
+  const handleDislike = async () => {
+    dispatch(incrementDislike());
+    setIsDisliked(true);
+    try {
+      await axios.post("/api/dislike", {dislikes: dislikes, id: id});
+    } catch (error) {
+      console.error("Error disliking the article", error);
+    }
+  };
   return (
     <div>
       {
@@ -53,10 +70,10 @@ const LikeHTML = ({id}) => {
             </button>
             {/*<button onClick={handleLike} disabled={isLiked || isDisliked}>👍 Харесвам <span>{likesData.data.likes}</span>*/}
             {/*</button>*/}
-            {/*<button className="removeBgrBorder" onClick={handleDislike} disabled={isLiked || isDisliked}>*/}
-            {/*  <DisLikeheart/>*/}
-            {/*  <span>{likesData.data.dislikes}</span>*/}
-            {/*</button>*/}
+            <button className="removeBgrBorder" onClick={handleDislike} disabled={isLiked || isDisliked}>
+              <DisLikeheart/>
+              <span>{likesData.data.dislikes}</span>
+            </button>
             {/*<button onClick={handleDislike} disabled={isLiked || isDisliked}>👎 Не*/}
             {/*  харесвам <span>{likesData.data.dislikes}</span></button>*/}
           </div>

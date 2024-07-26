@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./likeHeart.scss";
 
 const LikeHeart = (props) => {
   const [color, setColor] = useState("white"); // Начален цвят на SVG пътя

@@ -1,6 +1,6 @@
 import pool from "@/database/db";
 
-import {NextResponse, NextRequest} from "next/server";
+import {NextRequest, NextResponse} from "next/server";
 
 type LikeDislike = {
   likes: number,
@@ -8,7 +8,7 @@ type LikeDislike = {
   id: number,
 };
 
-export async function GET(req: NextRequest, res:any) {
+export async function GET(req: NextRequest, res: any) {
 
   const id = req.nextUrl.searchParams.get('id');
 
@@ -20,7 +20,7 @@ export async function GET(req: NextRequest, res:any) {
     let articles: LikeDislike = result.rows;
     return NextResponse.json(articles);
   } catch (error) {
-    return NextResponse.json({error: 'Failed to fetch data  '});
+    return NextResponse.json({error: 'Failed to fetch data  ', errorMsg: error});
   }
 
 }
