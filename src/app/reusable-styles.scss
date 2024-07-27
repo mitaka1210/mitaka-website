@@ -56,6 +56,14 @@
   justify-content: flex-end !important;
 }
 
+.flex-flow-row {
+  flex-flow: row wrap !important;
+}
+
+.flex-flow-column {
+  flex-flow: column !important;
+}
+
 .align-items-stretch {
   align-items: stretch !important;
 }
@@ -849,4 +857,14 @@
 
 .gap-15 {
   gap: 15px;
+}
+
+//add height 100vh
+.height-100vh {
+  height: 100vh;
+}
+
+//add height auto for div
+.height-auto {
+  height: auto;
 }

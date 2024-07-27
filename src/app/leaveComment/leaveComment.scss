@@ -1,0 +1,51 @@
+.message-list {
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  width: 80%;
+  margin: 0 auto;
+
+  li {
+    position: relative;
+    display: block;
+    margin: 3.5rem;
+    padding: 1rem 1rem 2rem 2rem;
+    border: 1px solid grey;
+
+    &:before,
+    &:after {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 0px;
+      height: 0px;
+      left: -20px;
+      top: 5px;
+      border: 10px solid;
+      border-color: transparent grey transparent transparent;
+      box-sizing: content-box;
+    }
+
+    &:after {
+      border-color: transparent white transparent transparent;
+      left: -19px;
+    }
+
+    &:nth-child(odd) {
+      margin-left: 0;
+      margin-right: 2rem;
+
+      &:before,
+      &:after {
+        border-color: transparent transparent transparent grey;
+        left: auto;
+        right: -20px;
+      }
+
+      &:after {
+        border-color: transparent transparent transparent white;
+        right: -19px;
+      }
+    }
+  }
+}

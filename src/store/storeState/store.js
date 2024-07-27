@@ -5,12 +5,12 @@ import likesSlice from "../likesSlice/likesSlice";
 import articleCommentsSlice from "../getCommentsForArticle/getCommentSlice";
 
 const store = configureStore({
-  reducer: {
-    todo: todoSlice,
-    comments: commentsSlice,
-    likes: likesSlice,
-    getComments: articleCommentsSlice
-  }
+    reducer: {
+        todo: todoSlice,
+        addComments: commentsSlice,
+        likes: likesSlice,
+        getComments: articleCommentsSlice
+    }
 });
 
 export default store;
