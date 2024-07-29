@@ -41,7 +41,7 @@
     "styled-components": "^6.1.11",
     "typed.js": "^2.1.0",
     "typewriter-effect": "^2.21.0",
-    "vercel": "^32.3.0"
+    "vercel": "^35.2.1"
   },
   "devDependencies": {
     "@types/node": "^20",
