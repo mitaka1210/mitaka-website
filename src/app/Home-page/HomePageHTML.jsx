@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import AutoTypedText from "@/app/Auto-typed-text/AutoTypedText";
 import {useTranslation} from "react-i18next";
 
@@ -7,6 +6,7 @@ const HomePageHTML = () => {
   const {t} = useTranslation();
   return (
     <>
+
       <div
         className="main-container flex-vertical-container justify-content-center align-items-center text-align-center">
         <div className="my-name">
@@ -19,7 +19,6 @@ const HomePageHTML = () => {
           </div>
         </div>
       </div>
-
 
     </>
   );

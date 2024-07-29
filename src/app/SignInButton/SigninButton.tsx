@@ -2,6 +2,7 @@ import React from 'react';
 import {signIn, signOut, useSession} from "next-auth/react";
 import {useTranslation} from "react-i18next";
 import './signIn.scss';
+import LoaderHTML from "@/app/loader/LoaderHTML";
 
 const SignInButton = () => {
   const {t, i18n} = useTranslation();
@@ -23,11 +24,15 @@ const SignInButton = () => {
         </button>
       </div>
     );
+  } else {
+    <LoaderHTML/>
   }
   return (
-    <a onClick={logIn} className='login'>
-      {t("signIn")}
-    </a>
+    <div>
+      <a onClick={logIn} className="login">
+        {t("signIn")}
+      </a>
+    </div>
   );
 };
 

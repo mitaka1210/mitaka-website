@@ -24,7 +24,7 @@ const MenuLabel = styled.label`
   text-align: center;
 `;
 const NavBackground = styled.div.attrs(props => ({
-  clicked: props.clicked ? true : false,
+  clicked: props.clicked ? true : undefined,
 }))`
   position: fixed;
   top: 6.5rem;
@@ -42,7 +42,7 @@ const NavBackground = styled.div.attrs(props => ({
 `;
 
 const Icon = styled.span.attrs(props => ({
-  clicked: props.clicked ? true : false,
+  clicked: props.clicked ? true : undefined,
 }))`
   position: relative;
   background-color: ${(props) => (props.clicked ? "transparent" : "black")};
@@ -83,7 +83,7 @@ const Icon = styled.span.attrs(props => ({
   }
 `;
 
-const Navigation = styled.nav`
+const Navigation = styled.nav.attrs(props => ({clicked: props.clicked ? true : undefined}))`
   height: 100vh;
   position: fixed;
   top: 0;
