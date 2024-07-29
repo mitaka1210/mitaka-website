@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchLikesDislikes, incrementDislike, incrementLike} from "@/store/likesSlice/likesSlice";
 import LikeHeart from "@/app/likeHeart/likeHeart.js";
 import axios from "axios";
-import DisLikeheart from "@/app/dislikeHeart/disLikeHTML.jsx";
+import DisLikeheart from "@/app/dislikeHeart/disLikeHTML.js";
 
 const LikeHTML = ({id}) => {
   let likesData = [];

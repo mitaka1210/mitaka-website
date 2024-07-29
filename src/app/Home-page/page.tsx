@@ -4,18 +4,34 @@ import HomePageHTML from './HomePageHTML'
 import Navigation from "@/app/Navigation-component/navigation";
 import React, {useEffect, useState} from "react";
 import LoaderHTML from "@/app/loader/LoaderHTML";
+import dynamic from "next/dynamic";
 
 const HomePage = () => {
-  let nextauth = localStorage.getItem("nextauth.message");
+  const HomePageHTML = dynamic(
+    () => import('./HomePageHTML'),
+    {ssr: false}
+  );
+  const Navigation = dynamic(
+    () => import('../Navigation-component/navigation'),
+    {ssr: false}
+  );
   let [showMenu, setShowMenu] = useState(true);
   useEffect(() => {
-    setTimeout(() => {
-      if (nextauth) {
-        setShowMenu(false)
-        console.log('pesho menu', showMenu);
-      }
-    }, 2000);
+    if (typeof window !== 'undefined') {
+      let nextauth = localStorage.getItem("nextauth.message");
+      setTimeout(() => {
+        if (nextauth) {
+          setShowMenu(false)
+          console.log('pesho menu', showMenu);
+        }
+      }, 1000);
+    } else {
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+    }
   }, [showMenu]);
+
   return (
     <>
       {showMenu ? <LoaderHTML/> :
