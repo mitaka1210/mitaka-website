@@ -17,17 +17,19 @@ const BlogHtml = () => {
   };
   const router = useRouter();
   const redirectTo = (path) => {
-    if (path === "aquariums") {
-      router.push("/cardAquariums");
-    } else if (path === "programing") {
-      router.push("/programingArticles");
-    }
+    // if (path === "aquariums") {
+    //   router.push("/cardAquariums");
+    // } else if (path === "programing") {
+    //   router.push("/programingArticles");
+    // }
   };
   return (
     <div className="blog-main-container">
       <div className="min-h-screen bg-white grid place-content-center p-5">
         <h1
           className="capitalize text-3xl md:text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-indigo-600">{t("category")}</h1>
+        <h1
+          className="capitalize text-3xl md:text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-indigo-600">{t("soon")}</h1>
         <div className="grid lg:grid-cols-3 gap-7 justify-center">
           <div className="max-w-sm shadow-xl relative card rounded-md overflow-hidden"
                onClick={() => redirectTo("aquariums")}>
