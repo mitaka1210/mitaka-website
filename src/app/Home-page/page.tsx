@@ -17,15 +17,19 @@ const HomePage = () => {
   if (typeof window !== 'undefined') {
     useEffect(() => {
       let nextauth = localStorage.getItem("nextauth.message");
+      console.log('pesho1', nextauth);
       if (nextauth) {
         setShowMenu(false)
       } else {
+        console.log('pesho2', nextauth);
         setTimeout(() => {
+          console.log('pesho3', nextauth);
           setShowMenu(false)
         }, 3000);
       }
     }, [showMenu]);
   } else {
+    console.log('pesho4');
     useEffect(() => {
       setTimeout(() => {
         window.location.reload();
