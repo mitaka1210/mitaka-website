@@ -8,16 +8,11 @@ import HamburgerMenu from "@/app/HamburgerMenu-page/HamburgerMenuHTML";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
 import Appbar from "@/app/SignInButton/AppBar/AppBar";
 import React from "react";
-import i18n from "../../i18n";
 import Header from "@/app/Lang/Lang";
 
 const Navigation = () => {
   const {t} = useTranslation();
   const size = useWindowSize();
-  const changeLang = lng => {
-    i18n.changeLanguage(lng).then(r => {
-    });
-  };
   return (
     <header className="flex-horizontal-container justify-content-end text-align-center">
       <div className="my-logo">
