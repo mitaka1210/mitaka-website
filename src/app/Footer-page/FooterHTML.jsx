@@ -32,17 +32,17 @@ const FooterHtml = () => {
           <div className="social-network">
             <ul>
               <li>
-                <a className="icons-styles margin-10" href="">
+                <a className="icons-styles margin-10" href="https://www.facebook.com/mitaka1210">
                   <FacebookIcon/>
                 </a>
               </li>
               <li>
-                <a className="icons-styles  margin-10" href="">
+                <a className="icons-styles  margin-10" href="https://x.com/dimitar1201">
                   <XIcon/>
                 </a>
               </li>
               <li>
-                <a className="icons-styles  margin-10" href="">
+                <a className="icons-styles  margin-10" href="https://www.linkedin.com/in/dimitar-dimitrov1201/">
                   <LinkedInIcon/>
                 </a>
               </li>
