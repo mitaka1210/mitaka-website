@@ -14,15 +14,17 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
     const [hideDiv, setHideDiv] = useState(true);
     const {t} = useTranslation();
     // localStorage
-    let lang = 'bg';
-    // update data
-    useEffect(() => {
-        if (lang === "bg") {
-            setAccordion(accordianBG);
-        } else {
-            setAccordion(accordianEN);
-        }
-    }, [lang]);
+    if (typeof window !== 'undefined') {
+        let lang = localStorage.getItem('i18nextLng');
+        // update data
+        useEffect(() => {
+            if (lang === "bg") {
+                setAccordion(accordianBG);
+            } else {
+                setAccordion(accordianEN);
+            }
+        }, [lang]);
+    }
     // methods
     const handleClick = (index) => {
         if (index === active) {
