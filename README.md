@@ -6,6 +6,7 @@ And that is my Personal Website/Blog
 
 <h3>This project is a personal website/blog where I share information about myself, my interests, hobbies, and skills. Using Next.js and RTK for the frontend, Docker for containerization, PostgreSQL for the database, and DBeaver for database management, I have created a platform where I will soon release pages with articles. Users will be able to comment on and share the content.</h3>
 ------------------------
+<br/>
 Dependencies
 DBeaver
 <h3 align="left">Languages and Tools:</h3>
