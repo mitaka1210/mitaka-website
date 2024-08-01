@@ -20,7 +20,3 @@ First, run the development server:
 ```bash
 npm i
 npm run dev
-
-Demo:
-<br/>
-https://mitaka-website-stage.vercel.app/Home-page
