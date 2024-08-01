@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm eng.Dimitar Dimitrov</h1>
 <h3 align="center">A passionate frontend developer from Bulgaria</h3>
 
-Personal Website/Blog
+And that is my Personal Website/Blog
 
 Description
 This project is a personal website/blog where I share information about myself, my interests, hobbies, and skills. Using Next.js and RTK for the frontend, Docker for containerization, PostgreSQL for the database, and DBeaver for database management, I have created a platform where I will soon release pages with articles. Users will be able to comment on and share the content.
