@@ -1,3 +1,6 @@
+<h1 align="center">Hi 👋, I'm eng.Dimitar Dimitrov</h1>
+<h3 align="center">A passionate frontend developer from Bulgaria</h3>
+
 Personal Website/Blog
 
 Description
