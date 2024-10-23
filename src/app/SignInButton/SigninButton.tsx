@@ -5,15 +5,18 @@ import './signIn.scss';
 import LoaderHTML from "@/app/loader/LoaderHTML";
 
 const SignInButton = () => {
-  const {t, i18n} = useTranslation();
+  const {t} = useTranslation();
   const {data: session} = useSession();
   const goToHome = () => {
     signOut({callbackUrl: '/'}).then(r => {
     })
   }
+  //? when login sometimes we can't update text in the page
+  //   maybe need to fix but for now i don't know how to fix it
+
+
   const logIn = () => {
-    signIn().then(r => {
-    })
+    signIn(undefined, {callbackUrl: '/'}).then(r => {})
   }
   if (session && session.user) {
     return (
