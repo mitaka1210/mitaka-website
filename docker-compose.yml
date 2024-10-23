@@ -6,8 +6,6 @@ services:
     container_name: eng.d-dimitrov.eu
     ports:
       - '3003:3003'
-    environment:
-      - NODE_ENV=production
     volumes:
       - .:/app
     command: npm start
