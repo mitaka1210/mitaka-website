@@ -4,14 +4,14 @@ import React, {useEffect, useState} from "react";
 import {useRouter} from "next/navigation";
 import "./cardAquariums.scss";
 import {useDispatch, useSelector} from "react-redux";
-import {DataState} from "@/app/interfaceTS/getCardInfoTS";
+
 import {fetchTodo} from "@/store/todoSlice/todoSlice.js";
 
 const CardAquariumsHTML = () => {
 
     const router = useRouter();
     let todoId = 1000;
-    let cardInfo = DataState;
+    let cardInfo;
     const dispatch = useDispatch();
     const [showInfo, setShowInfo] = useState(false);
     const status = useSelector((state) => state.todo.status);
