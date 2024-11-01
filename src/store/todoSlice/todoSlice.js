@@ -5,6 +5,7 @@ export const fetchTodo = createAsyncThunk("fetchTodo", async () => {
   return fetch("api/getArticles")
     .then((res) => res.json())
     .then((json) => {
+      console.log("pesho", json);
       return json;
       // setData(data);
     });

@@ -1,4 +1,4 @@
-import pool from "@/database/db";
+import pool from "../../../database/db";
 import {NextResponse} from "next/server";
 
 type ArticlesData = {
@@ -11,16 +11,28 @@ type ArticlesData = {
   date: string,
 };
 
+// export async function GET() {
+//   console.log('pesho123123');
+//   // изчакваме req.json() да се изпълни и да ни върне body
+//   try {
+//     const client = await pool.connect();
+//     const result = await client.query('SELECT * FROM article');
+//     console.log('pesho in', result);
+//     let articles: ArticlesData = result.rows;
+//     console.log('pesho', articles);
+//     return NextResponse.json(articles);
+//   } catch (error) {
+//     return NextResponse.json({error: 'Failed to fetch data  '});
+//   }
+//
+// }
+
 export async function GET() {
-  // изчакваме req.json() да се изпълни и да ни върне body
   try {
-    const client = await pool.connect();
-    const result = await client.query('SELECT * FROM article');
-    let articles: ArticlesData = result.rows;
-    return NextResponse.json(articles);
+    const result = await pool.query('SELECT * FROM article'); // Заменете със съответната ви SQL заявка
+    return NextResponse.json(result.rows);
   } catch (error) {
-    return NextResponse.json({error: 'Failed to fetch data  '});
+    console.error(error);
+    return NextResponse.json({ error: 'Failed to fetch articles' }, { status: 500 });
   }
-
 }
-
