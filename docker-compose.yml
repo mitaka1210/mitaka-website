@@ -2,10 +2,15 @@ version: '1.0'
 
 services:
   app:
-    build: .
+    image: my-website
     container_name: eng.d-dimitrov.eu
-    ports:
-      - '3003:3003'
+    networks:
+    - default
+    restart: always
     volumes:
       - .:/app
     command: npm start
+networks:
+  default:
+    external:
+      name: docker_network
