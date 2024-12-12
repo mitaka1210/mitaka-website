@@ -22,8 +22,9 @@ const CardAquariumsHTML = () => {
 
     const [data, setData] = useState(null);
     useEffect(() => {
-        getTodos();
-    }, [status]);
+        dispatch(fetchTodo());
+
+    }, [1]);
     const storeData = useSelector((state) => {
         cardInfo = state.todo;
     });
@@ -33,6 +34,7 @@ const CardAquariumsHTML = () => {
     };
     const getTodos = () => {
         if (status === "idle") {
+            console.log("pesho start",);
             dispatch(fetchTodo());
         } else if (status === "loading") {
             content = <div>Loading...</div>;

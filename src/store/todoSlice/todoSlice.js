@@ -2,7 +2,7 @@ import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
 
 export const fetchTodo = createAsyncThunk("fetchTodo", async () => {
-  return fetch("api/getArticles")
+  return fetch("/api/getArticles")
     .then((res) => res.json())
     .then((json) => {
       return json;

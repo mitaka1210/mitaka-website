@@ -17,8 +17,9 @@ const BlogHtml = () => {
   };
   const router = useRouter();
   const redirectTo = (path) => {
-    // if (path === "aquariums") {
-    //   router.push("/cardAquariums");
+    if (path === "aquariums") {
+      router.push("/cardAquariums");
+    }
     // } else if (path === "programing") {
     //   router.push("/programingArticles");
     // }
