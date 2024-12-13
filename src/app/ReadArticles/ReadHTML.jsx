@@ -2,7 +2,7 @@
 import React, {useEffect} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchTodo} from "@/store/todoSlice/todoSlice";
+import {fetchTodo} from "@/store/getAllArticles/getAllArticlesSlice";
 import LikeHTML from "@/app/Like/LikeHTML";
 import {resetState} from "@/store/likesSlice/likesSlice.js";
 import {useTranslation} from "react-i18next";

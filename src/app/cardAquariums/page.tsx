@@ -22,9 +22,8 @@ const Page = () => {
     <div>
       <Navigation/>
       <CardAquariumsHTML/>
-      <div className="fotter-css">
         <FooterHTML/>
-      </div>
+
     </div>
   );
 };

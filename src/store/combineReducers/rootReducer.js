@@ -1,6 +1,6 @@
 // app/rootReducer.js
 import {combineReducers} from "@reduxjs/toolkit";
-import {todoSlice} from "../todoSlice/todoSlice";
+import {todoSlice} from "../getAllArticles/getAllArticlesSlice";
 
 const rootReducer = combineReducers({
   todo: todoSlice,
