@@ -3,6 +3,7 @@
 import React from 'react';
 import dynamic from "next/dynamic";
 import './cardAquariums.scss';
+import CardAquariumsHTML from "@/app/cardAquariums/CardAquariumsHTML";
 
 const Page = () => {
   const CardAquariumsHtml = dynamic(
@@ -20,7 +21,7 @@ const Page = () => {
   return (
     <div>
       <Navigation/>
-      <CardAquariumsHtml/>
+      <CardAquariumsHTML/>
       <div className="fotter-css">
         <FooterHTML/>
       </div>
