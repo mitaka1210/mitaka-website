@@ -20,6 +20,7 @@
     "@mui/material": "^5.15.19",
     "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.2.6",
+    "@types/pg": "^8.11.10",
     "autotyping": "^1.2.6",
     "axios": "^1.7.2",
     "express": "^4.19.2",

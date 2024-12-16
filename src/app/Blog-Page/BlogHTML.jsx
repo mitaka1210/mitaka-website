@@ -17,11 +17,11 @@ const BlogHtml = () => {
   };
   const router = useRouter();
   const redirectTo = (path) => {
-    // if (path === "aquariums") {
-    //   router.push("/cardAquariums");
-    // } else if (path === "programing") {
-    //   router.push("/programingArticles");
-    // }
+    if (path === "aquariums") {
+      router.push("/cardAquariums");
+    } else if (path === "programing") {
+      // router.push("/programingArticles");
+    }
   };
   return (
     <div className="blog-main-container">
