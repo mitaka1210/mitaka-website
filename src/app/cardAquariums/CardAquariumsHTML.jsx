@@ -1,124 +1,140 @@
-"use client";
+'use client';
 
-import React, {useEffect, useState} from "react";
-import {useRouter} from "next/navigation";
-import "./cardAquariums.scss";
-import {useDispatch, useSelector} from "react-redux";
-import {DataState} from "@/app/interfaceTS/getCardInfoTS";
-import {fetchTodo} from "@/store/todoSlice/todoSlice.js";
+import React, { Suspense, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import './cardAquariums.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import images from '../../../assets/images/image';
+import { fetchArticles } from '@/store/getArticles/getArticlesSlice';
+import { useTranslation } from 'react-i18next';
 
 const CardAquariumsHTML = () => {
-
-    const router = useRouter();
-    let todoId = 1000;
-    let cardInfo = DataState;
-    const dispatch = useDispatch();
-    const [showInfo, setShowInfo] = useState(false);
-    const status = useSelector((state) => state.todo.status);
-    const error = useSelector((state) => state.todo.error);
-    let err = "";
-    let content;
-
-
-    const [data, setData] = useState(null);
-    useEffect(() => {
-        getTodos();
-    }, [status]);
-    const storeData = useSelector((state) => {
-        cardInfo = state.todo;
-    });
-    const redirectPage = (header, content, date, time, images, todoId) => {
-        // Добавете query parameters към URL
-        router.push("/");
-    };
-    const getTodos = () => {
-        if (status === "idle") {
-            dispatch(fetchTodo());
-        } else if (status === "loading") {
-            content = <div>Loading...</div>;
-        } else if (status === "succeeded") {
-        } else if (status === "failed") {
-            content = <div>{error}</div>;
-        } else {
-        }
-    };
-    const handleClick = (id) => {
-        // const {id} = router.query;
-        // Проверете дали използвате низове за query параметрите
-        router.push("/ReadArticles" + `/?id=${id}`);
-    };
-    const handleClickShowText = (id) => {
-        for (let i = 0; i < cardInfo.data.length; i++) {
-            if (id === cardInfo.data[i].todoId) {
-                setShowInfo(!showInfo);
-            }
-        }
-    };
-    return (
-        <div
-            className="height-auto flex-horizontal-container justify-content-space-evenly align-items-center flex-flow-row">
-            {
-                cardInfo.data.map((card, index) => {
-                    return <div className="flex-item card-main">
-                        <div className="py-4">
-                            <div
-                                className="shadow-lg group container rounded-md bg-white  max-w-sm flex justify-center flex-vertical-container-raw items-center mx-auto content-div">
-                                <div className="image-wrapper">
-                                    <img alt="traveller"
-                                         src={card.images === null ? mitaka : card.images}/>
-                                </div>
-                                <div>
-                                    <div className="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-25">
-                                        <span
-                                            className="block text-lg text-gray-800 font-bold tracking-wide">{card.header}</span>
-                                        <span
-                                            className="block text-lg text-gray-800 font-bold tracking-wide">{card.date}</span>
-                                        <span
-                                            className="block text-gray-600 text-sm">{card.description.substring(0, 150) + " ..."}</span>
-                                    </div>
-                                </div>
-                                <div className="absolute opacity-0 fd-sh group-hover:opacity-100">
-                                    <div className="pt-8 text-center">
-                                        <button
-                                            className="text-center rounded-lg p-4 bg-white  text-gray-700 font-bold text-lg"
-                                            onClick={() => handleClick(card.todoId)}>Прочети повече
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                })
-            }
+ const dispatch = useDispatch();
+ const { t } = useTranslation();
+ const router = useRouter();
+ let content;
+ const status = useSelector((state) => state.articles.status);
+ useEffect(() => {
+  if (status === 'idle') {
+   dispatch(fetchArticles());
+  }
+ }, [status, dispatch]);
+ const loading = useSelector((state) => state.articles);
+ const articlesInfo = useSelector((state) => state.articles.data);
+ let img = images;
+ const handleClick = (id) => {
+  console.log('pesho', id);
+  // const {id} = router.query;
+  // Проверете дали използвате низове за query параметрите
+  router.push('/ReadArticles' + `/?id=${id}`);
+ };
+ const sections = [
+  {
+   backgroundImage: `${img[6].url.src}`,
+   text: 'Immerse yourself in a seamless experience where every touchpoint anticipates your needs. Description one.',
+   date: '2024-12-13',
+  },
+  {
+   backgroundImage: 'https://i.pinimg.com/564x/34/65/b8/3465b890b11571e2c876ae74dc1b3139.jpg',
+   text: 'Engage with a platform where interaction is intuitive, ensuring your journey is fluid and responsive. Description two.',
+   date: '2024-12-14',
+  },
+  {
+   backgroundImage: 'https://i.pinimg.com/564x/33/d6/54/33d654e8058fdf69e160dcbd2235cdac.jpg',
+   text: 'Discover our commitment to thoughtful design, prioritizing accessibility and user satisfaction. Description three.',
+   date: '2024-12-15',
+  },
+  {
+   backgroundImage: 'https://i.pinimg.com/564x/39/b8/01/39b801afe355e623bcb3928b1c1b046d.jpg',
+   text: 'Experience innovation at every step, with forward-thinking solutions designed to enhance your daily interactions. Description four.',
+   date: '2024-12-16',
+  },
+  {
+   backgroundImage: 'https://i.pinimg.com/564x/2b/b5/48/2bb548dbf4a4c57381a7b7f736b4930b.jpg',
+   text: 'Join us in embracing sustainability, where design and functionality meet eco-conscious decisions. Description five.',
+   date: '2024-12-17',
+  },
+ ];
+ return (
+  <Suspense fallback={<div>Loading...</div>}>
+   {
+    loading.isLoading ?
+     <div>Loading</div> :
+     <div>
+      <section
+       className="flex flex-col  justify-center items-center  add-scroll-aquarium-page">
+       <div
+        className="prose text-gray-500 prose-sm prose-headings:font-normal prose-headings:text-xl">
+        <div className="flex-vertical-container-raw justify-center align-items-center">
+         <h1 className="text-align-center">"Подводна магия у дома: Всичко за
+          аквариуми – от старта до тайните
+          на професионалистите"</h1>
+         <p className="text-balance">"Живот под стъклото: Тайният свят на
+          аквариумите, който ще ви плени"</p>
         </div>
-        // <div>
-        //     {
-        //       cardInfo.data.map((card, index) => {
-        //         return <div className="container-card" key={index}>
-        //           <div className="card">
-        //             <div className="image-wrapper">
-        //               <img alt="traveller"
-        //                    src={card.images === null ? mitaka : card.images}/>
-        //             </div>
-        //             <div className="content">
-        //               <h6>{card.header}</h6>
-        //               <h5>{card.date}</h5>
-        //               <p>{card.description.substring(0, 150) + " ..."}</p>
-        //             </div>
-        //             <button className="card-read"
-        //                     onClick={() => handleClick(card.todoId)}> Прочети
-        //               повече
-        //             </button>
-        //             {/*<button className="card-read"*/}
-        //             {/*        onClick={() => redirectPage(card.header, card.description, "07/18/2024", "12:00:55", card.images, todoId)}> Прочети*/}
-        //             {/*  повече*/}
-        //             {/*</button>*/}
-        //           </div>
-        //         </div>;
-        //       })
-        //     }
-        // </div>
-    );
+       </div>
+
+       <div className="flex flex-wrap mx-auto mt-6 border-t pt-12">
+        {
+         articlesInfo.length > 0 ?
+          (
+           articlesInfo.map((article, index) => {
+            return (
+             <div key={index}>
+              {article.status === true && articlesInfo.length > 0 ?
+               <div className="blog-card margin-15" key={index}>
+                <div className="meta">
+                 <div className="photo" style={{ backgroundImage: `url(${sections[index]?.backgroundImage || img[7].url.src})` }}
+                 ></div>
+                 <ul className="details">
+                  <li className="author">
+                   <a href="#">{article.title.substring(0, 60)}....</a></li>
+                  <li className="date">{article.create_article_date}</li>
+                  <li className="tags">
+                   <ul>
+                    <li><a href="#">{t('Support')}</a></li>
+                    ,
+                    <li><a href="#">{t('Fish')}</a></li>,
+                    <li><a href="#">{t('Aquarium')}</a></li>
+                   </ul>
+                  </li>
+                 </ul>
+                </div>
+                <div className="description">
+                 <h1>{article.title}</h1>
+                 <h2>Вашето ръководство за създаване и поддръжка на здрав и
+                  красив
+                  аквариум.</h2>
+                 <p>Аквариумите не са просто декорация, а живи екосистеми, които
+                  внасят спокойствие и красота в дома. Те обаче изискват знания,
+                  внимание и грижи. Ако мечтаете за аквариум, но не знаете
+                  откъде
+                  да започнете, тази статия ще ви даде основни насоки.</p>
+                 <div className="flex-horizontal-container-raw justify-end">
+                  <button onClick={() => handleClick(article.id)}>
+                   <p className="read-more">
+                    <a href="#">Read More</a>
+                   </p>
+                  </button>
+                 </div>
+                </div>
+               </div> :
+               <div className="status-article-false"></div>
+              }
+             </div>
+            );
+           })
+          ) : null
+        }
+
+       </div>
+      </section>
+
+     </div>
+
+   }
+  </Suspense>
+ );
 };
 
 export default CardAquariumsHTML;

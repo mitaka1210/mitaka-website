@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3003",
     "lint": "next lint"
   },
   "dependencies": {
@@ -28,7 +28,7 @@
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-xhr-backend": "^3.2.2",
     "next": "^14.2.3",
-    "next-auth": "^4.24.7",
+    "next-auth": "^4.24.8",
     "next-i18next": "^15.3.0",
     "pg": "^8.12.0",
     "react": "^18",
@@ -41,11 +41,13 @@
     "styled-components": "^6.1.11",
     "typed.js": "^2.1.0",
     "typewriter-effect": "^2.21.0",
-    "vercel": "^32.3.0",
-    "yarn": "^1.22.22"
+    "uploader": "file:../upload_article/server/upload",
+    "vercel": "^32.3.0"
   },
   "devDependencies": {
+    "@types/next-auth": "^3.15.0",
     "@types/node": "^20",
+    "@types/pg": "^8.11.10",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
