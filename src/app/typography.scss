@@ -28,6 +28,8 @@ $interval-size: $range / $intervals !default;
 html {
   box-sizing: border-box;
   font-family: roboto-regular, sans-serif !important;
+  width: 100%;
+  height: 100%;
 }
 
 *, *:before, *:after {
@@ -145,6 +147,16 @@ q {
 
 
 span {
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+      font-size: $base-font-size * (.01 + (.03 * $i));
+    }
+    $i: $i + 1;
+  }
+}
+
+p {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
