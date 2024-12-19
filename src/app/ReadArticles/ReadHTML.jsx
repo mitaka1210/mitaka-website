@@ -4,7 +4,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { useDispatch, useSelector } from 'react-redux';
 import { resetState } from '@/store/likesSlice/likesSlice.js';
 import { useTranslation } from 'react-i18next';
-import  Uploader  from 'uploader/image.js';
+// import  Uploader  from 'uploader/image.js';
 import {
  fetchSections,
 } from '@/store/articlesSectionById/articlesSectionByIdSlice';
@@ -23,7 +23,6 @@ const ReadHtml = () => {
   if (status === 'idle') {
    dispatch(fetchSections(id));
   }
-  console.log("pesho",Uploader[0].url.src);
  }, [status, dispatch]);
 
  const goBack = () => {
@@ -53,7 +52,7 @@ const ReadHtml = () => {
 
       </div>
       <div className="article-image-container">
-       <img src={Uploader[0].url.src} alt="read" />
+       {/*<img src={Uploader[0].url.src} alt="read" />*/}
       </div>
       {
        articleSections.map((section, index) => {
