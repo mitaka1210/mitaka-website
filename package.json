@@ -41,7 +41,6 @@
     "styled-components": "^6.1.11",
     "typed.js": "^2.1.0",
     "typewriter-effect": "^2.21.0",
-    "uploader": "file:../upload_article/server/upload",
     "vercel": "^32.3.0"
   },
   "devDependencies": {
