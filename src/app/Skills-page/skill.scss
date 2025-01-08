@@ -7,10 +7,11 @@
   font-family: roboto-light;
   src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
 }
-
-.main-content {
-  padding: 2em 0 2em 0;
-  transform: translate(0px, 120px);
+.bgr-page-skills {
+  background: url("../../../assets/images/bgr-skill-page.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: contain;
 }
 
 .how-can-help {
@@ -24,6 +25,9 @@
 .section {
   display: flex;
   justify-content: center;
+  position: relative;
+  bottom: 10em;
+  left: 10em;
 }
 
 .wall {
@@ -42,7 +46,9 @@
 .second {
   margin-top: 75px;
 }
-
+.rotate-skills{
+  transform: rotate(270deg);
+}
 .third {
   margin-top: 150px;
 }
@@ -54,10 +60,10 @@
 .box {
   width: 100px;
   height: 100px;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -webkit-transform:  rotate(135deg);
+  -ms-transform:  rotate(135deg);
+  -moz-transform:  rotate(135deg);
+  transform: rotate(135deg);
   margin: 25px;
   cursor: pointer;
 
