@@ -34,15 +34,14 @@ const ReadHtml = () => {
    <div>
     <div className="read-back-btn">
      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-             onClick={goBack}>
-      {t('back')}
+             onClick={goBack}>{t('back')}
      </button>
      {
       articlesInfo.map((article, index) => {
        if (article.id === Number(id)) {
         return (
          <div key={index}>
-          <h1 className="read-title">{article.title}</h1>
+          <h3 className="read-title">{article.title}</h3>
          </div>
         );
        }

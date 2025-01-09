@@ -15,7 +15,7 @@ const TimeLineHtml = () => {
     <div>
       <h2 className="text-align-center">{t("myWord")}!</h2>
       <div className="timeline">
-        <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+        <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1 line-height-25 word-wrap">
           <div className="timeline__event__icon ">
             <Image className="coding-icon" src={coding} alt="coding"/>
           </div>
@@ -31,7 +31,7 @@ const TimeLineHtml = () => {
             </div>
           </div>
         </div>
-        <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+        <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2 line-height-25 word-wrap">
           <div className="timeline__event__icon">
             <i className="lni-burger"></i>
           </div>
@@ -47,7 +47,7 @@ const TimeLineHtml = () => {
             </div>
           </div>
         </div>
-        <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+        <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3 line-height-25 word-wrap">
           <div className="timeline__event__icon">
             <Image className="aviation-icon" src={aviation} alt="aviation"/>
           </div>
@@ -65,12 +65,12 @@ const TimeLineHtml = () => {
             </div>
           </div>
         </div>
-        <div className="timeline__event animated fadeInUp timeline__event--type1">
+        <div className="timeline__event animated fadeInUp timeline__event--type1 line-height-25 word-wrap">
           <div className="timeline__event__icon">
             <Image className="geodesy-icon" src={geodesy} alt="Express"/>
           </div>
           <div className="timeline__event__date">
-            01-06-2009
+            01-06-2010
           </div>
           <div className="timeline__event__content padding-15">
             <div className="">

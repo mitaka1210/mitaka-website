@@ -5,12 +5,11 @@ import {useRouter} from "next/navigation";
 import {useTranslation} from "react-i18next";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
 import i18n from "@/i18n";
-
 const BlogHtml = () => {
+  const articlesAquariumNumbers= process.env.NEXT_PUBLIC_AQUARIUM_ARTICLES;
+  const articlesProgramingNumbers= process.env.NEXT_PUBLIC_PROGRAMING_ARTICLES;
   const {t} = useTranslation();
   const size = useWindowSize();
-
-
   const changeLang = lng => {
     i18n.changeLanguage(lng).then(r => {
     });
@@ -26,10 +25,7 @@ const BlogHtml = () => {
   return (
     <div className="blog-main-container">
       <div className="min-h-screen bg-white grid place-content-center p-5">
-        <h1
-          className="capitalize text-3xl md:text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-indigo-600">{t("category")}</h1>
-        <h1
-          className="capitalize text-3xl md:text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-indigo-600">{t("soon")}</h1>
+        <h1 className="capitalize text-3xl md:text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-indigo-600">{t("category")}</h1>
         <div className="grid lg:grid-cols-3 gap-7 justify-center">
           <div className="max-w-sm shadow-xl relative card rounded-md overflow-hidden"
                onClick={() => redirectTo("aquariums")}>
@@ -47,11 +43,11 @@ const BlogHtml = () => {
               </div>
             </div>
             <div className="absolute bottom-4 px-4">
-              <span className="text-sm text-gray-500 -mb-1 block">37 {t("br")}</span>
-              <h2 className="text-xl text-pink-400">{t("aquarium")}</h2>
+              <span className="text-sm text-gray-500 -mb-1 block">{articlesAquariumNumbers} {t("br")}</span>
+              <h2 className="text-xl text-green-800">{t("aquarium")}</h2>
             </div>
             <div
-              className="absolute top-0 right-0 bg-pink-400 cursor-pointe z-50 w-full h-full flex justify-center items-center card-overlay">
+              className="absolute top-0 right-0 bg-green-400 cursor-pointe z-50 w-full h-full flex justify-center items-center card-overlay">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-white cursor-pointer"
                    viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd"
@@ -76,7 +72,7 @@ const BlogHtml = () => {
               </div>
             </div>
             <div className="absolute bottom-4 px-4">
-              <span className="text-sm text-gray-500 -mb-1 block">25 {t("br")}</span>
+              <span className="text-sm text-gray-500 -mb-1 block">{articlesProgramingNumbers} {t("br")}</span>
               <h2 className="text-xl text-yellow-400">{t("programing")}</h2>
             </div>
             <div

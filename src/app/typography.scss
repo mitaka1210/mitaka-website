@@ -16,7 +16,17 @@ $interval-size: $range / $intervals !default;
   font-family: roboto-light;
   src: url('../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
 }
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 
+@font-face {
+  font-family: roboto-regular;
+  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -160,7 +170,7 @@ p {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (.01 + (.03 * $i));
+      font-size: $base-font-size * (.4 + (.03 * $i));
     }
     $i: $i + 1;
   }

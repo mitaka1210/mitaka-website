@@ -26,8 +26,8 @@ const SkillPageHtml = ({size}) => {
   // imported from library
   const {t} = useTranslation();
   return (
-    <div>
-      <div className="how-can-help margin-10 text-align-center flow-text">
+    <div className="bgr-page-skills">
+      <div className="how-can-help text-align-center flow-text">
         <h2>{t("helpYou")}</h2>
       </div>
       {
@@ -35,7 +35,7 @@ const SkillPageHtml = ({size}) => {
           <MobileSkillsHtml/>
         </div> : <main className="main-content">
           <section className="section">
-            <div className="flex-horizontal-container justify-content-center">
+            <div className="flex-horizontal-container justify-content-center rotate-skills">
               <div className="v-boxes section-6">
                 <div className="box">
                   <span className="tooltip">?</span>

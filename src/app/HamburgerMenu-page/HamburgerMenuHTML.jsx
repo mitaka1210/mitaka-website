@@ -16,8 +16,8 @@ const MenuLabel = styled.label`
   top: 2rem;
   right: 2rem;
   border-radius: 50%;
-  height: 4rem;
-  width: 4rem;
+  height: 2rem;
+  width: 2rem;
   cursor: pointer;
   z-index: 1000;
   box-shadow: 0 1rem 3rem rgba(182, 237, 200, 0.3);
@@ -46,17 +46,17 @@ const Icon = styled.span.attrs(props => ({
 }))`
   position: relative;
   background-color: ${(props) => (props.clicked ? "transparent" : "black")};
-  width: 3rem;
+  width: 1rem;
   height: 2px;
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 1rem;
   transition: all 0.3s;
 
   &::before,
   &::after {
     content: "";
     background-color: black;
-    width: 3rem;
+    width: 1rem;
     height: 2px;
     display: inline-block;
     position: absolute;
@@ -65,21 +65,21 @@ const Icon = styled.span.attrs(props => ({
   }
 
   &::before {
-    top: ${(props) => (props.clicked ? "0" : "-0.8rem")};
+    top: ${(props) => (props.clicked ? "0" : "-0.3rem")};
     transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
   }
 
   &::after {
-    top: ${(props) => (props.clicked ? "0" : "0.8rem")};
+    top: ${(props) => (props.clicked ? "0" : "0.3rem")};
     transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
 
   ${MenuLabel}:hover &::before {
-    top: ${(props) => (props.clicked ? "0" : "-1rem")};
+    top: ${(props) => (props.clicked ? "0" : "-.3rem")};
   }
 
   ${MenuLabel}:hover &::after {
-    top: ${(props) => (props.clicked ? "0" : "1rem")};
+    top: ${(props) => (props.clicked ? "0" : ".3rem")};
   }
 `;
 
@@ -91,7 +91,7 @@ const Navigation = styled.nav.attrs(props => ({clicked: props.clicked ? true : u
   z-index: 600;
   width: ${(props) => (props.clicked ? "100%" : "0")};
   opacity: ${(props) => (props.clicked ? "1" : "0")};
-  transition: width 0.8s, opacity 0.8s;
+  transition: width 0.2s, opacity 0.1s;
 `;
 
 const List = styled.ul`

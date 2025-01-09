@@ -3,7 +3,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import './about.scss';
-
+import Head from 'next/head';
 const AboutPage = () => {
   const AboutHtml = dynamic(
     () => import('./AboutHTML'),
