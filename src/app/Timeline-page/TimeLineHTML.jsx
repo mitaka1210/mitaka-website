@@ -15,7 +15,7 @@ const TimeLineHtml = () => {
     <div>
       <h2 className="text-align-center">{t("myWord")}!</h2>
       <div className="timeline">
-        <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1">
+        <div className="timeline__event  animated fadeInUp delay-3s timeline__event--type1 line-height-25 word-wrap">
           <div className="timeline__event__icon ">
             <Image className="coding-icon" src={coding} alt="coding"/>
           </div>
@@ -27,11 +27,11 @@ const TimeLineHtml = () => {
               {t("programing")}
             </h6>
             <div className="timeline__event__description">
-              <p>{t("giveChance")}</p>
+              <span>{t("giveChance")}</span>
             </div>
           </div>
         </div>
-        <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2">
+        <div className="timeline__event animated fadeInUp delay-2s timeline__event--type2 line-height-25 word-wrap">
           <div className="timeline__event__icon">
             <i className="lni-burger"></i>
           </div>
@@ -43,11 +43,11 @@ const TimeLineHtml = () => {
               {t("workAll")}
             </h6>
             <div className="timeline__event__description">
-              <p>{t("startWorkingEverything")}!</p>
+              <span>{t("startWorkingEverything")}!</span>
             </div>
           </div>
         </div>
-        <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3">
+        <div className="timeline__event animated fadeInUp delay-1s timeline__event--type3 line-height-25 word-wrap">
           <div className="timeline__event__icon">
             <Image className="aviation-icon" src={aviation} alt="aviation"/>
           </div>
@@ -59,28 +59,28 @@ const TimeLineHtml = () => {
               {t("UNI")}
             </div>
             <div className="timeline__event__description">
-              <p> {t("specialty")}: <strong className="margin-left-5"> {t("specification")}</strong>
-              </p>
-              <p> {t("qualification")} „{t("bachelor")}”</p>
+              <h6> {t("specialty")}: <strong className="margin-left-5"> {t("specification")}</strong>
+              </h6>
+              <span> {t("qualification")} „{t("bachelor")}”</span>
             </div>
           </div>
         </div>
-        <div className="timeline__event animated fadeInUp timeline__event--type1">
+        <div className="timeline__event animated fadeInUp timeline__event--type1 line-height-25 word-wrap">
           <div className="timeline__event__icon">
             <Image className="geodesy-icon" src={geodesy} alt="Express"/>
           </div>
           <div className="timeline__event__date">
-            01-06-2009
+            01-06-2010
           </div>
           <div className="timeline__event__content padding-15">
             <div className="">
               {t("school")}
             </div>
             <div className="timeline__event__description">
-              <p>{t("specialty")}:<strong className="margin-left-5">{t("geodesy")}</strong></p>
-              <p>
-                <p>{t("qualification")} „{t("technician")}”</p>
-              </p>
+              <h6>{t("specialty")}:<strong className="margin-left-5">{t("geodesy")}</strong></h6>
+              <span>
+                {t("qualification")} „{t("technician")}”
+              </span>
             </div>
           </div>
         </div>

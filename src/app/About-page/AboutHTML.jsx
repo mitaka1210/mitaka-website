@@ -5,6 +5,7 @@ import {accordianEN} from "@/content-EN";
 import withClickOutside from "../Helper-components/Click-outside/WithClickOutSide";
 import ScrollTop from "@/app/Helper-components/scrollToTop/scrollTop";
 import {useTranslation} from "react-i18next";
+import Head from "next/head";
 
 const AboutHtml = forwardRef(({open, setOpen}, ref) => {
     // property
@@ -44,6 +45,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
 
 
     return (
+        <>
         <div className="about">
             <div
                 className="about-me text-align-center flex-horizontal-container-raw justify-content-center align-items-center">
@@ -54,8 +56,8 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
                 <div
                     className="my-hobbi flex-vertical-container justify-content-center align-items-center text-align-center margin-15"
                     onClick={closeDiv}>
-                    <span className="about-me-text margin-15">{t("whoIam")}</span>
-                    <span className="about-me-text">{t("goals")}</span>
+                    <p className="about-me-text margin-15">{t("whoIam")}</p>
+                    <p className="about-me-text">{t("goals")}</p>
                     <ul className=" text-align-justify accordian">
                         {accordion.map((item, index) => {
                             return (
@@ -133,6 +135,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
             </section>
             <ScrollTop/>
         </div>
+        </>
     );
 });
 

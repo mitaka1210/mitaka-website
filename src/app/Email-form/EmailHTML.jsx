@@ -96,9 +96,7 @@ const EmailHtml = () => {
   }
 
   return (
-    <div className="container-contact d-flex justify-content-center align-items-center">
-
-
+    <div className="container-contact margin-top-25 d-flex justify-content-center align-items-center">
       <div className="left-svg">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 563" fill="none">
           <g id="Image">
@@ -537,7 +535,7 @@ const EmailHtml = () => {
               ref.current?.reset();
             }}
       >
-        <h1 className="title text-center mb-4">{t("writeMe")}</h1>
+        <h1 className="title text-center">{t("writeMe")}</h1>
         <br/>
         <div className="form-group position-relative">
           <label htmlFor="formName" className="d-block">

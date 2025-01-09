@@ -88,14 +88,13 @@ const CardAquariumsHTML = () => {
                  ></div>
                  <ul className="details">
                   <li className="author">
-                   <a href="#">{article.title.substring(0, 60)}....</a></li>
+                   <a>{article.title.substring(0, 60)}....</a></li>
                   <li className="date">{article.create_article_date}</li>
                   <li className="tags">
                    <ul>
-                    <li><a href="#">{t('Support')}</a></li>
-                    ,
-                    <li><a href="#">{t('Fish')}</a></li>,
-                    <li><a href="#">{t('Aquarium')}</a></li>
+                    <li><a>{t('Support')}</a></li>,
+                    <li><a>{t('Fish')}</a></li>,
+                    <li><a >{t('Aquarium')}</a></li>
                    </ul>
                   </li>
                  </ul>
@@ -113,7 +112,7 @@ const CardAquariumsHTML = () => {
                  <div className="flex-horizontal-container-raw justify-end">
                   <button onClick={() => handleClick(article.id)}>
                    <p className="read-more">
-                    <a href="#">Read More</a>
+                    <a>Read More</a>
                    </p>
                   </button>
                  </div>

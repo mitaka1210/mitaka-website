@@ -19,7 +19,7 @@ interface Page {
   page: string
 }
 
-export default function Dropdown(props: Props, pathname: Props) {
+export default function Dropdown(props: any) {
   //?need to import library
   const size = useWindowSize();
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -61,7 +61,7 @@ export default function Dropdown(props: Props, pathname: Props) {
             <div
               className={`absolute right-14 top-8 z-30 w-[250px] min-h-[300px] flex flex-col py-4 bg-zinc-400 rounded-md ${transClass}`}>
               {
-                menuItems.map((item, number) =>
+                menuItems.map((item:any, number:any) =>
                   <Link
                     key={number}
                     className="hover:bg-zinc-300 hover:text-zinc-500 px-4 py-1"
