@@ -18,17 +18,17 @@ const ContactsHtml = () => {
           <div>
             <span className="margin-10">{t("contactMe")}</span>
             <div className="flex-vertical-container">
-              <p>{t("address")}: {t("streetAdd")}</p>
+              <span>{t("address")}: {t("streetAdd")}</span>
               <div className="flex-horizontal-container justify-content-center">
-                <p className="flex-horizontal-container-raw justify-content-center align-items-center text-align-center small-devices">{t("email")}:
-                </p>
-                <p className="color-orange-text margin-left-10 padding-0">{t("yahoo")}</p>
+                <span className="flex-horizontal-container-raw justify-content-center align-items-center text-align-center small-devices">{t("email")}:
+                </span>
+                <span className="color-orange-text margin-left-10 padding-0">{t("yahoo")}</span>
               </div>
               <div className="flex-horizontal-container justify-content-center">
-                <p className="flex-horizontal-container-raw justify-content-center align-items-center text-align-center small-devices">{t("phone")}:
+                <span className="flex-horizontal-container-raw justify-content-center align-items-center text-align-center small-devices">{t("phone")}:
                   +359 88 49 42 399 -
-                </p>
-                <p className="color-orange-text  padding-0">{t("myName")}</p>
+                </span>
+                <span className="color-orange-text  padding-0">{t("myName")}</span>
               </div>
             </div>
           </div>
