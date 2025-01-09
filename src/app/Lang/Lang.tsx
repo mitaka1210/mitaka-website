@@ -47,25 +47,25 @@ export default function Header() {
 
   }, [lang]);
   return (
-    <div className="flex gap-8 items-center text-white">
-      {lang === 'bg' ? menuItemsBG.map((item, number) => {
-        return item.hasOwnProperty("children") ? (
-          <Dropdown item={item} key={number}/>
-        ) : (
-          <Link key={number} className="hover:text-crimson-500" href="#">
-            {item.title}
-          </Link>
-        );
-      }) : menuItemsEN.map((item, number) => {
-        return item.hasOwnProperty("children") ? (
-          <Dropdown item={item} key={number}/>
-        ) : (
-          <Link key={number} className="hover:text-crimson-500" href="#">
-            {item.title}
-          </Link>
-        );
-      })
-      }
-    </div>
+      <div className="flex gap-8 items-center text-white">
+        {lang === 'bg' ? menuItemsBG.map((item, number) => {
+          return item.hasOwnProperty("children") ? (
+              <Dropdown item={item}  key={number}/>
+          ) : (
+              <Link key={number} className="hover:text-crimson-500" href="#">
+                {item.title}
+              </Link>
+          );
+        }) : menuItemsEN.map((item, number) => {
+          return item.hasOwnProperty("children") ? (
+              <Dropdown item={item}  key={number}/>
+          ) : (
+              <Link key={number} className="hover:text-crimson-500" href="#">
+                {item.title}
+              </Link>
+          );
+        })
+        }
+      </div>
   );
 }
