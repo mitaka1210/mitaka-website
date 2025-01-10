@@ -56,8 +56,8 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
                 <div
                     className="my-hobbi flex-vertical-container justify-content-center align-items-center text-align-center margin-15"
                     onClick={closeDiv}>
-                    <p className="about-me-text margin-15">{t("whoIam")}</p>
-                    <p className="about-me-text">{t("goals")}</p>
+                    <span className="about-me-text margin-15">{t("whoIam")}</span>
+                    <span className="about-me-text">{t("goals")}</span>
                     <ul className=" text-align-justify accordian">
                         {accordion.map((item, index) => {
                             return (
@@ -126,7 +126,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
                         <div
                             className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
                             <h5 className="margin-15">{t("book")}</h5>
-                            <p>{t("moneyVideo")}.</p>
+                            <span>{t("moneyVideo")}.</span>
                             <h6 className="">{t("say")} <strong>{t("RobertKiyosaki")}:</strong></h6>
                             <span><strong className="motivation border-color-bottom-gray ">"{t("motoRobert")}"</strong></span>
                         </div>

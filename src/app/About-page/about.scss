@@ -228,11 +228,15 @@ li.active .accordian-content {
   }
 }
 
-.numbered-item:before {
-  content: "№";
-  font-size: 16px; /* Може да промените размера на шрифта при нужда */
-  color: white; /* Може да промените цвета при нужда */
-  padding: 0 0 0 4px;
+.numbered-item {
+  display: flex;
+  margin-top: 3px;
+  &:before{
+    content: "№";
+    font-size: 16px; /* Може да промените размера на шрифта при нужда */
+    color: white; /* Може да промените цвета при нужда */
+    padding: 0 0 0 4px;
+  }
 }
 
 @media screen and (max-width: 700px) {
