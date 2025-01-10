@@ -1,37 +1,13 @@
-@font-face {
-  font-family: roboto-regular;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
-}
-
-@font-face {
-  font-family: roboto-light;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
-}
-
-.nav-bar-blog {
-  background-color: #000000;
-}
-
-.blog-main-container {
-  h2 {
-    font: 1.2em "roboto-regular";
-  }
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-// Variables
-$background-color: #16384c;
-$card-background-color: #fff;
-$text-color: #111;
-$card-transition: 0.5s ease-in-out;
-
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@use "../variables.scss";
+//@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+@import "../Footer-page/footer.scss";
 
 .blog-main-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: $background-color;
+  background: var(--background-color);
 }
 
 .container {
@@ -46,14 +22,14 @@ $card-transition: 0.5s ease-in-out;
     max-width: 300px;
     height: 140px;
     position: relative;
-    background: $card-background-color;
+    background: var(--card-background-color);
     margin: 30px 10px;
     padding: 20px 20px;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 200px rgba(0, 0, 0, 0.5);
-    transition: $card-transition;
+    transition: var(--card-transition);
 
     &:hover {
       height: 380px;
@@ -84,17 +60,19 @@ $card-transition: 0.5s ease-in-out;
       position: relative;
       padding: 10px 15px;
       text-align: center;
-      color: $text-color;
+      color: var(--text-color);
       visibility: hidden;
       opacity: 0;
-      transition: $card-transition;
+      transition: var(--card-transition);
     }
   }
 }
 
-//card new start
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+.footer-card-aquarium {
+  @extend .set-footer-bottom;
+}
 
+//card new start
 .custom-shape-divider-bottom-1635508836 {
   position: absolute;
   bottom: 0;

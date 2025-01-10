@@ -1,28 +1,44 @@
-import img1 from './football.jpeg';
-import img2 from './arduino.jpeg';
-import img3 from './aquarium.jpeg';
-import img4 from './front-end-work.jpg';
+import img1 from './PWA_weather.png';
+import img2 from './React_website.png';
+import img3 from './React_Todo.png';
+import img4 from './React_Site.png';
+import img5 from './shoes.png';
+import img6 from './payment_ts_site.png';
+import img7 from './pizza.png';
+import img8 from './start-aqua.jpg';
 
-
-export const IMAGES = [
-  {
-    id: 0,
-    url:"https://images.pexels.com/photos/3938704/pexels-photo-3938704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-
-
-  }
-  // {
-  //   id: 1,
-  //   url: img2
-  // },
-  // {
-  //   id: 2,
-  //   url:
-  //     img3
-  // },
-  // {
-  //   id: 3,
-  //   url:
-  //    img4
-  // }
-]
+const imagesArray = [
+ {
+  id: 0,
+  url: img1,
+ },
+ {
+  id: 1,
+  url: img2,
+ },
+ {
+  id: 2,
+  url: img3,
+ },
+ {
+  id: 3,
+  url: img4,
+ },
+ {
+  id: 4,
+  url: img5,
+ },
+ {
+  id: 5,
+  url: img6,
+ },
+ {
+  id: 6,
+  url: img7,
+ },
+ {
+  id: 7,
+  url: img8,
+ },
+];
+export default imagesArray;

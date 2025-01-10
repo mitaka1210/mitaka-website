@@ -863,7 +863,14 @@
 .height-100vh {
   height: 100vh;
 }
-
+//word-wrap
+.word-wrap {
+  word-wrap: break-word;
+}
+//line-height
+.line-height-25 {
+  line-height: 25px;
+}
 //add height auto for div
 .height-auto {
   height: auto;

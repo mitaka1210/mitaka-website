@@ -2,6 +2,7 @@
 import React from 'react';
 import './contact.scss';
 import dynamic from "next/dynamic";
+import LoaderHTML from "@/app/loader/LoaderHTML";
 
 
 const Page = () => {
@@ -19,6 +20,7 @@ const Page = () => {
   );
   return (
     <div className="contacts-page">
+        {/*<LoaderHTML/>*/}
       <div className="contacts-nav flex-horizontal-container text-align-center justify-content-end align-items-center">
         <Navigation/>
       </div>

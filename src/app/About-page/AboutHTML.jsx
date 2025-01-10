@@ -5,6 +5,7 @@ import {accordianEN} from "@/content-EN";
 import withClickOutside from "../Helper-components/Click-outside/WithClickOutSide";
 import ScrollTop from "@/app/Helper-components/scrollToTop/scrollTop";
 import {useTranslation} from "react-i18next";
+import Head from "next/head";
 
 const AboutHtml = forwardRef(({open, setOpen}, ref) => {
     // property
@@ -44,6 +45,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
 
 
     return (
+        <>
         <div className="about">
             <div
                 className="about-me text-align-center flex-horizontal-container-raw justify-content-center align-items-center">
@@ -124,7 +126,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
                         <div
                             className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
                             <h5 className="margin-15">{t("book")}</h5>
-                            <p>{t("moneyVideo")}.</p>
+                            <span>{t("moneyVideo")}.</span>
                             <h6 className="">{t("say")} <strong>{t("RobertKiyosaki")}:</strong></h6>
                             <span><strong className="motivation border-color-bottom-gray ">"{t("motoRobert")}"</strong></span>
                         </div>
@@ -133,6 +135,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
             </section>
             <ScrollTop/>
         </div>
+        </>
     );
 });
 

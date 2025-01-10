@@ -29,7 +29,6 @@ const HomePage = () => {
       }
     }, [showMenu]);
   } else {
-    console.log('pesho4');
     useEffect(() => {
       setTimeout(() => {
         window.location.reload();
