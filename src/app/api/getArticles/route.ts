@@ -18,15 +18,22 @@ const pool = new Pool({
  database: 'postgres',
 });
 export async function GET() {
- // изчакваме req.json() да се изпълни и да ни върне body
  try {
-  const client = await pool.connect();
-  const result = await client.query('SELECT * FROM articles');
-  let articles: ArticlesData[] = result.rows;
+  // Правим заявка към API-то на вашия сървър
+  const response = await fetch('http://192.168.55.5:5000/articles');
+
+  if (!response.ok) {
+   throw new Error('Failed to fetch data from external API');
+  }
+
+  // Парсираме отговора като JSON
+  const articles = await response.json();
+  console.log('pesho', articles);
+  // Връщаме получените данни
   return NextResponse.json(articles);
  } catch (error) {
-  return NextResponse.json({ error: 'Failed to fetch data  ' });
+  console.error('Error fetching articles:', error);
+  return NextResponse.json({ error: 'Failed to fetch data' });
  }
-
 }
 

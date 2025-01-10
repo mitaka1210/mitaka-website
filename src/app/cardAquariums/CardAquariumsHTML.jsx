@@ -7,12 +7,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import images from '../../../assets/images/image';
 import { fetchArticles } from '@/store/getArticles/getArticlesSlice';
 import { useTranslation } from 'react-i18next';
+import {t} from "i18next";
 
 const CardAquariumsHTML = () => {
  const dispatch = useDispatch();
- const { t } = useTranslation();
+setTimeout(() => {
+ // const { t } = useTranslation();
+},2000)
  const router = useRouter();
- let content;
  const status = useSelector((state) => state.articles.status);
  useEffect(() => {
   if (status === 'idle') {
@@ -23,7 +25,6 @@ const CardAquariumsHTML = () => {
  const articlesInfo = useSelector((state) => state.articles.data);
  let img = images;
  const handleClick = (id) => {
-  console.log('pesho', id);
   // const {id} = router.query;
   // Проверете дали използвате низове за query параметрите
   router.push('/ReadArticles' + `/?id=${id}`);
