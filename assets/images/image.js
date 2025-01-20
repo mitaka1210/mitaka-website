@@ -6,6 +6,11 @@ import img5 from './shoes.png';
 import img6 from './payment_ts_site.png';
 import img7 from './pizza.png';
 import img8 from './start-aqua.jpg';
+import img9 from './uploader_website.png';
+import img10 from './warehouse.png';
+import img11 from './clientApp.png';
+import img12 from './driver.png';
+import img13 from './dispatcher.png';
 
 const imagesArray = [
  {
@@ -40,5 +45,26 @@ const imagesArray = [
   id: 7,
   url: img8,
  },
+ {
+  id: 8,
+  url: img9,
+ },
+ {
+  id: 9,
+  url: img10,
+ },
+ {
+  id: 10,
+  url: img11,
+ },
+ {
+  id: 11,
+  url: img12,
+ },
+ {
+  id: 12,
+  url: img13,
+ },
+
 ];
 export default imagesArray;
