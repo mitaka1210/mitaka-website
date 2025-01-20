@@ -32,7 +32,7 @@ export async function GET() {
   // Връщаме получените данни
   return NextResponse.json(articles);
  } catch (error) {
-  console.error('Error fetching articles:', error);
+  console.log('Error fetching articles:', error);
   return NextResponse.json({ error: 'Failed to fetch data' });
  }
 }
