@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 import "./form.scss";
 import {useTranslation} from "react-i18next";
@@ -15,7 +15,13 @@ const EmailHtml = () => {
   const [inputValueEmail, setInputValueEmail] = useState("");
   const [inputValueName, setInputValueName] = useState("");
   const ref = useRef(null);
+  const getLocalStorage = localStorage.getItem("i18nextLng");
 
+
+  useEffect(() => {
+    document.title = getLocalStorage === 'bg' ? 'Контакти - инж.Димитров' : 'Contacts' +
+        ' - eng.Dimitrov';
+  }, [getLocalStorage])
 
   const showPopUp = () => {
     setMsgTrue(!msgTrue);

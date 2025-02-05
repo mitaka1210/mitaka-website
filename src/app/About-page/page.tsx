@@ -1,22 +1,26 @@
 'use client'
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import dynamic from 'next/dynamic';
 import './about.scss';
-import Head from 'next/head';
-const AboutPage = () => {
-  const AboutHtml = dynamic(
+const AboutHtml = dynamic(
     () => import('./AboutHTML'),
     {ssr: false}
-  );
-  const FooterHTML = dynamic(
+);
+const FooterHTML = dynamic(
     () => import('../Footer-page/page'),
     {ssr: false}
-  );
-  const Navigation = dynamic(
+);
+const Navigation = dynamic(
     () => import('../Navigation-component/navigation'),
     {ssr: false}
-  );
+);
+const AboutPage = () => {
+  const getLocalStorage = localStorage.getItem("i18nextLng");
+  useEffect(() => {
+    document.title = getLocalStorage === 'bg' ? 'За мен - инж.Димитров' : 'About Me' +
+        ' - eng.Dimitrov';
+  }, [getLocalStorage])
   return (
     <>
       <main className="images">
