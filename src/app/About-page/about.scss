@@ -1,15 +1,4 @@
-$background: #fafbff;
-$button-width: 100%;
-$border-radius: 5px;
-@font-face {
-  font-family: roboto-regular;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
-}
-
-@font-face {
-  font-family: roboto-light;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
-}
+@use '../variables.scss';
 
 .nav-bar-about {
   width: 100%;
@@ -33,19 +22,15 @@ $border-radius: 5px;
 }
 
 .box-1 > .overlay-box {
-  background-image: url("../../../assets/images/my-finance.jpeg");
-}
-
-.box-2 > .overlay-box {
-  background-image: url("../../../assets/images/aquarium.jpeg");
+  background-image: var(--about-img-3);
 }
 
 .box-3 > .overlay-box {
-  background-image: url("../../../assets/images/front-end-work.jpg");
+  background-image: var(--about-img-2);
 }
 
 .box-4 > .overlay-box {
-  background-image: url("../../../assets/images/book.jpeg");
+  background-image: var(--about-img-1);
 }
 
 .overlay-box:hover .desc,
@@ -185,7 +170,7 @@ li.active .accordian-content {
   margin: 0.5rem;
   line-height: 35px;
   border: 1px solid;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   color: #000;
   text-decoration: none;
   transition: all 0.35s;
@@ -198,11 +183,11 @@ li.active .accordian-content {
 }
 
 .btn-style506 {
-  $btn-color: #dd7e2a;
   position: relative;
-  border-color: $btn-color;
-  color: $btn-color;
+  border-color: var(--btn-color);
+  color: var(--btn-color);
   overflow: hidden;
+
 
   &::before {
     width: 6%;
@@ -210,7 +195,7 @@ li.active .accordian-content {
     position: absolute;
     top: 50%;
     left: 0px;
-    background-color: $btn-color;
+    background-color: var(--btn-color);
     transform: rotateZ(-45deg) translate(-50%, -50%);
     transition: all 0.3s;
     content: "";

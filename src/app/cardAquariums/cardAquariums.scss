@@ -1,11 +1,4 @@
 @use '../Footer-page/footer.scss';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-// Variables
-$background-color: #16384c;
-$card-background-color: #fff;
-$text-color: #111;
-$card-transition: 0.5s ease-in-out;
-
 
 .card-main {
   display: flex !Important;
@@ -26,14 +19,14 @@ $card-transition: 0.5s ease-in-out;
   & .card {
     max-width: 300px;
     height: 140px;
-    background: $card-background-color;
+    background: var(--card-background-color);
     margin: 30px 10px;
     padding: 20px 20px;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 5px 200px rgba(0, 0, 0, 0.5);
-    transition: $card-transition;
+    transition: var(--card-transition);
 
     &:hover {
       height: auto;
@@ -83,10 +76,10 @@ $card-transition: 0.5s ease-in-out;
       position: relative;
       padding: 10px 15px;
       text-align: center;
-      color: $text-color;
+      color: var(--text-color);
       visibility: hidden;
       opacity: 0;
-      transition: $card-transition;
+      transition: var(--card-transition);
     }
   }
 
@@ -104,13 +97,6 @@ $card-transition: 0.5s ease-in-out;
   overflow: auto;
   height: 1000px;
 }
-
-//test code
-
-//.content-div {
-//  background-size: cover;
-//  background: url('https://images.unsplash.com/photo-1522093007474-d86e9bf7ba6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80') no-repeat center;
-//}
 
 .content-div:hover {
   background-image: linear-gradient(to right,
@@ -147,17 +133,12 @@ $card-transition: 0.5s ease-in-out;
   height: 100vh;
 }
 
-$color_white: #fff;
-$color_prime: #5ad67d;
-$color_grey: #e2e2e2;
-$color_grey_dark: #a2a2a2;
-
 .blog-card {
   display: flex;
   flex-direction: column;
   box-shadow: 0 3px 7px -1px rgba(#000, .1);
   margin: 1rem auto 1.6%;
-  background: $color_white;
+  background: var(--color_white);
   line-height: 1.4;
   font-family: sans-serif;
   border-radius: 5px;
@@ -168,7 +149,7 @@ $color_grey_dark: #a2a2a2;
     color: inherit;
 
     &:hover {
-      color: $color_prime;
+      color: var(--color_prime);
     }
   }
 
@@ -210,7 +191,7 @@ $color_grey_dark: #a2a2a2;
     margin: auto;
     transition: left .2s;
     background: rgba(#000, .6);
-    color: $color_white;
+    color: var(--color_white);
     padding: 10px;
     width: 100%;
     font-size: .9rem;
@@ -224,20 +205,17 @@ $color_grey_dark: #a2a2a2;
     }
 
     .author:before {
-      font-family: FontAwesome;
       margin-right: 10px;
       content: "\f007";
     }
 
     .date:before {
-      font-family: FontAwesome;
       margin-right: 10px;
       content: "\f133";
     }
 
     .tags {
       ul:before {
-        font-family: FontAwesome;
         content: "\f02b";
         margin-right: 10px;
       }
@@ -254,7 +232,7 @@ $color_grey_dark: #a2a2a2;
 
   .description {
     padding: 1rem;
-    background: $color_white;
+    background: var(--color_white);
     position: relative;
     z-index: 1;
 
@@ -273,7 +251,7 @@ $color_grey_dark: #a2a2a2;
       font-size: 1rem;
       font-weight: 300;
       text-transform: uppercase;
-      color: $color_grey_dark;
+      color: var(--color_grey_dark);
       margin-top: 5px;
     }
 
@@ -281,7 +259,7 @@ $color_grey_dark: #a2a2a2;
       text-align: right;
 
       a {
-        color: $color_prime;
+        color: var(--color_prime);
         display: inline-block;
         position: relative;
 
@@ -312,7 +290,7 @@ $color_grey_dark: #a2a2a2;
         content: "";
         position: absolute;
         height: 5px;
-        background: $color_prime;
+        background: var(--color_prime);
         width: 35px;
         top: -0.75rem;
         border-radius: 3px;

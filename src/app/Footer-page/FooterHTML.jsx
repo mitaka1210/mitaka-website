@@ -5,7 +5,7 @@ import Image from "next/image";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import "./footer.scss";
-import QR from "../../../assets/images/ONLINE QR Code -  Димитър Димитров.png";
+import QR from "../../../assets/images/visitQR.png";
 import {useTranslation} from "react-i18next";
 
 const FooterHtml = () => {
