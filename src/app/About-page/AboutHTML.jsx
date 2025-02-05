@@ -5,7 +5,6 @@ import {accordianEN} from "@/content-EN";
 import withClickOutside from "../Helper-components/Click-outside/WithClickOutSide";
 import ScrollTop from "@/app/Helper-components/scrollToTop/scrollTop";
 import {useTranslation} from "react-i18next";
-import Head from "next/head";
 
 const AboutHtml = forwardRef(({open, setOpen}, ref) => {
     // property
