@@ -1,7 +1,7 @@
 'use client'
 
 import "./home.scss";
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import LoaderHTML from "@/app/loader/LoaderHTML";
 import dynamic from "next/dynamic";
 import { useTranslation } from "react-i18next";
@@ -17,12 +17,12 @@ const Navigation = dynamic(
 
 const HomePage = () => {
   const [showMenu, setShowMenu] = useState(true);
-  const getLocalStorage = localStorage.getItem("i18nextLng");
-  console.log('pesho', getLocalStorage);
-
+  const [language, setLanguage] = useState('en');
   useEffect(() => {
     // change meta title on page load
-    document.title = getLocalStorage === 'bg' ? 'Начална страница' : 'Home page'
+    const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+    setLanguage(storedLang);
+    document.title = storedLang ===  'bg' ? 'Начална страница' : 'Home page';
 
     // Проверка само ако сме в браузърна среда
     if (typeof window !== 'undefined') {
@@ -46,7 +46,7 @@ const HomePage = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [getLocalStorage]); // Празен dependency масив
+  }, [language]); // Празен dependency масив
 
   return (
       <>

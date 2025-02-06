@@ -11,7 +11,6 @@ import store from "@/store/storeState/store";
 const inter = Inter({subsets: ["latin"]});
 
 export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
-    console.log('pesho', children);
     return (
 
             <Provider store={store}>

@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import dynamic from 'next/dynamic';
 import './about.scss';
 const AboutHtml = dynamic(
@@ -16,11 +16,14 @@ const Navigation = dynamic(
     {ssr: false}
 );
 const AboutPage = () => {
-  const getLocalStorage = localStorage.getItem("i18nextLng");
+  const [language, setLanguage] = useState('en');
+
   useEffect(() => {
-    document.title = getLocalStorage === 'bg' ? 'За мен - инж.Димитров' : 'About Me' +
+    const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+    setLanguage(storedLang);
+    document.title = storedLang ===  'bg' ? 'За мен - инж.Димитров' : 'About Me' +
         ' - eng.Dimitrov';
-  }, [getLocalStorage])
+  }, []);
   return (
     <>
       <main className="images">

@@ -19,13 +19,13 @@ const Navigation = dynamic(
     { ssr: false },
 );
 const Page = () => {
-
-    const getLocalStorage = localStorage.getItem("i18nextLng");
-
+    const [language, setLanguage] = useState('en');
 
     useEffect(() => {
-        document.title = getLocalStorage === 'bg' ? 'Блог - Димитър Димитров' : 'Blog - Dimitar Dimitrov';
-    }, [getLocalStorage])
+        const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+        setLanguage(storedLang);
+        document.title = storedLang === 'bg' ? 'Блог - Димитър Димитров' : 'Blog - Dimitar Dimitrov';
+    }, []);
 
     return (
      <>

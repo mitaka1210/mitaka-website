@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useEffect} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import "./project.scss";
 import {useTranslation} from "react-i18next";
 import images from "../../../assets/images/image";
@@ -9,13 +9,15 @@ import images from "../../../assets/images/image";
 const ProjectsHtml = () => {
     const {t} = useTranslation();
     let img = images;
-    const getLocalStorage = localStorage.getItem("i18nextLng");
 
+    const [language, setLanguage] = useState('en');
 
     useEffect(() => {
-        document.title = getLocalStorage === 'bg' ? 'Моята история -' +
-            ' инж.Димитров' : 'My Timeline - eng.Dimitrov';
-    }, [getLocalStorage])
+        const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+        setLanguage(storedLang);
+        document.title = storedLang ===  'bg' ? 'Моята история -' +
+        ' инж.Димитров' : 'My Timeline - eng.Dimitrov';
+    }, []);
     return (
         <div className="flex-vertical-container text-align-center justify-content-center">
             <section className="start-programing flex-item text-align-center">

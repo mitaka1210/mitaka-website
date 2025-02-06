@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import dynamic from "next/dynamic";
 const TimeLineHtml = dynamic(
     () => import('./TimeLineHTML'),
@@ -15,11 +15,14 @@ const Navigation = dynamic(
     {ssr: false}
 );
 const Page = () => {
-    const getLocalStorage = localStorage.getItem("i18nextLng");
+    const [language, setLanguage] = useState('en');
+
     useEffect(() => {
-        document.title = getLocalStorage === 'bg' ? 'Историята ми! - инж.Димитров' : 'Professional Skills' +
+        const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+        setLanguage(storedLang);
+        document.title = storedLang ===  'bg' ? 'Историята ми! - инж.Димитров' : 'Professional Skills' +
             ' - eng.Dimitrov';
-    }, [getLocalStorage])
+    }, []);
   return (
     <div className="timeline-page">
       <div className="timeline-nav flex-horizontal-container text-align-center justify-content-end align-items-center">
