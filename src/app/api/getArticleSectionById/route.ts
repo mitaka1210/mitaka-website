@@ -30,16 +30,12 @@ export async function GET(req: NextRequest, res: any) {
   return NextResponse.json({ error: 'ID parameter is missing' }, { status: 400 });
  }
 
- console.log('Requested id:', id);
-
  try {
   // Свързване с базата данни
   const client = await pool.connect();
 
   // Заявка към базата данни за секцията със съответното id
-  const result = await client.query('SELECT * FROM sections WHERE article_id = $1', [id]);
-
-  // Ако няма намерени редове
+  const result = await client.query('SELECT * FROM sections WHERE article_id = $1', [id]);// Ако няма намерени редове
   if (result.rows.length === 0) {
    return NextResponse.json({ error: 'Section not found' }, { status: 404 });
   }

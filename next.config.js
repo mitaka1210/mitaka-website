@@ -1,9 +1,17 @@
-const {i18n} = require("./next-i18next.config");
-
+const { i18n } = require("./next-i18next.config");
 
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "share.d-dimitrov.eu",
+        pathname: "/api/articles/**", // Пътят, който връща изображенията
+      },
+    ],
+  },
   async redirects() {
     return [
       {
@@ -14,4 +22,5 @@ const nextConfig = {
     ];
   },
 };
+
 module.exports = nextConfig;

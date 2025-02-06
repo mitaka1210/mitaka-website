@@ -25,6 +25,7 @@ setTimeout(() => {
  const articlesInfo = useSelector((state) => state.articles.data);
  let img = images;
  const handleClick = (id) => {
+  console.log("pesho",id);
   // const {id} = router.query;
   // Проверете дали използвате низове за query параметрите
   router.push('/ReadArticles' + `/?id=${id}`);
@@ -65,11 +66,11 @@ setTimeout(() => {
       <section
        className="flex flex-col  justify-center items-center  add-scroll-aquarium-page">
        <div
-        className="prose text-gray-500 prose-sm prose-headings:font-normal prose-headings:text-xl">
+        className="prose text-gray-500 prose-sm prose-headings:font-normal prose-headings:text-xl mobile-devices-styles">
         <div className="flex-vertical-container-raw justify-center align-items-center">
-         <h1 className="text-align-center">"Подводна магия у дома: Всичко за
+         <h4 className="text-align-center">"Подводна магия у дома: Всичко за
           аквариуми – от старта до тайните
-          на професионалистите"</h1>
+          на професионалистите"</h4>
          <p className="text-balance">"Живот под стъклото: Тайният свят на
           аквариумите, който ще ви плени"</p>
         </div>
@@ -105,16 +106,16 @@ setTimeout(() => {
                  <h2>Вашето ръководство за създаване и поддръжка на здрав и
                   красив
                   аквариум.</h2>
-                 <p>Аквариумите не са просто декорация, а живи екосистеми, които
+                 <span>Аквариумите не са просто декорация, а живи екосистеми, които
                   внасят спокойствие и красота в дома. Те обаче изискват знания,
                   внимание и грижи. Ако мечтаете за аквариум, но не знаете
                   откъде
-                  да започнете, тази статия ще ви даде основни насоки.</p>
+                  да започнете, тази статия ще ви даде основни насоки.</span>
                  <div className="flex-horizontal-container-raw justify-end">
                   <button onClick={() => handleClick(article.id)}>
-                   <p className="read-more">
+                   <span className="read-more">
                     <a>Read More</a>
-                   </p>
+                   </span>
                   </button>
                  </div>
                 </div>

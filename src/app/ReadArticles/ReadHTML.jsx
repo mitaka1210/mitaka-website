@@ -18,12 +18,12 @@ const ReadHtml = () => {
  const status = useSelector((state) => state.sections.status);
  const articleSections = useSelector((state) => state.sections.data);
  const id = searchParams.get('id');
-
+ console.log("pesho",id);
  useEffect(() => {
-  if (status === 'idle') {
+
    dispatch(fetchSections(id));
-  }
- }, [status, dispatch]);
+
+ }, [id]);
 
  const goBack = () => {
   dispatch(resetState());
@@ -41,7 +41,7 @@ const ReadHtml = () => {
        if (article.id === Number(id)) {
         return (
          <div key={index}>
-          <h3 className="read-title">{article.title}</h3>
+          <h4 className="read-title">{article.title}</h4>
          </div>
         );
        }
@@ -57,9 +57,8 @@ const ReadHtml = () => {
     articleSections.map((section, index) => {
      return (
       <article key={index}>
-
        <div className="content-container">
-        <h3>{section.title}</h3>
+        <h4>{section.title}</h4>
         <p className="article-content">{section.content}</p>
        </div>
       </article>);

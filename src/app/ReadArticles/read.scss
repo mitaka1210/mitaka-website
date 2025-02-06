@@ -1,5 +1,5 @@
 .read {
-  margin: 5em;
+  margin: .5em;
 
 
   & .read-back-btn {
@@ -27,7 +27,6 @@
 .article-content {
   justify-content: center;
   display: flex;
-  margin: 20px;
   text-align: center;
 
   & p {
@@ -83,7 +82,6 @@ article:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 70%;
   padding: 0 15px;
 }
 
@@ -98,7 +96,6 @@ article:hover {
 
 .content-container .article-content {
   overflow: hidden;
-  text-align: justify;
   color: #666;
 }
 
