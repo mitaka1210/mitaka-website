@@ -94,8 +94,8 @@
 }
 
 .add-scroll-aquarium-page {
-  overflow: auto;
-  height: 1000px;
+  //overflow: auto;
+  //height: 1000px;
 }
 
 .content-div:hover {
@@ -348,6 +348,13 @@
 @media (min-height: 1100px) {
   .add-scroll-aquarium-page {
     height: 1400px;
+  }
+
+}
+
+@media (max-width: 420px) {
+  .mobile-devices-styles {
+    text-align: center;
   }
 
 }
