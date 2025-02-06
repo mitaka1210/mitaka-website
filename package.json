@@ -22,7 +22,7 @@
     "@reduxjs/toolkit": "^2.2.6",
     "autotyping": "^1.2.6",
     "axios": "^1.7.2",
-    "express": "^4.19.2",
+    "express": "^4.21.2",
     "express-rate-limit": "^7.3.1",
     "i18next": "^23.11.5",
     "i18next-browser-languagedetector": "^8.0.0",
@@ -41,7 +41,7 @@
     "styled-components": "^6.1.11",
     "typed.js": "^2.1.0",
     "typewriter-effect": "^2.21.0",
-    "vercel": "^32.3.0"
+    "vercel": "^41.0.1"
   },
   "devDependencies": {
     "@types/next-auth": "^3.15.0",
