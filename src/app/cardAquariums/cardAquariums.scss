@@ -248,10 +248,10 @@
     }
 
     h2 {
+      color: var(--color_grey_dark);
       font-size: 1rem;
       font-weight: 300;
       text-transform: uppercase;
-      color: var(--color_grey_dark);
       margin-top: 5px;
     }
 
@@ -287,10 +287,10 @@
       margin-top: 1.25rem;
 
       &:before {
+        background: var(--color_prime);
         content: "";
         position: absolute;
         height: 5px;
-        background: var(--color_prime);
         width: 35px;
         top: -0.75rem;
         border-radius: 3px;

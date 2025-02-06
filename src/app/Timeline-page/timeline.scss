@@ -1,34 +1,4 @@
-@font-face {
-  font-family: roboto-regular;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
-}
-
-@font-face {
-  font-family: roboto-light;
-  src: url('../../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
-}
-
-
-$content-width: calc(45vw - 84px);
-$margin: 20px;
-$spacing: 20px;
-$bdrs: 6px;
-$circle-size: 40px;
-$icon-size: 32px;
-$bdrs-icon: 100%;
-
-$color1: #9251ac;
-$color2: #f6a4ec;
-
-$color3: #87bbfe;
-$color4: #555ac0;
-
-$color5: #24b47e;
-$color6: #aff1b6;
-
 .timeline-page {
-  font: 1.2em "roboto-regular";
-
   & .timeline-nav {
     background-color: #000000;
   }
@@ -41,17 +11,16 @@ $color6: #aff1b6;
 .timeline {
   display: flex;
   flex-direction: column;
-  margin: $margin auto;
+  margin: var(--margin) auto;
   position: relative;
   height: calc(100vh - 20vh);
   overflow: auto;
 
   &__event {
-    //margin-bottom: $spacing;
     position: relative;
     display: flex;
-    margin: $spacing 0;
-    border-radius: $bdrs;
+    margin: var(--spacing) 0;
+    border-radius: var(--bdrs);
     align-self: center;
     width: 50vw;
 
@@ -59,11 +28,11 @@ $color6: #aff1b6;
       flex-direction: row-reverse;
 
       .timeline__event__date {
-        border-radius: 0 $bdrs $bdrs 0;
+        border-radius: 0 var(--bdrs) var(--bdrs) 0;
       }
 
       .timeline__event__content {
-        border-radius: $bdrs 0 0 $bdrs;
+        border-radius: var(--bdrs) 0 0 var(--bdrs);
       }
 
       .timeline__event__icon {
@@ -71,7 +40,7 @@ $color6: #aff1b6;
           content: "";
           width: 2px;
           height: 100%;
-          background: $color2;
+          background: var(--color2);
           position: absolute;
           top: 0%;
           left: 50%;
@@ -85,7 +54,7 @@ $color6: #aff1b6;
           content: "";
           width: 100%;
           height: 2px;
-          background: $color2;
+          background: var(--color2);
           position: absolute;
           right: 0;
           z-index: -1;
@@ -103,60 +72,58 @@ $color6: #aff1b6;
       text-transform: uppercase;
 
       font-weight: 600;
-      color: $color1;
+      color: var(--color1);
       letter-spacing: 1.5px;
     }
 
     &__content {
-      padding: $spacing;
+      padding: var(--spacing);
       box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
       0 18px 36px -18px rgba(0, 0, 0, 0.3),
       0 -12px 36px -8px rgba(0, 0, 0, 0.025);
       background: #fff;
-      width: $content-width;
-      border-radius: 0 $bdrs $bdrs 0;
+      width: var(--content-width);
+      border-radius: 0 var(--bdrs) var(--bdrs) 0;
     }
 
     &__date {
-      color: $color2;
+      color: var(--color2);
       font-size: 1.5rem;
       font-weight: 600;
-      background: $color1;
+      background: var(--color1);
       display: flex;
       align-items: center;
       justify-content: center;
       white-space: nowrap;
-      padding: 0 $spacing;
-      border-radius: $bdrs 0 0 $bdrs;
+      padding: 0 var(--spacing);
+      border-radius: var(--bdrs) 0 0 var(--bdrs);
     }
 
     &__icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: $color1;
-      padding: $spacing;
+      color: var(--color1);
+      padding: 40px;
       align-self: center;
-      margin: 0 $spacing;
-      background: $color2;
-      border-radius: $bdrs-icon;
-      width: $circle-size;
+      margin: 0 var(--spacing);
+      background: var(--color2);
+      border-radius: var(--bdrs-icon);
+      width: var(--circle-size);
       box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
       0 18px 36px -18px rgba(0, 0, 0, 0.3),
       0 -12px 36px -8px rgba(0, 0, 0, 0.025);
-      padding: 40px;
-      height: $circle-size;
+      height: var(--circle-size);
       position: relative;
-
       i {
-        font-size: $icon-size;
+        font-size: var(--icon-size);
       }
 
       &:before {
         content: "";
         width: 2px;
         height: 100%;
-        background: $color2;
+        background: var(--color2);
         position: absolute;
         top: 0%;
         z-index: -1;
@@ -169,7 +136,7 @@ $color6: #aff1b6;
         content: "";
         width: 100%;
         height: 2px;
-        background: $color2;
+        background: var(--color2);
         position: absolute;
         left: 0%;
         z-index: -1;
@@ -185,35 +152,35 @@ $color6: #aff1b6;
 
     &--type2 {
       &:after {
-        background: $color4;
+        background: var(--color4);
       }
 
       .timeline__event__date {
-        color: $color3;
-        background: $color4;
+        color: var(--color3);
+        background: var(--color4);
       }
 
       &:nth-child(2n + 1) {
         .timeline__event__icon {
           &:before,
           &:after {
-            background: $color3;
+            background: var(--color3);
           }
         }
       }
 
       .timeline__event__icon {
-        background: $color3;
-        color: $color4;
+        background: var(--color3);
+        color: var(--color4);
 
         &:before,
         &:after {
-          background: $color3;
+          background: var(--color3);
         }
       }
 
       .timeline__event__title {
-        color: $color4;
+        color: var(--color4);
       }
 
       .timeline__event__title {
@@ -222,35 +189,35 @@ $color6: #aff1b6;
 
     &--type3 {
       &:after {
-        background: $color5;
+        background: var(--color5);
       }
 
       .timeline__event__date {
-        color: $color6;
-        background-color: $color5;
+        color: var(--color6);
+        background-color: var(--color5);
       }
 
       &:nth-child(2n + 1) {
         .timeline__event__icon {
           &:before,
           &:after {
-            background: $color6;
+            background: var(--color6);
           }
         }
       }
 
       .timeline__event__icon {
-        background: $color6;
-        color: $color5;
+        background: var(--color6);
+        color: var(--color5);
 
         &:before,
         &:after {
-          background: $color6;
+          background: var(--color6);
         }
       }
 
       .timeline__event__title {
-        color: $color5;
+        color: var(--color5);
       }
 
       .timeline__event__title {
@@ -277,7 +244,7 @@ $color6: #aff1b6;
     }
 
     &__icon {
-      border-radius: $bdrs $bdrs 0 0;
+      border-radius: var(--bdrs) var(--bdrs) 0 0;
       width: 100%;
       margin: 0;
       box-shadow: none;
@@ -290,7 +257,7 @@ $color6: #aff1b6;
 
     &__date {
       border-radius: 0;
-      padding: $spacing;
+      padding: var(--spacing);
     }
 
     &:nth-child(2n + 1) {
@@ -299,11 +266,11 @@ $color6: #aff1b6;
 
       .timeline__event__date {
         border-radius: 0;
-        padding: $spacing;
+        padding: var(--spacing);
       }
 
       .timeline__event__icon {
-        border-radius: $bdrs $bdrs 0 0;
+        border-radius: var(--bdrs) var(--bdrs) 0 0;
         margin: 0;
       }
     }

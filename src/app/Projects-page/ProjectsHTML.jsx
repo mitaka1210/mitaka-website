@@ -1,14 +1,23 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import "./project.scss";
 import {useTranslation} from "react-i18next";
 import images from "../../../assets/images/image";
 
 
 const ProjectsHtml = () => {
-    let img = images;
     const {t} = useTranslation();
+    let img = images;
+
+    const [language, setLanguage] = useState('en');
+
+    useEffect(() => {
+        const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+        setLanguage(storedLang);
+        document.title = storedLang ===  'bg' ? 'Моята история -' +
+        ' инж.Димитров' : 'My Timeline - eng.Dimitrov';
+    }, []);
     return (
         <div className="flex-vertical-container text-align-center justify-content-center">
             <section className="start-programing flex-item text-align-center">
@@ -248,7 +257,7 @@ const ProjectsHtml = () => {
             </section>
             <section
                 className="magic-novatio flex-vertical-container justify-content-center text-align-center">
-                <h6>{t("createMyBlog")}!</h6>
+                <h3>{t("createMyBlog")}!</h3>
                 <div className="box-wrapper">
                     <figure className="shape-box shape-box_half">
                         <img
@@ -318,13 +327,12 @@ const ProjectsHtml = () => {
             </section>
             <section
                 className="magic-novatio flex-vertical-container justify-content-center text-align-center">
-                <h6>{t("iWantMore")}!</h6>
-                <div
-                    className="flex-horizontal-container-raw text-align-center justify-content-center">
-                    <p className="margin-10 padding-0">{t("magic")}</p>
-                    <p className="padding-0 margin-top-5"><q><strong
-                        className="novatio-header">{t("novatio")}</strong></q>
-                    </p>
+                <h3>{t("iWantMore")}!</h3>
+                <div className="flex-horizontal-container-raw text-align-center justify-content-center">
+                    {/*<p className="margin-10 padding-0">{t("magic")}</p>*/}
+                    {/*<p className="padding-0 margin-top-5"><q><strong*/}
+                    {/*    className="novatio-header">{t("novatio")}</strong></q>*/}
+                    {/*</p>*/}
                 </div>
                 <div className="box-wrapper">
                     <figure className="shape-box shape-box_half">

@@ -19,17 +19,10 @@ const pool = new Pool({
 });
 export async function GET() {
  try {
-  // Правим заявка към API-то на вашия сървър
-  const response = await fetch('http://192.168.55.5:5000/articles');
-
-  if (!response.ok) {
-   throw new Error('Failed to fetch data from external API');
-  }
-
-  // Парсираме отговора като JSON
-  const articles = await response.json();
-  console.log('pesho', articles);
-  // Връщаме получените данни
+  // Query to fetch all articles
+  const result = await pool.query('SELECT * FROM articles');
+  const articles = result.rows;
+  // Return the fetched articles as JSON
   return NextResponse.json(articles);
  } catch (error) {
   console.log('Error fetching articles:', error);
