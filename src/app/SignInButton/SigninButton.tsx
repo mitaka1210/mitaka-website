@@ -16,7 +16,7 @@ const SignInButton = () => {
 
 
   const logIn = () => {
-    signIn(undefined, {callbackUrl: '/'}).then(r => {})
+    signIn("google", {callbackUrl: '/'}).then(r => {})
   }
   if (session && session.user) {
     return (

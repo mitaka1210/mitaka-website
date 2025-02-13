@@ -89,13 +89,17 @@
   }
 }
 
+.footer-css {
+  position: absolute;
+    bottom: 0;
+}
+
 .footer-card-aquarium {
   @extend .set-footer-bottom;
 }
 
 .add-scroll-aquarium-page {
-  //overflow: auto;
-  //height: 1000px;
+    height: 100dvh;
 }
 
 .content-div:hover {
@@ -345,6 +349,7 @@
   }
 }
 
+
 @media (min-height: 1100px) {
   .add-scroll-aquarium-page {
     height: 1400px;
@@ -352,7 +357,7 @@
 
 }
 
-@media (max-width: 420px) {
+@media (max-width: 500px) {
   .mobile-devices-styles {
     text-align: center;
   }

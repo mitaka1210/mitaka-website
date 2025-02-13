@@ -4,9 +4,9 @@ import FooterHtml from "@/app/Footer-page/FooterHTML";
 
 const Page = () => {
   return (
-    <div>
+    <>
       <FooterHtml/>
-    </div>
+    </>
   );
 };
 

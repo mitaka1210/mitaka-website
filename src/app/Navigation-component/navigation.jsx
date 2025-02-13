@@ -6,20 +6,15 @@ import "./nav.scss";
 import {useTranslation} from "react-i18next";
 import HamburgerMenu from "@/app/HamburgerMenu-page/HamburgerMenuHTML";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
-import Appbar from "@/app/SignInButton/AppBar/AppBar";
 import React from "react";
 import Header from "@/app/Lang/Lang";
+import ChangeLang from "@/app/Lang/Lang";
 
 const Navigation = () => {
   const {t} = useTranslation();
   const size = useWindowSize();
   return (
-    <header className="flex-horizontal-container justify-content-end text-align-center">
-      <div className="my-logo">
-        {/*<p href="#">Portfo<span>lio.</span></p>*/}
-        {/*<div className="logo-images"></div>*/}
-      </div>
-
+    <header className="maxWidthAndHeight flex-horizontal-container justify-content-end text-align-center">
       {/*!If we need to check screen size START*/}
       {/*<div className='color-white addP'>*/}
       {/*  {size.width}px / {size.height}px*/}
@@ -52,10 +47,10 @@ const Navigation = () => {
               <Link href="/Contacts-page">{t("contact")}</Link>
             </li>
             <li className="text-8 color-white margin-15">
-              <Appbar/>
+                <Link href="/Login-page">{t("login")}</Link>
             </li>
             <li className="text-9 color-white margin-15">
-              <Header/>
+              <ChangeLang/>
             </li>
           </ul>
         </div>

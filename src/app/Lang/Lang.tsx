@@ -40,7 +40,7 @@ const menuItemsBG: MenuItem[] = [
   },
 ];
 
-export default function Header() {
+export default function ChangeLang() {
   let lang = localStorage.getItem("i18nextLng");
   const pathname = usePathname();
   useEffect(() => {
