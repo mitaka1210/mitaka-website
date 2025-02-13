@@ -29,7 +29,7 @@ const Page = () => {
     <div>
       <Navigation/>
       <CardAquariumsHTML/>
-      <div className="fotter-css">
+      <div className="input-width-100">
         <FooterHTML/>
       </div>
     </div>
