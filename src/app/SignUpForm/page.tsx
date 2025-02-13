@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-import './contact.scss';
 import {SignUpFormHTML, FooterHTML, Navigation} from './componentsShare/DynamicComponentsShare';
 
 const LoginPage = () => {
