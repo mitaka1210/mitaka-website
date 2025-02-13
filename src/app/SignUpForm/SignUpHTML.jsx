@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createAccount } from "@/store/createAccount/createAccountSlice";
 import {validateInput} from '../validSignUpFormInput/validSignUpFormInput';
-
 const SignUpFormHTML = () => {
     const [username, setUsername] = useState('');
     const [first_name, setFirstName] = useState('');
