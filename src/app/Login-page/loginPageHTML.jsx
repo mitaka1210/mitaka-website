@@ -5,18 +5,20 @@ import {useRouter} from "next/navigation";
 import {validLoginInput} from "@/app/signInValidInput/signInValidInput";
 import {login} from "@/store/login/loginSlice";
 import SignUpFormHTML from '../SignUpForm/SignUpHTML';
+import {useTranslation} from "react-i18next";
+import Image from "next/image";
+import google from '../../../assets/images/google-svgrepo-com.svg';
+import {signIn, signOut, useSession} from "next-auth/react";
 
 function LoginPageHtml(props) {
-
-        const [errors, setErrors] = useState({});
-        const [username, setUsername] = useState('');
-        const [password, setPassword] = useState('');
-        const [loginForm, setHideForm] = useState(true);
-        const dispatch = useDispatch();
-        const { loading, error } = useSelector((state) => state.auth);
-        const [isLoggedIn, setIsLoggedIn] = useState(false);
-        const router = useRouter();
-        const [user, setUser] = useState(null);
+    const { t } = useTranslation(); // ✅ Винаги се извиква в началото
+    const [errors, setErrors] = useState({});
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [loginForm, setHideForm] = useState(true);
+    const dispatch = useDispatch();
+    const { loading, error } = useSelector((state) => state.auth);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
         useEffect(() => {
             const signUpButton = document.getElementById('signUp');
             const signInButton = document.getElementById('signIn');
@@ -38,7 +40,11 @@ function LoginPageHtml(props) {
             };
         }, []);
         const googleLogin  = () => {
-
+            signIn("google", {callbackUrl: '/'}).then(r => {})
+        }
+        const goToHome = () => {
+            signOut({callbackUrl: '/'}).then(r => {
+            })
         }
         const handleLogin = async (e) => {
             console.log(username, password);
@@ -67,26 +73,26 @@ function LoginPageHtml(props) {
                         {loginForm ? (
                             <div>
                                 <form action="#" onSubmit={handleLogin}>
-                                    <h2 className="add-color-white">Sign In</h2>
+                                    <h3 className="color-white">{t('login')}</h3>
                                     <div className="social-container-login" onClick={googleLogin}>
-                                        {/*<a href="#" className="social">*/}
-                                        {/*    <img className="google-size" src={google} alt="google" />*/}
-                                        {/*</a>*/}
+                                        <a href="#" className="social">
+                                            <Image src={google} alt="google"/>
+                                        </a>
                                     </div>
-                                    <span className="add-color-white">or use your account</span>
+                                    <span className="color-white">{t('orUseYourAccount')}</span>
                                     <div>
                                         <label className="add-color-white login-input margin-top-15">Username</label>
-                                        <input type="text" value={username} name="username" onChange={(e) => setUsername(e.target.value)} />
-                                        {errors.username && <p style={{ color: 'red' }}>{errors.username}</p>}
+                                        <input type="text" value={username} name="username" placeholder={t('username')} onChange={(e) => setUsername(e.target.value)} />
+                                        {errors.username && <span style={{ color: 'red' }}>{errors.username}</span>}
                                     </div>
                                     <div className="margin-15">
                                         <label className="add-color-white">Password</label>
-                                        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                                        {errors.password && <p style={{ color: 'red' }}>{errors.password}</p>}
+                                        <input type="password" value={password} placeholder={t('password')} onChange={(e) => setPassword(e.target.value)} />
+                                        {errors.password && <span style={{ color: 'red' }}>{errors.password}</span>}
                                     </div>
                                     {isLoggedIn && <p style={{ color: 'red' }}>{error}</p>}
                                     <button className="btn-login-page" onClick={handleClickSignIn} type="submit" disabled={loading}>
-                                        {loading ? 'Logging in...' : 'Login'}
+                                        {loading ? t('waitLoad') : t("login")}
                                     </button>
                                 </form>
                             </div>
@@ -98,18 +104,18 @@ function LoginPageHtml(props) {
                     </div>
                     <div className="overlay-container-login">
                         <div className="overlay">
-                            <div className="overlay-panel overlay-left" onClick={handleClickSignIn}>
-                                <h5>Welcome Back</h5>
-                                <p>To keep connected with us please login with your personal info</p>
+                            <div className="overlay-panel overlay-left">
+                                <h5>{t('welcomeBack')}</h5>
+                                <p>{t('keepConnectedWithMePleaseLogin')}</p>
                                 <button className="ghost btn-login-page" id="signIn" onClick={handleClickSignIn}>
-                                    Sign In
+                                    {t("login")}
                                 </button>
                             </div>
-                            <div className="overlay-panel overlay-right" onClick={handleClickSignUp}>
-                                <h4>Hello,Friend</h4>
-                                <p>Enter your personal details and start journey with me!</p>
+                            <div className="overlay-panel overlay-right">
+                                <h6>{t("hiFriend")}</h6>
+                                <span>{t("enterDetails")}</span>
                                 <button className="ghost btn-login-page hello-friend-btn" id="signUp" onClick={handleClickSignUp}>
-                                    Sign Up
+                                    {t("signUp")}
                                 </button>
                             </div>
                         </div>
