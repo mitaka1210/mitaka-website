@@ -90,5 +90,19 @@
   "soon": "Soon",
   "Support": "Support",
   "fish": "Fish",
-  "aquariums": "Aquariums"
+  "aquariums": "Aquariums",
+  "login": "Login",
+  "signUp": "signUp",
+  "waitLoad": "Logging in...",
+  "createAccount": "Create account",
+  "hiFriend": "Hi, friend!",
+  "enterDetails": "Enter your personal details and start your journey with me",
+  "username": "Username",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "orUseYourAccount": "Or use your account",
+  "welcomeBack": "Welcome back!",
+  "keepConnectedWithMePleaseLogin": "To stay connected with us, please log in with your personal information"
 }

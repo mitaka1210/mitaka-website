@@ -1,59 +1,53 @@
 //! ERROR input default state
 
-export const validateInput = (username, password, first_name, lastName, email, confirmPassword) => {
-    let isValid = true;
-    // Изчистване на всички грешки първо
-    let setUsernameError = '';
-    let setFirstNameError = '';
-    let setLastNameError = '';
-    let setEmailError = '';
-    let setPasswordError = '';
-    let setConfirmPasswordError = '';
+export const validateInput = (username, password, firstName, lastName, email, confirmPassword) => {
+    const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+    let errors = {};
+    console.log("pesho valid", firstName);
 
     // Проверка дали всички полета са попълнени
     if (!username) {
-        setUsernameError('Username is required');
-        isValid = false;
+        errors.username = storedLang === 'en' ? 'Username is required' : 'Потребителското име е задължително';
     }
-    if (!first_name) {
-        setFirstNameError('First name is required');
-        isValid = false;
+    if (!firstName) {
+        errors.firstName = storedLang === 'en' ? 'Username is required' : 'Име е задължително';
     }
     if (!lastName) {
-        setLastNameError('Last name is required');
-        isValid = false;
+        errors.lastName = storedLang === 'en' ? 'Family Name is required' : 'Фамилията е задължително';
+
     }
     if (!email) {
-        setEmailError('Email is required');
-        isValid = false;
+        errors.email = storedLang === 'en' ? 'Email is required' : 'Емайла е' +
+            ' задължителен';
+
     }
     if (!password) {
-        setPasswordError('Password is required');
-        isValid = false;
+        errors.password = storedLang === 'en' ? 'password is required' : 'Паролата' +
+            ' е задължителна';
+
     }
     if (!confirmPassword) {
-        setConfirmPasswordError('Confirm password is required');
-        isValid = false;
-    }
+        errors.confirmPassword = storedLang === 'en' ? 'confirmPassword is' +
+            ' required' : 'Повторете паролата задължително';
 
+    }
     // Проверка дали паролите съвпадат
     if (password !== confirmPassword) {
-        setConfirmPasswordError('Passwords do not match');
-        isValid = false;
-    }
+        errors.password = storedLang === 'en' ? 'Password is not same' : 'Паролите не съвпадата';
 
+    }
     // Проверка за минимална дължина на паролата
     if (password && password.length < 6) {
-        setPasswordError('Password must be at least 6 characters');
-        isValid = false;
-    }
+        errors.password = storedLang === 'en' ? 'Password min length is 6' : 'Паролата трябва да е повече от 6 символа';
 
+    }
     // Проверка за валиден имейл
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email && !emailPattern.test(email)) {
-        setEmailError('Please enter a valid email');
-        isValid = false;
+        errors.email = storedLang === 'en' ? 'Email is required' : 'Моля' +
+            ' въведете валиден имейл';
+
     }
 
-    return isValid;
+    return errors;
 };
