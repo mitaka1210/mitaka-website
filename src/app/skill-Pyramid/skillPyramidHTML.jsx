@@ -10,27 +10,27 @@ const skills = [
         { name: 'JavaScript', category: 'old' },
     ],
     [
-        { name: 'SCSS', category: 'new' },
-        { name: 'ReactJS', category: 'new' },
-        { name: 'AngularJS', category: 'new' }
+        { name: 'SCSS', category: 'old' },
+        { name: 'ReactJS', category: 'old' },
+        { name: 'AngularJS', category: 'old' }
     ],
     [
-        { name: 'Gulp', category: 'new' },
-        { name: 'Github', category: 'new' },
-        { name: 'Angular', category: 'new' },
+        { name: 'Gulp', category: 'old' },
+        { name: 'Github', category: 'old' },
+        { name: 'Angular', category: 'old' },
         { name: 'NextJS', category: 'new' },
     ],
     [
-        { name: 'Redux', category: 'new' },
-        { name: 'Express', category: 'new' },
+        { name: 'Redux', category: 'old' },
+        { name: 'Express', category: 'old' },
         { name: 'Docker', category: 'new' },
-        { name: 'RxJS', category: 'new' },
-        { name: 'dbeaver', category: 'new' },
+        { name: 'RxJS', category: 'old' },
+        { name: 'dbeaver', category: 'old' },
     ],
     [
-        { name: 'Postman', category: 'new' },
+        { name: 'Postman', category: 'old' },
         { name: 'PostgreSQL', category: 'new' },
-        { name: 'RTK', category: 'new' },
+        { name: 'RTK', category: 'old' },
         { name: 'Firebase', category: 'new' },
         { name: 'Vue - 2', category: 'new' },
         { name: '🤔💭', category: 'new' },
@@ -109,7 +109,7 @@ export default function SkillPyramid() {
                 setHasTriggered(true);
             }
 
-            if (scrollPosition >= pageHeight - 300) {
+            if (scrollPosition >= pageHeight - 200) {
                 setVisibleRows((prev) => Math.min(prev + 1, skills.length));
             } else if (scrollTop < lastScrollTop) {
                 setVisibleRows((prev) => Math.max(prev - 1,1));

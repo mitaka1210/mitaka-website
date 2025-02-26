@@ -12,19 +12,20 @@ const ContactsHtml = () => {
         className="flex-vertical-container align-items-center justify-content-center maxWidthAndHeight add-height-section">
         <div className="add-position-relative text-align-center border-color-gray padding-10 round-behavior">
           <div className="flex-horizontal-container justify-content-center">
-            <h5 className="margin-15 flex-horizontal-container-raw justify-content-center align-items-center text-align-center">{t("contactМе")}</h5>
-            <h2 className="color-orange-text margin-left-10 padding-0"> {t("me")}!</h2>
+            <h2 className="margin-10 flex-horizontal-container-raw justify-content-center align-items-center text-align-center change-header-font-size">{t("contactМе")}</h2>
+            <h2 className="color-orange-text remove-margin-bottom margin-top-10 change-header-font-size"> {t("me")}!</h2>
           </div>
           <div>
             <span className="margin-10">{t("contactMe")}</span>
             <div className="flex-vertical-container">
+            <span className="margin-10 special-text">С Вашата идея и моите знания може да направим нещо уникално заедно.</span>
               <span>{t("address")}: {t("streetAdd")}</span>
               <div className="flex-horizontal-container justify-content-center">
                 <span className="flex-horizontal-container-raw justify-content-center align-items-center text-align-center small-devices">{t("email")}:
                 </span>
                 <span className="color-orange-text margin-left-10 padding-0">{t("yahoo")}</span>
               </div>
-              <div className="flex-horizontal-container justify-content-center">
+              <div className="flex-horizontal-container justify-content-center change-to-column">
                 <span className="flex-horizontal-container-raw justify-content-center align-items-center text-align-center small-devices">{t("phone")}:
                   +359 88 49 42 399 -
                 </span>

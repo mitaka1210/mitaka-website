@@ -24,10 +24,27 @@
   color: orangered;
   text-decoration: underline;
 }
-
+.special-text {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: italic;
+  color: #ff6600; /* Оранжев цвят за акцент */
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 @media screen and (max-width: 500px) {
   .add-position-relative {
     margin: calc(10vw - 8vw);
+  }
+  .change-to-column{
+    flex-direction: column !important;
+  }
+  .change-header-font-size{
+    font-size: 2em !important;
   }
 }
 

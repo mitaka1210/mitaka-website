@@ -31,7 +31,7 @@ const Page = () => {
       <div className="skills-page flex-horizontal-container text-align-center justify-content-end align-items-center">
         <Navigation/>
       </div>
-      <SkillPageHtml />
+      <SkillPageHtml size={size} />
       <FooterHTML/>
     </div>
   );
