@@ -328,12 +328,6 @@ const ProjectsHtml = () => {
             <section
                 className="magic-novatio flex-vertical-container justify-content-center text-align-center">
                 <h3>{t("iWantMore")}!</h3>
-                <div className="flex-horizontal-container-raw text-align-center justify-content-center">
-                    {/*<p className="margin-10 padding-0">{t("magic")}</p>*/}
-                    {/*<p className="padding-0 margin-top-5"><q><strong*/}
-                    {/*    className="novatio-header">{t("novatio")}</strong></q>*/}
-                    {/*</p>*/}
-                </div>
                 <div className="box-wrapper">
                     <figure className="shape-box shape-box_half">
                         <img
@@ -361,6 +355,21 @@ const ProjectsHtml = () => {
                                 <a href="https://novatiospace.com/industries/" target="_blank"
                                    className="read-more-btn">{t("application")}</a>
                             </div>
+                        </figcaption>
+                        <span className="after"></span>
+                    </figure>
+                    <figure className="shape-box shape-box_half">
+                        <img
+                            src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                            alt="logo-9"/>
+                        <div
+                            className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
+                        <figcaption>
+                            <div className="show-cont">
+                                <h3 className="card-no">12</h3>
+                                <h6 className="card-main-title">😏</h6>
+                            </div>
+                            <h5 className="card-content">{t("textForNextProject")}</h5>
                         </figcaption>
                         <span className="after"></span>
                     </figure>

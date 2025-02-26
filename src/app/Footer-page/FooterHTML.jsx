@@ -16,7 +16,7 @@ const FooterHtml = () => {
         className="footer-container-main flex-horizontal-container justify-content-space-evenly align-items-baseline ">
         <div className="flex-vertical-container justify-content-center margin-5 text-align-justify">
           <div>
-            <h3 className="margin-5 color-white">{t("contact")}</h3>
+            <h3 className="margin-5 color-white text-align-center">{t("contact")}</h3>
           </div>
           <div className="footer-text flex-vertical-container ">
             <span className="address margin-5 color-white text-align-justify">{t("streetAdd")}</span>
@@ -26,8 +26,8 @@ const FooterHtml = () => {
         </div>
         <div
           className="flex-vertical-container justify-content-center margin-5">
-          <div className="margin-left-20">
-            <h3 className=" color-white add-position-relative-social">{t("social")}</h3>
+          <div className="">
+            <h3 className=" color-white add-position-relative-social text-align-center">{t("social")}</h3>
           </div>
           <div className="social-network">
             <ul>

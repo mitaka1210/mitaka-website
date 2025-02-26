@@ -23,12 +23,14 @@ import "../typography.scss";
 import {useTranslation} from "react-i18next";
 import SkillPyramid from "@/app/skill-Pyramid/page";
 
-const SkillPageHtml = () => {
+const SkillPageHtml = ({size}) => {
   // imported from library
   const {t} = useTranslation();
   return (
       <div>
+        { size.width < 630 ? <div><MobileSkillsHtml/></div> :
           <SkillPyramid/>
+        }
       </div>
     // <div className="bgr-page-skills">
     //   <div className="how-can-help text-align-center flow-text">
