@@ -4,8 +4,6 @@ import React, {useEffect, useRef, useState} from "react";
 import "./project.scss";
 import {useTranslation} from "react-i18next";
 import images from "../../../assets/images/image";
-
-
 const ProjectsHtml = () => {
     const {t} = useTranslation();
     let img = images;
@@ -21,7 +19,7 @@ const ProjectsHtml = () => {
     return (
         <div className="flex-vertical-container text-align-center justify-content-center">
             <section className="start-programing flex-item text-align-center">
-                <h2>{t("everythingStart")}!</h2>
+                <h3>{t("everythingStart")}!</h3>
                 <div className="box-wrapper flex-horizontal-container justify-content-center">
                     <figure className="shape-box shape-box_half">
                         <img
@@ -256,7 +254,7 @@ const ProjectsHtml = () => {
                 </div>
             </section>
             <section
-                className="magic-novatio flex-vertical-container justify-content-center text-align-center">
+                className="my-blog-portfolio flex-vertical-container justify-content-center text-align-center">
                 <h3>{t("createMyBlog")}!</h3>
                 <div className="box-wrapper">
                     <figure className="shape-box shape-box_half">
@@ -296,8 +294,8 @@ const ProjectsHtml = () => {
                     </figure>
                     <figure className="shape-box shape-box_half">
                         <img
-                            src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                            alt="logo-9"/>
+                            src={img[15].url.src}
+                            alt="React-website"/>
                         <div
                             className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
                         <figcaption>
@@ -316,9 +314,12 @@ const ProjectsHtml = () => {
                             </ul>
                             <div
                                 className="buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center">
-                                <a href="https://github.com/mitaka1210/PERN"
+                                <a href="https://eng.d-dimitrov.eu/Home-page"
                                    target="_blank"
                                    className="read-more-btn">{t("application")}</a>
+                                <a href="https://github.com/mitaka1210/mitaka-website"
+                                   target="_blank"
+                                   className="read-more-btn">{t("code")}</a>
                             </div>
                         </figcaption>
                         <span className="after"></span>
@@ -352,8 +353,8 @@ const ProjectsHtml = () => {
                             </ul>
                             <div
                                 className="buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center">
-                                <a href="https://novatiospace.com/industries/" target="_blank"
-                                   className="read-more-btn">{t("application")}</a>
+                                <a href="/novatio-Apps"
+                                   className="read-more-btn">{t("novatioApps")}</a>
                             </div>
                         </figcaption>
                         <span className="after"></span>

@@ -8,10 +8,12 @@ import img7 from './pizza.png';
 import img8 from './start-aqua.jpg';
 import img9 from './uploader_website.png';
 import img10 from './warehouse.png';
-import img11 from './clientApp.png';
-import img12 from './driver.png';
-import img13 from './dispatcher.png';
-
+import img11 from './client.png';
+import img12 from './driver.webp';
+import img13 from './dispetcher.webp';
+import img14 from './reception.png'
+import img15 from './customer.png'
+import img16 from './blog-img.png'
 const imagesArray = [
  {
   id: 0,
@@ -64,6 +66,18 @@ const imagesArray = [
  {
   id: 12,
   url: img13,
+ },
+ {
+  id: 13,
+  url: img14,
+ },
+ {
+  id: 14,
+  url: img15,
+ },
+ {
+  id: 15,
+  url: img16,
  },
 
 ];

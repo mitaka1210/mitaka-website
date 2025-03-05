@@ -29,7 +29,7 @@ const Navigation = () => {
               <Link href="/">{t("home")}</Link>
             </li>
             <li className="text-2 color-white margin-15">
-              <Link href="/About-page">{t("about")}</Link>
+              <Link href="/about-page">{t("about")}</Link>
             </li>
             <li className="text-3 color-white margin-15">
               <Link href="/Blog-Page">{t("blog")}</Link>

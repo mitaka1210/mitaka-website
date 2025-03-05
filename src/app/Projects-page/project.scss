@@ -169,3 +169,25 @@
     text-align: center !important;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .start-programing {
+    & h2{
+    margin: 1em;
+    }
+    & h3 {
+      margin-bottom: 1em;
+    }
+  }
+
+  .magic-novatio{
+    margin-bottom: 5em;
+    & h3 {
+    }
+  }
+
+  .shape-box{
+    margin: 5px 15px 5px 1px;
+  }
+
+}

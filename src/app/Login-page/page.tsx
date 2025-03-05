@@ -4,7 +4,7 @@ import { LoginPageHTML, FooterHTML, Navigation } from './componentsShare/Dynamic
 
 const LoginPage = () => {
     return (
-        <div className="contacts-page">
+        <div className="login-create-account-page">
             <div className="contacts-nav flex-horizontal-container text-align-center justify-content-end align-items-center">
                 <Navigation />
             </div>

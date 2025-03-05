@@ -2,8 +2,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import {useTranslation} from "react-i18next";
-import Appbar from "@/app/SignInButton/AppBar/AppBar";
-import Header from "@/app/Lang/Lang";
+import ChangeLang from "@/app/Lang/Lang";
 
 const COLORS = {
   primaryDark: "#115b4c",
@@ -109,7 +108,7 @@ const ItemLink = styled.a`
   font-weight: 300;
   text-decoration: none;
   color: ${COLORS.primaryLight};
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   background-image: linear-gradient(
     120deg,
     transparent 0%,
@@ -147,7 +146,7 @@ function HamburgerMenu() {
             </ItemLink>
           </li>
           <li>
-            <ItemLink onClick={handleClick} to="/about" href="/About-page">
+            <ItemLink onClick={handleClick} to="/about" href="/about-page">
               {t("about")}
             </ItemLink>
           </li>
@@ -162,25 +161,27 @@ function HamburgerMenu() {
             </ItemLink>
           </li>
           <li>
-            <ItemLink onClick={handleClick} to="/contact" href="/Skills-page">
+            <ItemLink onClick={handleClick} to="/skills" href="/Skills-page">
               {t("skills")}
             </ItemLink>
           </li>
           <li>
-            <ItemLink onClick={handleClick} to="/contact" href="/Timeline-page">
+            <ItemLink onClick={handleClick} to="/timeline" href="/Timeline-page">
               {t("timeLine")}
             </ItemLink>
           </li>
           <li>
-            <ItemLink onClick={handleClick} to="/contact" href="/Contacts-page">
+            <ItemLink onClick={handleClick} to="/contacts" href="/Contacts-page">
               {t("contact")}
             </ItemLink>
           </li>
           <li onClick={handleClick}>
-            <Appbar/>
+            <ItemLink onClick={handleClick} to="/login" href="/Login-page">
+              {t("login")}
+            </ItemLink>
           </li>
           <li onClick={handleClick}>
-            <Header/>
+            <ChangeLang/>
           </li>
         </List>
       </Navigation>
