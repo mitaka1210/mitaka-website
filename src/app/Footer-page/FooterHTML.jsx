@@ -18,7 +18,7 @@ const FooterHtml = () => {
           <div>
             <h3 className="margin-5 color-white text-align-center">{t("contact")}</h3>
           </div>
-          <div className="footer-text flex-vertical-container ">
+          <div className="footer-text flex-vertical-container align-items-center">
             <span className="address margin-5 color-white text-align-justify">{t("streetAdd")}</span>
             <span className="phone margin-5 color-white text-align-justify">{t("phone")}: +359 88 49 42 399</span>
             <span className="email margin-5 color-white text-align-justify">{t("email")}: {t("gmail")}</span>

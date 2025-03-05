@@ -90,13 +90,13 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
                     <hr className="add-line-bottom"/>
                 </div>
             </section>
-            <div className="text-align-center my-focus"><h4>{t("myFocus")}</h4></div>
+            <div className="text-align-center my-focus"><h3>{t("myFocus")}</h3></div>
             <section className="info-bout-me flex-horizontal-container">
                 <div className="box-3">
                     <div className="overlay-box round-behavior shadowed-element border-color-gray-2px">
                         <div
                             className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
-                            <h5 className="margin-15">{t("programing")}!</h5>
+                            <h3 className="margin-15">{t("programing")}!</h3>
                             <h6 className="margin-5">{t("started")}</h6>
                             <span>{t("startedChance")}!</span>
                         </div>
@@ -106,16 +106,16 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
                     <div className="overlay-box round-behavior shadowed-element border-color-gray-2px">
                         <div
                             className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
-                            <h5 className="">{t("capital")}.</h5>
+                            <h4 className="">{t("capital")}.</h4>
                             <h6 className="margin-5">{t("say")} <strong>{t("WarrenBuffett")}:</strong></h6>
                             <div className="flex-vertical-container-raw align-items-center text-align-center">
                 <span className="flex-horizontal-container-raw border-color-bottom-gray padding-0">{t("rule")} <p
                     className="numbered-item padding-0"></p>1:{t("loseMoney")}.
                 </span>
-                                <span className="flex-horizontal-container-raw border-color-bottom-gray ">{t("rule")} <p
-                                    className="numbered-item padding-0"></p>2:{t("forgetOne")}<p
-                                    className="numbered-item padding-0"></p> 1:
-                </span>
+                        <span className="flex-horizontal-container-raw border-color-bottom-gray ">{t("rule")} <p
+                            className="numbered-item padding-0"></p>2:{t("forgetOne")}<p
+                            className="numbered-item padding-0"></p> 1:
+                        </span>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
                     <div className="overlay-box round-behavior shadowed-element border-color-gray-2px">
                         <div
                             className="desc flex-vertical-container-raw justify-content-center align-items-center text-align-center">
-                            <h5 className="margin-15">{t("book")}</h5>
+                            <h3 className="margin-15">{t("book")}</h3>
                             <span>{t("moneyVideo")}.</span>
                             <h6 className="">{t("say")} <strong>{t("RobertKiyosaki")}:</strong></h6>
                             <span><strong className="motivation border-color-bottom-gray ">"{t("motoRobert")}"</strong></span>

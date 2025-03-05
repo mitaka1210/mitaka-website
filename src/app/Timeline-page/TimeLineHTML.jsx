@@ -23,9 +23,9 @@ const TimeLineHtml = () => {
             04-22-2021
           </div>
           <div className="timeline__event__content ">
-            <h6>
+            <h4>
               {t("programing")}
-            </h6>
+            </h4>
             <div className="timeline__event__description">
               <span>{t("giveChance")}</span>
             </div>
@@ -39,9 +39,9 @@ const TimeLineHtml = () => {
             25-08-2014
           </div>
           <div className="timeline__event__content">
-            <h6 className="">
+            <h4 className="">
               {t("workAll")}
-            </h6>
+            </h4>
             <div className="timeline__event__description">
               <span>{t("startWorkingEverything")}!</span>
             </div>
@@ -59,8 +59,8 @@ const TimeLineHtml = () => {
               {t("UNI")}
             </div>
             <div className="timeline__event__description">
-              <h6> {t("specialty")}: <strong className="margin-left-5"> {t("specification")}</strong>
-              </h6>
+              <h4> {t("specialty")}: <strong className="margin-left-5"> {t("specification")}</strong>
+              </h4>
               <span> {t("qualification")} „{t("bachelor")}”</span>
             </div>
           </div>
@@ -77,7 +77,7 @@ const TimeLineHtml = () => {
               {t("school")}
             </div>
             <div className="timeline__event__description">
-              <h6>{t("specialty")}:<strong className="margin-left-5">{t("geodesy")}</strong></h6>
+              <h4>{t("specialty")}:<strong className="margin-left-5">{t("geodesy")}</strong></h4>
               <span>
                 {t("qualification")} „{t("technician")}”
               </span>

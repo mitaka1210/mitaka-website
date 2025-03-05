@@ -1,10 +1,10 @@
 @use './variables.scss';
 
-$large-screen: 150px;
-$small-screen: 50px;
-$base-font-size: 2rem !default;
+$large-screen: 20px;
+$small-screen: 10px;
+$base-font-size: .3rem !default;
 // Flow Text
-$intervals: 20 !default;
+$intervals: 40 !default;
 $range: $large-screen - $small-screen !default;
 $interval-size:calc( $range / $intervals);
 
@@ -65,9 +65,9 @@ p, ul, ol {
   padding-bottom: .5em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 calc(var(--sizing-ws-base) / 7) 0;
-}
+//h1, h2, h3, h4, h5, h6 {
+//  margin: 0 0 calc(var(--sizing-ws-base) / 7) 0;
+//}
 
 // Credit to materialize css
 // https://github.com/Dogfalo/materialize/blob/master/sass/components/_typography.scss
@@ -88,7 +88,7 @@ h2 {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (1.1 + (.05 * $i));
+      font-size: $base-font-size * (1.1 + (.3 * $i));
     }
     $i: $i + 1;
   }
@@ -99,7 +99,7 @@ h3 {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (1 + (.04 * $i));
+      font-size: $base-font-size * (1 + (.2 * $i));
     }
     $i: $i + 1;
   }
@@ -109,7 +109,7 @@ h4 {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (.9 + (.03 * $i));
+      font-size: $base-font-size * (.9 + (.1 * $i));
     }
     $i: $i + 1;
   }
@@ -119,7 +119,7 @@ h5 {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (.1 + (.02 * $i));
+      font-size: $base-font-size * (.1 + (.09 * $i));
     }
     $i: $i + 1;
   }
@@ -128,8 +128,8 @@ h5 {
 h6 {
   $i: 0;
   @while $i <= $intervals {
-    @media only screen and (min-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (.02 + (.04 * $i));
+    @media only screen and (min-width: 390 + ($i * $interval-size)) {
+      font-size: $base-font-size * (.02 + (.2 * $i));
     }
     $i: $i + 1;
   }
@@ -139,7 +139,7 @@ q {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (.6 + (.01 * $i));
+      font-size: $base-font-size * (.6 + (.1 * $i));
     }
     $i: $i + 1;
   }
@@ -160,7 +160,7 @@ span {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (.01 + (.03 * $i));
+      font-size: $base-font-size * (.01 + (.1 * $i));
     }
     $i: $i + 1;
   }
