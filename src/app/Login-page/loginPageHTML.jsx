@@ -12,6 +12,7 @@ import {signIn, signOut, useSession} from "next-auth/react";
 
 function LoginPageHtml(props) {
     const { t } = useTranslation(); // ✅ Винаги се извиква в началото
+    const {data: session} = useSession();
     const [errors, setErrors] = useState({});
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -39,14 +40,10 @@ function LoginPageHtml(props) {
                 signInButton.removeEventListener('click', handleSignInClick);
             };
         }, []);
-        const googleLogin  = () => {
-            signIn("google", {callbackUrl: '/'}).then(r => {})
-        }
-        const goToHome = () => {
-            signOut({callbackUrl: '/'}).then(r => {
-            })
-        }
-        const handleLogin = async (e) => {
+    const logIn = () => {
+        signIn("google", {callbackUrl: '/'}).then(r => {})
+    }
+    const handleLogin = async (e) => {
             console.log(username, password);
             e.preventDefault();
             const validationErrors = validLoginInput(username, password);
@@ -74,7 +71,7 @@ function LoginPageHtml(props) {
                             <div>
                                 <form action="#" onSubmit={handleLogin}>
                                     <h3 className="color-white">{t('login')}</h3>
-                                    <div className="social-container-login" onClick={googleLogin}>
+                                    <div className="social-container-login" onClick={logIn}>
                                         <a href="#" className="social">
                                             <Image src={google} alt="google"/>
                                         </a>
