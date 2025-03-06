@@ -6,13 +6,30 @@ import "./nav.scss";
 import {useTranslation} from "react-i18next";
 import HamburgerMenu from "@/app/HamburgerMenu-page/HamburgerMenuHTML";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Header from "@/app/Lang/Lang";
 import ChangeLang from "@/app/Lang/Lang";
-
+import Appbar from "@/app/SignInButton/AppBar/AppBar";
+import {signOut, useSession} from "next-auth/react";
 const Navigation = () => {
   const {t} = useTranslation();
   const size = useWindowSize();
+  const {data: session} = useSession();
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    if (session && session.user) {
+      console.log("pesho", session);
+      console.log("pesho", session.user);
+      setUserName(session.user.name);
+
+    }
+  }, [1]);
+
+  const goToHome = () => {
+    signOut({callbackUrl: '/'}).then(r => {
+    })
+  }
   return (
     <header className="maxWidthAndHeight flex-horizontal-container justify-content-end text-align-center">
       {/*!If we need to check screen size START*/}
@@ -47,7 +64,16 @@ const Navigation = () => {
               <Link href="/Contacts-page">{t("contact")}</Link>
             </li>
             <li className="text-8 color-white margin-15">
-                <Link href="/Login-page">{t("login")}</Link>
+              {
+                userName === ''  ?  <Link href="/Login-page">{t("login")}</Link> :
+                    <div className="flex gap-4 ml-auto">
+                      <p className="text-sky-600">{session.user.name}</p>
+                      <button onClick={goToHome} className="flex-horizontal-container-raw log-out">
+                        {t("signOut")}
+                      </button>
+                    </div>
+              }
+              {/*<Appbar/>*/}
             </li>
             <li className="text-9 color-white margin-15">
               <ChangeLang/>

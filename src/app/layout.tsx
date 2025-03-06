@@ -3,7 +3,7 @@ import {Inter} from "next/font/google";
 import React from "react";
 import './typography.scss';
 import './reusable-styles.scss';
-import Providers from "@/app/SignInButton/Providers/Provider";
+import Providers from "@/app/Login-page/Providers/Provider";
 import '../i18n';
 import {Provider} from "react-redux";
 import store from "@/store/storeState/store";
