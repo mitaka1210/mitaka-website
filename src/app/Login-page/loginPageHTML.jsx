@@ -12,7 +12,6 @@ import {signIn, signOut, useSession} from "next-auth/react";
 
 function LoginPageHtml(props) {
     const { t } = useTranslation(); // ✅ Винаги се извиква в началото
-    const {data: session} = useSession();
     const [errors, setErrors] = useState({});
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
