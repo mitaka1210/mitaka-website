@@ -19,12 +19,9 @@ const Navigation = () => {
 
   useEffect(() => {
     if (session && session.user) {
-      console.log("pesho", session);
-      console.log("pesho", session.user);
       setUserName(session.user.name);
-
     }
-  }, [1]);
+  }, [userName]);
 
   const goToHome = () => {
     signOut({callbackUrl: '/'}).then(r => {
@@ -73,7 +70,6 @@ const Navigation = () => {
                       </button>
                     </div>
               }
-              {/*<Appbar/>*/}
             </li>
             <li className="text-9 color-white margin-15">
               <ChangeLang/>
