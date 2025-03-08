@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaLaptopCode, FaDatabase, FaCloud } from 'react-icons/fa';
-
+import './skillPyramid.scss';
 const skills = [
     [{ name: 'HTML', category: 'old' }],
     [
@@ -68,23 +68,23 @@ const services = [
     {
         title: 'Web Development',
         icon: <FaCode />,
-        details: ['Frontend & Backend', 'Modern Frameworks', 'Responsive Design'],
+        details: ['Frontend', 'Modern Frameworks', 'Responsive Design'],
     },
     {
         title: 'App Development',
         icon: <FaLaptopCode />,
         details: ['Cross-platform', 'PWA & Native', 'Performance Optimization'],
     },
-    {
-        title: 'Database Management',
-        icon: <FaDatabase />,
-        details: ['SQL & NoSQL', 'Optimization', 'Data Security'],
-    },
-    {
-        title: 'Cloud Solutions',
-        icon: <FaCloud />,
-        details: ['Deployment', 'Scalability', 'Serverless Architecture'],
-    },
+    // {
+    //     title: 'Database Management',
+    //     icon: <FaDatabase />,
+    //     details: ['SQL & NoSQL', 'Optimization', 'Data Security'],
+    // },
+    // {
+    //     title: 'Cloud Solutions',
+    //     icon: <FaCloud />,
+    //     details: ['Deployment', 'Scalability', 'Serverless Architecture'],
+    // },
 ];
 
 export default function SkillPyramid() {
@@ -171,23 +171,20 @@ export default function SkillPyramid() {
             {showServices && (
                 <><h2 className="margin-top-45 remove-margin-bottom">Моите Услуги</h2>
                     <div
-                        className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                        className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 services">
                         {services.map((service, index) => (
                             <motion.div
                                 key={index}
-                                className="bg-gray-800 p-16 rounded-xl shadow-lg text-center flex flex-col items-center"
+                                className="bg-gray-800 p-16 rounded-xl shadow-lg text-center flex flex-col items-center card"
                                 initial={{opacity: 0, y: 20}}
                                 animate={{opacity: 1, y: 0}}
                                 transition={{ duration: 0.5, delay: index * 0.2, ease: "easeOut" }}
                             >
-                                <div
-                                    className="text-4xl mb-4 text-blue-400">{service.icon}</div>
+                                <div className="text-4xl mb-4 text-blue-400">{service.icon}</div>
                                 <h2 className="text-xl font-bold mb-2">{service.title}</h2>
                                 <ul className="text-gray-400">
                                     {service.details.map((detail, i) => (
-                                        <li key={i} className="mb-1">
-                                            &raquo; {detail}
-                                        </li>
+                                        <li key={i} className="mb-1">&raquo; {detail}</li>
                                     ))}
                                 </ul>
                             </motion.div>

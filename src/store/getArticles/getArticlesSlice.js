@@ -35,7 +35,7 @@ const articlesSlice = createSlice({
    let articlesArr = [];
    state.status = 'succeeded';
    for (let i = 0; i < action.payload.length; i++) {
-    let createArticleDate = new Date(action.payload[i].created_at).toLocaleString(undefined, {
+    let createArticleDate = new Date(action.payload[i].createData).toLocaleString(undefined, {
      year: 'numeric',
      month: '2-digit',
      day: '2-digit',
@@ -46,10 +46,12 @@ const articlesSlice = createSlice({
      status: action.payload[i].status,
      id: action.payload[i].id,
      title: action.payload[i].title,
+     sections: action.payload[i].sections,
+     images: action.payload[i].images,
     });
    }
    //? return last created article first
-
+   console.log('articlesArr', articlesArr);
    state.data = articlesArr;
   });
   builder.addCase(fetchArticles.rejected, (state, action) => {
