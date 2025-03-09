@@ -102,7 +102,7 @@ return () => window.removeEventListener("scroll", handleScroll);
               {sectionArr.map((section, index) => (
                 <div key={index} className="read-section">
                   <h2 className="read-section-title" style={{ fontSize: "28px", textAlign: "center", color: "#fff" }}>{index + 1}.{section.title}</h2>
-                  <span className="read-section-text">{section.content}</span>
+                  <p className="read-section-text">{section.content}</p>
                 </div>
               ))}
             </div>

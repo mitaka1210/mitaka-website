@@ -1,15 +1,14 @@
-body {
+.novatio-apps {
+  background: linear-gradient(135deg, #e6f0ff, #cce0ff, #b3d1ff);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: #000;
 }
-
 .container-novatio-app {
   position: relative;
   flex-wrap: wrap;
   gap: 0px 10px;
+  height: 69dvh;
 }
 
 .container-novatio-app .card {

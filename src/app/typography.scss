@@ -145,31 +145,29 @@ q {
   }
 }
 
-
 p {
   $i: 0;
   @while $i <= $intervals {
-    @media only screen and (min-width: 360 + ($i * $interval-size)) {
+    @media only screen and (min-width: calc(440px + #{$i * $interval-size})) {
+      font-size: $base-font-size * (6 + (.03 * $i));
+    }
+    $i: $i + 1;
+  }
+}
+p {
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (max-width: calc(360px + #{$i * $interval-size})) {
       font-size: $base-font-size * (.4 + (.03 * $i));
     }
     $i: $i + 1;
   }
-}
-
+} 
 span {
   $i: 0;
   @while $i <= $intervals {
-    @media only screen and (min-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (.01 + (.1 * $i));
-    }
-    $i: $i + 1;
-  }
-}
-span {
-  $i: 0;
-  @while $i <= $intervals {
-    @media only screen and (max-width: 360 + ($i * $interval-size)) {
-      font-size: $base-font-size * (.01 + (.03 * $i));
+    @media only screen and (min-width: calc(360px + #{$i * $interval-size})) {
+      font-size: $base-font-size * (3 + (.03 * $i));
     }
     $i: $i + 1;
   }
