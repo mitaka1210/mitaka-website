@@ -42,9 +42,12 @@
 }
 
 
-.add-line {
-  width: 100%;
+.add-line-after-header{
+  border-bottom: 1px dashed #28db37;
+  margin: 0 auto;
+  width: 50%;
   height: 5px;
+  border-top-width: 0 !important;
 }
 
 //!Card Start
