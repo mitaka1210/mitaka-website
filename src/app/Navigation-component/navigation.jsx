@@ -35,7 +35,7 @@ const Navigation = () => {
       {/*</div>*/}
       {/*!If we need to check screen size END*/}
       {
-        (600 < 501) ? <div>
+        (size.width < 501) ? <div>
           <HamburgerMenu/>
         </div> : <div className="maxWidthAndHeight justify-content-end flex-horizontal-container">
           <ul className="justify-content-end maxWidthAndHeight navigation padding-0">

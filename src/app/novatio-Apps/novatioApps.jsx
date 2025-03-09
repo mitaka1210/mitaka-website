@@ -62,7 +62,7 @@ function NovatioApps(props) {
                                 <span>Vuetify theme</span>
                             </div>
                         </div>
-                        <div className="flex-horizontal-container margin-top-80 margin-bottom-25">
+                        <div className="flex-horizontal-container">
                             <div className="card" >
                                 <div className="img-box">
                                     <img src={img[11].url.src} alt="driver"/>

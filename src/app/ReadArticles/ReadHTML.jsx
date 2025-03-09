@@ -22,6 +22,8 @@ const ReadHtml = () => {
   const [sectionArr, setSectionArr] = useState([]);
   const [data, setData] = useState();
   const [articleTitle, setArticleTitle] = useState('');
+  const [progress, setProgress] = useState(0);
+  const [showNext, setShowNext] = useState(false);
 
   // Hard-coded ID (можете да замените това с логика за получаване на параметър)
   let id = 3;
@@ -63,7 +65,18 @@ const ReadHtml = () => {
     dispatch(resetState());
     router.push('/cardAquariums');
   };
+const progressArticle = () => {
+  const handleScroll = () => {
+    let scrollTop = document.documentElement.scrollTop;
+    let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let progressValue = (scrollTop / scrollHeight) * 100;
+    setProgress(progressValue);
+    setShowNext(progressValue > 90);
+};
 
+window.addEventListener("scroll", handleScroll);
+return () => window.removeEventListener("scroll", handleScroll);
+}
   return (
     <>
       {loading ? (
