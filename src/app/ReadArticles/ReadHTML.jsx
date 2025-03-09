@@ -54,6 +54,7 @@ const ReadHtml = () => {
 
         setSectionArr(mergedSections);
         setLoading(false);
+        progressArticle();
       }
     } else {
       setLoading(true);
@@ -82,7 +83,10 @@ return () => window.removeEventListener("scroll", handleScroll);
       {loading ? (
         <div>{t('loading')}</div> 
       ) : (
-        <div className="read">
+        <div className="read" style={{ fontFamily: "Arial, sans-serif", background: "linear-gradient(to bottom, #006994, #003f5c)", minHeight: "100vh", padding: "20px" }}>
+           <div className="progress-container" style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "4px", background: "#ddd", zIndex: 1000 }}>
+                <div className="progress-bar" style={{ height: "4px", background: "#ffcc00", width: `${progress}%`, transition: "width 0.3s ease-in-out" }}></div>
+            </div>
           <div className="read-back-btn">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
@@ -92,12 +96,13 @@ return () => window.removeEventListener("scroll", handleScroll);
             </button>
           </div>
           <section>
-            <h1 className="read-title">{articleTitle}</h1>
-            <div className="read-sections">
+            <h2 className="read-title text-align-center">{articleTitle}</h2>
+            <hr className='add-line-after-header'/>
+            <div className="read-sections" style={{ maxWidth: "800px", margin: "50px auto", background: "rgba(255, 255, 255, 0.3)", padding: "20px", borderRadius: "8px", boxShadow: "0 0 10px rgba(0,0,0,0.1)", backdropFilter: "blur(10px)" }}>
               {sectionArr.map((section, index) => (
                 <div key={index} className="read-section">
-                  <h2 className="read-section-title">{section.title}</h2>
-                  <p className="read-section-text">{section.content}</p>
+                  <h2 className="read-section-title" style={{ fontSize: "28px", textAlign: "center", color: "#fff" }}>{index + 1}.{section.title}</h2>
+                  <span className="read-section-text">{section.content}</span>
                 </div>
               ))}
             </div>
