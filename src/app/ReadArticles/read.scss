@@ -1,8 +1,15 @@
+@use "../Footer-page/footer.scss";
+
 .read {
   margin: .5em;
-
-
-  & .read-back-btn {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #006994, #008bb5, #00a8cc);
+  color: white;
+  transition: background 0.5s ease-in-out;
+    & .read-back-btn {
     text-align: center;
   }
 }
@@ -120,3 +127,57 @@ article:hover {
 }
 
 //!Card End
+
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: red;
+  z-index: 1000;
+}
+.progress-bar {
+  height: 4px;
+  background: #ffcc00;
+  width: 0%;
+}
+.read-sections{
+  max-width: 800px;
+  margin: 0px auto;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+}
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+p {
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  h1 { font-size: 22px; }
+  p { font-size: 16px; }
+}
+.next-article {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffcc00;
+  color: #006994;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: none;
+  font-weight: bold;
+}
+.line-after-header{
+
+    border: 1px dashed #ffcc00;
+    width: 50%;
+    margin: 15px auto;
+  
+}

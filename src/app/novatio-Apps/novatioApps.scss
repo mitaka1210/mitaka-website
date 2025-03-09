@@ -1,15 +1,14 @@
-body {
+.novatio-apps {
+  background: linear-gradient(135deg, #e6f0ff, #cce0ff, #b3d1ff);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: #000;
 }
-
 .container-novatio-app {
   position: relative;
   flex-wrap: wrap;
   gap: 0px 10px;
+  height: 69dvh;
 }
 
 .container-novatio-app .card {
@@ -102,16 +101,7 @@ body {
 .novation-apps-page{
   width: 100%;
 }
-.novatio-apps {
-  background: linear-gradient(135deg, #e6f0ff, #cce0ff, #b3d1ff);
-}
-p {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  text-align: center;
-  font-size: 18px;
-  color: #676767;
-}
+
 .frame {
   width: 90%;
   margin: 40px auto;
