@@ -39,7 +39,7 @@ function LoginPageHtml(props) {
                 signInButton.removeEventListener('click', handleSignInClick);
             };
         }, []);
-    const logIn = () => {
+    const logInWithGoogle = () => {
         signIn("google", {callbackUrl: '/'}).then(r => {})
     }
     const handleLogin = async (e) => {
@@ -70,7 +70,7 @@ function LoginPageHtml(props) {
                             <div>
                                 <form action="#" onSubmit={handleLogin}>
                                     <h3 className="color-white">{t('login')}</h3>
-                                    <div className="social-container-login" onClick={logIn}>
+                                    <div className="social-container-login" onClick={logInWithGoogle}>
                                         <a href="#" className="social">
                                             <Image src={google} alt="google"/>
                                         </a>

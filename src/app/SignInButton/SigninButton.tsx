@@ -11,7 +11,7 @@ const SignInButton = () => {
     signOut({callbackUrl: '/'}).then(r => {
     })
   }
-  //? when login sometimes we can't update text in the page
+  //? when loginWithGoogle sometimes we can't update text in the page
   //   maybe need to fix but for now i don't know how to fix it
 
 
