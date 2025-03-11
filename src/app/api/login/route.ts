@@ -1,22 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import pool from '@/database/db';
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(req: NextRequest) {
     if (req.method !== 'POST') {
-        return res.status(405).json({ message: 'Method not allowed' });
+        return new NextResponse(JSON.stringify({ message: 'Method not allowed' }), { status: 405 });
     }
 
     const { username, email } = await req.json();
 
     if (!username || !email) {
-        return res.status(400).json({ message: 'Username and password are required' });
+        return new NextResponse(JSON.stringify({ message: 'Username and password are required' }), { status: 400 });
     }
 
     try {
         const userResult = await pool.query('SELECT id, name, email FROM googlelogin WHERE name = $1', [username]);
 
         if (userResult.rows.length === 0) {
-            return res.status(401).json({ message: 'Invalid username or password' });
+            return new NextResponse(JSON.stringify({ message: 'Invalid username or password' }), { status: 401 });
         }
         const user = userResult.rows[0];
         await pool.query('INSERT INTO googlelogin (name, email, login_date) VALUES ($1, $2, CURRENT_TIMESTAMP)', [
@@ -24,9 +24,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
             user.email,
         ]);
 
-        return res.json({ user: { id: user.id, name: user.name, email: user.email } });
+        return new NextResponse(JSON.stringify({ user: { id: user.id, name: user.name, email: user.email } }), { status: 200 });
     } catch (err) {
         console.error('Error during login:', err);
-        return res.status(500).json({ message: 'Internal server error' });
+        return new NextResponse(JSON.stringify({ message: 'Internal server error' }), { status: 500 });
     }
 }
