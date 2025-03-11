@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 import "./form.scss";
 import {useTranslation} from "react-i18next";
@@ -14,9 +14,15 @@ const EmailHtml = () => {
   const [inputValueText, setInputValueText] = useState("");
   const [inputValueEmail, setInputValueEmail] = useState("");
   const [inputValueName, setInputValueName] = useState("");
+  const [language, setLanguage] = useState('en');
   const ref = useRef(null);
 
-
+  useEffect(() => {
+    const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+    setLanguage(storedLang);
+    document.title = storedLang ===  'bg' ? 'Контакти - инж.Димитров' : 'Contacts' +
+    ' - eng.Dimitrov';
+  }, []);
   const showPopUp = () => {
     setMsgTrue(!msgTrue);
   };

@@ -1,22 +1,29 @@
 'use client'
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import dynamic from 'next/dynamic';
 import './about.scss';
-import Head from 'next/head';
-const AboutPage = () => {
-  const AboutHtml = dynamic(
+const AboutHtml = dynamic(
     () => import('./AboutHTML'),
     {ssr: false}
-  );
-  const FooterHTML = dynamic(
+);
+const FooterHTML = dynamic(
     () => import('../Footer-page/page'),
     {ssr: false}
-  );
-  const Navigation = dynamic(
+);
+const Navigation = dynamic(
     () => import('../Navigation-component/navigation'),
     {ssr: false}
-  );
+);
+const AboutPage = () => {
+  const [language, setLanguage] = useState('en');
+
+  useEffect(() => {
+    const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+    setLanguage(storedLang);
+    document.title = storedLang ===  'bg' ? 'За мен - инж.Димитров' : 'About Me' +
+        ' - eng.Dimitrov';
+  }, []);
   return (
     <>
       <main className="images">

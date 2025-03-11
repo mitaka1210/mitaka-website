@@ -6,20 +6,29 @@ import "./nav.scss";
 import {useTranslation} from "react-i18next";
 import HamburgerMenu from "@/app/HamburgerMenu-page/HamburgerMenuHTML";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
-import Appbar from "@/app/SignInButton/AppBar/AppBar";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Header from "@/app/Lang/Lang";
-
+import ChangeLang from "@/app/Lang/Lang";
+import Appbar from "@/app/SignInButton/AppBar/AppBar";
+import {signOut, useSession} from "next-auth/react";
 const Navigation = () => {
   const {t} = useTranslation();
   const size = useWindowSize();
-  return (
-    <header className="flex-horizontal-container justify-content-end text-align-center">
-      <div className="my-logo">
-        {/*<p href="#">Portfo<span>lio.</span></p>*/}
-        {/*<div className="logo-images"></div>*/}
-      </div>
+  const {data: session} = useSession();
+  const [userName, setUserName] = useState('');
 
+  useEffect(() => {
+    if (session && session.user) {
+      setUserName(session.user.name);
+    }
+  }, [userName]);
+
+  const goToHome = () => {
+    signOut({callbackUrl: '/'}).then(r => {
+    })
+  }
+  return (
+    <header className="maxWidthAndHeight flex-horizontal-container justify-content-end text-align-center">
       {/*!If we need to check screen size START*/}
       {/*<div className='color-white addP'>*/}
       {/*  {size.width}px / {size.height}px*/}
@@ -34,7 +43,7 @@ const Navigation = () => {
               <Link href="/">{t("home")}</Link>
             </li>
             <li className="text-2 color-white margin-15">
-              <Link href="/About-page">{t("about")}</Link>
+              <Link href="/about-page">{t("about")}</Link>
             </li>
             <li className="text-3 color-white margin-15">
               <Link href="/Blog-Page">{t("blog")}</Link>
@@ -51,11 +60,19 @@ const Navigation = () => {
             <li className="text-7 color-white margin-15">
               <Link href="/Contacts-page">{t("contact")}</Link>
             </li>
-            <li className="text-8 color-white margin-15">
-              <Appbar/>
-            </li>
+            {/*<li className="text-8 color-white margin-15">*/}
+            {/*  {*/}
+            {/*    userName === ''  ?  <Link href="/Login-page">{t("login")}</Link> :*/}
+            {/*        <div className="flex gap-4 ml-auto">*/}
+            {/*          <p className="text-sky-600">{session.user.name}</p>*/}
+            {/*          <button onClick={goToHome} className="flex-horizontal-container-raw log-out">*/}
+            {/*            {t("signOut")}*/}
+            {/*          </button>*/}
+            {/*        </div>*/}
+            {/*  }*/}
+            {/*</li>*/}
             <li className="text-9 color-white margin-15">
-              <Header/>
+              <ChangeLang/>
             </li>
           </ul>
         </div>

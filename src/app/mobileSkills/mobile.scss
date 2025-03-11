@@ -63,3 +63,14 @@
   animation-timing-funciton: linear;
   animation-fill-mode: both;
 }
+
+
+.services-li-font-size li{
+  font-size: 1.4rem;
+}
+
+@media  screen and (width: 450px) {
+  .services-li-font-size li{
+    font-size: 1.7rem;
+  }
+}

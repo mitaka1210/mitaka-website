@@ -1,19 +1,25 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import "./project.scss";
 import {useTranslation} from "react-i18next";
 import images from "../../../assets/images/image";
-
-
 const ProjectsHtml = () => {
-    let img = images;
-    console.log("pesho", img[0].url);
     const {t} = useTranslation();
+    let img = images;
+
+    const [language, setLanguage] = useState('en');
+
+    useEffect(() => {
+        const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
+        setLanguage(storedLang);
+        document.title = storedLang ===  'bg' ? 'Моята история -' +
+        ' инж.Димитров' : 'My Timeline - eng.Dimitrov';
+    }, []);
     return (
         <div className="flex-vertical-container text-align-center justify-content-center">
             <section className="start-programing flex-item text-align-center">
-                <h2>{t("everythingStart")}!</h2>
+                <h3>{t("everythingStart")}!</h3>
                 <div className="box-wrapper flex-horizontal-container justify-content-center">
                     <figure className="shape-box shape-box_half">
                         <img
@@ -25,8 +31,8 @@ const ProjectsHtml = () => {
                                 <h3 className="card-no">01</h3>
                                 <h6 className="card-main-title">Weather App(PWA)</h6>
                             </div>
-                            <p className="card-content">{t("weatherApp")}.</p>
-                            <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
+                            <h5 className="card-content">{t("weatherApp")}.</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -55,8 +61,8 @@ const ProjectsHtml = () => {
                                 <h3 className="card-no">02</h3>
                                 <h6 className="card-main-title">React website</h6>
                             </div>
-                            <p className="card-content">{t("reactWebSite")}</p>
-                            <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
+                            <h5 className="card-content">{t("reactWebSite")}</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -83,7 +89,7 @@ const ProjectsHtml = () => {
                                 <h3 className="card-no">03</h3>
                                 <h6 className="card-main-title">React ToDo</h6>
                             </div>
-                            <p className="card-content">{t("reactToDo")}</p>
+                            <h5 className="card-content">{t("reactToDo")}</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
@@ -111,9 +117,9 @@ const ProjectsHtml = () => {
                                 <h3 className="card-no">04</h3>
                                 <h6 className="card-main-title">React website</h6>
                             </div>
-                            <p className="card-content">Страници с оформление направени с ReactJs and Figma. Адаптивен
-                                дизайн</p>
-                            <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
+                            <h5 className="card-content">Страници с оформление направени с ReactJs and Figma. Адаптивен
+                                дизайн</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -145,8 +151,8 @@ const ProjectsHtml = () => {
                                 <h3 className="card-no">05</h3>
                                 <h6 className="card-main-title">{t("shoes")}<span> ({t("shoesHomePage")})</span></h6>
                             </div>
-                            <p className="card-content">{t("shopShoes")}</p>
-                            <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
+                            <h5 className="card-content">{t("shopShoes")}</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -172,8 +178,8 @@ const ProjectsHtml = () => {
                                 <h3 className="card-no">06</h3>
                                 <h6 className="card-main-title">{t("paymentPage")} (TypeScript)</h6>
                             </div>
-                            <p className="card-content">{t("paymentPageMake")} TS</p>
-                            <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
+                            <h5 className="card-content">{t("paymentPageMake")} TS</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -200,8 +206,8 @@ const ProjectsHtml = () => {
                                 <h3 className="card-no">07</h3>
                                 <h6 className="card-main-title">{t("pizzaMenu")}</h6>
                             </div>
-                            <p className="card-content">{t("pizzaMenu")}</p>
-                            <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
+                            <h5 className="card-content">{t("pizzaMenu")}</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -213,7 +219,6 @@ const ProjectsHtml = () => {
                             </ul>
                             <div
                                 className="buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center">
-                                <a href="#" className="read-more-btn" target="_blank">{t("application")}</a>
                                 <a href="https://github.com/mitaka1210/react-pizza" target="_blank"
                                    className="read-more-btn">{t("code")}</a>
                             </div>
@@ -230,8 +235,8 @@ const ProjectsHtml = () => {
                                 <h3 className="card-no">08</h3>
                                 <h6 className="card-main-title">{t("onlineShop")}</h6>
                             </div>
-                            <p className="card-content">{t("onlineShopText")}</p>
-                            <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
+                            <h5 className="card-content">{t("onlineShopText")}</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -240,8 +245,6 @@ const ProjectsHtml = () => {
                             </ul>
                             <div
                                 className="buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center">
-                                <a href="https://dazzling-joliot-4402f9.netlify.app/" target="_blank"
-                                   className="read-more-btn">{t("application")}</a>
                                 <a href="https://github.com/mitaka1210/E-shopReactJS" target="_blank"
                                    className="read-more-btn">{t("code")}</a>
                             </div>
@@ -250,25 +253,23 @@ const ProjectsHtml = () => {
                     </figure>
                 </div>
             </section>
-            <section className="magic-novatio flex-vertical-container justify-content-center text-align-center">
-                <h6>{t("iWantMore")}!</h6>
-                <div className="flex-horizontal-container-raw text-align-center justify-content-center">
-                    <p className="margin-10 padding-0">{t("magic")}</p>
-                    <p className="padding-0"><q><strong className="novatio-header">{t("novatio")}</strong></q></p>
-                </div>
+            <section
+                className="my-blog-portfolio flex-vertical-container justify-content-center text-align-center">
+                <h3>{t("createMyBlog")}!</h3>
                 <div className="box-wrapper">
                     <figure className="shape-box shape-box_half">
                         <img
-                            src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                            alt="logo-9"/>
-                        <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
+                            src={img[8].url.src}
+                            alt="React-website"/>
+                        <div
+                            className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">09</h3>
-                                <h6 className="card-main-title">{t("blog")}(PERN)</h6>
+                                <h6 className="card-main-title">{t("uploadArticle")}(PERN)</h6>
                             </div>
-                            <p className="card-content">{t("myBlog")}</p>
-                            <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
+                            <h5 className="card-content">{t("myUploader")}</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -281,24 +282,67 @@ const ProjectsHtml = () => {
                             </ul>
                             <div
                                 className="buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center">
-                                <a href="https://github.com/mitaka1210/PERN" target="_blank"
+                                <a href="https://upload.d-dimitrov.eu/"
+                                   target="_blank"
                                    className="read-more-btn">{t("application")}</a>
+                                <a href="https://github.com/mitaka1210/PERN"
+                                   target="_blank"
+                                   className="read-more-btn">{t("code")}</a>
                             </div>
                         </figcaption>
                         <span className="after"></span>
                     </figure>
                     <figure className="shape-box shape-box_half">
                         <img
-                            src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                            alt="logo-9"/>
-                        <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
+                            src={img[15].url.src}
+                            alt="React-website"/>
+                        <div
+                            className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">10</h3>
+                                <h6 className="card-main-title">{t("blog")}</h6>
+                            </div>
+                            <h5 className="card-content">{t("myBlog")}</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
+                            <ul className="card-content">
+                                <li>HTML</li>
+                                <li>SCSS</li>
+                                <li>NextJS</li>
+                                <li>Redux(RTK)</li>
+                                <li>Figma</li>
+                            </ul>
+                            <div
+                                className="buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center">
+                                <a href="https://eng.d-dimitrov.eu/Home-page"
+                                   target="_blank"
+                                   className="read-more-btn">{t("application")}</a>
+                                <a href="https://github.com/mitaka1210/mitaka-website"
+                                   target="_blank"
+                                   className="read-more-btn">{t("code")}</a>
+                            </div>
+                        </figcaption>
+                        <span className="after"></span>
+                    </figure>
+                </div>
+            </section>
+            <section
+                className="magic-novatio flex-vertical-container justify-content-center text-align-center">
+                <h3>{t("iWantMore")}!</h3>
+                <div className="box-wrapper">
+                    <figure className="shape-box shape-box_half">
+                        <img
+                            src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                            alt="logo-9"/>
+                        <div
+                            className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
+                        <figcaption>
+                            <div className="show-cont">
+                                <h3 className="card-no">11</h3>
                                 <h6 className="card-main-title">{t("novatio")}</h6>
                             </div>
-                            <p className="card-content">{t("novatioText")}</p>
-                            <h5 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h5>
+                            <h5 className="card-content">{t("novatioText")}</h5>
+                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -309,9 +353,24 @@ const ProjectsHtml = () => {
                             </ul>
                             <div
                                 className="buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center">
-                                <a href="https://novatiospace.com/industries/" target="_blank"
-                                   className="read-more-btn">{t("application")}</a>
+                                <a href="/novatio-Apps"
+                                   className="read-more-btn">{t("novatioApps")}</a>
                             </div>
+                        </figcaption>
+                        <span className="after"></span>
+                    </figure>
+                    <figure className="shape-box shape-box_half">
+                        <img
+                            src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+                            alt="logo-9"/>
+                        <div
+                            className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
+                        <figcaption>
+                            <div className="show-cont">
+                                <h3 className="card-no">12</h3>
+                                <h6 className="card-main-title">😏</h6>
+                            </div>
+                            <h5 className="card-content">{t("textForNextProject")}</h5>
                         </figcaption>
                         <span className="after"></span>
                     </figure>
