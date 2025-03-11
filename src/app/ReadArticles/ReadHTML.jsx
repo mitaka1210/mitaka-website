@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { resetState } from '@/store/likesSlice/likesSlice.js';
 import { useTranslation } from 'react-i18next'; // Импорт на useTranslation
 import { fetchArticles } from '@/store/getArticles/getArticlesSlice';
+import LoaderHTML from "@/app/loader/LoaderHTML";
 
 const ReadHtml = () => {
   // Извикване на useTranslation тук
@@ -81,7 +82,7 @@ return () => window.removeEventListener("scroll", handleScroll);
   return (
     <>
       {loading ? (
-        <div>{t('loading')}</div> 
+          <LoaderHTML />
       ) : (
         <div className="read" style={{ fontFamily: "Arial, sans-serif", background: "linear-gradient(to bottom, #006994, #003f5c)", minHeight: "100vh", padding: "20px" }}>
            <div className="progress-container" style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "4px", background: "#ddd", zIndex: 1000 }}>

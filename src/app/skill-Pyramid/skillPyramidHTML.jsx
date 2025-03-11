@@ -102,7 +102,7 @@ export default function SkillPyramid() {
             const pageHeight = document.documentElement.scrollHeight;
             const clientHeight = window.innerHeight;
             const scrolledPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
-            if (scrolledPercentage >= 50) {
+            if (scrolledPercentage >= 20) {
                 if (hasTriggered) return;
                 else
                 setShowServices(true);
@@ -115,6 +115,7 @@ export default function SkillPyramid() {
                 setVisibleRows((prev) => Math.max(prev - 1,1));
             }
             setLastScrollTop(scrollTop);
+            console.log("pesho", scrollPosition);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -184,7 +185,7 @@ export default function SkillPyramid() {
                                 <h2 className="text-xl font-bold mb-2">{service.title}</h2>
                                 <ul className="text-gray-400">
                                     {service.details.map((detail, i) => (
-                                        <li key={i} className="mb-1">&raquo; {detail}</li>
+                                        <li key={i} className="mb-1 change-font-size-li">&raquo; {detail}</li>
                                     ))}
                                 </ul>
                             </motion.div>
