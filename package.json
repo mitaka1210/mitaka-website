@@ -21,7 +21,7 @@
     "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.2.6",
     "autotyping": "^1.2.6",
-    "axios": "^1.7.2",
+    "axios": "^1.8.2",
     "bcrypt": "^5.1.1",
     "debug": "^4.4.0",
     "esbuild": "^0.25.0",
