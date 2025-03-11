@@ -52,9 +52,8 @@ export default function Dropdown(props: any) {
               className={`absolute right-14 top-8 z-30 w-[250px] min-h-[300px] flex flex-col py-4 bg-zinc-400 rounded-md ${transClass}`}>
               {
                 menuItems.map((item:any, number:any) =>
-               <div>
+               <div key={number}>
                  <Link
-                     key={number}
                      className="hover:bg-zinc-300 hover:text-zinc-500 px-4 py-1 lang-flag"
                      href={item?.route || ''}
                      onClick={() => {

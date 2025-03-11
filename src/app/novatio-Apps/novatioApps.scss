@@ -8,7 +8,6 @@
   position: relative;
   flex-wrap: wrap;
   gap: 0px 10px;
-  height: 69dvh;
 }
 
 .container-novatio-app .card {
@@ -210,7 +209,7 @@
 
 @media (max-width: 480px) {
   .container-novatio-app{
-    flex-direction: column;
+    height: 100%;
   }
   .container-novatio-app .card {
     width: 170px;

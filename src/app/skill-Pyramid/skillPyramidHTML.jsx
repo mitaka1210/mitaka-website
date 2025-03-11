@@ -95,38 +95,51 @@ export default function SkillPyramid() {
     const [hasTriggered, setHasTriggered] = useState(false);
 
     useEffect(() => {
+        let reduceInterval;
         const handleScroll = () => {
             const scrollTop = window.scrollY;
-            const scrollPosition = scrollTop + window.innerHeight;
-            const scrollHeight = document.documentElement.scrollHeight;
-            const pageHeight = document.documentElement.scrollHeight;
             const clientHeight = window.innerHeight;
+            const scrollHeight = document.documentElement.scrollHeight;
+
             const scrolledPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
-            if (scrolledPercentage >= 20) {
-                if (hasTriggered) return;
-                else
+
+            if (scrolledPercentage >= 10 && !hasTriggered) {
                 setShowServices(true);
                 setHasTriggered(true);
             }
 
-            if (scrollPosition >= pageHeight - 200) {
-                setVisibleRows((prev) => Math.min(prev + 1, skills.length));
-            } else if (scrollTop < lastScrollTop) {
-                setVisibleRows((prev) => Math.max(prev - 1,1));
+
+            if (scrollTop === 0) {
+                // Плавно намаляване до 1
+                clearInterval(reduceInterval);
+                reduceInterval = setInterval(() => {
+                    setVisibleRows((prev) => {
+                        if (prev > 1) return prev - 1;
+                        clearInterval(reduceInterval);
+                        return 1;
+                    });
+                }, 150); // Контролира скоростта на прибиране
+            } else {
+                clearInterval(reduceInterval);
+                if (scrolledPercentage >= 3) {
+                    setVisibleRows((prev) => (prev < skills.length ? prev + 1 : prev));
+                } else if (scrollTop < lastScrollTop) {
+                    setVisibleRows((prev) => Math.max(prev - 1, 1));
+                }
             }
+
             setLastScrollTop(scrollTop);
-            console.log("pesho", scrollPosition);
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollTop]);
+    }, [lastScrollTop, hasTriggered]); // Добавям `hasTriggered`, за да избегнем излишни обновявания
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-5">
             <h2 className="">Моите умения</h2>
 
-               <div style={{height: 270+ 'px'}} className="flex flex-col items-center">
+               <div  className="flex flex-col items-center">
                    {skills.slice(0, visibleRows).map((row, index) => (
                        <motion.div
                            key={index}
