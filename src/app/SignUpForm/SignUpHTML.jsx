@@ -1,11 +1,17 @@
+'use client';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createAccount } from "@/store/createAccount/createAccountSlice";
 import {validateInput} from '../validSignUpFormInput/validSignUpFormInput';
 import {useTranslation} from "react-i18next";
 import {validLoginInput} from "@/app/signInValidInput/signInValidInput";
+import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
+import {resetState} from "@/store/likesSlice/likesSlice";
+import {useRouter} from "next/navigation";
 const SignUpFormHTML = () => {
     const {t} = useTranslation();
+    const router = useRouter();
+    const size = useWindowSize();
     const [username, setUsername] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -15,12 +21,6 @@ const SignUpFormHTML = () => {
     const [errors, setErrors] = useState({});
 
     //! ERROR input default state
-    const [usernameError, setUsernameError] = useState('');
-    const [firstNameError, setFirstNameError] = useState('');
-    const [lastNameError, setLastNameError] = useState('');
-    const [emailError, setEmailError] = useState('');
-    const [passwordError, setPasswordError] = useState('');
-    const [confirmPasswordError, setConfirmPasswordError] = useState('');
     const { errorCreate } = useSelector((state) => state.createAccount);
     const dispatch = useDispatch();
 
@@ -44,7 +44,14 @@ const SignUpFormHTML = () => {
             }
         }
     };
+
+
+    // Функция за връщане назад
+    const goBack = () => {
+       window.location.reload()
+    };
     return (
+        <>
         <form action="#" onSubmit={handleCreateAccount}>
             <h4 className="color-white ">{t('createAccount')}</h4>
             <div>
@@ -92,10 +99,20 @@ const SignUpFormHTML = () => {
                     {errorCreate.message}
                 </p>
             )}
-            <button className="btn-login-page" id="idCreateAccount">
-                {t("createAccount")}
-            </button>
         </form>
+            {size.width < 500 ?
+                <div>
+                    <button className="btn-login-page input-width-100" id="idCreateAccount">
+                        {t("createAccount")}
+                    </button>
+                    <button className="btn-login-page margin-top-10 input-width-100" onClick={goBack}>
+                        {t("back")}
+                    </button>
+                </div> :
+                <button className="btn-login-page" id="idCreateAccount">
+                    {t("createAccount")}
+                </button> }
+        </>
     );
 };
 

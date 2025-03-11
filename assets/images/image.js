@@ -14,6 +14,8 @@ import img13 from './dispetcher.webp';
 import img14 from './reception.png'
 import img15 from './customer.png'
 import img16 from './blog-img.png'
+import img17 from '../../assets/flag/en-flag.png';
+import img18 from '../../assets/flag/bg-flag.png';
 const imagesArray = [
  {
   id: 0,
@@ -78,6 +80,13 @@ const imagesArray = [
  {
   id: 15,
   url: img16,
+ },
+ {
+  id: 16,
+  url: img17,
+ }, {
+  id: 17,
+  url: img18,
  },
 
 ];

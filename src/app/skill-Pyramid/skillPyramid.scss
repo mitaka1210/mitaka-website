@@ -1,12 +1,4 @@
 /* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #d0eae3;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
 .services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -31,12 +23,6 @@ body {
     box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-h3 {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-p {
-    font-size: 0.95em;
-    color: #333;
+.change-font-size-li{
+    font-size: .6em !important;
 }

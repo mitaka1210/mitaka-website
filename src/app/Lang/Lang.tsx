@@ -1,16 +1,12 @@
 import React, {useEffect} from "react";
 import Link from "next/link";
-import {usePathname} from "next/navigation";
 import Dropdown from "../DropDown/Dropdown";
-
+import images from "../../../assets/images/image";
 export interface MenuItem {
   title: string;
   route?: string;
+  lang?: string;
   children?: MenuItem[];
-}
-
-export interface Page {
-  page: string
 }
 
 const menuItemsEN: MenuItem[] = [
@@ -19,9 +15,11 @@ const menuItemsEN: MenuItem[] = [
     children: [
       {
         title: "English",
+        lang: 'en',
       },
       {
         title: "Bulgarian",
+        lang: 'bg',
       },
     ],
   },
@@ -32,9 +30,11 @@ const menuItemsBG: MenuItem[] = [
     children: [
       {
         title: "Английски",
+        lang: 'en',
       },
       {
         title: "Български",
+        lang: 'bg',
       },
     ],
   },
@@ -42,9 +42,9 @@ const menuItemsBG: MenuItem[] = [
 
 export default function ChangeLang() {
   let lang = localStorage.getItem("i18nextLng");
-  const pathname = usePathname();
+  let img = images;
   useEffect(() => {
-
+    console.log('pesho', lang);
   }, [lang]);
   return (
       <div className="flex gap-8 items-center text-white">
@@ -53,7 +53,9 @@ export default function ChangeLang() {
               <Dropdown item={item}  key={number}/>
           ) : (
               <Link key={number} className="hover:text-crimson-500" href="#">
-                {item.title}
+                <img
+                    src={img[17].url.src}
+                    alt="Project Weather App"/>
               </Link>
           );
         }) : menuItemsEN.map((item, number) => {
@@ -61,7 +63,10 @@ export default function ChangeLang() {
               <Dropdown item={item}  key={number}/>
           ) : (
               <Link key={number} className="hover:text-crimson-500" href="#">
-                {item.title}
+         ]
+                <img
+                    src={img[18].url.src}
+                    alt="Project Weather App"/>
               </Link>
           );
         })

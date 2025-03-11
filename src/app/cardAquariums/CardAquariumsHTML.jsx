@@ -8,6 +8,7 @@ import images from '../../../assets/images/image';
 import { fetchArticles } from '@/store/getArticles/getArticlesSlice';
 import { useTranslation } from 'react-i18next';
 import {t} from "i18next";
+import LoaderHTML from "@/app/loader/LoaderHTML";
 
 const CardAquariumsHTML = () => {
  const dispatch = useDispatch();
@@ -61,7 +62,7 @@ setTimeout(() => {
   <Suspense fallback={<div>Loading...</div>}>
    {
     loading.isLoading ?
-     <div>Loading</div> :
+        <LoaderHTML />:
      <div>
       <section
        className="flex flex-col  justify-center items-center  add-scroll-aquarium-page">
