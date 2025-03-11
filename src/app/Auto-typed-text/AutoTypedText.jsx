@@ -8,8 +8,9 @@ const AutoTypedText = () => {
   const el = useRef(null);
   let lang = localStorage.getItem("i18nextLng");
   const {t} = useTranslation();
-  const langBG = ["Програмист", "Акварист", "Дизайнер", "Програмист на свободна практика", "Авиационен инженер"];
-  const langEN = ["Developer", "Aquarist", "Designer", "Freelancer", "Aviation engineer"];
+  const langBG = ["Front-end Програмист", "Акварист", "Дизайнер", "Програмист" +
+  " на свободна практика", "Авиационен инженер"];
+  const langEN = ["Front-end Developer", "Aquarist", "Designer", "Freelancer", "Aviation engineer"];
 
   useEffect(() => {
     const typed = new Typed(el.current, {
