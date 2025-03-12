@@ -60,11 +60,6 @@ export async function POST(req, {params}) {
     console.log("🔹 ID from params:", params.id);
     const { id } = params.id; // ✅ Взимаме ID от URL параметрите
     console.log("🔹 ID from id:", id);
-
-    if (!id) {
-        return new NextResponse(JSON.stringify({ error: "ID is required" }), { status: 400 });
-    }
-
     try {
         const { isLike } = await req.json(); // ✅ Четем тялото на заявката
         console.log("🔹 isLike:", isLike);
