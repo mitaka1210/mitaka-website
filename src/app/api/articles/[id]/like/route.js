@@ -44,7 +44,7 @@ import {NextRequest, NextResponse} from "next/server"; // Файлът db.js с�
  * Handles the HTTP request for liking or disliking an article.
  *
  * @param {NextRequest} req - The HTTP request object.
- * @param {NextResponse} res - The HTTP response object.
+ * @param context
  *
  * The request should contain:
  * - `id` in the query parameters, representing the article ID.
@@ -56,9 +56,11 @@ import {NextRequest, NextResponse} from "next/server"; // Файлът db.js с�
 
 
 
-export async function POST(req, { params }) {
+export async function POST(req, context) {
+    const { params } = context; // Правилно извличаме `params`
+
     console.log("🔹 ID from params:", params.id);
-    const id = params.id; // ✅ Взимаме ID от URL параметрите правилно
+    const id = params.id; // ✅ Взимаме ID от URL параметрите
 
     try {
         const { isLike } = await req.json(); // ✅ Четем тялото на заявката
