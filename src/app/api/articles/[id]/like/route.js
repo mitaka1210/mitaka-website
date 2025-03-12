@@ -54,7 +54,9 @@ import {NextRequest, NextResponse} from "next/server"; // Файлът db.js с�
  * It responds with a JSON object indicating success or an error message.
  */
 
-export async function POST(req, { params }) {
+
+
+export async function POST(req, {params}) {
     console.log("🔹 ID from params:", params.id);
     const { id } = params.id; // ✅ Взимаме ID от URL параметрите
     console.log("🔹 ID from id:", id);
@@ -83,5 +85,3 @@ export async function POST(req, { params }) {
         return new NextResponse(JSON.stringify({ error: "Server error" }), { status: 500 });
     }
 }
-
-
