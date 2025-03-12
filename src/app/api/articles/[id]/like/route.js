@@ -56,16 +56,16 @@ import {NextRequest, NextResponse} from "next/server"; // Файлът db.js с�
 
 
 
-export async function POST(req, {params}) {
+export async function POST(req, { params }) {
     console.log("🔹 ID from params:", params.id);
-    const { id } = params.id; // ✅ Взимаме ID от URL параметрите
-    console.log("🔹 ID from id:", id);
+    const id = params.id; // ✅ Взимаме ID от URL параметрите правилно
+
     try {
         const { isLike } = await req.json(); // ✅ Четем тялото на заявката
         console.log("🔹 isLike:", isLike);
 
         if (typeof isLike !== "boolean") {
-            return new NextResponse(JSON.stringify({ error: "Invalid request body" }), { status: 400 });
+            return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
         }
 
         const query = isLike
@@ -74,9 +74,9 @@ export async function POST(req, {params}) {
 
         await pool.query(query, [id]);
 
-        return new NextResponse(JSON.stringify({ success: true }), { status: 200 });
+        return NextResponse.json({ success: true }, { status: 200 });
     } catch (error) {
         console.error("🔴 Database error:", error);
-        return new NextResponse(JSON.stringify({ error: "Server error" }), { status: 500 });
+        return NextResponse.json({ error: "Server error" }, { status: 500 });
     }
 }
