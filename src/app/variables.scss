@@ -64,6 +64,16 @@
 
   --color5: #24b47e;
   --color6: #aff1b6;
+
+
+  --color-bg: #FDF1F2;
+  --color-heart: #EA442B;
+  --color-heartBGR: #2BEAD4FF;
+  --easing: cubic-bezier(.7, 0, .3, 1);
+  --duration: .5s;
+  --i: 1;
+  --color: #25CB25FF;
+  --totalParticles: 6;
   @font-face {
     font-family: roboto-regular;
     src: url('../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');

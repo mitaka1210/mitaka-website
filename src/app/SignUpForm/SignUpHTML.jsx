@@ -6,7 +6,7 @@ import {validateInput} from '../validSignUpFormInput/validSignUpFormInput';
 import {useTranslation} from "react-i18next";
 import {validLoginInput} from "@/app/signInValidInput/signInValidInput";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
-import {resetState} from "@/store/likesSlice/likesSlice";
+import {resetState} from "@/store/api/likesSlice";
 import {useRouter} from "next/navigation";
 const SignUpFormHTML = () => {
     const {t} = useTranslation();

@@ -12,10 +12,6 @@ const Page = () => {
     () => import('../Footer-page/page'),
     {ssr: false}
   );
-  const LikeHTML = dynamic(
-    () => import('../Like/LikeHTML'),
-    {ssr: false}
-  );
   const Navigation = dynamic(
     () => import('../Navigation-component/navigation'),
     {ssr: false}

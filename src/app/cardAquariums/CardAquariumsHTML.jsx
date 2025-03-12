@@ -1,12 +1,10 @@
 'use client';
-
 import React, { Suspense, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import './cardAquariums.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import images from '../../../assets/images/image';
 import { fetchArticles } from '@/store/getArticles/getArticlesSlice';
-import { useTranslation } from 'react-i18next';
 import {t} from "i18next";
 import LoaderHTML from "@/app/loader/LoaderHTML";
 
@@ -26,10 +24,11 @@ setTimeout(() => {
  const articlesInfo = useSelector((state) => state.articles.data);
  let img = images;
  const handleClick = (id) => {
-  console.log("pesho",id);
   // const {id} = router.query;
   // Проверете дали използвате низове за query параметрите
   router.push('/ReadArticles' + `/?id=${id}`);
+  // router.push(`/ReadArticles/${id}`); // По-чист URL
+
  };
  const sections = [
   {
