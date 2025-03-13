@@ -7,11 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { fetchArticles } from "@/store/getArticles/getArticlesSlice";
 import LoaderHTML from "@/app/loader/LoaderHTML";
-import {
-    articlesLikesDislikes,
-    useGetArticleLikesQuery, useLikeArticleMutation
+import {useGetArticleLikesQuery, useLikeArticleMutation
 } from "@/store/api/likesSlice";
-import LikeHTML from "@/app/Like/LikeHTML";
 import LikeHeart from "@/app/likeHeart/likeHeart";
 import DisLikeheart from "@/app/dislikeHeart/disLikeHTML";
 
