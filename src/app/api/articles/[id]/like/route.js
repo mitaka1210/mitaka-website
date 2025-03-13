@@ -55,7 +55,8 @@ import {NextRequest, NextResponse} from "next/server"; // Файлът db.js с�
  */
 
 
-export async function POST(req, { params }) {
+export async function POST(req,context) {
+    const { params } = context; // Правилно извличаме `params`
     try {
         const { id } = await params; // ✅ ID от URL параметрите
         console.log("🔹 ID from params:", id);
@@ -90,6 +91,5 @@ export async function POST(req, { params }) {
         return NextResponse.json({ error: "Server error" }, { status: 500 });
     }
 }
-
 
 
