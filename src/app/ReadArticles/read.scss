@@ -4,12 +4,11 @@
   margin: .5em;
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  margin: 0;
   padding: 0;
   background: linear-gradient(to bottom, #006994, #008bb5, #00a8cc);
   color: white;
   transition: background 0.5s ease-in-out;
-    & .read-back-btn {
+  & .read-back-btn {
     text-align: center;
   }
 }
@@ -179,8 +178,13 @@ p {
 }
 .line-after-header{
 
-    border: 1px dashed #ffcc00;
-    width: 50%;
-    margin: 15px auto;
-  
+  border: 1px dashed #ffcc00;
+  width: 50%;
+  margin: 15px auto;
+
+}
+
+
+.likeDislikeBtn{
+
 }
