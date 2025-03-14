@@ -10,18 +10,16 @@ import store from "@/store/storeState/store";
 
 const inter = Inter({subsets: ["latin"]});
 
-export default function RootLayout({children,}: Readonly<{ children: React.ReactNode; }>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-
-            <Provider store={store}>
-                <html lang="en">
-                <body className={inter.className}>
-                <Providers>
-                    {children}
-                </Providers>
-                </body>
-                </html>
-            </Provider>
-
+        <html lang="en">
+        <body>
+        <Provider store={store}> {/* Обвиваме само тук клиентските неща */}
+            <Providers>
+                {children}
+            </Providers>
+        </Provider>
+        </body>
+        </html>
     );
 }
