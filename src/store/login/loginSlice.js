@@ -31,7 +31,7 @@ export const login = createAsyncThunk('auth/login', async ({ username, password,
 export const checkAuth = createAsyncThunk('auth/checkAuth', async (_, { rejectWithValue }) => {
     try {
         const token = localStorage.getItem('token');
-        if (!token) throw new Error('No token found');
+        if (!token) {throw new Error('No token found');}
 
         const response = await fetch(`${url}/api/check-auth`, {
             headers: { Authorization: token },

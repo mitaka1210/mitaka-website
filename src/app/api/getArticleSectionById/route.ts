@@ -45,9 +45,7 @@ export async function GET(req: NextRequest, res: any) {
 
   // Връщане на отговор със секцията
   return NextResponse.json(section);
- } catch (error) {
-  console.error('Error fetching data:', error);
-  // @ts-ignore
+ } catch (error:any) {
   return NextResponse.json({ error: 'Failed to fetch data', errorMsg: error.message }, { status: 500 });
  }
 }

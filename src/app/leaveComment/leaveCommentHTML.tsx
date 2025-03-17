@@ -21,7 +21,7 @@ interface RootState {
   getComments: ArticleComment;
 }
 
-const LeaveComments = ({id}: any) => {
+const LeaveComments = ({id}:any) => {
   let content;
   const dispatch = useDispatch();
   const status = useSelector((state: RootState) => state.getComments.status);
@@ -38,8 +38,8 @@ const LeaveComments = ({id}: any) => {
 
   const getTodos = () => {
     if (status === "idle") {
-      // @ts-ignore
-      dispatch(getArticleComment(params));
+    //@ts-expect-error
+      dispatch(getArticleComment(params as any));
     } else if (status === "loading") {
       content = <div>Loading...</div>;
     } else if (status === "succeeded") {

@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-export const getArticleComment = createAsyncThunk("getArticleComment", async (id) => {
+export const getArticleComment = createAsyncThunk( async (id) => {
     return fetch(`api/getComments?${id}`)
         .then(response => response.json())
         .then(json => {
@@ -23,7 +23,7 @@ const articleCommentsSlice = createSlice({
         },
     },
     extraReducers: builder => {
-        builder.addCase(getArticleComment.pending, (state, action) => {
+        builder.addCase(getArticleComment.pending, (state) => {
             state.status = "loading";
             state.isLoading = true;
         });
