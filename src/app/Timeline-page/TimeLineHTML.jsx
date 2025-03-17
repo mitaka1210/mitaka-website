@@ -1,16 +1,30 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./timeline.scss";
 import Image from "next/image";
 import geodesy from "../../../assets/images/tacheometer.png";
 import aviation from "../../../assets/images/airport.png";
 import coding from "../../../assets/images/coding.png";
 import {useTranslation} from "react-i18next";
+import LoaderHTML from "@/app/loader/LoaderHTML";
 
 const TimeLineHtml = () => {
+
   // imported lib
   const {t} = useTranslation();
+
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    // Симулираме зареждане (например от API или изображения)
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000)
+  }, []);
+
+  if (loading) {
+    return <LoaderHTML />;
+  }
   return (
     <div>
       <h2 className="text-align-center">{t("myWord")}!</h2>

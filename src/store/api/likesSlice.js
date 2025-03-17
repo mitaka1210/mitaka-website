@@ -3,7 +3,6 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const baseQuery = fetchBaseQuery({
     baseUrl: "/api/articles/",
     prepareHeaders: (headers) => {
-        console.log("🔹 Headers:", headers);
         return headers;
     }
 });
@@ -14,17 +13,14 @@ export const articlesLikesDislikes = createApi({
     endpoints: (builder) => ({
         getArticleLikes: builder.query({
             query: (articleId) => {
-                console.log("🔹 GET likes for article:", articleId);
                 return `${articleId}/likes`;
             },
             transformResponse: (response) => {
-                console.log("🔹 Response from getArticleLikes:", response);
                 return response;
             }
         }),
         likeArticle: builder.mutation({
             query: ({ articleId, type }) => {
-                console.log("🔹 Like/Dislike request:", { articleId, type });
                 return {
                     url: `${articleId}/like`,
                     method: "POST",
@@ -37,10 +33,10 @@ export const articlesLikesDislikes = createApi({
             async onQueryStarted({ articleId }, { dispatch, queryFulfilled }) {
                 try {
                     const { data } = await queryFulfilled;
-                    console.log("🔹 Like/Dislike response:", data);
+                    console.log("pesho DATA", data);
                     dispatch(articlesLikesDislikes.util.invalidateTags([{ type: "Likes", id: articleId }]));
                 } catch (error) {
-                    console.error("🔴 Грешка при харесване/нехаресване", error);
+                    return error
                 }
             },
         }),

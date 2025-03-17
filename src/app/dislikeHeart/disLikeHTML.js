@@ -7,8 +7,7 @@ const DisLikeheart = () => {
     setActive(!active); // Промяна на състоянието при кли
   };
   return (
-    <div>
-      <div className="heart-Circle" onClick={handleClick}>
+      <div className="heart-Circle" onClick={handleClick} >
 
         <div className={active ? "heart-Container broken" : "heart-Container"}>
 
@@ -37,12 +36,9 @@ const DisLikeheart = () => {
               <div className="point pt2"></div>
               <div className="point pt3"></div>
             </div>
-
           </div>
-
         </div>
       </div>
-    </div>
   );
 };
 

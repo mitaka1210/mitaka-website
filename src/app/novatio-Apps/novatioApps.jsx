@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './novatioApps.scss';
 import images from "../../../assets/images/image";
 import {useTranslation} from "react-i18next";
+import LoaderHTML from "@/app/loader/LoaderHTML";
 
 function NovatioApps(props) {
     const {t} = useTranslation();
+    const [loading, setLoading] = useState(true);
     let img = images;
+    useEffect(() => {
+        // Симулираме зареждане (например от API или изображения)
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000)
+    }, []);
+
+    if (loading) {
+        return <LoaderHTML />;
+    }
     return (
             <main className="novatio-apps flex-vertical-container align-items-center">
                 <section className="novatioApps margin-40">

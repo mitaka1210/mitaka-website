@@ -1,20 +1,24 @@
 "use client";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./blog.scss";
 import {useRouter} from "next/navigation";
 import {useTranslation} from "react-i18next";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
 import i18n from "@/i18n";
+import LoaderHTML from "@/app/loader/LoaderHTML";
 const BlogHtml = () => {
   const articlesAquariumNumbers= process.env.NEXT_PUBLIC_AQUARIUM_ARTICLES;
   const articlesProgramingNumbers= process.env.NEXT_PUBLIC_PROGRAMING_ARTICLES;
   const {t} = useTranslation();
-  const size = useWindowSize();
-  const changeLang = lng => {
-    i18n.changeLanguage(lng).then(r => {
-    });
-  };
+  const [loading, setLoading] = useState(true);
   const router = useRouter();
+
+  useEffect(() => {
+    // Симулираме зареждане (например от API или изображения)
+ setTimeout(() => {
+   setLoading(false);
+ }, 2000)
+  }, []);
   const redirectTo = (path) => {
     if (path === "aquariums") {
       router.push("/cardAquariums");
@@ -22,6 +26,10 @@ const BlogHtml = () => {
       router.push("/programingArticles");
     }
   };
+
+    if (loading) {
+        return <LoaderHTML />;
+    }
   return (
     <div className="blog-main-container">
       <div className="min-h-screen bg-white grid place-content-center p-5">
