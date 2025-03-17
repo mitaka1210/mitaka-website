@@ -51,6 +51,7 @@ const CardAquariumsHTML = () => {
                 <div className="blog-card margin-15" key={index}>
                  <div className="meta">
                   <div className="photo">
+                   {/* eslint-disable-next-line react/jsx-no-undef */}
                    <Image
                        src="/assets/images/my-image.jpg"
                        alt="Описание на изображението"
