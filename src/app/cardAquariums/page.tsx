@@ -3,9 +3,8 @@
 import React, {useEffect, useState} from 'react';
 import dynamic from "next/dynamic";
 import './cardAquariums.scss';
-import CardAquariumsHTML from "@/app/cardAquariums/CardAquariumsHTML";
 
-const CardAquariumsHtml = dynamic(
+const CardAquariums = dynamic(
     () => import('./CardAquariumsHTML'),
     {ssr: false}
 );
@@ -28,7 +27,7 @@ const Page = () => {
   return (
     <div>
       <Navigation/>
-      <CardAquariumsHTML/>
+      <CardAquariums/>
       <div className="input-width-100">
         <FooterHTML/>
       </div>
