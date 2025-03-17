@@ -1,8 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaLaptopCode, FaDatabase, FaCloud } from 'react-icons/fa';
 import './skillPyramid.scss';
+import LoaderHTML from "@/app/loader/LoaderHTML";
 const skills = [
     [{ name: 'HTML', category: 'old' }],
     [
@@ -93,7 +94,17 @@ export default function SkillPyramid() {
     const [selectedSkill, setSelectedSkill] = useState(null);
     const [showServices, setShowServices] = useState(false);
     const [hasTriggered, setHasTriggered] = useState(false);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        // Симулираме зареждане (например от API или изображения)
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000)
+    }, []);
 
+    if (loading) {
+        return <LoaderHTML />;
+    }
     useEffect(() => {
         let reduceInterval;
         const handleScroll = () => {

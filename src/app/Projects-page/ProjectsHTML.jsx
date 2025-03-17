@@ -4,18 +4,31 @@ import React, {useEffect, useRef, useState} from "react";
 import "./project.scss";
 import {useTranslation} from "react-i18next";
 import images from "../../../assets/images/image";
+import LoaderHTML from "@/app/loader/LoaderHTML";
 const ProjectsHtml = () => {
     const {t} = useTranslation();
     let img = images;
 
     const [language, setLanguage] = useState('en');
-
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        // Симулираме зареждане (например от API или изображения)
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000)
+    }, []);
     useEffect(() => {
         const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
         setLanguage(storedLang);
         document.title = storedLang ===  'bg' ? 'Моята история -' +
         ' инж.Димитров' : 'My Timeline - eng.Dimitrov';
     }, []);
+
+
+
+    if (loading) {
+        return <LoaderHTML />;
+    }
     return (
         <div className="flex-vertical-container text-align-center justify-content-center">
             <section className="start-programing flex-item text-align-center">

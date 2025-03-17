@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import "./likeHeart.scss";
 
-const LikeHeart = (props) => {
+const LikeHeart = ({props}) => {
   const [color, setColor] = useState("white"); // Начален цвят на SVG пътя
-
+    console.log("pesho", props);
   const handleClick = () => {
     console.log("pesho");
     // Промяна на цвета при клик
@@ -11,7 +11,6 @@ const LikeHeart = (props) => {
   };
 
   return (
-    <div>
       <div className="like-wrapper">
         <div className="ripple"></div>
         <svg className="heart-like" width="24" height="24" viewBox="0 0 24 24">
@@ -28,7 +27,6 @@ const LikeHeart = (props) => {
           <div className="particle" style={{"--i": 6, "--color": "#D53EF3"}}></div>
         </div>
       </div>
-    </div>
   );
 };
 

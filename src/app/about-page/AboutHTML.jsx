@@ -5,6 +5,7 @@ import {accordianEN} from "@/content-EN";
 import withClickOutside from "../Helper-components/Click-outside/WithClickOutSide";
 import ScrollTop from "@/app/Helper-components/scrollToTop/scrollTop";
 import {useTranslation} from "react-i18next";
+import LoaderHTML from "@/app/loader/LoaderHTML";
 
 const AboutHtml = forwardRef(({open, setOpen}, ref) => {
     // property
@@ -13,6 +14,7 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
     const [accordion, setAccordion] = useState(accordianBG);
     const [hideDiv, setHideDiv] = useState(true);
     const {t} = useTranslation();
+    const [loading, setLoading] = useState(true);
     // localStorage
     if (typeof window !== 'undefined') {
         let lang = localStorage.getItem('i18nextLng');
@@ -25,7 +27,12 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
             }
         }, [lang]);
     }
-    // methods
+    useEffect(() => {
+        // Симулираме зареждане (например от API или изображения)
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000)
+    }, []);
     const handleClick = (index) => {
         if (index === active) {
             setActive(-1);
@@ -41,7 +48,9 @@ const AboutHtml = forwardRef(({open, setOpen}, ref) => {
             setHideDiv(true);
         }
     };
-
+    if (loading) {
+        return <LoaderHTML />;
+    }
 
     return (
         <>

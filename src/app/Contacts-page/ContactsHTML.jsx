@@ -1,11 +1,22 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import EmailHtml from "../Email-form/page";
 import {useTranslation} from "react-i18next";
-
+import LoaderHTML from "@/app/loader/LoaderHTML";
 const ContactsHtml = () => {
   const {t} = useTranslation();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    // Симулираме зареждане (например от API или изображения)
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000)
+  }, []);
+
+  if (loading) {
+    return <LoaderHTML />;
+  }
   return (
     <main className="bgr-gray">
       <section
