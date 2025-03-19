@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 import { FaCode, FaLaptopCode, FaDatabase, FaCloud } from 'react-icons/fa';
 import './skillPyramid.scss';
 import LoaderHTML from "@/app/loader/LoaderHTML";
+import {useTranslation} from "react-i18next";
+let lang = localStorage.getItem("i18nextLng");
+
 const skills = [
     [{ name: 'HTML', category: 'old' }],
     [
@@ -39,30 +42,34 @@ const skills = [
 ];
 
 const skillDescriptions = {
-    HTML: 'Основен език за изграждане на уеб страници.',
-    CSS: 'Език за стилизиране на уеб страници.',
-    JavaScript: 'Основен език за уеб разработка.',
-    React: 'Библиотека за изграждане на интерфейси.',
-    Angular: 'Фреймуърк за уеб приложения.',
-    'Node.js': 'Сървърна среда за изпълнение на JavaScript.',
-    Redux: 'Управление на състоянието в React.',
-    PostgreSQL: 'Релационна база данни с отворен код.',
-    Docker: 'Контейнеризация на приложения.',
-    RxJS: 'Библиотека за реактивно програмиране.',
-    NextJS: 'Фреймуърк за React с SSR и SSG.',
-    Express: 'Минималистичен бекенд фреймуърк за Node.js.',
-    Firebase: 'Платформа за бекенд услуги от Google.',
-    SCSS: 'Разширение на CSS с допълнителни възможности.',
-    'AngularJS': 'Първата версия на Angular за уеб приложения.',
-    Gulp: 'Инструмент за автоматизация на задачи в уеб разработката.',
-    Github: 'Платформа за управление на кодови репозитории.',
-    NestJS: 'Фреймуърк за създаване на сървърни приложения с TypeScript.',
-    MongoDB: 'NoSQL база данни, базирана на документи.',
-    Postman: 'Инструмент за тестване и разработка на API-та.',
-    RTK: 'Redux Toolkit - подобрена версия на Redux.',
-    'Vue - 2': 'Втората версия на Vue.js за уеб разработка.',
-    dbeaver: 'Инструмент за управление на бази данни.',
-    '🤔💭': 'Предстои да бъде открито! 😉'
+    HTML: lang === 'bg' ? 'Основен език за изграждане на уеб страници.' : 'Basic language for building web pages.',
+    CSS: lang === 'bg' ? 'Език за стилизиране на уеб страници.' : 'Language for styling web' +
+' pages.',
+    JavaScript: lang === 'bg' ? 'Основен език за уеб разработка.' : 'Primary language for' +
+' web development.',
+    React: lang === 'bg' ? 'Библиотека за изграждане на интерфейси.' :  'Library for building interfaces.',
+    Angular: lang === 'bg' ? 'Фреймуърк за уеб приложения.' : 'Framework for web applications.',
+    'Node.js': lang === 'bg' ? 'Сървърна среда за изпълнение на JavaScript.' : 'Server environment for running JavaScript.',
+    Redux: lang === 'bg' ? 'Управление на състоянието в React.' : 'State management in React.',
+    PostgreSQL: lang === 'bg' ? 'Релационна база данни с отворен код.' : 'Open-source relational database.',
+    Docker: lang === 'bg' ? 'Контейнеризация на приложения.' : 'Application containerization.',
+    RxJS: lang === 'bg' ? 'Библиотека за реактивно програмиране.' : 'Library for reactive programming.',
+    NextJS: lang === 'bg' ? 'Фреймуърк за React с SSR и SSG.' :  'Framework for React with SSR and SSG.',
+    Express: lang === 'bg' ?  'Минималистичен бекенд фреймуърк за Node.js.' : 'Minimalist backend framework for Node.js.',
+    Firebase: lang === 'bg' ?  'Платформа за бекенд услуги от Google.' : 'Backend services platform by Google.',
+    SCSS: lang === 'bg' ?  'Разширение на CSS с допълнителни възможности.' : 'Extension of CSS with additional features.',
+    'AngularJS': lang === 'bg' ?  'Първата версия на Angular за уеб' +
+        ' приложения.' : 'Task automation tool in web development.',
+    Gulp: lang === 'bg' ?  'Инструмент за автоматизация на задачи в уеб' +
+        ' разработката.' : 'Task automation tool in web development.',
+    Github: lang === 'bg' ?  'Платформа за управление на кодови репозитории.' : 'Platform for code repository management.',
+    Postman: lang === 'bg' ?  'Инструмент за тестване и разработка на' +
+        ' API-та.' : 'Tool for API testing and development.',
+    RTK: lang === 'bg' ?  'Redux Toolkit - подобрена версия на Redux.' : 'Redux Toolkit - an improved version of Redux.',
+    'VueJS - 2': lang === 'bg' ?  'Втората версия на Vue.js за уеб' +
+        ' разработка.' : 'The second version of Vue.js for web development.',
+    dbeaver: lang === 'bg' ?  'Инструмент за управление на бази данни.' : 'Database management tool.',
+    '🤔💭': lang === 'bg' ?  'Предстои да бъде открито! 😉' : 'To be discovered! 😉'
 };
 
 const services = [
@@ -89,7 +96,9 @@ const services = [
 ];
 
 export default function SkillPyramid() {
+    const {t} = useTranslation();
     const [visibleRows, setVisibleRows] = useState(0);
+    const [lan, setlan] = useState('bg');
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [selectedSkill, setSelectedSkill] = useState(null);
     const [showServices, setShowServices] = useState(false);
@@ -100,11 +109,7 @@ export default function SkillPyramid() {
         setTimeout(() => {
             setLoading(false);
         }, 2000)
-    }, []);
-
-    if (loading) {
-        return <LoaderHTML />;
-    }
+    }, [lang]);
     useEffect(() => {
         let reduceInterval;
         const handleScroll = () => {
@@ -141,14 +146,23 @@ export default function SkillPyramid() {
 
             setLastScrollTop(scrollTop);
         };
-
+        setlan(lang);
+        console.log("pesho", lang);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollTop, hasTriggered]); // Добавям `hasTriggered`, за да избегнем излишни обновявания
-
+    }, [lastScrollTop, hasTriggered, lang]); // Добавям `hasTriggered`, за да
+    // избегнем излишни обновявания
+    if (loading) {
+        return <LoaderHTML />;
+    }
+    const testClick = () => {
+        let newLang  = localStorage.getItem("i18nextLng");
+        lang = newLang
+        console.log("pesho new", lang);
+    }
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-5">
-            <h2 className="">Моите умения</h2>
+            <h2 className="">{t("mySkills")}</h2>
 
                <div  className="flex flex-col items-center">
                    {skills.slice(0, visibleRows).map((row, index) => (
@@ -184,17 +198,17 @@ export default function SkillPyramid() {
                            className="absolute top-2 right-2 bg-red-600 px-3 py-1 rounded-full text-sm"
                            onClick={() => setSelectedSkill(null)}
                        >
-                           Затвори
+                           Затвори {lang}
                        </button>
                        <h2 className="text-lg font-bold">{selectedSkill}</h2>
-                       <p className="mt-2 text-gray-300">
+                       <p className="mt-2 text-gray-300" onClick={testClick()}>
                            {skillDescriptions[selectedSkill]}
                        </p>
                    </motion.div>
                )}
             {/* Services Section */}
             {showServices && (
-                <><h2 className="margin-top-45 remove-margin-bottom">Моите Услуги</h2>
+                <><h2 className="margin-top-45 remove-margin-bottom">{t("myServices")}</h2>
                     <div
                         className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 services">
                         {services.map((service, index) => (
