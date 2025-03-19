@@ -1,14 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./likeHeart.scss";
 
-const LikeHeart = ({props}) => {
-  const [color, setColor] = useState("white"); // Начален цвят на SVG пътя
-    console.log("pesho", props);
-  const handleClick = () => {
-    console.log("pesho");
-    // Промяна на цвета при клик
-    setColor(color === "black" ? "blue" : "red");
-  };
+const LikeHeart = ({likeIt}) => {
+  const [color, setColor] = useState(""); // Начален цвят на SVG пътя
+    useEffect(() => {
+        setColor(likeIt ? "#fc2e5a" : "white");
+    }, [likeIt]);
+
 
   return (
       <div className="like-wrapper">
