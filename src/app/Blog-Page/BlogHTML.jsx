@@ -3,8 +3,6 @@ import React, {useEffect, useState} from "react";
 import "./blog.scss";
 import {useRouter} from "next/navigation";
 import {useTranslation} from "react-i18next";
-import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
-import i18n from "@/i18n";
 import LoaderHTML from "@/app/loader/LoaderHTML";
 const BlogHtml = () => {
   const articlesAquariumNumbers= process.env.NEXT_PUBLIC_AQUARIUM_ARTICLES;
@@ -12,6 +10,7 @@ const BlogHtml = () => {
   const {t} = useTranslation();
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  let lang = localStorage.getItem("i18nextLng");
 
   useEffect(() => {
     // Симулираме зареждане (например от API или изображения)
@@ -23,7 +22,7 @@ const BlogHtml = () => {
     if (path === "aquariums") {
       router.push("/cardAquariums");
     } else if (path === "programing") {
-      router.push("/programingArticles");
+      // router.push("/programingArticles");
     }
   };
 
@@ -34,6 +33,7 @@ const BlogHtml = () => {
     <div className="blog-main-container">
       <div className="min-h-screen bg-white grid place-content-center p-5">
         <h1 className="capitalize text-3xl md:text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-indigo-600">{t("category")}</h1>
+        <p className="text-align-center">{t('articleOnlyBG')}</p>
         <div className="grid lg:grid-cols-3 gap-7 justify-center">
           <div className="max-w-sm shadow-xl relative card rounded-md overflow-hidden"
                onClick={() => redirectTo("aquariums")}>

@@ -29,7 +29,7 @@ const ContactsHtml = () => {
           <div>
             <span className="margin-10">{t("contactMe")}</span>
             <div className="flex-vertical-container">
-            <span className="margin-10 special-text">С Вашата идея и моите знания може да направим нещо уникално заедно.</span>
+            <span className="margin-10 special-text">{t('yourIdeasMySkills')}</span>
               <span>{t("address")}: {t("streetAdd")}</span>
               <div className="flex-horizontal-container justify-content-center">
                 <span className="flex-horizontal-container-raw justify-content-center align-items-center text-align-center small-devices">{t("email")}:

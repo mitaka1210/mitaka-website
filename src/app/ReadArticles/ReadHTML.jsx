@@ -139,7 +139,7 @@ const ReadHtml = () => {
             <section>
                 <div className="likeDislikeBtn flex-horizontal-container justify-content-center">
                     <button className="removeBgrBorder" onClick={handleLike} disabled={isLiked || isDisliked}>
-                        <LikeHeart />
+                        <LikeHeart likeIt={isLiked}/>
                         <p>{likeCount}</p>
                     </button>
                     <button className="removeBgrBorder" onClick={handleDislike} disabled={isLiked || isDisliked}>
