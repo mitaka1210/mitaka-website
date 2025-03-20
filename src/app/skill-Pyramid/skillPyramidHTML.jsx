@@ -220,7 +220,7 @@ export default function SkillPyramid() {
                            className="absolute top-2 right-2 bg-red-600 px-3 py-1 rounded-full text-sm"
                            onClick={() => setSelectedSkill(null)}
                        >
-                           Затвори {lang}
+                           {t('close')}
                        </button>
                        <h2 className="text-lg font-bold">{selectedSkill}</h2>
                        <p className="mt-2 text-gray-300" onClick={testClick()}>

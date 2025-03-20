@@ -44,7 +44,6 @@ export default function ChangeLang() {
   let lang = localStorage.getItem("i18nextLng");
   let img = images;
   useEffect(() => {
-    console.log('pesho', lang);
   }, [lang]);
   return (
       <div className="flex gap-8 items-center text-white">
@@ -55,7 +54,7 @@ export default function ChangeLang() {
               <Link key={number} className="hover:text-crimson-500" href="#">
                 <img
                     src={img[17].url.src}
-                    alt="Project Weather App"/>
+                    alt="Lang BG"/>
               </Link>
           );
         }) : menuItemsEN.map((item, number) => {
@@ -66,7 +65,7 @@ export default function ChangeLang() {
          ]
                 <img
                     src={img[18].url.src}
-                    alt="Project Weather App"/>
+                    alt="lang EN"/>
               </Link>
           );
         })

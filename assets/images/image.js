@@ -16,6 +16,8 @@ import img15 from './customer.png'
 import img16 from './blog-img.png'
 import img17 from '../../assets/flag/en-flag.png';
 import img18 from '../../assets/flag/bg-flag.png';
+import img19 from '../../assets/images/novatio-project.png';
+import img20 from '../../assets/images/next-proejct.jpg';
 const imagesArray = [
  {
   id: 0,
@@ -84,9 +86,18 @@ const imagesArray = [
  {
   id: 16,
   url: img17,
- }, {
+ },
+ {
   id: 17,
   url: img18,
+ },
+ {
+  id: 18,
+  url: img19,
+ },
+ {
+  id: 19,
+  url: img20,
  },
 
 ];
