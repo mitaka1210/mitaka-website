@@ -1,8 +1,12 @@
 'use client';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaLaptopCode, FaDatabase, FaCloud } from 'react-icons/fa';
 import './skillPyramid.scss';
+import LoaderHTML from "@/app/loader/LoaderHTML";
+import {useTranslation} from "react-i18next";
+let lang = localStorage.getItem("i18nextLng");
+
 const skills = [
     [{ name: 'HTML', category: 'old' }],
     [
@@ -37,7 +41,7 @@ const skills = [
     ],
 ];
 
-const skillDescriptions = {
+const skillDescriptionsBG = {
     HTML: 'Основен език за изграждане на уеб страници.',
     CSS: 'Език за стилизиране на уеб страници.',
     JavaScript: 'Основен език за уеб разработка.',
@@ -62,6 +66,32 @@ const skillDescriptions = {
     'Vue - 2': 'Втората версия на Vue.js за уеб разработка.',
     dbeaver: 'Инструмент за управление на бази данни.',
     '🤔💭': 'Предстои да бъде открито! 😉'
+};
+const skillDescriptionsEN = {
+    HTML: 'Basic language for building web pages.',
+    CSS: 'Language for styling web pages.',
+    JavaScript: 'Primary language for web development.',
+    React: 'Library for building interfaces.',
+    Angular: 'Framework for web applications.',
+    'Node.js': 'Server environment for running JavaScript.',
+    Redux: 'State management in React.',
+    PostgreSQL: 'Open-source relational database.',
+    Docker: 'Application containerization.',
+    RxJS: 'Library for reactive programming.',
+    NextJS: 'Framework for React with SSR and SSG.',
+    Express: 'Minimalist backend framework for Node.js.',
+    Firebase: 'Backend services platform by Google.',
+    SCSS: 'Extension of CSS with additional features.',
+    'AngularJS': 'The first version of Angular for web applications.',
+    Gulp: 'Task automation tool in web development.',
+    Github: 'Platform for code repository management.',
+    NestJS: 'Framework for building server-side applications with TypeScript.',
+    MongoDB: 'NoSQL document-based database.',
+    Postman: 'Tool for API testing and development.',
+    RTK: 'Redux Toolkit - an improved version of Redux.',
+    'Vue - 2': 'The second version of Vue.js for web development.',
+    dbeaver: 'Database management tool.',
+    '🤔💭': 'To be discovered! 😉'
 };
 
 const services = [
@@ -88,12 +118,20 @@ const services = [
 ];
 
 export default function SkillPyramid() {
+    const {t} = useTranslation();
     const [visibleRows, setVisibleRows] = useState(0);
+    const [lan, setlan] = useState('bg');
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [selectedSkill, setSelectedSkill] = useState(null);
     const [showServices, setShowServices] = useState(false);
     const [hasTriggered, setHasTriggered] = useState(false);
-
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        // Симулираме зареждане (например от API или изображения)
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000)
+    }, [lang]);
     useEffect(() => {
         let reduceInterval;
         const handleScroll = () => {
@@ -130,14 +168,23 @@ export default function SkillPyramid() {
 
             setLastScrollTop(scrollTop);
         };
-
+        setlan(lang);
+        console.log("pesho", lang);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollTop, hasTriggered]); // Добавям `hasTriggered`, за да избегнем излишни обновявания
-
+    }, [lastScrollTop, hasTriggered, lang]); // Добавям `hasTriggered`, за да
+    // избегнем излишни обновявания
+    if (loading) {
+        return <LoaderHTML />;
+    }
+    const testClick = () => {
+        let newLang  = localStorage.getItem("i18nextLng");
+        lang = newLang
+        console.log("pesho new", lang);
+    }
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-5">
-            <h2 className="">Моите умения</h2>
+            <h2 className="">{t("mySkills")}</h2>
 
                <div  className="flex flex-col items-center">
                    {skills.slice(0, visibleRows).map((row, index) => (
@@ -173,17 +220,17 @@ export default function SkillPyramid() {
                            className="absolute top-2 right-2 bg-red-600 px-3 py-1 rounded-full text-sm"
                            onClick={() => setSelectedSkill(null)}
                        >
-                           Затвори
+                           {t('close')}
                        </button>
                        <h2 className="text-lg font-bold">{selectedSkill}</h2>
-                       <p className="mt-2 text-gray-300">
-                           {skillDescriptions[selectedSkill]}
+                       <p className="mt-2 text-gray-300" onClick={testClick()}>
+                           {lang === 'bg' ? skillDescriptionsBG[selectedSkill] : skillDescriptionsEN[selectedSkill]}
                        </p>
                    </motion.div>
                )}
             {/* Services Section */}
             {showServices && (
-                <><h2 className="margin-top-45 remove-margin-bottom">Моите Услуги</h2>
+                <><h2 className="margin-top-45 remove-margin-bottom">{t("myServices")}</h2>
                     <div
                         className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 services">
                         {services.map((service, index) => (

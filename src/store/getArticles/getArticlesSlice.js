@@ -51,7 +51,6 @@ const articlesSlice = createSlice({
     });
    }
    //? return last created article first
-   console.log('articlesArr', articlesArr);
    state.data = articlesArr;
   });
   builder.addCase(fetchArticles.rejected, (state, action) => {

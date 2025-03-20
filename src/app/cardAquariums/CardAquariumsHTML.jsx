@@ -6,7 +6,6 @@ import './cardAquariums.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import images from '../../../assets/images/image';
 import { fetchArticles } from '@/store/getArticles/getArticlesSlice';
-import { useTranslation } from 'react-i18next';
 import {t} from "i18next";
 import LoaderHTML from "@/app/loader/LoaderHTML";
 
@@ -26,14 +25,13 @@ setTimeout(() => {
  const articlesInfo = useSelector((state) => state.articles.data);
  let img = images;
  const handleClick = (id) => {
-  console.log("pesho",id);
   // const {id} = router.query;
   // Проверете дали използвате низове за query параметрите
   router.push('/ReadArticles' + `/?id=${id}`);
  };
  const sections = [
   {
-   backgroundImage: `${img[6].url.src}`,
+   backgroundImage: `${img[8].url.src}`,
    text: 'Immerse yourself in a seamless experience where every touchpoint anticipates your needs. Description one.',
    date: '2024-12-13',
   },
@@ -69,11 +67,8 @@ setTimeout(() => {
        <div
         className="prose text-gray-500 prose-sm prose-headings:font-normal prose-headings:text-xl mobile-devices-styles">
         <div className="flex-vertical-container-raw justify-center align-items-center">
-         <h4 className="text-align-center">"Подводна магия у дома: Всичко за
-          аквариуми – от старта до тайните
-          на професионалистите"</h4>
-         <p className="text-balance">"Живот под стъклото: Тайният свят на
-          аквариумите, който ще ви плени"</p>
+         <h4 className="text-align-center">"Подводна магия у дома: Всичко за аквариуми – от старта до тайните на професионалистите"</h4>
+         <p className="text-balance">"Живот под стъклото: Тайният свят на аквариумите, който ще ви плени"</p>
         </div>
        </div>
 
@@ -87,7 +82,7 @@ setTimeout(() => {
               {article.status === true && articlesInfo.length > 0 ?
                <div className="blog-card margin-15" key={index}>
                 <div className="meta">
-                 <div className="photo" style={{ backgroundImage: `url(${sections[index]?.backgroundImage || img[7].url.src})` }}
+                 <div className="photo" style={{ backgroundImage: `url(${img[7].url.src})` }}
                  ></div>
                  <ul className="details">
                   <li className="author">
@@ -104,9 +99,9 @@ setTimeout(() => {
                 </div>
                 <div className="description">
                  <h1>{article.title}</h1>
-                 <h2>Вашето ръководство за създаване и поддръжка на здрав и
+                 <h5>Вашето ръководство за създаване и поддръжка на здрав и
                   красив
-                  аквариум.</h2>
+                  аквариум.</h5>
                  <span>Аквариумите не са просто декорация, а живи екосистеми, които
                   внасят спокойствие и красота в дома. Те обаче изискват знания,
                   внимание и грижи. Ако мечтаете за аквариум, но не знаете

@@ -1,15 +1,13 @@
 @use "../Footer-page/footer.scss";
 
 .read {
-  margin: .5em;
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  margin: 0;
   padding: 0;
   background: linear-gradient(to bottom, #006994, #008bb5, #00a8cc);
   color: white;
   transition: background 0.5s ease-in-out;
-    & .read-back-btn {
+  & .read-back-btn {
     text-align: center;
   }
 }
@@ -161,6 +159,11 @@ h1 {
 p {
   font-size: 18px;
 }
+.dislike-number{
+  position: relative;
+  bottom: 1.1em;
+  right: .3em;
+}
 @media (max-width: 768px) {
   h1 { font-size: 22px; }
   p { font-size: 16px; }
@@ -175,12 +178,17 @@ p {
   border-radius: 5px;
   text-decoration: none;
   display: none;
-  font-weight: bold;
+  //font-weight: bold;
 }
 .line-after-header{
 
-    border: 1px dashed #ffcc00;
-    width: 50%;
-    margin: 15px auto;
-  
+  border: 1px dashed #ffcc00;
+  width: 50%;
+  margin: 15px auto;
+
+}
+
+
+.likeDislikeBtn{
+
 }

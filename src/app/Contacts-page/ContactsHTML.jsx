@@ -1,11 +1,22 @@
 "use client";
 
-import React from "react";
+import React, {useEffect, useState} from "react";
 import EmailHtml from "../Email-form/page";
 import {useTranslation} from "react-i18next";
-
+import LoaderHTML from "@/app/loader/LoaderHTML";
 const ContactsHtml = () => {
   const {t} = useTranslation();
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    // Симулираме зареждане (например от API или изображения)
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000)
+  }, []);
+
+  if (loading) {
+    return <LoaderHTML />;
+  }
   return (
     <main className="bgr-gray">
       <section
@@ -18,7 +29,7 @@ const ContactsHtml = () => {
           <div>
             <span className="margin-10">{t("contactMe")}</span>
             <div className="flex-vertical-container">
-            <span className="margin-10 special-text">С Вашата идея и моите знания може да направим нещо уникално заедно.</span>
+            <span className="margin-10 special-text">{t('yourIdeasMySkills')}</span>
               <span>{t("address")}: {t("streetAdd")}</span>
               <div className="flex-horizontal-container justify-content-center">
                 <span className="flex-horizontal-container-raw justify-content-center align-items-center text-align-center small-devices">{t("email")}:

@@ -1,20 +1,4 @@
-@charset "UTF-8";
-*, *:before, *:after {
-  position: relative;
-  box-sizing: border-box;
-}
-
-:root {
-  --color-bg: #FDF1F2;
-  --color-heart: #EA442B;
-  --color-heartBGR: #2BEAD4FF;
-  --easing: cubic-bezier(.7, 0, .3, 1);
-  --duration: .5s;
-  --i: 1;
-  --color: #25CB25FF;
-  --totalParticles: 6;
-}
-
+@use '../variables';
 .like-button {
   font-size: 5vmin;
   -webkit-appearance: none;
@@ -131,8 +115,8 @@
 }
 
 .heart-like {
-  width: 2em;
-  height: 2em;
+  width: 8em;
+  height: 6.6em;
   display: block;
   -webkit-transform-origin: center 80%;
   transform-origin: center 80%;

@@ -1,5 +1,5 @@
-@font-face { font-family: roboto-regular;
-  src: url('../../../assets/fonts/Peralta/Peralta-Regular.ttf'); }
+//@font-face { font-family: roboto-regular;
+//  src: url('../../../assets/fonts/Peralta/Peralta-Regular.ttf'); }
 
 .main-container {
   height: 100vh;
@@ -35,7 +35,7 @@
 
 .my-name {
 
-  font: 1.68em "roboto-regular";
+  //font: 1.68em "roboto-regular";
   & .is {
     color: white;
   }

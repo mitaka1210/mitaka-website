@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './novatioApps.scss';
 import images from "../../../assets/images/image";
 import {useTranslation} from "react-i18next";
+import LoaderHTML from "@/app/loader/LoaderHTML";
 
 function NovatioApps(props) {
     const {t} = useTranslation();
+    const [loading, setLoading] = useState(true);
     let img = images;
+    useEffect(() => {
+        // Симулираме зареждане (например от API или изображения)
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000)
+    }, []);
+
+    if (loading) {
+        return <LoaderHTML />;
+    }
     return (
             <main className="novatio-apps flex-vertical-container align-items-center">
                 <section className="novatioApps margin-40">
@@ -13,7 +25,7 @@ function NovatioApps(props) {
                 </section>
                 <section>
                     <div className="container-novatio-app flex-horizontal-container align-items-center justify-content-center">
-                        <div className="flex-horizontal-container">
+                        <div className="flex-horizontal-container mobile-novatio-apps">
                             <div className="card margin-15">
                                 <div className="img-box">
                                     <img src={img[12].url.src} alt="dispatcher"/>
