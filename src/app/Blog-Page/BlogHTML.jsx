@@ -51,7 +51,7 @@ const BlogHtml = () => {
               </div>
             </div>
             <div className="absolute bottom-4 px-4">
-              <span className="text-sm text-gray-500 -mb-1 block">{articlesAquariumNumbers} {t("br")}</span>
+              <span className="text-sm text-gray-500 -mb-1 block">{articlesAquariumNumbers} {articlesAquariumNumbers > 0 ? (( t("Onebr"))) :( t("br"))}</span>
               <h2 className="text-xl text-green-800">{t("aquarium")}</h2>
             </div>
             <div

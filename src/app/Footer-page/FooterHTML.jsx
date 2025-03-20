@@ -16,7 +16,7 @@ const FooterHtml = () => {
         className="footer-container-main flex-horizontal-container justify-content-space-evenly align-items-baseline ">
         <div className="flex-vertical-container justify-content-center margin-5 text-align-justify">
           <div>
-            <h3 className="margin-5 color-white text-align-center">{t("contact")}</h3>
+            <h4 className="margin-5 color-white text-align-center">{t("contact")}</h4>
           </div>
           <div className="footer-text flex-vertical-container align-items-center">
             <span className="address margin-5 color-white text-align-justify">{t("streetAdd")}</span>
@@ -27,7 +27,7 @@ const FooterHtml = () => {
         <div
           className="flex-vertical-container justify-content-center margin-5">
           <div className="">
-            <h3 className=" color-white add-position-relative-social text-align-center">{t("social")}</h3>
+            <h4 className=" color-white add-position-relative-social text-align-center">{t("social")}</h4>
           </div>
           <div className="social-network">
             <ul>
@@ -50,7 +50,7 @@ const FooterHtml = () => {
           </div>
         </div>
         <div className="flex-vertical-container  justify-content-center align-items-center text-align-center  margin-5">
-          <h3 className="margin-5 color-white">{t("visit")}</h3>
+          <h4 className="margin-5 color-white">{t("visit")}</h4>
           <div className="margin-10">
             <Image
               src={QR}

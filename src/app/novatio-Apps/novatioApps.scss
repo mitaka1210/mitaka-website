@@ -74,7 +74,7 @@
 
 .container-novatio-app .card .content h2 {
   font-size: 1.5rem;
-  font-weight: 700;
+  //font-weight: 700;
   color: var(--clr);
 }
 
@@ -91,7 +91,7 @@
   text-decoration: none;
   background: var(--clr);
   color: white;
-  font-weight: 500;
+  //font-weight: 500;
 }
 
 .container-novatio-app .card .content a:hover {
@@ -110,14 +110,12 @@
   text-align: center;
 }
 .custom-btn {
-  width: 130px;
+  width: 190px;
   margin: 20px;
   height: 40px;
   color: #fff;
   border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
+  padding: 5px !important;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -180,10 +178,10 @@
   position: absolute;
   content: "";
   box-shadow:
-          -1px -1px 20px 0px rgba(255,255,255,1),
-          -4px -4px 5px 0px rgba(255,255,255,1),
-          7px 7px 20px 0px rgba(0,0,0,.4),
-          4px 4px 5px 0px rgba(0,0,0,.3);
+    -1px -1px 20px 0px rgba(255,255,255,1),
+    -4px -4px 5px 0px rgba(255,255,255,1),
+    7px 7px 20px 0px rgba(0,0,0,.4),
+    4px 4px 5px 0px rgba(0,0,0,.3);
 }
 .btn-6 span:before {
   left: 0;
@@ -229,5 +227,14 @@
 
   .container-novatio-app .card .content a {
     font-size: 0.9rem;
+  }
+  .mobile-novatio-apps{
+    flex-wrap: wrap !important;
+    justify-content: center;
+  }
+  .custom-btn{
+    width: 180px;
+    margin: 20px;
+    height: 70px;
   }
 }

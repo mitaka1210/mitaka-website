@@ -42,7 +42,7 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">01</h3>
-                                <h6 className="card-main-title">Weather App(PWA)</h6>
+                                <h4 className="card-main-title">Weather App(PWA)</h4>
                             </div>
                             <h5 className="card-content">{t("weatherApp")}.</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -72,7 +72,7 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">02</h3>
-                                <h6 className="card-main-title">React website</h6>
+                                <h4 className="card-main-title">React website</h4>
                             </div>
                             <h5 className="card-content">{t("reactWebSite")}</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -100,7 +100,7 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">03</h3>
-                                <h6 className="card-main-title">React ToDo</h6>
+                                <h4 className="card-main-title">React ToDo</h4>
                             </div>
                             <h5 className="card-content">{t("reactToDo")}</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -128,11 +128,11 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">04</h3>
-                                <h6 className="card-main-title">React website</h6>
+                                <h4 className="card-main-title">React website</h4>
                             </div>
                             <h5 className="card-content">Страници с оформление направени с ReactJs and Figma. Адаптивен
                                 дизайн</h5>
-                            <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
+                            <h4 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h4>
                             <ul className="card-content">
                                 <li>HTML</li>
                                 <li>SCSS</li>
@@ -162,7 +162,7 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">05</h3>
-                                <h6 className="card-main-title">{t("shoes")}<span> ({t("shoesHomePage")})</span></h6>
+                                <h4 className="card-main-title">{t("shoes")}<span> ({t("shoesHomePage")})</span></h4>
                             </div>
                             <h5 className="card-content">{t("shopShoes")}</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -189,7 +189,7 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">06</h3>
-                                <h6 className="card-main-title">{t("paymentPage")} (TypeScript)</h6>
+                                <h4 className="card-main-title">{t("paymentPage")} (TypeScript)</h4>
                             </div>
                             <h5 className="card-content">{t("paymentPageMake")} TS</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -217,7 +217,7 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">07</h3>
-                                <h6 className="card-main-title">{t("pizzaMenu")}</h6>
+                                <h4 className="card-main-title">{t("pizzaMenu")}</h4>
                             </div>
                             <h5 className="card-content">{t("pizzaMenu")}</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -246,7 +246,7 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">08</h3>
-                                <h6 className="card-main-title">{t("onlineShop")}</h6>
+                                <h4 className="card-main-title">{t("onlineShop")}</h4>
                             </div>
                             <h5 className="card-content">{t("onlineShopText")}</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -279,7 +279,7 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">09</h3>
-                                <h6 className="card-main-title">{t("uploadArticle")}(PERN)</h6>
+                                <h4 className="card-main-title">{t("uploadArticle")}(PERN)</h4>
                             </div>
                             <h5 className="card-content">{t("myUploader")}</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -314,7 +314,7 @@ const ProjectsHtml = () => {
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">10</h3>
-                                <h6 className="card-main-title">{t("blog")}</h6>
+                                <h4 className="card-main-title">{t("blog")}</h4>
                             </div>
                             <h5 className="card-content">{t("myBlog")}</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -345,14 +345,14 @@ const ProjectsHtml = () => {
                 <div className="box-wrapper">
                     <figure className="shape-box shape-box_half">
                         <img
-                            src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                            alt="logo-9"/>
+                            src={img[18].url.src}
+                            alt="React-website"/>
                         <div
                             className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
                         <figcaption>
                             <div className="show-cont">
                                 <h3 className="card-no">11</h3>
-                                <h6 className="card-main-title">{t("novatio")}</h6>
+                                <h4 className="card-main-title">{t("novatio")}</h4>
                             </div>
                             <h5 className="card-content">{t("novatioText")}</h5>
                             <h6 className="margin-top-5 border-color-bottom-gray">{t("technologies")}</h6>
@@ -374,8 +374,8 @@ const ProjectsHtml = () => {
                     </figure>
                     <figure className="shape-box shape-box_half">
                         <img
-                            src="https://images.unsplash.com/photo-1534670007418-fbb7f6cf32c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-                            alt="logo-9"/>
+                            src={img[19].url.src}
+                            alt="React-website"/>
                         <div
                             className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
                         <figcaption>

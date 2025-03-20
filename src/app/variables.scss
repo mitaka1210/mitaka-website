@@ -74,17 +74,18 @@
   --color: #25CB25FF;
   --totalParticles: 6;
 
-  @font-face {
-    font-family: roboto-regular;
-    src: url('../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
-  }
-
-  @font-face {
-    font-family: roboto-light;
-    src: url('../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
-  }
+  //@font-face {
+  //  font-family: roboto-regular;
+  //  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Italic.ttf');
+  //}
+  //
+  //@font-face {
+  //  font-family: roboto-light;
+  //  src: url('../../assets/fonts/Cormorant/CormorantGaramond-Regular.ttf');
+  //}
 
   //project page
-  @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+  //@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 }

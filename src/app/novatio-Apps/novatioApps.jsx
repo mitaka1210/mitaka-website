@@ -25,7 +25,7 @@ function NovatioApps(props) {
                 </section>
                 <section>
                     <div className="container-novatio-app flex-horizontal-container align-items-center justify-content-center">
-                        <div className="flex-horizontal-container">
+                        <div className="flex-horizontal-container mobile-novatio-apps">
                             <div className="card margin-15">
                                 <div className="img-box">
                                     <img src={img[12].url.src} alt="dispatcher"/>

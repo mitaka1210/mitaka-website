@@ -67,7 +67,7 @@
 
 .my-hobbi {
   & .about-me-text {
-    font-weight: 900;
+    //font-weight: 900;
   }
 }
 
@@ -121,7 +121,7 @@
 .accordian-title {
   position: relative;
   cursor: pointer;
-  font: 1.2em "roboto-regular";
+  //font: 1.2em "roboto-regular";
 }
 
 li.active .accordian-title::after {
@@ -135,7 +135,7 @@ li.active .accordian-title::after {
 
 .accordian-content p {
   margin-bottom: 0.5rem;
-  font: 1em "roboto-regular";
+  //font: 1em "roboto-regular";
 }
 
 li.active .accordian-content {
