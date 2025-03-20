@@ -144,7 +144,7 @@ const ReadHtml = () => {
                     </button>
                     <button className="removeBgrBorder" onClick={handleDislike} disabled={isLiked || isDisliked}>
                         <DisLikeheart />
-                        <p>{dislikeCount}</p>
+                        <p className="dislike-number">{dislikeCount}</p>
                     </button>
                 </div>
             </section>
