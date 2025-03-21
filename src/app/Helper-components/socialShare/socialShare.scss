@@ -64,7 +64,7 @@
     position: absolute;
     bottom: 4em;
     right: 4em;
-    top: 16em;
+    top: 12.6em;
     text-align: justify;
     /* z-index: 5555; */
     display: flex;
@@ -85,5 +85,20 @@
       justify-content: center;
       text-align: center;
     }
+  }
+}
+@media (max-width: 393px) {
+  .social-share {
+    right: 3em;
+  }
+}
+@media (max-width: 390px) {
+  .social-share {
+    right: 3em;
+  }
+}
+@media (max-width: 360px) {
+  .social-share {
+    right: 2em;
   }
 }
