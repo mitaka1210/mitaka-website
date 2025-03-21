@@ -164,10 +164,6 @@ p {
   bottom: 1.1em;
   right: .3em;
 }
-@media (max-width: 768px) {
-  h1 { font-size: 22px; }
-  p { font-size: 16px; }
-}
 .next-article {
   position: fixed;
   bottom: 20px;
@@ -178,17 +174,33 @@ p {
   border-radius: 5px;
   text-decoration: none;
   display: none;
-  //font-weight: bold;
 }
 .line-after-header{
-
   border: 1px dashed #ffcc00;
   width: 50%;
   margin: 15px auto;
-
 }
-
-
-.likeDislikeBtn{
-
+@media (max-width: 768px) {
+  h1 { font-size: 22px; }
+  p { font-size: 16px; }
+}
+@media (max-width: 440px ) {
+  .share-menu-responsive{
+    display: flex;
+    flex-flow: column;
+  }
+  .social-share {
+    position: absolute;
+    /* bottom: -29px; */
+    /* right: 27em; */
+    /* top: 46.7em; */
+    text-align: justify;
+    z-index: 5555;
+    /* background: red !important; */
+  }
+  .social-icons a {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+  }
 }
