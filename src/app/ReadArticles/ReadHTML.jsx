@@ -10,6 +10,7 @@ import {
 } from "@/store/api/likesSlice";
 import {fetchArticles} from "@/store/getArticles/getArticlesSlice";
 import LoaderHTML from "@/app/loader/LoaderHTML";
+import SocialShare from "@/app/Helper-components/socialShare/socialShare";
 
 const ReadHtml = () => {
     const dispatch = useDispatch();
@@ -115,7 +116,7 @@ const ReadHtml = () => {
     if (loading || isLoading) return <LoaderHTML />;
 
     return (
-        <div className="read" style={{ fontFamily: "Arial, sans-serif", background: "linear-gradient(to bottom, #006994, #003f5c)", minHeight: "100vh", padding: "20px" }}>
+        <div className="read" style={{ background: "linear-gradient(to bottom, #006994, #003f5c)", minHeight: "100vh", padding: "20px" }}>
             <div className="progress-container" style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "4px", background: "#ddd", zIndex: 1000 }}>
                 <div className="progress-bar" style={{ height: "4px", background: "#fc2e5a", width: `${progress}%`, transition: "width 0.3s ease-in-out" }}></div>
             </div>
@@ -125,16 +126,23 @@ const ReadHtml = () => {
                 </button>
             </div>
             <section>
-                <h2 className="read-title text-align-center">{articleTitle}</h2>
-                <hr className="add-line-after-header" />
-                <div className="read-sections" style={{ maxWidth: "800px", margin: "50px auto", background: "rgba(255, 255, 255, 0.3)", padding: "20px", borderRadius: "8px", boxShadow: "0 0 10px rgba(0,0,0,0.1)", backdropFilter: "blur(10px)" }}>
-                    {sectionArr.map((section, index) => (
-                        <div key={index} className="read-section">
-                            <h2 className="read-section-title" style={{ fontSize: "28px", textAlign: "center", color: "#fff" }}>{index + 1}.{section.title}</h2>
-                            <p className="read-section-text">{section.content}</p>
-                        </div>
-                    ))}
-                </div>
+           <div className="share-menu-responsive">
+             <div>
+                 <h2 className="read-title text-align-center">{articleTitle}</h2>
+                 <hr className="add-line-after-header" />
+                 <div className="read-sections" style={{ maxWidth: "800px", margin: "50px auto", background: "rgba(255, 255, 255, 0.3)", padding: "20px", borderRadius: "8px", boxShadow: "0 0 10px rgba(0,0,0,0.1)", backdropFilter: "blur(10px)" }}>
+                     {sectionArr.map((section, index) => (
+                         <div key={index} className="read-section">
+                             <h2 className="read-section-title" style={{ fontSize: "28px", textAlign: "center", color: "#fff" }}>{index + 1}.{section.title}</h2>
+                             <p className="read-section-text">{section.content}</p>
+                         </div>
+                     ))}
+                 </div>
+             </div>
+             <div>
+                 <SocialShare data={articleTitle} />
+             </div>
+           </div>
             </section>
             <section>
                 <div className="likeDislikeBtn flex-horizontal-container justify-content-center">

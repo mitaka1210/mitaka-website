@@ -18,6 +18,9 @@ import img17 from '../../assets/flag/en-flag.png';
 import img18 from '../../assets/flag/bg-flag.png';
 import img19 from '../../assets/images/novatio-project.png';
 import img20 from '../../assets/images/next-proejct.jpg';
+import img21  from '../../assets/images/svg-facebook.svg';
+import img22  from '../../assets/images/svg-twitter.svg';
+import img23  from '../../assets/images/svg-instagram.svg';
 const imagesArray = [
  {
   id: 0,
@@ -99,6 +102,17 @@ const imagesArray = [
   id: 19,
   url: img20,
  },
-
+ {
+  id: 20,
+  url: img21,
+ },
+ {
+  id: 21,
+  url: img22,
+ },
+ {
+  id: 22,
+  url: img23,
+ },
 ];
 export default imagesArray;
