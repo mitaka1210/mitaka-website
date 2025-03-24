@@ -24,6 +24,10 @@ setTimeout(() => {
  const loading = useSelector((state) => state.articles);
  const articlesInfo = useSelector((state) => state.articles.data);
  let img = images;
+ console.log("pesho",articlesInfo);
+ if (articlesInfo.length === 0) {
+  router.push('/');
+ }
  const handleClick = (id) => {
   // const {id} = router.query;
   // Проверете дали използвате низове за query параметрите
@@ -34,26 +38,6 @@ setTimeout(() => {
    backgroundImage: `${img[8].url.src}`,
    text: 'Immerse yourself in a seamless experience where every touchpoint anticipates your needs. Description one.',
    date: '2024-12-13',
-  },
-  {
-   backgroundImage: 'https://i.pinimg.com/564x/34/65/b8/3465b890b11571e2c876ae74dc1b3139.jpg',
-   text: 'Engage with a platform where interaction is intuitive, ensuring your journey is fluid and responsive. Description two.',
-   date: '2024-12-14',
-  },
-  {
-   backgroundImage: 'https://i.pinimg.com/564x/33/d6/54/33d654e8058fdf69e160dcbd2235cdac.jpg',
-   text: 'Discover our commitment to thoughtful design, prioritizing accessibility and user satisfaction. Description three.',
-   date: '2024-12-15',
-  },
-  {
-   backgroundImage: 'https://i.pinimg.com/564x/39/b8/01/39b801afe355e623bcb3928b1c1b046d.jpg',
-   text: 'Experience innovation at every step, with forward-thinking solutions designed to enhance your daily interactions. Description four.',
-   date: '2024-12-16',
-  },
-  {
-   backgroundImage: 'https://i.pinimg.com/564x/2b/b5/48/2bb548dbf4a4c57381a7b7f736b4930b.jpg',
-   text: 'Join us in embracing sustainability, where design and functionality meet eco-conscious decisions. Description five.',
-   date: '2024-12-17',
   },
  ];
  return (
