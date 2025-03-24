@@ -3,6 +3,7 @@
 import React, {useEffect, useState} from 'react';
 import dynamic from 'next/dynamic';
 import './about.scss';
+import SEO from "@/app/SEO/seo";
 const AboutHtml = dynamic(
     () => import('./AboutHTML'),
     {ssr: false}
@@ -24,8 +25,14 @@ const AboutPage = () => {
     document.title = storedLang ===  'bg' ? 'За мен - инж.Димитров' : 'About Me' +
         ' - eng.Dimitrov';
   }, []);
+  const title = language === 'bg' ? 'За мен - инж.Димитров' : 'About Me- eng.Dimitrov';
+  const description = language === 'bg'
+      ? "За мен Димитър Димитров."
+      : "About Me- eng.Dimitrov";
+  const url = window.location.href != '' ? window.location.href : window.location.origin;
   return (
-    <>
+    <>     {/* SEO мета тагове */}
+      <SEO title={title} description={description} url={url} lang={language} />
       <main className="images">
         <div>
           <div className="about-page">
