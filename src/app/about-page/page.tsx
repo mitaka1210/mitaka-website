@@ -18,21 +18,22 @@ const Navigation = dynamic(
 );
 const AboutPage = () => {
   const [language, setLanguage] = useState('en');
-
+  const [pageUrl, setUrl ] = useState('');
   useEffect(() => {
     const storedLang  = localStorage.getItem("i18nextLng") || 'en'; // Достъп до localStorage само в браузъра
     setLanguage(storedLang);
     document.title = storedLang ===  'bg' ? 'За мен - инж.Димитров' : 'About Me' +
         ' - eng.Dimitrov';
+    setUrl (window.location.href != '' ? window.location.href : window.location.origin);
+
   }, []);
   const title = language === 'bg' ? 'За мен - инж.Димитров' : 'About Me- eng.Dimitrov';
   const description = language === 'bg'
       ? "За мен Димитър Димитров."
       : "About Me- eng.Dimitrov";
-  const url = window.location.href != '' ? window.location.href : window.location.origin;
   return (
     <>     {/* SEO мета тагове */}
-      <SEO title={title} description={description} url={url} lang={language} />
+      <SEO title={title} description={description} url={pageUrl} lang={language} />
       <main className="images">
         <div>
           <div className="about-page">
