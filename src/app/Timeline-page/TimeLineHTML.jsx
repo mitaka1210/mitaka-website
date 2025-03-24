@@ -73,7 +73,7 @@ const TimeLineHtml = () => {
               {t("UNI")}
             </div>
             <div className="timeline__event__description">
-              <h4> {t("specialty")}: <strong className="margin-left-5"> {t("specification")}</strong>
+              <h4> {t("specialty")}: <strong className="margin-left-5 change-strong-color"> {t("specification")}</strong>
               </h4>
               <span> {t("qualification")} „{t("bachelor")}”</span>
             </div>
@@ -91,7 +91,7 @@ const TimeLineHtml = () => {
               {t("school")}
             </div>
             <div className="timeline__event__description">
-              <h4>{t("specialty")}:<strong className="margin-left-5">{t("geodesy")}</strong></h4>
+              <h4>{t("specialty")}:<strong className="margin-left-5 change-strong-color">{t("geodesy")}</strong></h4>
               <span>
                 {t("qualification")} „{t("technician")}”
               </span>
