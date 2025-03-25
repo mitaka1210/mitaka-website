@@ -24,8 +24,7 @@ setTimeout(() => {
  const loading = useSelector((state) => state.articles);
  const articlesInfo = useSelector((state) => state.articles.data);
  let img = images;
- console.log("pesho",articlesInfo);
- if (articlesInfo.length === 0) {
+ if (articlesInfo.length === 0 && status === 'failed') {
   router.push('/');
  }
  const handleClick = (id) => {
@@ -51,8 +50,8 @@ setTimeout(() => {
        <div
         className="prose text-gray-500 prose-sm prose-headings:font-normal prose-headings:text-xl mobile-devices-styles">
         <div className="flex-vertical-container-raw justify-center align-items-center">
-         <h4 className="text-align-center">"Подводна магия у дома: Всичко за аквариуми – от старта до тайните на професионалистите"</h4>
-         <p className="text-balance">"Живот под стъклото: Тайният свят на аквариумите, който ще ви плени"</p>
+         <h4 className="text-align-center color-white">"Подводна магия у дома: Всичко за аквариуми – от старта до тайните на професионалистите"</h4>
+         <p className="text-balance color-white">"Живот под стъклото: Тайният свят на аквариумите, който ще ви плени"</p>
         </div>
        </div>
 

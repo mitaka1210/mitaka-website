@@ -5,7 +5,7 @@ import img4 from './React_Site.png';
 import img5 from './shoes.png';
 import img6 from './payment_ts_site.png';
 import img7 from './pizza.png';
-import img8 from './start-aqua.jpg';
+import img8 from './home-aquarium.jpg';
 import img9 from './uploader_website.png';
 import img10 from './warehouse.png';
 import img11 from './client.png';
