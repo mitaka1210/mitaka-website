@@ -28,6 +28,7 @@ const ReadHtml = () => {
     const [likeCount, setLikeCount] = useState(0);
     const [dislikeCount, setDislikeCount] = useState(0);
     const [likeArticle] = useLikeArticleMutation();
+    let a;
 
     useEffect(() => {
         const queryId = searchParams.get("id");
@@ -64,6 +65,7 @@ const ReadHtml = () => {
             setArticleTitle(section.title);
             setSectionArr(section.sections);
             setLoading(false);
+            a = document.getElementsByClassName('read-sections-text');
         }
     }, [status, articlesInfo, id]);
 
@@ -79,11 +81,19 @@ const ReadHtml = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, [id]);
-
     const goBack = () => {
         router.push("/cardAquariums");
     };
-
+    const formattedContent = (text) => {
+        return text.split("\r\n").map((line, index) => {
+            if (line.startsWith("✅") || line.startsWith("❌")) {
+                return <li key={index}>{line}</li>;
+            } else if (line.trim() !== "") {
+                return <p key={index}>{line}</p>;
+            }
+            return null;
+        });
+    };
     const handleLike = async () => {
         if (isLiked || isDisliked) return;
         setIsLiked(true);
@@ -114,7 +124,8 @@ const ReadHtml = () => {
 
     if (!id) return null;
     if (loading || isLoading) return <LoaderHTML />;
-
+    console.log("pesho", a);
+    console.log("pesho", sectionArr);
     return (
         <div className="read" style={{ background: "linear-gradient(to bottom, #006994, #003f5c)", minHeight: "100vh", padding: "20px" }}>
             <div className="progress-container" style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "4px", background: "#ddd", zIndex: 1000 }}>
@@ -134,7 +145,8 @@ const ReadHtml = () => {
                      {sectionArr.map((section, index) => (
                          <div key={index} className="read-section">
                              <h2 className="read-section-title" style={{ fontSize: "28px", textAlign: "center", color: "#fff" }}>{index + 1}.{section.title}</h2>
-                             <p className="read-section-text">{section.content}</p>
+                             {/*<p className="read-section-text">{section.content}</p>*/}
+                             <ul>{formattedContent(section.content)}</ul>
                          </div>
                      ))}
                  </div>
