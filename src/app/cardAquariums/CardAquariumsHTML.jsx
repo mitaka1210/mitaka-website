@@ -73,9 +73,9 @@ setTimeout(() => {
                   <li className="date">{article.create_article_date}</li>
                   <li className="tags">
                    <ul>
-                    <li><a>{t('Support')}</a></li>,
-                    <li><a>{t('Fish')}</a></li>,
-                    <li><a >{t('Aquarium')}</a></li>
+                    <li className="support-fish-aquarium">{t('Support')}</li>,
+                    <li className="support-fish">{t('Fish')}</li>,
+                    <li className="support-aquarium">{t('Aquarium')}</li>
                    </ul>
                   </li>
                  </ul>
@@ -85,11 +85,16 @@ setTimeout(() => {
                  <h5>Вашето ръководство за създаване и поддръжка на здрав и
                   красив
                   аквариум.</h5>
-                 <span>Аквариумите не са просто декорация, а живи екосистеми, които
+                 {
+                  index === 0 ?
+                      <span>Аквариумите не са просто декорация, а живи екосистеми, които
                   внасят спокойствие и красота в дома. Те обаче изискват знания,
                   внимание и грижи. Ако мечтаете за аквариум, но не знаете
                   откъде
                   да започнете, тази статия ще ви даде основни насоки.</span>
+                        :
+                      <span>{article.sections[1].content.substring(0,220)}...</span>
+                 }
                  <div className="flex-horizontal-container-raw justify-end">
                   <button onClick={() => handleClick(article.id)}>
                    <span className="read-more">
