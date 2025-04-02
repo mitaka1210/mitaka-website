@@ -114,5 +114,19 @@
   "mySkills": "Моите умения",
   "yourIdeasMySkills": "С Вашата идея и моите знания може да направим нещо уникално заедно.",
   "articleOnlyBG": "За момента статиите са само на БГ.",
-  "close": "Затвори"
+  "close": "Затвори",
+  "optimizePage": "Оптимизация на зареждането на страниците",
+  "inProgress": "В процес",
+  "addNewUI": "Обновяване на UI дизайна",
+  "addSearch": "Добавяне на търсачка",
+  "createLoginPage": "Създаване на акаунт и влизане с него",
+  "publishArticle": "Публикуване на стати",
+  "complete": "Завършено",
+  "completes": "Завършенa",
+  "contactPageDone": "Страница за контакти",
+  "addCommentSection": "Добавяне на коментари към статията",
+  "expected": "Очаква",
+  "addLikeIdslikeReation": "Добавяне на реакция към статията",
+  "manyMoreIdeas": "Имам и още много идеи",
+  "upcomingTasks": "Предстоящи Подобрения"
 }
