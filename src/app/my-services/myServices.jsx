@@ -75,10 +75,9 @@ const servicesEN = [
 ];
 export default function MyServices() {
   const { t } = useTranslation();
-  const [lang, setLang] = useState("bg");
   const langDefault = localStorage.getItem("i18nextLng");
+  const [lang, setLang] = useState("bg");
   useEffect(() => {
-    console.log("lang", langDefault);
     setLang(langDefault);
   }, [langDefault]);
   let img = images;
