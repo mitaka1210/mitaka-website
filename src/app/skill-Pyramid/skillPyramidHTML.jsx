@@ -5,6 +5,7 @@ import { FaCode, FaLaptopCode, FaDatabase, FaCloud } from "react-icons/fa";
 import "./skillPyramid.scss";
 import LoaderHTML from "@/app/loader/LoaderHTML";
 import { useTranslation } from "react-i18next";
+import MyServices from "../my-services/myServices";
 let lang = localStorage.getItem("i18nextLng");
 
 const skills = [
@@ -42,7 +43,7 @@ const skills = [
   [{ name: "Мисля какво да е", icon: "🤔💭", category: "new" }],
 ];
 
-const skillDescriptions = {
+const skillDescriptionsBG = {
   HTML: "Основен език за изграждане на уеб страници.",
   CSS: "Език за стилизиране на уеб страници.",
   JavaScript: "Основен език за уеб разработка.",
@@ -170,7 +171,6 @@ export default function SkillPyramid() {
       setLastScrollTop(scrollTop);
     };
     setlan(lang);
-    console.log("pesho", lang);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollTop, hasTriggered, lang]); // Добавям `hasTriggered`, за да
@@ -178,7 +178,7 @@ export default function SkillPyramid() {
   if (loading) {
     return <LoaderHTML />;
   }
-  const testClick = () => {
+  const relativeToLanguage = () => {
     let newLang = localStorage.getItem("i18nextLng");
     lang = newLang;
   };
@@ -229,124 +229,18 @@ export default function SkillPyramid() {
             {t("close")}
           </button>
           <h2 className="text-lg font-bold">{selectedSkill}</h2>
-          <p className="mt-2 text-gray-300" onClick={testClick()}>
-            {skillDescriptions[selectedSkill]}
-            {/* {lang === "bg"
+          <p className="mt-2 text-gray-300" onClick={relativeToLanguage()}>
+            {/* {skillDescriptionsBG[selectedSkill]} */}
+            {lang === "bg"
               ? skillDescriptionsBG[selectedSkill]
-              : skillDescriptionsEN[selectedSkill]} */}
+              : skillDescriptionsEN[selectedSkill]}
           </p>
         </motion.div>
       )}
       {/* Services Section */}
       {showServices && (
         <>
-          <div className="margin-top-45">
-            <section class="expertise">
-              <h2 className="text-align-center">My Areas of Expertise</h2>
-              <p class="intro-text text-align-center">
-                My comprehensive services are custom-tailored to meet your
-                unique business goals and objectives.
-              </p>
-
-              <div class="expertise-grid">
-                <div class="expertise-card">
-                  <h3>Web Development</h3>
-                  <ul class="tech-list">
-                    <li>
-                      Creating responsive and user-friendly websites using
-                      modern technologies.
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="expertise-card">
-                  <h3>Software Consulting</h3>
-                  <ul class="tech-list">
-                    <li>
-                      Providing expert guidance and solutions for software
-                      development projects.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* <div class="expertise-card">
-                <h3>Mobile App Development</h3>
-                <ul class="tech-list">
-                  <li>React Native</li>
-                  <li>Flutter</li>
-                  <li>WeChat Mini App</li>
-                </ul>
-              </div> */}
-
-                <div class="expertise-card">
-                  <h3>Product Design</h3>
-                  <p class="service-description">
-                    I have a wealth of experience in all aspects of product
-                    design for clients and business clients, from ideation to
-                    prototyping to production.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <section class="process">
-              <h2>Collaboration Process</h2>
-
-              <div class="process-steps">
-                <div class="process-step">
-                  <div class="process-content">
-                    <h4>Communication</h4>
-                    <p>
-                      Prior to initiating any project, I prioritize an initial
-                      online meeting with each client for 15-30 minutes.
-                      Ensuring a clear understanding of visions, objectives,
-                      methodologies, or other concerns, helps us align our goals
-                      and expectations from the very beginning.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="process-step">
-                  <div class="process-content">
-                    <h4>Design & Development</h4>
-                    <p>
-                      Aligning with my clients' specific requirements,
-                      preferences, and coding standards. I am dedicated to
-                      delivering results that adhere to the industry's best
-                      practices while ensuring top-tier quality and optimal
-                      performance.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="process-step">
-                  <div class="process-content">
-                    <h4>Revision</h4>
-                    <p>
-                      Clear and constructive feedback with detailed and accurate
-                      progress updates will be provided based on project
-                      milestones, ensuring my clients are well-informed about
-                      the status of their goals. This commitment to transparency
-                      is a cornerstone of my professional ethics.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="process-step">
-                  <div class="process-content">
-                    <h4>Finalize</h4>
-                    <p>
-                      I deeply respect the objectives and dreams of my clients
-                      and respond to their further needs at first time. My
-                      foremost aim is to cultivate trust and foster lasting
-                      connections with my clients, transforming professional
-                      partnerships into long-term friendships.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
+          <MyServices />
           {/* <h2 className="margin-top-45 remove-margin-bottom">
             {t("myServices")}
           </h2>
