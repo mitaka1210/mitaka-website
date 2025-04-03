@@ -49,6 +49,11 @@ export default function ImprovementsWebsite() {
                   <span className="status completed">{t("complete")}</span>
                 </div>
                 <div className="update">
+                  <span className="icon">🎨</span>
+                  <span>{t("addingImprovements")}</span>
+                  <span className="status pending">{t("expected")}</span>
+                </div>
+                <div className="update">
                   <span className="icon">📩</span>
                   <span>{t("contactPageDone")}</span>
                   <span className="status completed">{t("completes")}</span>
@@ -68,6 +73,29 @@ export default function ImprovementsWebsite() {
                   <span>{t("manyMoreIdeas")}</span>
                   <span className="status pending">{t("expected")}</span>
                 </div>
+              </div>
+            </section>
+            <h2 className="margin-top-25 color-white">{t("survey")}</h2>
+            <section className="survey-section">
+              <div>
+                <button className="btn-survey-bulgarian">
+                  <a
+                    href="https://forms.office.com/r/zkJgyn05mQ?origin=lprLink"
+                    target="_blank"
+                  >
+                    Вашето мнение е от значение!
+                  </a>
+                </button>
+              </div>
+              <div>
+                <button className="btn-survey-english">
+                  <a
+                    href="https://forms.office.com/r/AgvXZZ8s7h?origin=lprLink"
+                    target="_blank"
+                  >
+                    Your opinion matters!
+                  </a>
+                </button>
               </div>
             </section>
           </main>
