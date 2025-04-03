@@ -75,12 +75,15 @@ const servicesEN = [
 ];
 export default function MyServices() {
   const { t } = useTranslation();
-  const langDefault = localStorage.getItem("i18nextLng");
   const [lang, setLang] = useState("bg");
   useEffect(() => {
-    setLang(langDefault);
-  }, [langDefault]);
-  let img = images;
+    if (typeof window !== "undefined") {
+      const storedLang = localStorage.getItem("i18nextLng");
+      if (storedLang) {
+        setLang(storedLang);
+      }
+    }
+  }, []);
   return (
     <div className="margin-top-45">
       {/* <h2 className="margin-top-45 remove-margin-bottom">
