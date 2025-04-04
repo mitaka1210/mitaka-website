@@ -24,6 +24,8 @@ export default function Dropdown(props: any) {
     toggle();
   }
   const transClass = isOpen ? "flex" : "hidden";
+
+  //TODO може би ще е по-добре да показвам флаговете вместо текста на езика в момента пише EN or BG и езика  когато сме на екран повече от 630
   return (
     <>
       {size.width < 630 ?
