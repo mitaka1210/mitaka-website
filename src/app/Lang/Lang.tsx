@@ -43,8 +43,8 @@ const menuItemsBG: MenuItem[] = [
 export default function ChangeLang() {
   let lang = localStorage.getItem("i18nextLng");
   let img = images;
-  useEffect(() => {
-  }, [lang]);
+  // useEffect(() => {
+  // }, [lang]);
   return (
       <div className="flex gap-8 items-center text-white">
         {lang === 'bg' ? menuItemsBG.map((item, number) => {

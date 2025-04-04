@@ -127,6 +127,8 @@ export default function SkillPyramid() {
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [showServices, setShowServices] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
+  const [scrollPos, setScrollPos] = useState(0);
+
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     // Симулираме зареждане (например от API или изображения)
@@ -140,7 +142,10 @@ export default function SkillPyramid() {
       const scrollTop = window.scrollY;
       const clientHeight = window.innerHeight;
       const scrollHeight = document.documentElement.scrollHeight;
-
+      // Only update if scroll position has changed significantly
+      // if (Math.abs(scrollTop - scrollPos) > 5) {
+      //   setScrollPos(scrollTop);
+      // }
       const scrolledPercentage =
         (scrollTop / (scrollHeight - clientHeight)) * 100;
 

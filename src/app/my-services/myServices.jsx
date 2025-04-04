@@ -74,16 +74,18 @@ const servicesEN = [
   // },
 ];
 export default function MyServices() {
-  const { t } = useTranslation();
-  const [lang, setLang] = useState("bg");
+  const { t, i18n } = useTranslation();
+  const [lang, setLang] = useState(i18n.language || "bg");
+
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedLang = localStorage.getItem("i18nextLng");
-      if (storedLang) {
-        setLang(storedLang);
-      }
-    }
-  }, []);
+    const handleLanguageChange = (lng) => {
+      setLang(lng);
+    };
+    i18n.on("languageChanged", handleLanguageChange);
+    return () => {
+      i18n.off("languageChanged", handleLanguageChange);
+    };
+  }, [i18n]);
   return (
     <div className="margin-top-45">
       {/* <h2 className="margin-top-45 remove-margin-bottom">
