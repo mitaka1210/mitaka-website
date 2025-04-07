@@ -10,14 +10,18 @@ const baseQuery = fetchBaseQuery({
 export const articlesLikesDislikes = createApi({
     reducerPath: "articlesLikesDislikes",
     baseQuery,
+    tagTypes: ['Likes'], // Add 'Likes' here
+
     endpoints: (builder) => ({
         getArticleLikes: builder.query({
             query: (articleId) => {
                 return `${articleId}/likes`;
             },
             transformResponse: (response) => {
+                console.log("pesho response", response);
                 return response;
-            }
+            },
+            providesTags: (result, error, articleId) => [{ type: "Likes", id: articleId }],
         }),
         likeArticle: builder.mutation({
             query: ({ articleId, type }) => {
