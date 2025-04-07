@@ -1,40 +1,40 @@
 import React from "react";
-import './mobile.scss';
-import Slider from 'react-slick';
-import {motion} from "framer-motion";
-import {FaCode, FaLaptopCode} from "react-icons/fa";
+import "./mobile.scss";
+import Slider from "react-slick";
+import MyServices from "../my-services/myServices";
+import { FaCode, FaLaptopCode } from "react-icons/fa";
 const MobileSkillsHtml = () => {
   const imgs = [
-    'html',
-    'css',
-    'docker',
-    'grunt',
-    'reactjs',
-    'angular',
-    'angularjs',
-    'scss',
-    'reactjs',
-    'postman',
-    'redux(RTK)',
-    'dbeaver',
-    'postgreSQL',
-    'github',
-    'express',
-    'javascript',
-    'nodejs',
-    'jekyll',
-    'rxjs',
+    "html",
+    "css",
+    "docker",
+    "grunt",
+    "reactjs",
+    "angular",
+    "angularjs",
+    "scss",
+    "reactjs",
+    "postman",
+    "redux(RTK)",
+    "dbeaver",
+    "postgreSQL",
+    "github",
+    "express",
+    "javascript",
+    "nodejs",
+    "jekyll",
+    "rxjs",
   ];
   const services = [
     {
-      title: 'Web Development',
+      title: "Web Development",
       icon: <FaCode />,
-      details: ['Frontend', 'Modern Frameworks', 'Responsive Design'],
+      details: ["Frontend", "Modern Frameworks", "Responsive Design"],
     },
     {
-      title: 'App Development',
+      title: "App Development",
       icon: <FaLaptopCode />,
-      details: ['Cross-platform', 'PWA & Native', 'Performance Optimization'],
+      details: ["Cross-platform", "PWA & Native", "Performance Optimization"],
     },
     // {
     //     title: 'Database Management',
@@ -50,7 +50,7 @@ const MobileSkillsHtml = () => {
   const settings = {
     centerMode: true,
     className: "slider variable-width, center",
-    centerPadding: '10px',
+    centerPadding: "10px",
     slidesToShow: 0,
     speed: 500,
     slidesToScroll: 1,
@@ -80,18 +80,23 @@ const MobileSkillsHtml = () => {
           arrows: false,
           slidesToShow: 1,
         },
-      }
+      },
     ],
   };
 
   const renderSlides = imgs.map((num) => (
-    <div className="trending-img card" key={num}   style={{ width: 350 }}>{num}</div>
+    <div className="trending-img card" key={num} style={{ width: 350 }}>
+      {num}
+    </div>
   ));
-  return(
+  return (
     <>
       <div className="cards-preview">
-            <Slider {...settings}>{renderSlides}</Slider>
-        <h2 className="text-align-center">Моите Услуги</h2>
+        <Slider {...settings}>{renderSlides}</Slider>
+        <section className="my-services-section-mobile">
+          <MyServices />
+        </section>
+        {/* <h2 className="text-align-center">Моите Услуги</h2>
           <div
               className="mt-6 margin-15 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 services">
             {services.map((service, index) => (
@@ -111,10 +116,10 @@ const MobileSkillsHtml = () => {
                   </ul>
                 </motion.div>
             ))}
-          </div>
+          </div> */}
       </div>
     </>
-  )
+  );
 };
 
 export default MobileSkillsHtml;

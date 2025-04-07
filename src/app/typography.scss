@@ -94,7 +94,7 @@ h2 {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: 350 + ($i * $interval-size)) {
-      font-size: $base-font-size * (1.1 + (.3 * $i));
+      font-size: $base-font-size * (1.1 + (.2 * $i));
     }
     $i: $i + 1;
   }
@@ -155,7 +155,7 @@ p {
   $i: 0;
   @while $i <= $intervals {
     @media only screen and (min-width: calc(440px + #{$i * $interval-size})) {
-      font-size: $base-font-size * (6 + (.03 * $i));
+      font-size: $base-font-size * (.6 + (.08 * $i));
     }
     $i: $i + 1;
   }
@@ -177,4 +177,10 @@ span {
     }
     $i: $i + 1;
   }
+}
+
+
+strong{
+  font-weight: bolder !important;
+  color: #e0f7ce;
 }

@@ -3,20 +3,21 @@
 // components/Nav.js
 import Link from "next/link";
 import "./nav.scss";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 import HamburgerMenu from "@/app/HamburgerMenu-page/HamburgerMenuHTML";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Header from "@/app/Lang/Lang";
 import ChangeLang from "@/app/Lang/Lang";
+import { useRouter } from "next/navigation";
 import Appbar from "@/app/SignInButton/AppBar/AppBar";
-import {signOut, useSession} from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 const Navigation = () => {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const size = useWindowSize();
-  const {data: session} = useSession();
-  const [userName, setUserName] = useState('');
-
+  const { data: session } = useSession();
+  const [userName, setUserName] = useState("");
+  const router = useRouter();
   useEffect(() => {
     if (session && session.user) {
       setUserName(session.user.name);
@@ -24,9 +25,11 @@ const Navigation = () => {
   }, [userName]);
 
   const goToHome = () => {
-    signOut({callbackUrl: '/'}).then(r => {
-    })
-  }
+    signOut({ callbackUrl: "/" }).then((r) => {});
+  };
+  const ImprovementsWebsite = () => {
+    router.push("/Improvements-website");
+  };
   return (
     <header className="maxWidthAndHeight flex-horizontal-container justify-content-end text-align-center">
       {/*!If we need to check screen size START*/}
@@ -34,10 +37,18 @@ const Navigation = () => {
       {/*  {size.width}px / {size.height}px*/}
       {/*</div>*/}
       {/*!If we need to check screen size END*/}
-      {
-        (size.width < 501) ? <div>
-          <HamburgerMenu/>
-        </div> : <div className="maxWidthAndHeight justify-content-end flex-horizontal-container">
+      {size.width < 501 ? (
+        <div>
+          <HamburgerMenu />
+        </div>
+      ) : (
+        <div className="maxWidthAndHeight justify-content-end flex-horizontal-container">
+          <div
+            className="rocket-bgr-improvements"
+            onClick={ImprovementsWebsite}
+          >
+            <span>🚀</span>
+          </div>
           <ul className="justify-content-end maxWidthAndHeight navigation padding-0">
             <li className="text-1 color-white margin-15">
               <Link href="/">{t("home")}</Link>
@@ -72,11 +83,11 @@ const Navigation = () => {
             {/*  }*/}
             {/*</li>*/}
             <li className="text-9 color-white margin-15">
-              <ChangeLang/>
+              <ChangeLang />
             </li>
           </ul>
         </div>
-      }
+      )}
     </header>
   );
 };

@@ -52,7 +52,17 @@
 .text-8 a:hover {
   color: crimson;
 }
-
+.rocket-bgr-improvements{
+  cursor: pointer;
+  background-color: #000000;
+  width: 30%;
+  text-align: justify;
+  & span{
+    position: relative;
+    top: 10px;
+    left: 15px;
+  }
+}
 
 .sticky .my-logo p span {
   color: var(--color-lio, crimson);

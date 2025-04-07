@@ -100,6 +100,10 @@
 
 .add-scroll-aquarium-page {
     height: 100dvh;
+  background-image: url("../../../assets/images/Ai-generator-bgr-img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .content-div:hover {
@@ -210,18 +214,31 @@
 
     .author:before {
       margin-right: 10px;
-      content: "\f007";
+      content: "✍️";
     }
 
     .date:before {
+      content: "📅"; /* Календар */
       margin-right: 10px;
-      content: "\f133";
+      font-size: 20px;
+      color: #007bff;
+      animation: pulse 1s infinite alternate;
     }
-
+    @keyframes pulse {
+      0% {
+        color: #007bff;
+      }
+      100% {
+        color: #0056b3;
+      }
+    }
     .tags {
       ul:before {
-        content: "\f02b";
+        content: "🏷️";
         margin-right: 10px;
+        font-size: 20px;
+        color: #28a745;
+        animation: bounce 1s infinite alternate;
       }
 
       li {
@@ -232,6 +249,49 @@
         }
       }
     }
+  }
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  .support-fish-aquarium:before {
+    //content: "🐠💧 Подкрепете аквариума си!"; /* Риба и капка вода */
+    content: "💧"; /* Риба и капка вода */
+    margin-right: 10px;
+    font-size: 20px;
+    color: #007bff; /* Син цвят */
+  }
+  .support-fish:before {
+    //content: "🐠💧 Подкрепете аквариума си!"; /* Риба и капка вода */
+    content: "🐠"; /* Риба и капка вода */
+    margin-right: 10px;
+    font-size: 20px;
+    color: #007bff; /* Син цвят */
+  }
+  .support-aquarium:before {
+    //content: "🐠💧 Подкрепете аквариума си!"; /* Риба и капка вода */
+    content: "🐟🛠️"; /* Риба и капка вода */
+    margin-right: 10px;
+    font-size: 20px;
+    color: #007bff; /* Син цвят */
+  }
+  .tags .tech:before {
+    content: "💻"; /* Таг за технологии */
+    margin-right: 10px;
+  }
+
+  .tags .nature:before {
+    content: "🌳"; /* Таг за природа */
+    margin-right: 10px;
+  }
+
+  .tags .health:before {
+    content: "💪"; /* Таг за здраве */
+    margin-right: 10px;
   }
 
   .description {

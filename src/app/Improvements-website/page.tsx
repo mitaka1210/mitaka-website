@@ -1,11 +1,10 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
-import './blog.scss';
 import dynamic from 'next/dynamic';
 import SEO from '../SEO/seo';
 
-const BlogHtml = dynamic(() => import('./BlogHTML'), { ssr: false });
+const BlogHtml = dynamic(() => import('./Improvements-website'), { ssr: false });
 const FooterHTML = dynamic(() => import('../Footer-page/page'), { ssr: false });
 const Navigation = dynamic(() => import('../Navigation-component/navigation'), { ssr: false });
 

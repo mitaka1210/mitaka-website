@@ -22,7 +22,9 @@
     transform: scale(1.05) !important;
     box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
 }
-
-.change-font-size-li{
-    font-size: .6em !important;
+@media (max-width: 468px) {
+    .change-font-size-li{
+        font-size: .5em !important;
+    }
 }
+
