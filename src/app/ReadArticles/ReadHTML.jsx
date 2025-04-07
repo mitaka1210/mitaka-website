@@ -38,12 +38,13 @@ const ReadHtml = () => {
     }, [searchParams]);
 
     useEffect(() => {
+        console.log("pesho", id);
         if (id) {
             dispatch(fetchArticles());
         }
     }, [dispatch, id]);
 
-    const { data, isLoading } = useGetArticleLikesQuery(id, { skip: !id });
+    const { data, isLoading } = useGetArticleLikesQuery(id, { skip: !id, refetchOnMountOrArgChange: true,});
 
     useEffect(() => {
         if (data) {
@@ -95,6 +96,7 @@ const ReadHtml = () => {
         });
     };
     const handleLike = async () => {
+        console.log("pesho", isLiked, isDisliked);
         if (isLiked || isDisliked) return;
         setIsLiked(true);
         setLikeCount((prev) => prev + 1);
@@ -124,8 +126,6 @@ const ReadHtml = () => {
 
     if (!id) return null;
     if (loading || isLoading) return <LoaderHTML />;
-    console.log("pesho", a);
-    console.log("pesho", sectionArr);
     return (
         <div className="read" style={{ background: "linear-gradient(to bottom, #006994, #003f5c)", minHeight: "100vh", padding: "20px" }}>
             <div className="progress-container" style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "4px", background: "#ddd", zIndex: 1000 }}>
