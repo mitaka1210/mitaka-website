@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import SEO from '../SEO/seo';
 
-const BlogHtml = dynamic(() => import('./Improvements-website'), { ssr: false });
+const Improvements = dynamic(() => import('./Improvements-website'), { ssr: false });
 const FooterHTML = dynamic(() => import('../Footer-page/page'), { ssr: false });
 const Navigation = dynamic(() => import('../Navigation-component/navigation'), { ssr: false });
 
@@ -27,11 +27,11 @@ const Page = () => {
             {/* SEO мета тагове */}
             <SEO title={title} description={description} url={pageUrl} lang={language} />
             {/* Основно съдържание */}
-            <div className="blog-page">
+            <div className="improvements-page">
                 <div className="nav-bar-blog flex-vertical-container text-align-center justify-content-end">
                     <Navigation />
                 </div>
-                <BlogHtml />
+                <Improvements />
                 <FooterHTML />
             </div>
         </>
