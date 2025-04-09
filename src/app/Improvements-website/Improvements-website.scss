@@ -1,3 +1,6 @@
+.improvements-page{
+  container-type: inline-size;
+}
 .improvements{
     height: 100dvh;
     background: linear-gradient(to bottom right, #f4f4f4, #e0e0e0);
@@ -43,7 +46,6 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 55px;
-    margin-top: 75px;
   }
   .btn-survey-english {
     background: white;
@@ -59,3 +61,23 @@ h2 {
     border-radius: 10px;
     text-decoration: underline;
   }
+@container (min-width: 412px) {
+  .improvements {
+    height: 130dvh;
+  }
+}
+@container (max-width: 400px) {
+    .improvements {
+      height: 160dvh;
+    }
+  }
+@container (max-width: 390px) {
+  .improvements {
+    height: 145dvh;
+  }
+}
+@container (max-width: 360px) {
+  .improvements {
+    height: 140dvh;
+  }
+}
