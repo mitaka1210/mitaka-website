@@ -2,10 +2,21 @@ import React, { useEffect, useState } from "react";
 import "./Improvements-website.scss";
 import { useTranslation } from "react-i18next";
 import LoaderHTML from "../loader/LoaderHTML";
+import {accordianBG} from "@/content-BG";
+import {accordianEN} from "@/content-EN";
 
 export default function ImprovementsWebsite() {
   const [loading, setLoading] = useState(true);
+  const [changeLang, setChangeLang] = useState('bg');
   const { t } = useTranslation();
+  // localStorage
+  if (typeof window !== 'undefined') {
+    let getLang = localStorage.getItem('i18nextLng');
+    // update data
+    useEffect(() => {
+      setChangeLang(getLang)
+    }, [getLang]);
+  }
   useEffect(() => {
     setLoading(false);
   }, []);
@@ -76,27 +87,33 @@ export default function ImprovementsWebsite() {
               </div>
             </section>
             <h2 className="margin-top-25 color-white">{t("survey")}</h2>
-            <section className="survey-section">
-              <div>
-                <button className="btn-survey-bulgarian">
-                  <a
-                    href="https://forms.office.com/r/zkJgyn05mQ?origin=lprLink"
-                    target="_blank"
-                  >
-                    Вашето мнение е от значение!
-                  </a>
-                </button>
-              </div>
-              <div>
-                <button className="btn-survey-english">
-                  <a
-                    href="https://forms.office.com/r/AgvXZZ8s7h?origin=lprLink"
-                    target="_blank"
-                  >
-                    Your opinion matters!
-                  </a>
-                </button>
-              </div>
+            <section className="survey-section margin-top-15">
+
+              {
+                changeLang === "bg" ? (
+                    <div>
+                      <button className="btn-survey-bulgarian">
+                        <a
+                            href="https://forms.office.com/r/zkJgyn05mQ?origin=lprLink"
+                            target="_blank"
+                        >
+                          Вашето мнение е от значение!
+                        </a>
+                      </button>
+                    </div>
+                ) : (
+                    <div>
+                      <button className="btn-survey-english">
+                        <a
+                            href="https://forms.office.com/r/AgvXZZ8s7h?origin=lprLink"
+                            target="_blank"
+                        >
+                          Your opinion matters!
+                        </a>
+                      </button>
+                    </div>
+                )
+              }
             </section>
           </main>
         </div>
