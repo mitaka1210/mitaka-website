@@ -1,32 +1,27 @@
-import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/database/db';
+import { NextResponse } from 'next/server';
+import { Pool } from 'pg';
 
-export async function POST(req: NextRequest) {
-    if (req.method !== 'POST') {
-        return new NextResponse(JSON.stringify({ message: 'Method not allowed' }), { status: 405 });
-    }
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL, // Взема URL от .env
+});
 
-    const { username, email } = await req.json();
-
-    if (!username || !email) {
-        return new NextResponse(JSON.stringify({ message: 'Username and password are required' }), { status: 400 });
-    }
-
+export async function POST(req:any) {
     try {
-        const userResult = await pool.query('SELECT id, name, email FROM googlelogin WHERE name = $1', [username]);
+        const { name, email } = await req.json();
+        console.log('Received data:', { name, email });
 
-        if (userResult.rows.length === 0) {
-            return new NextResponse(JSON.stringify({ message: 'Invalid username or password' }), { status: 401 });
+        if (!name || !email) {
+            return NextResponse.json({ success: false, error: 'Missing name or email' }, { status: 400 });
         }
-        const user = userResult.rows[0];
-        await pool.query('INSERT INTO googlelogin (name, email, login_date) VALUES ($1, $2, CURRENT_TIMESTAMP)', [
-            user.name,
-            user.email,
-        ]);
 
-        return new NextResponse(JSON.stringify({ user: { id: user.id, name: user.name, email: user.email } }), { status: 200 });
-    } catch (err) {
-        console.error('Error during login:', err);
-        return new NextResponse(JSON.stringify({ message: 'Internal server error' }), { status: 500 });
+        const loginDate = new Date().toISOString();
+
+        await pool.query('INSERT INTO logins (name, email, login_date) VALUES ($1, $2, $3) ON CONFLICT (email) DO UPDATE SET login_date = EXCLUDED.login_date',
+            [name, email, loginDate]);
+
+        return NextResponse.json({ success: true, message: 'User login recorded' });
+    } catch (error) {
+        console.error('Database error:', error);
+        return NextResponse.json({ success: false, error: 'Database error' }, { status: 500 });
     }
 }

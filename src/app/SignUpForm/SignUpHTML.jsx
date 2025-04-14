@@ -8,12 +8,13 @@ import {validLoginInput} from "@/app/signInValidInput/signInValidInput";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
 import {resetState} from "@/store/likesSlice/likesSlice";
 import {useRouter} from "next/navigation";
-const SignUpFormHTML = () => {
+
+const SignUpFormHTML = ({sendDataToLogin}) => {
     const {t} = useTranslation();
     const router = useRouter();
     const size = useWindowSize();
     const [username, setUsername] = useState('');
-    const [firstName, setFirstName] = useState('');
+    const [first_name, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -27,25 +28,25 @@ const SignUpFormHTML = () => {
 
     const handleCreateAccount = async (e) => {
         e.preventDefault();
-        const validationErrors = validateInput(username, password, firstName, lastName, email, confirmPassword)
+        const validationErrors = validateInput(username, password, first_name, lastName, email, confirmPassword)
 
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
         }else {
             try {
-                dispatch(createAccount({ username, firstName, lastName, email, password })).unwrap();
-                const signInButton = document.getElementById('idCreateAccount');
-                const containerLogin = document.getElementById('login');
-                signInButton.addEventListener('click', () => {
-                    containerLogin.classList.remove('right-panel-active');
-                });
+                await dispatch(createAccount({ username, first_name, lastName, email, password })).unwrap();
+                window.location.reload();
+                // const signInButton = document.getElementById('idCreateAccount');
+                // const containerLogin = document.getElementById('login');
+                // signInButton.addEventListener('click', () => {
+                //     containerLogin.classList.remove('right-panel-active');
+                // });
+                sendDataToLogin(true);
             } catch (error) {
-                console.log('Error', error);
+                console.log('❌ ГРЕШКА ПРИ СЪЗДАВАНЕ НА АКАУНТ:', error);
             }
         }
     };
-
-
     // Функция за връщане назад
     const goBack = () => {
        window.location.reload()
@@ -62,8 +63,8 @@ const SignUpFormHTML = () => {
 
             <div className="input-width-100 margin-5">
                 <label className="color-white">{t('firstName')}</label>
-                <input className="border-radius-10" type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
-                {errors.firstName && <span style={{ color: 'red' }}>{errors.firstName}</span>}
+                <input className="border-radius-10" type="text" value={first_name} onChange={(e) => setFirstName(e.target.value)} />
+                {errors.first_name && <span style={{ color: 'red' }}>{errors.first_name}</span>}
             </div>
 
             <div className="input-width-100 margin-5">
@@ -99,7 +100,6 @@ const SignUpFormHTML = () => {
                     {errorCreate.message}
                 </p>
             )}
-        </form>
             {size.width < 500 ?
                 <div>
                     <button className="btn-login-page input-width-100" id="idCreateAccount">
@@ -112,6 +112,7 @@ const SignUpFormHTML = () => {
                 <button className="btn-login-page" id="idCreateAccount">
                     {t("createAccount")}
                 </button> }
+        </form>
         </>
     );
 };
