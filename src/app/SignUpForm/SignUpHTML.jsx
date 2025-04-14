@@ -8,6 +8,7 @@ import {validLoginInput} from "@/app/signInValidInput/signInValidInput";
 import useWindowSize from "@/app/Helper-components/getWindowSize/windowSize";
 import {resetState} from "@/store/likesSlice/likesSlice";
 import {useRouter} from "next/navigation";
+
 const SignUpFormHTML = ({sendDataToLogin}) => {
     const {t} = useTranslation();
     const router = useRouter();
