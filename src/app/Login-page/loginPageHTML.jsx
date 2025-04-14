@@ -3,7 +3,7 @@ import './loginPage.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/navigation";
 import {validLoginInput} from "@/app/signInValidInput/signInValidInput";
-import {login} from "@/store/login/loginSlice";
+import {login, checkAuth} from "@/store/login/loginSlice";
 import SignUpFormHTML from '../SignUpForm/SignUpHTML';
 import {useTranslation} from "react-i18next";
 import Image from "next/image";
@@ -16,9 +16,12 @@ function LoginPageHtml(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loginForm, setHideForm] = useState(true);
+    const [testForm, setTestForm] = useState(false);
     const dispatch = useDispatch();
     const { loading, error } = useSelector((state) => state.auth);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const router = useRouter();
         useEffect(() => {
             const signUpButton = document.getElementById('signUp');
             const signInButton = document.getElementById('signIn');
@@ -38,30 +41,48 @@ function LoginPageHtml(props) {
                 signUpButton.removeEventListener('click', handleSignUpClick);
                 signInButton.removeEventListener('click', handleSignInClick);
             };
-        }, []);
+        }, [testForm]);
     const logInWithGoogle = () => {
         signIn("google", {callbackUrl: '/'}).then(r => {})
     }
     const handleLogin = async (e) => {
-            console.log(username, password);
-            e.preventDefault();
-            const validationErrors = validLoginInput(username, password);
-            if (Object.keys(validationErrors).length > 0) {
-                setErrors(validationErrors);
-                return;
-            }
-            const result = await dispatch(login({ username, password, role: 'user' }));
-            if (result.payload.token) {
-                // navigate('/home');
-            }
-        };
-        const handleClickSignUp = () => {
-            setHideForm(false);
-        };
-        const handleClickSignIn = () => {
+        e.preventDefault();
+        const validationErrors = validLoginInput(username, password);
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            return;
+        }
+        const result = await dispatch(login({ username, password, role: 'user' }));
+        if (result.payload.token) {
+            // Повикай checkAuth след login
+            // await dispatch(checkAuth());
+            router.push('/');
+        }else {
+            // Може би покажи съобщение за неуспешен логин
+            console.error("Login failed: ", result.error || "Unknown error");
+            setIsLoggedIn(true); // това вече го имаш за да покаже error съобщение
+        }
+    };
+    const handleClickSignUp = () => {
+        setHideForm(false);
+    };
+    const handleClickSignIn = () => {
+        setHideForm(true);
+        setIsLoggedIn(true);
+    };
+
+    const handleDataFomSignUpForm = (data) => {
+        console.log('Data received from child:', data);
+        if(data){
+            const signInButton = document.getElementById('idCreateAccount');
+            const containerLogin = document.getElementById('login');
+            signInButton.addEventListener('click', () => {
+                containerLogin.classList.remove('right-panel-active');
+            });
+            setTestForm(true)
             setHideForm(true);
-            setIsLoggedIn(true);
-        };
+            setIsLoggedIn(true);        }
+    }
         return (
             <div className="container-login-page">
                 <div className="container-login" id="login">
@@ -94,7 +115,7 @@ function LoginPageHtml(props) {
                             </div>
                         ) : (
                             <div className="form-container-login sign-up-container-login">
-                                <SignUpFormHTML />
+                                <SignUpFormHTML sendDataToLogin={handleDataFomSignUpForm} />
                             </div>
                         )}
                     </div>

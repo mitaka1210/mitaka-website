@@ -21,11 +21,15 @@ const Navigation = () => {
   useEffect(() => {
     if (session && session.user) {
       setUserName(session.user.name);
+    }else if(localStorage.getItem('token') !== undefined && localStorage.getItem('token') !== null && localStorage.getItem('token') !== ''){
+      setUserName(localStorage.getItem('role'));
     }
   }, [userName]);
 
   const goToHome = () => {
     signOut({ callbackUrl: "/" }).then((r) => {});
+    localStorage.removeItem("token");
+    localStorage.removeItem("role");
   };
   const ImprovementsWebsite = () => {
     router.push("/Improvements-website");
@@ -75,7 +79,7 @@ const Navigation = () => {
             {/*  {*/}
             {/*    userName === ''  ?  <Link href="/Login-page">{t("login")}</Link> :*/}
             {/*        <div className="flex gap-4 ml-auto">*/}
-            {/*          <p className="text-sky-600">{session.user.name}</p>*/}
+            {/*          <p className="text-sky-600">{session !== null  ? session.user.name : ''}</p>*/}
             {/*          <button onClick={goToHome} className="flex-horizontal-container-raw log-out">*/}
             {/*            {t("signOut")}*/}
             {/*          </button>*/}
