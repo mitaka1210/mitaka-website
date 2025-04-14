@@ -40,7 +40,7 @@ const SignUpFormHTML = ({sendDataToLogin}) => {
                 // signInButton.addEventListener('click', () => {
                 //     containerLogin.classList.remove('right-panel-active');
                 // });
-                // sendDataToLogin(true);
+                sendDataToLogin(true);
             } catch (error) {
                 console.log('❌ ГРЕШКА ПРИ СЪЗДАВАНЕ НА АКАУНТ:', error);
             }
