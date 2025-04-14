@@ -98,7 +98,7 @@ setTimeout(() => {
                  <div className="flex-horizontal-container-raw justify-end">
                   <button onClick={() => handleClick(article.id)}>
                    <span className="read-more">
-                    <a>Read More</a>
+                    <a>{t('seeMore')}</a>
                    </span>
                   </button>
                  </div>
