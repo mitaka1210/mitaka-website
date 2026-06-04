@@ -142,7 +142,8 @@ const ReadHtml = () => {
       </div>
       <div className="read-sections">
        {sectionArr.map((section, index) => {
-        const imageUrl = section.image_url ? getUploadImageUrl(section.image_url) : null;
+
+        const imageUrl = section.image_url ? getUploadImageUrl(section.image_url) : getUploadImageUrl(section.image_url);
         return (
          <div key={index} className="read-section">
           <h5 className="read-section-title text-align-center">
