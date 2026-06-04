@@ -44,3 +44,4 @@ docker-compose.rollback.yml
 .claude/*
 tools/tmp/
 .kiro
+/mitaka-website
