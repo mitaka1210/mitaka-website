@@ -43,3 +43,5 @@ docker-compose.rollback.yml
 # AI Agent configuration and docs
 .claude/*
 tools/tmp/
+.kiro
+/mitaka-website
