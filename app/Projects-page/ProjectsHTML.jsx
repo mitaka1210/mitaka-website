@@ -368,6 +368,44 @@ const ProjectsHtml = () => {
       </figcaption>
       <span className="after"></span>
      </figure>
+     <figure className="shape-box shape-box_half">
+      <img src={img[30].url.src} alt="React-website" />
+      <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
+      <figcaption>
+       <div className="show-cont">
+        <h3 className="card-no">13</h3>
+        <h4 className="card-main-title">{t('aqua-hub-header')}</h4>
+       </div>
+       <h5 className="card-content">{t('aqua-hub-text')}</h5>
+       <h6 className="margin-top-5 border-color-bottom-gray">{t('aqua-hub')}</h6>
+       <ul className="card-content">
+        <li>HTML</li>
+        <li>SCSS</li>
+        <li>NextJs</li>
+        <li>Prisma</li>
+        <li>Zustanda</li>
+        <li>PostgreSql</li>
+        <li>My-ai-agent-army</li>
+        <li>NeonDB</li>
+        <li>Docker</li>
+       </ul>
+       <div className="buttons-wrapper flex-horizontal-container justify-content-end text-align-center align-items-center">
+        <a href="https://aqua-hub-yqsy.vercel.app/en/login?demo=1&next=/start" target="_blank" className="read-more-btn">
+         {t('application')}
+        </a>
+        {storedLang === 'en' ? (
+         <a href="https://app.notion.com/p/AquaHub-Product-Vision-EN-38171746a27880bf84c8c232d7120324" target="_blank" className="read-more-btn">
+          {t('product')}
+         </a>
+        ) : (
+         <a href="https://brash-spinach-809.notion.site/AquaHub-38171746a27880cfa34ec25730781740?pvs=74" target="_blank" className="read-more-btn">
+          {t('product')}
+         </a>
+        )}
+       </div>
+      </figcaption>
+      <span className="after"></span>
+     </figure>
     </div>
    </section>
    <section className="magic-novatio flex-vertical-container justify-content-center text-align-center">
@@ -378,7 +416,7 @@ const ProjectsHtml = () => {
       <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
       <figcaption>
        <div className="show-cont">
-        <h3 className="card-no">15</h3>
+        <h3 className="card-no">14</h3>
         <h4 className="card-main-title">{t('novatio')}</h4>
        </div>
        <h5 className="card-content">{t('novatioText')}</h5>
@@ -404,7 +442,7 @@ const ProjectsHtml = () => {
       <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
       <figcaption>
        <div className="show-cont">
-        <h3 className="card-no">16</h3>
+        <h3 className="card-no">15</h3>
         <h4 className="card-main-title">{t('econt')}</h4>
        </div>
        <h5 className="card-content">{t('econtSubText')}</h5>
@@ -428,7 +466,7 @@ const ProjectsHtml = () => {
       <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
       <figcaption>
        <div className="show-cont">
-        <h3 className="card-no">17</h3>
+        <h3 className="card-no">16</h3>
         <h6 className="card-main-title">😏</h6>
        </div>
        <h5 className="card-content">{t('textForNextProject')}</h5>
@@ -445,7 +483,7 @@ const ProjectsHtml = () => {
       <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
       <figcaption>
        <div className="show-cont">
-        <h3 className="card-no">13</h3>
+        <h3 className="card-no">17</h3>
         <h4 className="card-main-title аi-docs">{t('aiDocumentation')}</h4>
        </div>
        <h5 className="card-content">{t('aiDocumentationText')}</h5>
@@ -472,7 +510,7 @@ const ProjectsHtml = () => {
       <div className="brk-abs-overlay z-index-0 bg-black opacity-60"></div>
       <figcaption>
        <div className="show-cont">
-        <h3 className="card-no">14</h3>
+        <h3 className="card-no">18</h3>
         <h4 className="card-main-title аi-docs">{t('aiAgentWorkflow')}</h4>
        </div>
        <h5 className="card-content">{t('aiAgentWorkflowText')}</h5>
