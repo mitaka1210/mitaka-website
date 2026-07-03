@@ -34,6 +34,7 @@
  "everythingStart": "That's how it all started and much more",
  "weatherApp": "Entering the city, you can easily access weather information through the app. It is compatible (ANDROID/IOS) and easy to install on your mobile device.",
  "technologies": "Technologies",
+ "aqua-hub": "Aquarium Hub",
  "application": "Application",
  "code": "GitHub",
  "reactWebSite": "Pages with layout made with ReactJs and Figma. Responsive design",
@@ -160,5 +161,8 @@
  "aiAgentWorkflow": "Claude Code Skeleton Ecosystem",
  "aiSectionName": "Effectiveness with AI",
  "close": "Close",
- "completes": "Completed"
+ "completes": "Completed",
+ "aqua-hub-header": "Platform AquaHub",
+ "aqua-hub-text": "AquaHub is a modern digital ecosystem paired with a user-friendly mobile app. It consolidates everything needed to care for an aquarium with ease, enjoyment, and zero unnecessary stress.",
+ "product": "Product"
 }
