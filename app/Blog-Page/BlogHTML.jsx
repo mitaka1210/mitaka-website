@@ -1,72 +1,28 @@
 // javascript
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './blog.scss';
-import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
-import LoaderHTML from '../loader/LoaderHTML';
-import { useDispatch, useSelector } from 'react-redux';
 import NewsletterSignup from '../newsletterSignup/newsletterSignup';
-import { fetchArticles } from '../../store/getArticles/getArticlesSlice';
 
 const BlogHtml = () => {
- // All hooks called unconditionally and in a stable order
  const { t } = useTranslation();
- const dispatch = useDispatch();
- const router = useRouter();
-
- // Consolidated selector so Hooks count/order doesn't change
- const { status, data: articlesInfo = [], isLoading } = useSelector((state) => state.articles || {});
-
- const [blockCategoryAquariums, setBlockCategoryAquariums] = useState(false);
- const [loading, setLoading] = useState(true);
-
- useEffect(() => {
-  if (status === 'idle') {
-   dispatch(fetchArticles());
-  }
-
-  if (status === 'succeeded') {
-   setLoading(Boolean(isLoading));
-
-   // compute deterministically instead of setting state repeatedly inside a loop
-   const computedBlockCategory = (() => {
-    if (!Array.isArray(articlesInfo) || articlesInfo.length === 0) return false;
-    // If there is more than one article, enable the category.
-    if (articlesInfo.length > 1) return true;
-    // If exactly one article, enable only if its status is true
-    return articlesInfo[0].status === true;
-   })();
-
-   setBlockCategoryAquariums(computedBlockCategory);
-  }
- }, [status, dispatch, isLoading, articlesInfo]);
 
  const redirectTo = (path) => {
   if (path === 'aquariums') {
-   router.push('/cardAquariums');
+   window.open('https://aqua-hub-yqsy.vercel.app/en/login?demo=1&next=/start', '_blank');
   } else if (path === 'programing') {
    // router.push("/programingArticles");
   }
  };
 
- if (loading) {
-  return <LoaderHTML />;
- }
- const classes = ['max-w-sm', 'shadow-xl', 'relative', 'card', 'rounded-md', 'overflow-hidden', !blockCategoryAquariums && 'opacity-50', !blockCategoryAquariums && 'cursor-not-allowed'].filter(Boolean).join(' ');
  return (
   <div className="blog-main-container">
    <div className="min-h-screen bg-white grid place-content-center p-5 blog-category-container">
     <h2 className="capitalize text-3xl md:text-4xl lg:text-6xl text-center mb-10 lg:mb-20 text-indigo-600">{t('category')}</h2>
     <p className="text-align-center">{t('articleOnlyBG')}</p>
     <div className="grid lg:grid-cols-3 gap-1 justify-center">
-     <div
-      className={classes}
-      aria-disabled={!blockCategoryAquariums}
-      onClick={() => {
-       if (blockCategoryAquariums) redirectTo('aquariums');
-      }}
-     >
+     <div className="max-w-sm shadow-xl relative card rounded-md overflow-hidden" onClick={() => redirectTo('aquariums')}>
       <div className="relative">
        <img src="https://aquascape.bg/blog/12-single-default/akvaskejp-where-the-wild-flowers-grow-aranzhi.jpg" alt="" className="max-w-full add-img-height" />
        <div className="custom-shape-divider-bottom-1635508836">
